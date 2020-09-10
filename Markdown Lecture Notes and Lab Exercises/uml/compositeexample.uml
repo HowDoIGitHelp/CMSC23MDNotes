@@ -1,0 +1,28 @@
+@startuml
+
+  interface FileSystemEntity{
+    + {abstract} size() : float
+    + {abstract} searchResults(target:str) : [str]
+  }
+
+  class Directory{
+    - name : str
+    - children : [FileSystemEntity]
+    + size() : float
+    + searchResults(target:str) : [FileSystemEntity]
+    + addChild(newChild:FileSystemEntity)
+    + removeChild(exChild:FileSystemEntity)
+  }
+
+  class File{
+    - name : str
+    - size : float
+    + size() : float
+    + searchResults(target:str) : [FileSystemEntity]
+  }
+
+  Directory ..|> FileSystemEntity
+  File ..|> FileSystemEntity
+  Directory o--> FileSystemEntity
+
+@enduml

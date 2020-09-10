@@ -1,0 +1,48 @@
+@startuml
+class CreditAccount{
+  ...someAttribute
+  applyMonthlyInterest()
+  applyMonthlyChange()
+  ...someOtherMethod()
+}
+
+class DebitAccount{
+  ...someAttribute
+  applyMonthlyInterest()
+  deactivateIfUnderBalanced()
+  applyMonthlyChange()
+  ...someOtherMethod()
+}
+
+class PayrollAccount{
+  applyMonthlyChange()
+  ...someAttribute
+  ...someMethod()
+}
+
+interface Account{
+  {abstract} applyMonthlyChange()
+}
+
+class Bank{
+  accounts:[Account]
+  applyAllMonthlyChanges()
+}
+
+note bottom of Bank
+  applyAllMonthlyChanges(){
+    ...
+    for every account a in accounts{
+      a.applyMonthlyChange
+    }
+  }
+end note
+
+Bank o--> Account
+CreditAccount ..|> Account
+DebitAccount ..|> Account
+PayrollAccount ..|> Account
+
+
+
+@enduml

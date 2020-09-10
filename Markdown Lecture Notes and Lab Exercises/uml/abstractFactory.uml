@@ -1,0 +1,49 @@
+@startuml
+  interface ProductA{
+    + {abstract} someMethodA()
+  }
+  interface ProductB{
+    + {abstract} someMethodB()
+  }
+
+  interface AbstractFactory{
+    + {abstract} newProductA() : ProductA
+    + {abstract} newProductB() : ProductB
+  }
+
+  class ProductAVariant1{
+    + someMethodA()
+  }
+  class ProductBVariant1{
+    + someMethodB()
+  }
+
+  class FactoryVariant1{
+    + newProductA() : ProductA
+    + newProductB() : ProductB
+  }
+
+  class ProductAVariant2{
+    + someMethodA()
+  }
+  class ProductBVariant2{
+    + someMethodB()
+  }
+
+  class FactoryVariant2{
+    + newProductA() : ProductA
+    + newProductB() : ProductB
+  }
+
+  ProductAVariant1 ..|> ProductA
+  ProductAVariant2 ..|> ProductA
+
+  ProductBVariant1 ..|> ProductB
+  ProductBVariant2 ..|> ProductB
+
+  FactoryVariant1 ..|> AbstractFactory
+  FactoryVariant2 ..|> AbstractFactory
+
+  AbstractFactory ..> ProductA
+  AbstractFactory ..> ProductB
+@enduml

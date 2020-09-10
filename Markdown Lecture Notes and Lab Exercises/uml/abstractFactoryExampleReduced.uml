@@ -1,0 +1,97 @@
+@startuml
+
+ interface Monster{
+  + {abstract} announce()
+  + {abstract} move()
+ }
+
+ interface Bokoblin{
+  + {abstract} bludgeon()
+  + {abstract} defend()
+ }
+
+ interface Moblin{
+  + {abstract} stab()
+  + {abstract} kick()
+ }
+
+
+ class NormalBokoblin{
+  + announce()
+  + move()
+  + bludgeon()
+  + defend()
+ }
+
+ class NormalMoblin{
+  + announce()
+  + move()
+  + stab()
+  + kick()
+ }
+
+
+
+ class BlueBokoblin{
+  + announce()
+  + move()
+  + bludgeon()
+  + defend()
+ }
+
+ class BlueMoblin{
+  + announce()
+  + move()
+  + stab()
+  + kick()
+  }
+
+
+
+
+ interface Dungeon{
+  + {abstract} newBokoblin() : Bokoblin
+  + {abstract} newMoblin() : Moblin
+ }
+
+ class EasyDungeon{
+  + newBokoblin() : Bokoblin
+  + newMoblin() : Moblin
+ }
+
+ class MediumDungeon{
+  + newBokoblin() : Bokoblin
+  + newMoblin() : Moblin
+ }
+
+
+ class Encounter{
+  - enemies : [Monster]
+  - dungeon : Dungeon
+  + announceEnemies()
+  + moveEnemies()
+ }
+
+ Moblin ..|> Monster
+ Bokoblin ..|> Monster
+ NormalMoblin ..|> Moblin
+ NormalBokoblin ..|> Bokoblin
+ BlueMoblin ..|> Moblin
+ BlueBokoblin ..|> Bokoblin
+
+ EasyDungeon ..|> Dungeon
+ MediumDungeon ..|> Dungeon
+
+ EasyDungeon ..>  NormalMoblin
+ EasyDungeon ..>  NormalBokoblin
+
+ MediumDungeon ..>  BlueMoblin
+ MediumDungeon ..>  BlueBokoblin
+
+
+ Dungeon ..>  Moblin
+ Dungeon ..>  Bokoblin
+
+ Encounter o--> Monster
+ Encounter o--> Dungeon
+@enduml

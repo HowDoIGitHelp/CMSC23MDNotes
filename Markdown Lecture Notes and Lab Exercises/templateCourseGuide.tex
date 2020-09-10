@@ -1,0 +1,265 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+
+% Overwrite \begin{figure}[htbp] with \begin{figure}[H]
+%\usepackage{float}
+%\let\origfigure=\figure
+%\let\endorigfigure=\endfigure
+%\renewenvironment{figure}[1][]{%
+%\origfigure[b]
+%}{%
+%\endorigfigure
+%}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\titleformat{\section}
+  {\color{black}\Large\bfseries}
+  {\thesection}
+  {1em}
+  {\scshape}
+\titleformat{\subsection}
+  {\color{black}\normalfont\large\bfseries}
+  {\thesubsection}
+  {1em}
+  {\scshape}
+\titleformat{\subsubsection}
+  {\color{black}\normalfont\normalsize\bfseries}
+  {\thesubsubsection}
+  {1em}
+  {\itshape}
+
+\usepackage[all]{nowidow}
+
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+\usepackage{fancyvrb}
+
+\usepackage{float}
+\floatplacement{figure}{$if(float-placement-figure)$$float-placement-figure$$else$H$endif$}
+
+% fix for pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% TP: hack to truncate list of figures/tables.
+\usepackage{truncate}
+\usepackage{caption}
+\usepackage{tocloft}
+% TP: end hack
+
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+$if(mainfont)$
+    \setmainfont{$mainfont$}
+$endif$
+$if(sansfont)$
+    \setsansfont{$sansfont$}
+$endif$
+$if(monofont)$
+    \setmonofont[Mapping=tex-ansi]{$monofont$}
+$endif$
+$if(mathfont)$
+    \setmathfont(Digits,Latin,Greek){$mathfont$}
+$endif$
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+$if(geometry)$
+\usepackage[a4paper, left=1.5in, right=1.5in, top=1in, bottom=1.25in]{geometry}
+$endif$
+$if(natbib)$
+\usepackage{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+$if(biblatex)$
+\usepackage{biblatex}
+$if(biblio-files)$
+\bibliography{$biblio-files$}
+$endif$
+$endif$
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+$endif$
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{$mainlang$}
+\else
+  \usepackage[$lang$]{babel}
+\fi
+$endif$
+
+$if(title)$
+\title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+\date{$date$}
+$for(header-includes)$
+$header-includes$
+$endfor$
+\usepackage{ragged2e}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\addbibresource{$biblio-files$}
+\RaggedRight
+
+
+
+\usepackage{rotating}
+\usepackage{longtable,booktabs}
+\usepackage{mathrsfs}
+\usepackage[strings]{underscore}
+
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\itshape}
+
+\usepackage{fontspec}
+\setmainfont{JosefinSans-Light.ttf}[
+Path = JosefinSans/,
+BoldFont = JosefinSans-Regular.ttf,
+ItalicFont = JosefinSans-LightItalic.ttf,
+BoldItalicFont  = JosefinSans-Italic.ttf]
+
+\renewcommand{\arraystretch}{3}
+
+\begin{document}
+$if(title)$
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE University of the Philippines Cebu \par}
+	\vspace{1cm}
+	{\scshape\Large CMSC 23\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Programming Paradigms\par}
+	\vspace{2cm}
+	{\Large\itshape Rubelito Abella\par}
+	\vfill
+
+	\vfill
+
+% Bottom of the page
+	{\large September 2020\par}
+\end{titlepage}
+$endif$
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+$if(lot)$
+\listoftables
+$endif$
+$if(lof)$
+\listoffigures
+$endif$
+
+$body$
+
+
+\printbibliography
+
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}

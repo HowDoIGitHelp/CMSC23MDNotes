@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="563px" preserveAspectRatio="none" style="width:1523px;height:563px;" version="1.1" viewBox="0 0 1523 563" width="1523px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1xlegt61n0o4c" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[d2c4278637bdc93ab6ebd71329cfa63c]
+class Monster-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="75.6719" id="Monster" style="stroke: #A80036; stroke-width: 1.5;" width="82" x="933" y="469" />
+        <ellipse cx="951.15" cy="485" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M952.1031,481.6406 L952.1031,488.2969 L953.8219,488.2969 Q954.4313,488.2969 954.6969,488.5313 Q954.9625,488.7656 954.9625,489.1563 Q954.9625,489.5313 954.6969,489.7656 Q954.4313,490 953.8219,490 L948.6813,490 Q948.0719,490 947.8063,489.7656 Q947.5406,489.5313 947.5406,489.1406 Q947.5406,488.7656 947.8063,488.5313 Q948.0719,488.2969 948.6813,488.2969 L950.4,488.2969 L950.4,481.6406 L948.6813,481.6406 Q948.0719,481.6406 947.8063,481.4063 Q947.5406,481.1719 947.5406,480.7813 Q947.5406,480.4063 947.8063,480.1719 Q948.0719,479.9375 948.6813,479.9375 L953.8219,479.9375 Q954.4313,479.9375 954.6969,480.1719 Q954.9625,480.4063 954.9625,480.7813 Q954.9625,481.1719 954.6969,481.4063 Q954.4313,481.6406 953.8219,481.6406 L952.1031,481.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="43" x="965.85" y="489.9102">Monster</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="934" x2="1014" y1="501" y2="501" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="934" x2="1014" y1="509" y2="509" />
+        <ellipse cx="944" cy="520" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="56" x="953" y="524.4189">announce()</text>
+        <ellipse cx="944" cy="533.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="34" x="953" y="538.2549">move()</text>
+        <!--MD5=[a24fe83283c2c4c987db187e0793ad64]
+class Bokoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="75.6719" id="Bokoblin" style="stroke: #A80036; stroke-width: 1.5;" width="82" x="989" y="333" />
+        <ellipse cx="1004" cy="349" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1004.9531,345.6406 L1004.9531,352.2969 L1006.6719,352.2969 Q1007.2813,352.2969 1007.5469,352.5313 Q1007.8125,352.7656 1007.8125,353.1563 Q1007.8125,353.5313 1007.5469,353.7656 Q1007.2813,354 1006.6719,354 L1001.5313,354 Q1000.9219,354 1000.6563,353.7656 Q1000.3906,353.5313 1000.3906,353.1406 Q1000.3906,352.7656 1000.6563,352.5313 Q1000.9219,352.2969 1001.5313,352.2969 L1003.25,352.2969 L1003.25,345.6406 L1001.5313,345.6406 Q1000.9219,345.6406 1000.6563,345.4063 Q1000.3906,345.1719 1000.3906,344.7813 Q1000.3906,344.4063 1000.6563,344.1719 Q1000.9219,343.9375 1001.5313,343.9375 L1006.6719,343.9375 Q1007.2813,343.9375 1007.5469,344.1719 Q1007.8125,344.4063 1007.8125,344.7813 Q1007.8125,345.1719 1007.5469,345.4063 Q1007.2813,345.6406 1006.6719,345.6406 L1004.9531,345.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="1018" y="353.9102">Bokoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="990" x2="1070" y1="365" y2="365" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="990" x2="1070" y1="373" y2="373" />
+        <ellipse cx="1000" cy="384" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="1009" y="388.4189">bludgeon()</text>
+        <ellipse cx="1000" cy="397.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="41" x="1009" y="402.2549">defend()</text>
+        <!--MD5=[7df00ce2acd1953d19dd85f854251515]
+class Moblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="75.6719" id="Moblin" style="stroke: #A80036; stroke-width: 1.5;" width="69" x="884.5" y="333" />
+        <ellipse cx="899.5" cy="349" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M900.4531,345.6406 L900.4531,352.2969 L902.1719,352.2969 Q902.7813,352.2969 903.0469,352.5313 Q903.3125,352.7656 903.3125,353.1563 Q903.3125,353.5313 903.0469,353.7656 Q902.7813,354 902.1719,354 L897.0313,354 Q896.4219,354 896.1563,353.7656 Q895.8906,353.5313 895.8906,353.1406 Q895.8906,352.7656 896.1563,352.5313 Q896.4219,352.2969 897.0313,352.2969 L898.75,352.2969 L898.75,345.6406 L897.0313,345.6406 Q896.4219,345.6406 896.1563,345.4063 Q895.8906,345.1719 895.8906,344.7813 Q895.8906,344.4063 896.1563,344.1719 Q896.4219,343.9375 897.0313,343.9375 L902.1719,343.9375 Q902.7813,343.9375 903.0469,344.1719 Q903.3125,344.4063 903.3125,344.7813 Q903.3125,345.1719 903.0469,345.4063 Q902.7813,345.6406 902.1719,345.6406 L900.4531,345.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="37" x="913.5" y="353.9102">Moblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="885.5" x2="952.5" y1="365" y2="365" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="885.5" x2="952.5" y1="373" y2="373" />
+        <ellipse cx="895.5" cy="384" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="30" x="904.5" y="388.4189">stab()</text>
+        <ellipse cx="895.5" cy="397.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="29" x="904.5" y="402.2549">kick()</text>
+        <!--MD5=[0a784c539a0fcac1184073c04fd4f365]
+class Lizalflos-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="75.6719" id="Lizalflos" style="stroke: #A80036; stroke-width: 1.5;" width="116" x="615" y="333" />
+        <ellipse cx="647.1" cy="349" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M648.0531,345.6406 L648.0531,352.2969 L649.7719,352.2969 Q650.3813,352.2969 650.6469,352.5313 Q650.9125,352.7656 650.9125,353.1563 Q650.9125,353.5313 650.6469,353.7656 Q650.3813,354 649.7719,354 L644.6313,354 Q644.0219,354 643.7563,353.7656 Q643.4906,353.5313 643.4906,353.1406 Q643.4906,352.7656 643.7563,352.5313 Q644.0219,352.2969 644.6313,352.2969 L646.35,352.2969 L646.35,345.6406 L644.6313,345.6406 Q644.0219,345.6406 643.7563,345.4063 Q643.4906,345.1719 643.4906,344.7813 Q643.4906,344.4063 643.7563,344.1719 Q644.0219,343.9375 644.6313,343.9375 L649.7719,343.9375 Q650.3813,343.9375 650.6469,344.1719 Q650.9125,344.4063 650.9125,344.7813 Q650.9125,345.1719 650.6469,345.4063 Q650.3813,345.6406 649.7719,345.6406 L648.0531,345.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="46" x="664.9" y="353.9102">Lizalflos</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="616" x2="730" y1="365" y2="365" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="616" x2="730" y1="373" y2="373" />
+        <ellipse cx="626" cy="384" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="90" x="635" y="388.4189">throwBoomerang()</text>
+        <ellipse cx="626" cy="397.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="29" x="635" y="402.2549">hide()</text>
+        <!--MD5=[c10d7b6b0d72f0db19766adbab0019c8]
+class NormalBokoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="NormalBokoblin" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="304.5" y="170" />
+        <ellipse cx="319.5" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M322.2656,181.875 Q322.4219,181.6563 322.6094,181.5469 Q322.7969,181.4375 323.0156,181.4375 Q323.3906,181.4375 323.625,181.6953 Q323.8594,181.9531 323.8594,182.5625 L323.8594,184.0156 Q323.8594,184.625 323.625,184.8906 Q323.3906,185.1563 323.0156,185.1563 Q322.6719,185.1563 322.4688,184.9531 Q322.2656,184.7656 322.1563,184.25 Q322.1094,183.8906 321.9219,183.7031 Q321.5938,183.3281 320.9844,183.1094 Q320.375,182.8906 319.75,182.8906 Q318.9844,182.8906 318.3516,183.2188 Q317.7188,183.5469 317.2266,184.2969 Q316.7344,185.0469 316.7344,186.0781 L316.7344,187.1719 Q316.7344,188.4063 317.625,189.2266 Q318.5156,190.0469 320.1094,190.0469 Q321.0469,190.0469 321.7031,189.7969 Q322.0938,189.6406 322.5156,189.2031 Q322.7813,188.9375 322.9297,188.8594 Q323.0781,188.7813 323.2813,188.7813 Q323.6094,188.7813 323.8672,189.0391 Q324.125,189.2969 324.125,189.6406 Q324.125,189.9844 323.7813,190.3906 Q323.2813,190.9688 322.4844,191.2969 Q321.4063,191.75 320.1094,191.75 Q318.5938,191.75 317.3906,191.125 Q316.4063,190.625 315.7188,189.5547 Q315.0313,188.4844 315.0313,187.2031 L315.0313,186.0469 Q315.0313,184.7188 315.6484,183.5703 Q316.2656,182.4219 317.3594,181.8047 Q318.4531,181.1875 319.6875,181.1875 Q320.4219,181.1875 321.0703,181.3516 Q321.7188,181.5156 322.2656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="89" x="333.5" y="190.9102">NormalBokoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="305.5" x2="424.5" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="305.5" x2="424.5" y1="210" y2="210" />
+        <ellipse cx="315.5" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="324.5" y="225.4189">announce()</text>
+        <ellipse cx="315.5" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="324.5" y="239.2549">move()</text>
+        <ellipse cx="315.5" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="52" x="324.5" y="253.0908">bludgeon()</text>
+        <ellipse cx="315.5" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="324.5" y="266.9268">defend()</text>
+        <!--MD5=[854c45012ab6a241b7bbda8ff1236112]
+class NormalMoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="NormalMoblin" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="160.5" y="170" />
+        <ellipse cx="175.5" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M178.2656,181.875 Q178.4219,181.6563 178.6094,181.5469 Q178.7969,181.4375 179.0156,181.4375 Q179.3906,181.4375 179.625,181.6953 Q179.8594,181.9531 179.8594,182.5625 L179.8594,184.0156 Q179.8594,184.625 179.625,184.8906 Q179.3906,185.1563 179.0156,185.1563 Q178.6719,185.1563 178.4688,184.9531 Q178.2656,184.7656 178.1563,184.25 Q178.1094,183.8906 177.9219,183.7031 Q177.5938,183.3281 176.9844,183.1094 Q176.375,182.8906 175.75,182.8906 Q174.9844,182.8906 174.3516,183.2188 Q173.7188,183.5469 173.2266,184.2969 Q172.7344,185.0469 172.7344,186.0781 L172.7344,187.1719 Q172.7344,188.4063 173.625,189.2266 Q174.5156,190.0469 176.1094,190.0469 Q177.0469,190.0469 177.7031,189.7969 Q178.0938,189.6406 178.5156,189.2031 Q178.7813,188.9375 178.9297,188.8594 Q179.0781,188.7813 179.2813,188.7813 Q179.6094,188.7813 179.8672,189.0391 Q180.125,189.2969 180.125,189.6406 Q180.125,189.9844 179.7813,190.3906 Q179.2813,190.9688 178.4844,191.2969 Q177.4063,191.75 176.1094,191.75 Q174.5938,191.75 173.3906,191.125 Q172.4063,190.625 171.7188,189.5547 Q171.0313,188.4844 171.0313,187.2031 L171.0313,186.0469 Q171.0313,184.7188 171.6484,183.5703 Q172.2656,182.4219 173.3594,181.8047 Q174.4531,181.1875 175.6875,181.1875 Q176.4219,181.1875 177.0703,181.3516 Q177.7188,181.5156 178.2656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="189.5" y="190.9102">NormalMoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="161.5" x2="268.5" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="161.5" x2="268.5" y1="210" y2="210" />
+        <ellipse cx="171.5" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="180.5" y="225.4189">announce()</text>
+        <ellipse cx="171.5" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="180.5" y="239.2549">move()</text>
+        <ellipse cx="171.5" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="180.5" y="253.0908">stab()</text>
+        <ellipse cx="171.5" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="180.5" y="266.9268">kick()</text>
+        <!--MD5=[c59888e102c47f8756e0c6c2c5563e0e]
+class NormalLizalflos-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="NormalLizalflos" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="7" y="170" />
+        <ellipse cx="22" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M24.7656,181.875 Q24.9219,181.6563 25.1094,181.5469 Q25.2969,181.4375 25.5156,181.4375 Q25.8906,181.4375 26.125,181.6953 Q26.3594,181.9531 26.3594,182.5625 L26.3594,184.0156 Q26.3594,184.625 26.125,184.8906 Q25.8906,185.1563 25.5156,185.1563 Q25.1719,185.1563 24.9688,184.9531 Q24.7656,184.7656 24.6563,184.25 Q24.6094,183.8906 24.4219,183.7031 Q24.0938,183.3281 23.4844,183.1094 Q22.875,182.8906 22.25,182.8906 Q21.4844,182.8906 20.8516,183.2188 Q20.2188,183.5469 19.7266,184.2969 Q19.2344,185.0469 19.2344,186.0781 L19.2344,187.1719 Q19.2344,188.4063 20.125,189.2266 Q21.0156,190.0469 22.6094,190.0469 Q23.5469,190.0469 24.2031,189.7969 Q24.5938,189.6406 25.0156,189.2031 Q25.2813,188.9375 25.4297,188.8594 Q25.5781,188.7813 25.7813,188.7813 Q26.1094,188.7813 26.3672,189.0391 Q26.625,189.2969 26.625,189.6406 Q26.625,189.9844 26.2813,190.3906 Q25.7813,190.9688 24.9844,191.2969 Q23.9063,191.75 22.6094,191.75 Q21.0938,191.75 19.8906,191.125 Q18.9063,190.625 18.2188,189.5547 Q17.5313,188.4844 17.5313,187.2031 L17.5313,186.0469 Q17.5313,184.7188 18.1484,183.5703 Q18.7656,182.4219 19.8594,181.8047 Q20.9531,181.1875 22.1875,181.1875 Q22.9219,181.1875 23.5703,181.3516 Q24.2188,181.5156 24.7656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="36" y="190.9102">NormalLizalflos</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="124" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="124" y1="210" y2="210" />
+        <ellipse cx="18" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="27" y="225.4189">announce()</text>
+        <ellipse cx="18" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="27" y="239.2549">move()</text>
+        <ellipse cx="18" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="27" y="253.0908">throwBoomerang()</text>
+        <ellipse cx="18" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="28" x="27" y="266.9268">hide()</text>
+        <!--MD5=[8cd35e65590586da7cb7754d00e42d89]
+class BlueBokoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="BlueBokoblin" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="1359.5" y="170" />
+        <ellipse cx="1374.5" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1377.2656,181.875 Q1377.4219,181.6563 1377.6094,181.5469 Q1377.7969,181.4375 1378.0156,181.4375 Q1378.3906,181.4375 1378.625,181.6953 Q1378.8594,181.9531 1378.8594,182.5625 L1378.8594,184.0156 Q1378.8594,184.625 1378.625,184.8906 Q1378.3906,185.1563 1378.0156,185.1563 Q1377.6719,185.1563 1377.4688,184.9531 Q1377.2656,184.7656 1377.1563,184.25 Q1377.1094,183.8906 1376.9219,183.7031 Q1376.5938,183.3281 1375.9844,183.1094 Q1375.375,182.8906 1374.75,182.8906 Q1373.9844,182.8906 1373.3516,183.2188 Q1372.7188,183.5469 1372.2266,184.2969 Q1371.7344,185.0469 1371.7344,186.0781 L1371.7344,187.1719 Q1371.7344,188.4063 1372.625,189.2266 Q1373.5156,190.0469 1375.1094,190.0469 Q1376.0469,190.0469 1376.7031,189.7969 Q1377.0938,189.6406 1377.5156,189.2031 Q1377.7813,188.9375 1377.9297,188.8594 Q1378.0781,188.7813 1378.2813,188.7813 Q1378.6094,188.7813 1378.8672,189.0391 Q1379.125,189.2969 1379.125,189.6406 Q1379.125,189.9844 1378.7813,190.3906 Q1378.2813,190.9688 1377.4844,191.2969 Q1376.4063,191.75 1375.1094,191.75 Q1373.5938,191.75 1372.3906,191.125 Q1371.4063,190.625 1370.7188,189.5547 Q1370.0313,188.4844 1370.0313,187.2031 L1370.0313,186.0469 Q1370.0313,184.7188 1370.6484,183.5703 Q1371.2656,182.4219 1372.3594,181.8047 Q1373.4531,181.1875 1374.6875,181.1875 Q1375.4219,181.1875 1376.0703,181.3516 Q1376.7188,181.5156 1377.2656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="1388.5" y="190.9102">BlueBokoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1360.5" x2="1463.5" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1360.5" x2="1463.5" y1="210" y2="210" />
+        <ellipse cx="1370.5" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="1379.5" y="225.4189">announce()</text>
+        <ellipse cx="1370.5" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="1379.5" y="239.2549">move()</text>
+        <ellipse cx="1370.5" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="52" x="1379.5" y="253.0908">bludgeon()</text>
+        <ellipse cx="1370.5" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="1379.5" y="266.9268">defend()</text>
+        <!--MD5=[a1b332ff881d3a256449f1e9eae3edfd]
+class BlueMoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="BlueMoblin" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="1085.5" y="170" />
+        <ellipse cx="1100.5" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1103.2656,181.875 Q1103.4219,181.6563 1103.6094,181.5469 Q1103.7969,181.4375 1104.0156,181.4375 Q1104.3906,181.4375 1104.625,181.6953 Q1104.8594,181.9531 1104.8594,182.5625 L1104.8594,184.0156 Q1104.8594,184.625 1104.625,184.8906 Q1104.3906,185.1563 1104.0156,185.1563 Q1103.6719,185.1563 1103.4688,184.9531 Q1103.2656,184.7656 1103.1563,184.25 Q1103.1094,183.8906 1102.9219,183.7031 Q1102.5938,183.3281 1101.9844,183.1094 Q1101.375,182.8906 1100.75,182.8906 Q1099.9844,182.8906 1099.3516,183.2188 Q1098.7188,183.5469 1098.2266,184.2969 Q1097.7344,185.0469 1097.7344,186.0781 L1097.7344,187.1719 Q1097.7344,188.4063 1098.625,189.2266 Q1099.5156,190.0469 1101.1094,190.0469 Q1102.0469,190.0469 1102.7031,189.7969 Q1103.0938,189.6406 1103.5156,189.2031 Q1103.7813,188.9375 1103.9297,188.8594 Q1104.0781,188.7813 1104.2813,188.7813 Q1104.6094,188.7813 1104.8672,189.0391 Q1105.125,189.2969 1105.125,189.6406 Q1105.125,189.9844 1104.7813,190.3906 Q1104.2813,190.9688 1103.4844,191.2969 Q1102.4063,191.75 1101.1094,191.75 Q1099.5938,191.75 1098.3906,191.125 Q1097.4063,190.625 1096.7188,189.5547 Q1096.0313,188.4844 1096.0313,187.2031 L1096.0313,186.0469 Q1096.0313,184.7188 1096.6484,183.5703 Q1097.2656,182.4219 1098.3594,181.8047 Q1099.4531,181.1875 1100.6875,181.1875 Q1101.4219,181.1875 1102.0703,181.3516 Q1102.7188,181.5156 1103.2656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="61" x="1114.5" y="190.9102">BlueMoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1086.5" x2="1177.5" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1086.5" x2="1177.5" y1="210" y2="210" />
+        <ellipse cx="1096.5" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="1105.5" y="225.4189">announce()</text>
+        <ellipse cx="1096.5" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="1105.5" y="239.2549">move()</text>
+        <ellipse cx="1096.5" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="1105.5" y="253.0908">stab()</text>
+        <ellipse cx="1096.5" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="1105.5" y="266.9268">kick()</text>
+        <!--MD5=[9545d85d50f68597502bc0cea4172482]
+class BlueLizalflos-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="BlueLizalflos" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="614" y="170" />
+        <ellipse cx="636.2" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M638.9656,181.875 Q639.1219,181.6563 639.3094,181.5469 Q639.4969,181.4375 639.7156,181.4375 Q640.0906,181.4375 640.325,181.6953 Q640.5594,181.9531 640.5594,182.5625 L640.5594,184.0156 Q640.5594,184.625 640.325,184.8906 Q640.0906,185.1563 639.7156,185.1563 Q639.3719,185.1563 639.1688,184.9531 Q638.9656,184.7656 638.8563,184.25 Q638.8094,183.8906 638.6219,183.7031 Q638.2938,183.3281 637.6844,183.1094 Q637.075,182.8906 636.45,182.8906 Q635.6844,182.8906 635.0516,183.2188 Q634.4188,183.5469 633.9266,184.2969 Q633.4344,185.0469 633.4344,186.0781 L633.4344,187.1719 Q633.4344,188.4063 634.325,189.2266 Q635.2156,190.0469 636.8094,190.0469 Q637.7469,190.0469 638.4031,189.7969 Q638.7938,189.6406 639.2156,189.2031 Q639.4813,188.9375 639.6297,188.8594 Q639.7781,188.7813 639.9813,188.7813 Q640.3094,188.7813 640.5672,189.0391 Q640.825,189.2969 640.825,189.6406 Q640.825,189.9844 640.4813,190.3906 Q639.9813,190.9688 639.1844,191.2969 Q638.1063,191.75 636.8094,191.75 Q635.2938,191.75 634.0906,191.125 Q633.1063,190.625 632.4188,189.5547 Q631.7313,188.4844 631.7313,187.2031 L631.7313,186.0469 Q631.7313,184.7188 632.3484,183.5703 Q632.9656,182.4219 634.0594,181.8047 Q635.1531,181.1875 636.3875,181.1875 Q637.1219,181.1875 637.7703,181.3516 Q638.4188,181.5156 638.9656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="651.8" y="190.9102">BlueLizalflos</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="615" x2="731" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="615" x2="731" y1="210" y2="210" />
+        <ellipse cx="625" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="634" y="225.4189">announce()</text>
+        <ellipse cx="625" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="634" y="239.2549">move()</text>
+        <ellipse cx="625" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="634" y="253.0908">throwBoomerang()</text>
+        <ellipse cx="625" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="28" x="634" y="266.9268">hide()</text>
+        <!--MD5=[7dad5499a180e40289b63ef06d96a6fb]
+class SilverBokoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="SilverBokoblin" style="stroke: #A80036; stroke-width: 1.5;" width="110" x="1214" y="170" />
+        <ellipse cx="1229" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1231.7656,181.875 Q1231.9219,181.6563 1232.1094,181.5469 Q1232.2969,181.4375 1232.5156,181.4375 Q1232.8906,181.4375 1233.125,181.6953 Q1233.3594,181.9531 1233.3594,182.5625 L1233.3594,184.0156 Q1233.3594,184.625 1233.125,184.8906 Q1232.8906,185.1563 1232.5156,185.1563 Q1232.1719,185.1563 1231.9688,184.9531 Q1231.7656,184.7656 1231.6563,184.25 Q1231.6094,183.8906 1231.4219,183.7031 Q1231.0938,183.3281 1230.4844,183.1094 Q1229.875,182.8906 1229.25,182.8906 Q1228.4844,182.8906 1227.8516,183.2188 Q1227.2188,183.5469 1226.7266,184.2969 Q1226.2344,185.0469 1226.2344,186.0781 L1226.2344,187.1719 Q1226.2344,188.4063 1227.125,189.2266 Q1228.0156,190.0469 1229.6094,190.0469 Q1230.5469,190.0469 1231.2031,189.7969 Q1231.5938,189.6406 1232.0156,189.2031 Q1232.2813,188.9375 1232.4297,188.8594 Q1232.5781,188.7813 1232.7813,188.7813 Q1233.1094,188.7813 1233.3672,189.0391 Q1233.625,189.2969 1233.625,189.6406 Q1233.625,189.9844 1233.2813,190.3906 Q1232.7813,190.9688 1231.9844,191.2969 Q1230.9063,191.75 1229.6094,191.75 Q1228.0938,191.75 1226.8906,191.125 Q1225.9063,190.625 1225.2188,189.5547 Q1224.5313,188.4844 1224.5313,187.2031 L1224.5313,186.0469 Q1224.5313,184.7188 1225.1484,183.5703 Q1225.7656,182.4219 1226.8594,181.8047 Q1227.9531,181.1875 1229.1875,181.1875 Q1229.9219,181.1875 1230.5703,181.3516 Q1231.2188,181.5156 1231.7656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="78" x="1243" y="190.9102">SilverBokoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1215" x2="1323" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1215" x2="1323" y1="210" y2="210" />
+        <ellipse cx="1225" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="1234" y="225.4189">announce()</text>
+        <ellipse cx="1225" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="1234" y="239.2549">move()</text>
+        <ellipse cx="1225" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="52" x="1234" y="253.0908">bludgeon()</text>
+        <ellipse cx="1225" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="1234" y="266.9268">defend()</text>
+        <!--MD5=[7fa41c270d749a454e567c1a826211f7]
+class SilverMoblin-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="SilverMoblin" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="767" y="170" />
+        <ellipse cx="782" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M784.7656,181.875 Q784.9219,181.6563 785.1094,181.5469 Q785.2969,181.4375 785.5156,181.4375 Q785.8906,181.4375 786.125,181.6953 Q786.3594,181.9531 786.3594,182.5625 L786.3594,184.0156 Q786.3594,184.625 786.125,184.8906 Q785.8906,185.1563 785.5156,185.1563 Q785.1719,185.1563 784.9688,184.9531 Q784.7656,184.7656 784.6563,184.25 Q784.6094,183.8906 784.4219,183.7031 Q784.0938,183.3281 783.4844,183.1094 Q782.875,182.8906 782.25,182.8906 Q781.4844,182.8906 780.8516,183.2188 Q780.2188,183.5469 779.7266,184.2969 Q779.2344,185.0469 779.2344,186.0781 L779.2344,187.1719 Q779.2344,188.4063 780.125,189.2266 Q781.0156,190.0469 782.6094,190.0469 Q783.5469,190.0469 784.2031,189.7969 Q784.5938,189.6406 785.0156,189.2031 Q785.2813,188.9375 785.4297,188.8594 Q785.5781,188.7813 785.7813,188.7813 Q786.1094,188.7813 786.3672,189.0391 Q786.625,189.2969 786.625,189.6406 Q786.625,189.9844 786.2813,190.3906 Q785.7813,190.9688 784.9844,191.2969 Q783.9063,191.75 782.6094,191.75 Q781.0938,191.75 779.8906,191.125 Q778.9063,190.625 778.2188,189.5547 Q777.5313,188.4844 777.5313,187.2031 L777.5313,186.0469 Q777.5313,184.7188 778.1484,183.5703 Q778.7656,182.4219 779.8594,181.8047 Q780.9531,181.1875 782.1875,181.1875 Q782.9219,181.1875 783.5703,181.3516 Q784.2188,181.5156 784.7656,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="796" y="190.9102">SilverMoblin</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="768" x2="864" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="768" x2="864" y1="210" y2="210" />
+        <ellipse cx="778" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="787" y="225.4189">announce()</text>
+        <ellipse cx="778" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="787" y="239.2549">move()</text>
+        <ellipse cx="778" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="787" y="253.0908">stab()</text>
+        <ellipse cx="778" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="787" y="266.9268">kick()</text>
+        <!--MD5=[5c11f3af8c26a1dc3da8043a463e01b4]
+class SilverLizalflos-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="SilverLizalflos" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="461" y="170" />
+        <ellipse cx="480.95" cy="186" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M483.7156,181.875 Q483.8719,181.6563 484.0594,181.5469 Q484.2469,181.4375 484.4656,181.4375 Q484.8406,181.4375 485.075,181.6953 Q485.3094,181.9531 485.3094,182.5625 L485.3094,184.0156 Q485.3094,184.625 485.075,184.8906 Q484.8406,185.1563 484.4656,185.1563 Q484.1219,185.1563 483.9188,184.9531 Q483.7156,184.7656 483.6063,184.25 Q483.5594,183.8906 483.3719,183.7031 Q483.0438,183.3281 482.4344,183.1094 Q481.825,182.8906 481.2,182.8906 Q480.4344,182.8906 479.8016,183.2188 Q479.1688,183.5469 478.6766,184.2969 Q478.1844,185.0469 478.1844,186.0781 L478.1844,187.1719 Q478.1844,188.4063 479.075,189.2266 Q479.9656,190.0469 481.5594,190.0469 Q482.4969,190.0469 483.1531,189.7969 Q483.5438,189.6406 483.9656,189.2031 Q484.2313,188.9375 484.3797,188.8594 Q484.5281,188.7813 484.7313,188.7813 Q485.0594,188.7813 485.3172,189.0391 Q485.575,189.2969 485.575,189.6406 Q485.575,189.9844 485.2313,190.3906 Q484.7313,190.9688 483.9344,191.2969 Q482.8563,191.75 481.5594,191.75 Q480.0438,191.75 478.8406,191.125 Q477.8563,190.625 477.1688,189.5547 Q476.4813,188.4844 476.4813,187.2031 L476.4813,186.0469 Q476.4813,184.7188 477.0984,183.5703 Q477.7156,182.4219 478.8094,181.8047 Q479.9031,181.1875 481.1375,181.1875 Q481.8719,181.1875 482.5203,181.3516 Q483.1688,181.5156 483.7156,181.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="496.05" y="190.9102">SilverLizalflos</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="462" x2="578" y1="202" y2="202" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="462" x2="578" y1="210" y2="210" />
+        <ellipse cx="472" cy="221" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="481" y="225.4189">announce()</text>
+        <ellipse cx="472" cy="234.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="481" y="239.2549">move()</text>
+        <ellipse cx="472" cy="248.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="481" y="253.0908">throwBoomerang()</text>
+        <ellipse cx="472" cy="262.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="28" x="481" y="266.9268">hide()</text>
+        <!--MD5=[d0abd5815626a4d286061f5143ce8dbd]
+class Dungeon-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="89.5078" id="Dungeon" style="stroke: #A80036; stroke-width: 1.5;" width="150" x="900" y="176.5" />
+        <ellipse cx="945.25" cy="192.5" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M946.2031,189.1406 L946.2031,195.7969 L947.9219,195.7969 Q948.5313,195.7969 948.7969,196.0313 Q949.0625,196.2656 949.0625,196.6563 Q949.0625,197.0313 948.7969,197.2656 Q948.5313,197.5 947.9219,197.5 L942.7813,197.5 Q942.1719,197.5 941.9063,197.2656 Q941.6406,197.0313 941.6406,196.6406 Q941.6406,196.2656 941.9063,196.0313 Q942.1719,195.7969 942.7813,195.7969 L944.5,195.7969 L944.5,189.1406 L942.7813,189.1406 Q942.1719,189.1406 941.9063,188.9063 Q941.6406,188.6719 941.6406,188.2813 Q941.6406,187.9063 941.9063,187.6719 Q942.1719,187.4375 942.7813,187.4375 L947.9219,187.4375 Q948.5313,187.4375 948.7969,187.6719 Q949.0625,187.9063 949.0625,188.2813 Q949.0625,188.6719 948.7969,188.9063 Q948.5313,189.1406 947.9219,189.1406 L946.2031,189.1406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="51" x="965.75" y="197.4102">Dungeon</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="901" x2="1049" y1="208.5" y2="208.5" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="901" x2="1049" y1="216.5" y2="216.5" />
+        <ellipse cx="911" cy="227.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="124" x="920" y="231.9189">newBokoblin() : Bokoblin</text>
+        <ellipse cx="911" cy="241.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="104" x="920" y="245.7549">newMoblin() : Moblin</text>
+        <ellipse cx="911" cy="255.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="120" x="920" y="259.5908">newLizalflos() : Lizalflos</text>
+        <!--MD5=[fe100259ae3336a1cee0683dd5445174]
+class EasyDungeon-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="89.5078" id="EasyDungeon" style="stroke: #A80036; stroke-width: 1.5;" width="145" x="217.5" y="13.5" />
+        <ellipse cx="248.25" cy="29.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M251.0156,25.375 Q251.1719,25.1563 251.3594,25.0469 Q251.5469,24.9375 251.7656,24.9375 Q252.1406,24.9375 252.375,25.1953 Q252.6094,25.4531 252.6094,26.0625 L252.6094,27.5156 Q252.6094,28.125 252.375,28.3906 Q252.1406,28.6563 251.7656,28.6563 Q251.4219,28.6563 251.2188,28.4531 Q251.0156,28.2656 250.9063,27.75 Q250.8594,27.3906 250.6719,27.2031 Q250.3438,26.8281 249.7344,26.6094 Q249.125,26.3906 248.5,26.3906 Q247.7344,26.3906 247.1016,26.7188 Q246.4688,27.0469 245.9766,27.7969 Q245.4844,28.5469 245.4844,29.5781 L245.4844,30.6719 Q245.4844,31.9063 246.375,32.7266 Q247.2656,33.5469 248.8594,33.5469 Q249.7969,33.5469 250.4531,33.2969 Q250.8438,33.1406 251.2656,32.7031 Q251.5313,32.4375 251.6797,32.3594 Q251.8281,32.2813 252.0313,32.2813 Q252.3594,32.2813 252.6172,32.5391 Q252.875,32.7969 252.875,33.1406 Q252.875,33.4844 252.5313,33.8906 Q252.0313,34.4688 251.2344,34.7969 Q250.1563,35.25 248.8594,35.25 Q247.3438,35.25 246.1406,34.625 Q245.1563,34.125 244.4688,33.0547 Q243.7813,31.9844 243.7813,30.7031 L243.7813,29.5469 Q243.7813,28.2188 244.3984,27.0703 Q245.0156,25.9219 246.1094,25.3047 Q247.2031,24.6875 248.4375,24.6875 Q249.1719,24.6875 249.8203,24.8516 Q250.4688,25.0156 251.0156,25.375 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="78" x="265.75" y="34.4102">EasyDungeon</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="218.5" x2="361.5" y1="45.5" y2="45.5" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="218.5" x2="361.5" y1="53.5" y2="53.5" />
+        <ellipse cx="228.5" cy="64.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="237.5" y="68.9189">newBokoblin() : Bokoblin</text>
+        <ellipse cx="228.5" cy="78.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="237.5" y="82.7549">newMoblin() : Moblin</text>
+        <ellipse cx="228.5" cy="92.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="237.5" y="96.5908">newLizalflos() : Lizalflos</text>
+        <!--MD5=[866382b59c0d5f703d5e5ef1085d9962]
+class MediumDungeon-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="89.5078" id="MediumDungeon" style="stroke: #A80036; stroke-width: 1.5;" width="145" x="1025.5" y="13.5" />
+        <ellipse cx="1048.6" cy="29.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1051.3656,25.375 Q1051.5219,25.1563 1051.7094,25.0469 Q1051.8969,24.9375 1052.1156,24.9375 Q1052.4906,24.9375 1052.725,25.1953 Q1052.9594,25.4531 1052.9594,26.0625 L1052.9594,27.5156 Q1052.9594,28.125 1052.725,28.3906 Q1052.4906,28.6563 1052.1156,28.6563 Q1051.7719,28.6563 1051.5688,28.4531 Q1051.3656,28.2656 1051.2563,27.75 Q1051.2094,27.3906 1051.0219,27.2031 Q1050.6938,26.8281 1050.0844,26.6094 Q1049.475,26.3906 1048.85,26.3906 Q1048.0844,26.3906 1047.4516,26.7188 Q1046.8188,27.0469 1046.3266,27.7969 Q1045.8344,28.5469 1045.8344,29.5781 L1045.8344,30.6719 Q1045.8344,31.9063 1046.725,32.7266 Q1047.6156,33.5469 1049.2094,33.5469 Q1050.1469,33.5469 1050.8031,33.2969 Q1051.1938,33.1406 1051.6156,32.7031 Q1051.8813,32.4375 1052.0297,32.3594 Q1052.1781,32.2813 1052.3813,32.2813 Q1052.7094,32.2813 1052.9672,32.5391 Q1053.225,32.7969 1053.225,33.1406 Q1053.225,33.4844 1052.8813,33.8906 Q1052.3813,34.4688 1051.5844,34.7969 Q1050.5063,35.25 1049.2094,35.25 Q1047.6938,35.25 1046.4906,34.625 Q1045.5063,34.125 1044.8188,33.0547 Q1044.1313,31.9844 1044.1313,30.7031 L1044.1313,29.5469 Q1044.1313,28.2188 1044.7484,27.0703 Q1045.3656,25.9219 1046.4594,25.3047 Q1047.5531,24.6875 1048.7875,24.6875 Q1049.5219,24.6875 1050.1703,24.8516 Q1050.8188,25.0156 1051.3656,25.375 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="1064.4" y="34.4102">MediumDungeon</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1026.5" x2="1169.5" y1="45.5" y2="45.5" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1026.5" x2="1169.5" y1="53.5" y2="53.5" />
+        <ellipse cx="1036.5" cy="64.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="1045.5" y="68.9189">newBokoblin() : Bokoblin</text>
+        <ellipse cx="1036.5" cy="78.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="1045.5" y="82.7549">newMoblin() : Moblin</text>
+        <ellipse cx="1036.5" cy="92.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="1045.5" y="96.5908">newLizalflos() : Lizalflos</text>
+        <!--MD5=[b5ea199322eabec5b8cdda01b4e618a8]
+class HardDungeon-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="89.5078" id="HardDungeon" style="stroke: #A80036; stroke-width: 1.5;" width="145" x="777.5" y="13.5" />
+        <ellipse cx="808.25" cy="29.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M811.0156,25.375 Q811.1719,25.1563 811.3594,25.0469 Q811.5469,24.9375 811.7656,24.9375 Q812.1406,24.9375 812.375,25.1953 Q812.6094,25.4531 812.6094,26.0625 L812.6094,27.5156 Q812.6094,28.125 812.375,28.3906 Q812.1406,28.6563 811.7656,28.6563 Q811.4219,28.6563 811.2188,28.4531 Q811.0156,28.2656 810.9063,27.75 Q810.8594,27.3906 810.6719,27.2031 Q810.3438,26.8281 809.7344,26.6094 Q809.125,26.3906 808.5,26.3906 Q807.7344,26.3906 807.1016,26.7188 Q806.4688,27.0469 805.9766,27.7969 Q805.4844,28.5469 805.4844,29.5781 L805.4844,30.6719 Q805.4844,31.9063 806.375,32.7266 Q807.2656,33.5469 808.8594,33.5469 Q809.7969,33.5469 810.4531,33.2969 Q810.8438,33.1406 811.2656,32.7031 Q811.5313,32.4375 811.6797,32.3594 Q811.8281,32.2813 812.0313,32.2813 Q812.3594,32.2813 812.6172,32.5391 Q812.875,32.7969 812.875,33.1406 Q812.875,33.4844 812.5313,33.8906 Q812.0313,34.4688 811.2344,34.7969 Q810.1563,35.25 808.8594,35.25 Q807.3438,35.25 806.1406,34.625 Q805.1563,34.125 804.4688,33.0547 Q803.7813,31.9844 803.7813,30.7031 L803.7813,29.5469 Q803.7813,28.2188 804.3984,27.0703 Q805.0156,25.9219 806.1094,25.3047 Q807.2031,24.6875 808.4375,24.6875 Q809.1719,24.6875 809.8203,24.8516 Q810.4688,25.0156 811.0156,25.375 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="78" x="825.75" y="34.4102">HardDungeon</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="778.5" x2="921.5" y1="45.5" y2="45.5" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="778.5" x2="921.5" y1="53.5" y2="53.5" />
+        <ellipse cx="788.5" cy="64.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="797.5" y="68.9189">newBokoblin() : Bokoblin</text>
+        <ellipse cx="788.5" cy="78.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="797.5" y="82.7549">newMoblin() : Moblin</text>
+        <ellipse cx="788.5" cy="92.1719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="797.5" y="96.5908">newLizalflos() : Lizalflos</text>
+        <!--MD5=[0a005aa698e1f18d1a2bb4de0df49e47]
+class Encounter-->
+        <rect fill="#FEFECE" filter="url(#f1xlegt61n0o4c)" height="103.3438" id="Encounter" style="stroke: #A80036; stroke-width: 1.5;" width="122" x="1348" y="7" />
+        <ellipse cx="1378.3" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1381.0656,18.875 Q1381.2219,18.6563 1381.4094,18.5469 Q1381.5969,18.4375 1381.8156,18.4375 Q1382.1906,18.4375 1382.425,18.6953 Q1382.6594,18.9531 1382.6594,19.5625 L1382.6594,21.0156 Q1382.6594,21.625 1382.425,21.8906 Q1382.1906,22.1563 1381.8156,22.1563 Q1381.4719,22.1563 1381.2688,21.9531 Q1381.0656,21.7656 1380.9563,21.25 Q1380.9094,20.8906 1380.7219,20.7031 Q1380.3938,20.3281 1379.7844,20.1094 Q1379.175,19.8906 1378.55,19.8906 Q1377.7844,19.8906 1377.1516,20.2188 Q1376.5188,20.5469 1376.0266,21.2969 Q1375.5344,22.0469 1375.5344,23.0781 L1375.5344,24.1719 Q1375.5344,25.4063 1376.425,26.2266 Q1377.3156,27.0469 1378.9094,27.0469 Q1379.8469,27.0469 1380.5031,26.7969 Q1380.8938,26.6406 1381.3156,26.2031 Q1381.5813,25.9375 1381.7297,25.8594 Q1381.8781,25.7813 1382.0813,25.7813 Q1382.4094,25.7813 1382.6672,26.0391 Q1382.925,26.2969 1382.925,26.6406 Q1382.925,26.9844 1382.5813,27.3906 Q1382.0813,27.9688 1381.2844,28.2969 Q1380.2063,28.75 1378.9094,28.75 Q1377.3938,28.75 1376.1906,28.125 Q1375.2063,27.625 1374.5188,26.5547 Q1373.8313,25.4844 1373.8313,24.2031 L1373.8313,23.0469 Q1373.8313,21.7188 1374.4484,20.5703 Q1375.0656,19.4219 1376.1594,18.8047 Q1377.2531,18.1875 1378.4875,18.1875 Q1379.2219,18.1875 1379.8703,18.3516 Q1380.5188,18.5156 1381.0656,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="1395.7" y="27.9102">Encounter</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1349" x2="1469" y1="39" y2="39" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="1356" y="47" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="1368" y="54.4189">enemies : [Monster]</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="1356" y="60.8359" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="1368" y="68.2549">dungeon : Dungeon</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="1349" x2="1469" y1="74.6719" y2="74.6719" />
+        <ellipse cx="1359" cy="85.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="96" x="1368" y="90.0908">announceEnemies()</text>
+        <ellipse cx="1359" cy="99.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="1368" y="103.9268">moveEnemies()</text>
+        <!--MD5=[4150fa03d763e3872d18eb806f8f98d7]
+link Moblin to Monster-->
+        <path d="M934.321,409.326 C939.506,421.959 945.414,436.355 951.06,450.1087 " fill="none" id="Moblin-&gt;Monster" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="957.643,447.7136,958.762,468.8737,944.692,453.0295,957.643,447.7136" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5601e02b80b69acca451a1eb8cee6713]
+link Bokoblin to Monster-->
+        <path d="M1014.4,409.326 C1009.12,421.959 1003.105,436.355 997.358,450.1087 " fill="none" id="Bokoblin-&gt;Monster" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="1003.686,453.1195,989.515,468.8737,990.769,447.7211,1003.686,453.1195" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[dbe5a6568b4495c21f3ad1d9afb7688d]
+link Lizalflos to Monster-->
+        <path d="M731.036,397.837 C783.679,421.273 860.967,455.6795 914.163,479.3616 " fill="none" id="Lizalflos-&gt;Monster" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="917.157,473.0322,932.582,487.5612,911.463,485.8221,917.157,473.0322" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[598596c91f85918e187fb9c32540d141]
+link NormalMoblin to Moblin-->
+        <path d="M269.704,264.732 C275.352,267.897 281.165,270.733 287,273 C479.594,347.82 544.406,297.788 748,333 C787.224,339.784 831.101,349.318 864.588,357.009 " fill="none" id="NormalMoblin-&gt;Moblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="866.559,350.281,884.45,361.634,863.384,363.916,866.559,350.281" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[13f9a39c1fe54c8da897b57db1a8a444]
+link NormalBokoblin to Bokoblin-->
+        <path d="M425.799,265.496 C431.452,268.368 437.229,270.933 443,273 C659.38,350.483 743.535,260.104 969.879,334.547 " fill="none" id="NormalBokoblin-&gt;Bokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="972.306,327.979,988.949,341.094,967.76,341.22,972.306,327.979" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[6a67fa32cf3b731dc8fa24eeab6b1f01]
+link NormalLizalflos to Lizalflos-->
+        <path d="M125.269,264.611 C131.102,267.757 137.063,270.624 143,273 C295.858,334.185 489.07,357.089 594.882,365.428 " fill="none" id="NormalLizalflos-&gt;Lizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="595.414,358.449,614.841,366.909,594.378,372.41,595.414,358.449" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[64ba1f0f97cc11765abf1f067d291f78]
+link BlueMoblin to Moblin-->
+        <path d="M1085.21,259.759 C1079.15,264.313 1072.98,268.828 1067,273 C1025.75,301.805 1012.85,305.069 971,333 C970.824,333.117 970.648,333.235 970.472,333.353 " fill="none" id="BlueMoblin-&gt;Moblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="974.213,339.276,953.764,344.832,966.285,327.737,974.213,339.276" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[e8caa643c414c4e1396e5c468cbb838f]
+link BlueBokoblin to Bokoblin-->
+        <path d="M1359.24,262.705 C1353.25,266.455 1347.1,269.976 1341,273 C1258.53,313.888 1155.23,341.991 1090.91,357.04 " fill="none" id="BlueBokoblin-&gt;Bokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="1092.13,363.941,1071.08,361.555,1089.02,350.29,1092.13,363.941" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[387da42435c1f4b67e81dcbc41213d07]
+link BlueLizalflos to Lizalflos-->
+        <path d="M673,273.261 C673,285.906 673,299.552 673,312.496 " fill="none" id="BlueLizalflos-&gt;Lizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="680,312.657,673,332.657,666,312.657,680,312.657" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[e25b79a0f13e6cc58adc34d3169da208]
+link SilverMoblin to Moblin-->
+        <path d="M851.447,273.261 C861.128,287.124 871.649,302.192 881.443,316.217 " fill="none" id="SilverMoblin-&gt;Moblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="887.212,312.252,892.923,332.657,875.734,320.267,887.212,312.252" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b194e87c045c462de6d396ca79a0d32c]
+link SilverBokoblin to Bokoblin-->
+        <path d="M1213.9,261.276 C1207.9,265.3 1201.85,269.275 1196,273 C1161.05,295.255 1120.96,318.735 1088.94,337.019 " fill="none" id="SilverBokoblin-&gt;Bokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="1091.96,343.351,1071.11,347.136,1085.05,331.176,1091.96,343.351" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b0f687c90fade56c97d6975c7d91faf6]
+link SilverLizalflos to Lizalflos-->
+        <path d="M572.654,273.261 C587.824,287.886 604.385,303.851 619.6,318.519 " fill="none" id="SilverLizalflos-&gt;Lizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="624.725,313.737,634.265,332.657,615.008,323.816,624.725,313.737" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[24925adc17002cc30c59b2f7b9fe0608]
+link EasyDungeon to Dungeon-->
+        <path d="M362.508,65.676 C472.433,76.605 687.243,104.106 880.806,170.494 " fill="none" id="EasyDungeon-&gt;Dungeon" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="883.214,163.921,899.767,177.149,878.577,177.131,883.214,163.921" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[82c858931c04b9338f4942428753b8db]
+link MediumDungeon to Dungeon-->
+        <path d="M1064.06,103.92 C1050.75,121.341 1035.27,141.605 1020.99,160.305 " fill="none" id="MediumDungeon-&gt;Dungeon" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="1026.53,164.582,1008.83,176.225,1015.4,156.082,1026.53,164.582" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[eb3c70ac572799ac946432873492ec8b]
+link HardDungeon to Dungeon-->
+        <path d="M884.488,103.92 C898.014,121.341 913.746,141.605 928.265,160.305 " fill="none" id="HardDungeon-&gt;Dungeon" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="933.889,156.134,940.625,176.225,922.83,164.72,933.889,156.134" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[e04b7e2d814ef822a0f5ef37f9a97089]
+link EasyDungeon to NormalMoblin-->
+        <path d="M269.307,103.92 C260.476,122.877 250.078,145.2 240.756,165.211 " fill="none" id="EasyDungeon-&gt;NormalMoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="238.536,169.976,245.9621,163.5066,240.6472,165.4436,238.7103,160.1287,238.536,169.976" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[7b8935250d585b94d872476e108ed41c]
+link EasyDungeon to NormalBokoblin-->
+        <path d="M310.693,103.92 C319.524,122.877 329.922,145.2 339.244,165.211 " fill="none" id="EasyDungeon-&gt;NormalBokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="341.464,169.976,341.2897,160.1287,339.3528,165.4436,334.0379,163.5066,341.464,169.976" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[bf775ad3ca0ae9353c8bd27f99464041]
+link EasyDungeon to NormalLizalflos-->
+        <path d="M228.495,103.707 C197.631,125.89 160.296,152.725 129.2,175.075 " fill="none" id="EasyDungeon-&gt;NormalLizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="125.051,178.057,134.6935,176.0516,129.1109,175.1385,130.024,169.5559,125.051,178.057" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[aedf43136cfd53c02c2b2116aba960f7]
+link MediumDungeon to BlueMoblin-->
+        <path d="M1107.38,103.92 C1111.37,122.797 1116.06,145.012 1120.27,164.958 " fill="none" id="MediumDungeon-&gt;BlueMoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1121.33,169.976,1123.385,160.3439,1120.2974,165.0838,1115.5575,161.9961,1121.33,169.976" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[a672fb6b6dbc03f30aea5aa94d1674e0]
+link MediumDungeon to BlueBokoblin-->
+        <path d="M1170.5,88.168 C1219.78,108.681 1285.78,138.198 1341,170 C1345.62,172.659 1350.31,175.542 1354.96,178.537 " fill="none" id="MediumDungeon-&gt;BlueBokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1359.23,181.316,1353.8723,173.0519,1355.0405,178.5868,1349.5056,179.7551,1359.23,181.316" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5c307d60d2c772a588da13bdf91d8f66]
+link MediumDungeon to BlueLizalflos-->
+        <path d="M1025.26,82.831 C998.47,91.404 967.864,101.171 940,110 C855.178,136.878 829.297,131.664 749,170 C744.906,171.955 740.776,174.104 736.67,176.38 " fill="none" id="MediumDungeon-&gt;BlueLizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="732.228,178.897,742.0304,177.9412,736.5784,176.4325,738.0871,170.9805,732.228,178.897" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[bcd9c0ce0a630effd097902c3dbb6641]
+link HardDungeon to SilverMoblin-->
+        <path d="M840.619,103.92 C836.633,122.797 831.942,145.012 827.729,164.958 " fill="none" id="HardDungeon-&gt;SilverMoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="826.67,169.976,832.4453,161.9982,827.7044,165.0842,824.6184,160.3432,826.67,169.976" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[9a5737c5680c3945bf346226c2fed09f]
+link HardDungeon to SilverBokoblin-->
+        <path d="M922.758,82.762 C949.554,91.327 980.156,101.107 1008,110 C1091.55,136.685 1117.3,131.294 1196,170 C1200.46,172.193 1204.95,174.635 1209.4,177.229 " fill="none" id="HardDungeon-&gt;SilverBokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1213.84,179.869,1208.1525,171.8283,1209.5436,177.3115,1204.0605,178.7025,1213.84,179.869" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[bdb3b250dc8f6d476b50246fae756d8b]
+link HardDungeon to SilverLizalflos-->
+        <path d="M777.232,87.179 C725.555,107.786 655.135,137.816 596,170 C591.913,172.225 587.763,174.603 583.618,177.072 " fill="none" id="HardDungeon-&gt;SilverLizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="579.126,179.783,588.8985,178.559,583.4073,177.2002,584.7661,171.709,579.126,179.783" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[6bb88b5ea8e10577a50bb80a91e038fb]
+link Dungeon to Moblin-->
+        <path d="M958.198,266.755 C950.833,286.155 942.229,308.816 934.962,327.957 " fill="none" id="Dungeon-&gt;Moblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="933.145,332.744,940.0797,325.7504,934.9202,328.0697,932.6009,322.9102,933.145,332.744" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[87dad6b3a83c57b60241d1fa9135052c]
+link Dungeon to Bokoblin-->
+        <path d="M991.502,266.755 C998.736,286.155 1007.19,308.816 1014.32,327.957 " fill="none" id="Dungeon-&gt;Bokoblin" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1016.11,332.744,1016.7136,322.9137,1014.3632,328.0591,1009.2177,325.7086,1016.11,332.744" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[7e7a4c4f3443958dd1c0e1044a4f815d]
+link Dungeon to Lizalflos-->
+        <path d="M899.838,263.834 C893.826,266.981 887.827,270.069 882,273 C833.481,297.402 777.641,323.204 735.893,342.057 " fill="none" id="Dungeon-&gt;Lizalflos" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="731.13,344.205,740.9787,344.1516,735.688,342.1496,737.69,336.8588,731.13,344.205" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[0aa1c3dca60b9dd56b9b62415579a462]
+link Encounter to Monster-->
+        <path d="M1457.0256,120.4028 C1457.0256,120.4028 1511.93,226.343 1482,273 C1379.51,432.771 1137,484.4199 1028.32,499.8944 " fill="none" id="Encounter-Monster" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1015.14,501.687,1024.598,504.4339,1020.0941,501.0112,1023.5168,496.5073,1015.14,501.687" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1020.0941" x2="1028.015" y1="501.0112" y2="499.936" />
+        <polygon fill="#FFFFFF" points="1450.35,110.431,1450.3638,117.6421,1457.0256,120.4028,1457.0117,113.1917,1450.35,110.431" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b49864f712db0907f5ce0f513490ffaa]
+link Encounter to Dungeon-->
+        <path d="M1336.1494,78.8935 C1336.1494,78.8935 1157.5,131.586 1068,170 C1065.97,170.872 1063.92,171.773 1061.87,172.7 " fill="none" id="Encounter-Dungeon" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1050.05,178.244,1059.8969,178.0475,1054.5776,176.1225,1056.5026,170.8033,1050.05,178.244" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="1054.5776" x2="1061.82" y1="176.1225" y2="172.723" />
+        <polygon fill="#FFFFFF" points="1347.71,75.676,1340.8572,73.4312,1336.1494,78.8935,1343.0022,81.1383,1347.71,75.676" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[3bab7c1bdcfcf936bca8daaf2a180874]
+@startuml
+
+   interface Monster{
+      + {abstract} announce()
+      + {abstract} move()
+   }
+
+   interface Bokoblin{
+      + {abstract} bludgeon()
+      + {abstract} defend()
+   }
+
+   interface Moblin{
+      + {abstract} stab()
+      + {abstract} kick()
+   }
+
+   interface Lizalflos{
+      + {abstract} throwBoomerang()
+      + {abstract} hide()
+   }
+
+   class NormalBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class NormalMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+   class NormalLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   class BlueBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class BlueMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+   class BlueLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   class SilverBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class SilverMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+
+   class SilverLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   interface Dungeon{
+      + {abstract} newBokoblin() : Bokoblin
+      + {abstract} newMoblin() : Moblin
+      + {abstract} newLizalflos() : Lizalflos
+   }
+
+   class EasyDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class MediumDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class HardDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class Encounter{
+      - enemies : [Monster]
+      - dungeon : Dungeon
+      + announceEnemies()
+      + moveEnemies()
+   }
+
+   Moblin ..|> Monster
+   Bokoblin ..|> Monster
+   Lizalflos ..|> Monster
+   NormalMoblin ..|> Moblin
+   NormalBokoblin ..|> Bokoblin
+   NormalLizalflos ..|> Lizalflos
+   BlueMoblin ..|> Moblin
+   BlueBokoblin ..|> Bokoblin
+   BlueLizalflos ..|> Lizalflos
+   SilverMoblin ..|> Moblin
+   SilverBokoblin ..|> Bokoblin
+   SilverLizalflos ..|> Lizalflos
+
+   EasyDungeon ..|> Dungeon
+   MediumDungeon ..|> Dungeon
+   HardDungeon ..|> Dungeon
+
+   EasyDungeon ..>   NormalMoblin
+   EasyDungeon ..>   NormalBokoblin
+   EasyDungeon ..>   NormalLizalflos
+
+   MediumDungeon ..>   BlueMoblin
+   MediumDungeon ..>   BlueBokoblin
+   MediumDungeon ..>   BlueLizalflos
+
+   HardDungeon ..>   SilverMoblin
+   HardDungeon ..>   SilverBokoblin
+   HardDungeon ..>   SilverLizalflos
+
+   Dungeon ..>   Moblin
+   Dungeon ..>   Bokoblin
+   Dungeon ..>   Lizalflos
+
+   Encounter o- -> Monster
+   Encounter o- -> Dungeon
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 19:39:45 SGT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: PH
+-->
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+@startuml
+
+class Robot{
+  + name : str
+  + talk()
+  + communicate(partner : Robot)
+}
+
+class SkyBot{
+  + fly(height:int)
+}
+
+class ShadeBot{
+  + visorOpacity : int
+}
+
+SkyBot --|> Robot
+ShadeBot --|> Robot
+
+@enduml

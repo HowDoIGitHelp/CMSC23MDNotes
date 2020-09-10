@@ -1,0 +1,43 @@
+@startuml
+  class Shipment{
+    - processDate : Date
+    - orderList : [Order]
+    - delivery : Delivery
+    + shipmentDetails() : str
+    + newDelivery(location) : Delivery //factory method
+  }
+
+  class ExpressShipment{
+    + newDelivery(location) : Delivery //overrides Shipment.delivery()
+  }
+
+  interface Delivery{
+    + {abstract} estimatedDeliveryDate() : Date
+    + {abstract} deliveryFee() : float
+    + {abstract} deliveryDetails() : str
+    + {abstract} changeDeliveryStatus() : void
+  }
+
+  class ExpressDelivery{
+  - location : str
+  - deliveryStatus : str
+  + estimatedDeliveryDate() : Date
+  + deliveryFee() : float
+  + deliveryDetails() : str
+  + changeDeliveryStatus() : void
+  }
+
+  class StandardDelivery{
+    - location : str
+    - deliveryStatus : str
+    + estimatedDeliveryDate() : Date
+    + deliveryFee() : float
+    + deliveryDetails() : str
+    + changeDeliveryStatus() : void
+  }
+
+Shipment *--> Delivery : produces,uses >
+StandardDelivery ..|> Delivery
+ExpressDelivery ..|> Delivery
+ExpressShipment --|> Shipment
+@enduml

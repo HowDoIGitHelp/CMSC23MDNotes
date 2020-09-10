@@ -1,0 +1,59 @@
+@startuml
+
+	interface Iterator{
+		+ {abstract} hasNext() : bool
+		+ {abstract} next() : Element
+	}
+
+	interface Collection{
+		+ {abstract} newIterator() : Iterator
+	}
+
+	class MyList{
+		- elements : [Elements]
+		+ size() : int
+		+ elementAtIndex(index) : Element
+		+ newIterator() : Iterator
+	}
+
+	class ListIterator{
+		- traversedList : MyList
+		- currentIndex : int
+		+ hasNext() : bool
+		+ next() : Element
+	}
+
+	class ReverseListIterator{
+	- traversedList : MyList
+	- currentIndex : int
+		+ hasNext() : bool
+		+ next() : Element
+	}
+
+	class MyBTree{
+		- value : Element
+		- left : MyBTree
+		- right : MyBTree
+		+ value() : Element
+		+ left() : MyBTree
+		+ right() : MyBTree
+		+ newIterator() : Iterator
+	}
+
+	class InOrderIterator{
+		- traversedTree : MyBTree
+		- stack : [MyBTree]
+		- visited : [MyBTree]
+		+ hasNext() : bool
+		+ next() : element
+	}
+
+	ListIterator ..|> Iterator
+	ReverseListIterator ..|> Iterator
+	InOrderIterator ..|> Iterator
+	MyList ..|> Collection
+	MyBTree ..|> Collection
+	ListIterator o--> MyList
+	ReverseListIterator o--> MyList
+	InOrderIterator o--> MyBTree
+@enduml

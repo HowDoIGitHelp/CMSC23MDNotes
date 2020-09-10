@@ -1,0 +1,11 @@
+@startuml
+  hide empty description
+  [*] --> LiquidState
+  LiquidState --> SolidState : cool,compress
+  SolidState --> LiquidState : heat,release
+  LiquidState --> GaseousState : heat,release
+  GaseousState --> LiquidState : cool, compress
+  SolidState --> SolidState : compress,cool
+  GaseousState --> GaseousState : heat,release
+
+@enduml

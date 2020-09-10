@@ -1,0 +1,47 @@
+@startuml
+	left to right direction
+  interface Subscriber{
+    + {abstract} update(newHeadline:Headline, newWeather: Weather)
+  }
+
+  class PushNotifier{
+    - currentWeather : Weather
+    - currentHeadline : Headline
+    - subscribers : [Subscriber]
+    + changeHeadline()
+    + changeWeather()
+    + subscribe(newSubscriber:Subscriber)
+    + unsubscribe(exSubscriber:Subscriber)
+    + notifySubscribers()
+  }
+
+  class Weather{
+    - temperature : float
+    - humidity : float
+    - outlook : float
+  }
+
+  class Headline{
+    - headline : str
+    - details : str
+    - source : str
+  }
+
+  class EmailSubscriber{
+	 - emailAddress : str
+    + update(newHeadline:Headline, newWeather: Weather)
+  }
+
+  class FileLogger{
+	 - filename : str
+    + update(newHeadline:Headline, newWeather: Weather)
+  }
+
+  EmailSubscriber ..|> Subscriber
+  FileLogger ..|> Subscriber
+  PushNotifier o--> Subscriber
+  PushNotifier o--> Weather
+  PushNotifier o--> Headline
+	Subscriber ..> Weather
+	Subscriber ..> Headline
+@enduml

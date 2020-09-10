@@ -1,0 +1,19 @@
+@startuml
+class Animal{
+name : string
+weight : float
+sound() : string
+}
+
+class Mammal{
+lactate() : void
+}
+
+class Reptile{
+molt() : void
+}
+
+Mammal --|> Animal
+Reptile --|> Animal
+
+@enduml

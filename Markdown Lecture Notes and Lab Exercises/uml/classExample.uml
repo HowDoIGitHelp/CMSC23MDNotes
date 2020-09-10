@@ -1,0 +1,21 @@
+@startuml
+  class ExampleClass{
+    - privateAttribute : Type1
+    + publicAttribute : Type2
+    # protectedAttribute
+    - privateMethod(param : Type) : ReturnType
+    + publicMethod() : ReturnType
+  }
+
+  interface ExampleAbstraction{
+    - {abstract} privateMethod1()
+    + {abstract} publicMethod2()
+  }
+
+  abstract ExampleAbstractClass{
+    - privateAttribute : Type1
+    + publicMethod(param : Type1, param : Type2) : Type2
+    - {abstract} privateAbstractMethod(param : Type)
+  }
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+
+interface State{
+  + {abstract} contextRelatedMethod()
+  + {abstract} anotherContextRelatedMethod()
+  + {abstract} stateName()
+}
+
+class InitialState{
+  - context:Context
+  + contextRelatedMethod()
+  + anotherContextRelatedMethod()
+  + stateName()
+}
+
+class AnotherState{
+  - context:Context
+  + contextRelatedMethod()
+  + anotherContextRelatedMethod()
+  + stateName()
+}
+
+class Context{
+  - currentState : State
+  + changeState(State)
+  + method()
+  + anotherMethod()
+}
+
+InitialState ..|> State
+AnotherState ..|> State
+Context *--> State
+State o--> Context
+
+@enduml

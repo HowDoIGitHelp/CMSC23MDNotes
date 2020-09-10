@@ -1,0 +1,60 @@
+@startuml
+interface Account{
+  {abstract} balanceReport():str
+  {abstract} accountInfo():str
+  {abstract} applyMonthlyChange()
+}
+
+interface DepositableAccount{
+  {abstract} deposit(money:float)
+}
+interface WithdrawableAccount{
+  {abstract} withdraw(money:float)
+}
+interface TransferRecipientAccount{
+  {abstract} recieveFund(money:float)
+}
+interface TransferSenderAccount{
+  {abstract} transfer(money:float,recipient:TransferRecipientAccount)
+}
+
+class CreditAccount{
+  deposit(money:float)
+  withdraw(money:float)
+  recieveFund(money:float)
+  transfer(money:float,recipient:TransferRecipientAccount)
+  balanceReport():str
+  accountInfo():str
+  applyMonthlyChange()
+}
+class DebitAccount{
+  deposit(money:float)
+  withdraw(money:float)
+  recieveFund(money:float)
+  transfer(money:float,recipient:TransferRecipientAccount)
+  balanceReport():str
+  accountInfo():str
+  applyMonthlyChange()
+}
+class PayrollAccount{
+  withdraw(money:float)
+  recieveFund(money:float)
+  balanceReport():str
+  accountInfo():str
+  applyMonthlyChange()
+}
+DepositableAccount ..|> Account
+WithdrawableAccount ..|> Account
+TransferSenderAccount ..|> Account
+TransferRecipientAccount ..|> Account
+CreditAccount ..|> DepositableAccount
+CreditAccount ..|> WithdrawableAccount
+CreditAccount ..|> TransferSenderAccount
+CreditAccount ..|> TransferRecipientAccount
+DebitAccount ..|> DepositableAccount
+DebitAccount ..|> WithdrawableAccount
+DebitAccount ..|> TransferSenderAccount
+DebitAccount ..|> TransferRecipientAccount
+PayrollAccount ..|> WithdrawableAccount
+PayrollAccount ..|> TransferRecipientAccount
+@enduml

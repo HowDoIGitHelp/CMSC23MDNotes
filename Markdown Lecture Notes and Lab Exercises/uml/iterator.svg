@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="469px" preserveAspectRatio="none" style="width:528px;height:469px;" version="1.1" viewBox="0 0 528 469" width="528px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fztto7ng4u4bn" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[023ecf6702e3ca2ce47ae747eafb20f1]
+class Iterator-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="75.6719" id="Iterator" style="stroke: #A80036; stroke-width: 1.5;" width="106" x="188.5" y="218.5" />
+        <ellipse cx="219.25" cy="234.5" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M220.2031,231.1406 L220.2031,237.7969 L221.9219,237.7969 Q222.5313,237.7969 222.7969,238.0313 Q223.0625,238.2656 223.0625,238.6563 Q223.0625,239.0313 222.7969,239.2656 Q222.5313,239.5 221.9219,239.5 L216.7813,239.5 Q216.1719,239.5 215.9063,239.2656 Q215.6406,239.0313 215.6406,238.6406 Q215.6406,238.2656 215.9063,238.0313 Q216.1719,237.7969 216.7813,237.7969 L218.5,237.7969 L218.5,231.1406 L216.7813,231.1406 Q216.1719,231.1406 215.9063,230.9063 Q215.6406,230.6719 215.6406,230.2813 Q215.6406,229.9063 215.9063,229.6719 Q216.1719,229.4375 216.7813,229.4375 L221.9219,229.4375 Q222.5313,229.4375 222.7969,229.6719 Q223.0625,229.9063 223.0625,230.2813 Q223.0625,230.6719 222.7969,230.9063 Q222.5313,231.1406 221.9219,231.1406 L220.2031,231.1406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="39" x="236.75" y="239.4102">Iterator</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="189.5" x2="293.5" y1="250.5" y2="250.5" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="189.5" x2="293.5" y1="258.5" y2="258.5" />
+        <ellipse cx="199.5" cy="269.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="80" x="208.5" y="273.9189">hasNext() : bool</text>
+        <ellipse cx="199.5" cy="283.3359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="208.5" y="287.7549">next() : Element</text>
+        <!--MD5=[c160724f8e3bb89ca8141a12554ac2e3]
+class Collection-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="61.8359" id="Collection" style="stroke: #A80036; stroke-width: 1.5;" width="132" x="184.5" y="389" />
+        <ellipse cx="219.75" cy="405" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M220.7031,401.6406 L220.7031,408.2969 L222.4219,408.2969 Q223.0313,408.2969 223.2969,408.5313 Q223.5625,408.7656 223.5625,409.1563 Q223.5625,409.5313 223.2969,409.7656 Q223.0313,410 222.4219,410 L217.2813,410 Q216.6719,410 216.4063,409.7656 Q216.1406,409.5313 216.1406,409.1406 Q216.1406,408.7656 216.4063,408.5313 Q216.6719,408.2969 217.2813,408.2969 L219,408.2969 L219,401.6406 L217.2813,401.6406 Q216.6719,401.6406 216.4063,401.4063 Q216.1406,401.1719 216.1406,400.7813 Q216.1406,400.4063 216.4063,400.1719 Q216.6719,399.9375 217.2813,399.9375 L222.4219,399.9375 Q223.0313,399.9375 223.2969,400.1719 Q223.5625,400.4063 223.5625,400.7813 Q223.5625,401.1719 223.2969,401.4063 Q223.0313,401.6406 222.4219,401.6406 L220.7031,401.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="55" x="238.25" y="409.9102">Collection</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="185.5" x2="315.5" y1="421" y2="421" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="185.5" x2="315.5" y1="429" y2="429" />
+        <ellipse cx="195.5" cy="440" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="106" x="204.5" y="444.4189">newIterator() : Iterator</text>
+        <!--MD5=[c66729ae91ac98ccf54e173f1a1210fa]
+class MyList-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="103.3438" id="MyList" style="stroke: #A80036; stroke-width: 1.5;" width="180" x="329.5" y="205" />
+        <ellipse cx="398.25" cy="221" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M401.0156,216.875 Q401.1719,216.6563 401.3594,216.5469 Q401.5469,216.4375 401.7656,216.4375 Q402.1406,216.4375 402.375,216.6953 Q402.6094,216.9531 402.6094,217.5625 L402.6094,219.0156 Q402.6094,219.625 402.375,219.8906 Q402.1406,220.1563 401.7656,220.1563 Q401.4219,220.1563 401.2188,219.9531 Q401.0156,219.7656 400.9063,219.25 Q400.8594,218.8906 400.6719,218.7031 Q400.3438,218.3281 399.7344,218.1094 Q399.125,217.8906 398.5,217.8906 Q397.7344,217.8906 397.1016,218.2188 Q396.4688,218.5469 395.9766,219.2969 Q395.4844,220.0469 395.4844,221.0781 L395.4844,222.1719 Q395.4844,223.4063 396.375,224.2266 Q397.2656,225.0469 398.8594,225.0469 Q399.7969,225.0469 400.4531,224.7969 Q400.8438,224.6406 401.2656,224.2031 Q401.5313,223.9375 401.6797,223.8594 Q401.8281,223.7813 402.0313,223.7813 Q402.3594,223.7813 402.6172,224.0391 Q402.875,224.2969 402.875,224.6406 Q402.875,224.9844 402.5313,225.3906 Q402.0313,225.9688 401.2344,226.2969 Q400.1563,226.75 398.8594,226.75 Q397.3438,226.75 396.1406,226.125 Q395.1563,225.625 394.4688,224.5547 Q393.7813,223.4844 393.7813,222.2031 L393.7813,221.0469 Q393.7813,219.7188 394.3984,218.5703 Q395.0156,217.4219 396.1094,216.8047 Q397.2031,216.1875 398.4375,216.1875 Q399.1719,216.1875 399.8203,216.3516 Q400.4688,216.5156 401.0156,216.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="34" x="418.75" y="225.9102">MyList</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="330.5" x2="508.5" y1="237" y2="237" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="337.5" y="245" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="101" x="349.5" y="252.4189">elements : [Elements]</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="330.5" x2="508.5" y1="258.8359" y2="258.8359" />
+        <ellipse cx="340.5" cy="269.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="48" x="349.5" y="274.2549">size() : int</text>
+        <ellipse cx="340.5" cy="283.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="154" x="349.5" y="288.0908">elementAtIndex(index) : Element</text>
+        <ellipse cx="340.5" cy="297.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="349.5" y="301.9268">newIterator() : Iterator</text>
+        <!--MD5=[959e551dfb0c5309f83274e88aa0033f]
+class ListIterator-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="103.3438" id="ListIterator" style="stroke: #A80036; stroke-width: 1.5;" width="130" x="189.5" y="14" />
+        <ellipse cx="222.5" cy="30" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M225.2656,25.875 Q225.4219,25.6563 225.6094,25.5469 Q225.7969,25.4375 226.0156,25.4375 Q226.3906,25.4375 226.625,25.6953 Q226.8594,25.9531 226.8594,26.5625 L226.8594,28.0156 Q226.8594,28.625 226.625,28.8906 Q226.3906,29.1563 226.0156,29.1563 Q225.6719,29.1563 225.4688,28.9531 Q225.2656,28.7656 225.1563,28.25 Q225.1094,27.8906 224.9219,27.7031 Q224.5938,27.3281 223.9844,27.1094 Q223.375,26.8906 222.75,26.8906 Q221.9844,26.8906 221.3516,27.2188 Q220.7188,27.5469 220.2266,28.2969 Q219.7344,29.0469 219.7344,30.0781 L219.7344,31.1719 Q219.7344,32.4063 220.625,33.2266 Q221.5156,34.0469 223.1094,34.0469 Q224.0469,34.0469 224.7031,33.7969 Q225.0938,33.6406 225.5156,33.2031 Q225.7813,32.9375 225.9297,32.8594 Q226.0781,32.7813 226.2813,32.7813 Q226.6094,32.7813 226.8672,33.0391 Q227.125,33.2969 227.125,33.6406 Q227.125,33.9844 226.7813,34.3906 Q226.2813,34.9688 225.4844,35.2969 Q224.4063,35.75 223.1094,35.75 Q221.5938,35.75 220.3906,35.125 Q219.4063,34.625 218.7188,33.5547 Q218.0313,32.4844 218.0313,31.2031 L218.0313,30.0469 Q218.0313,28.7188 218.6484,27.5703 Q219.2656,26.4219 220.3594,25.8047 Q221.4531,25.1875 222.6875,25.1875 Q223.4219,25.1875 224.0703,25.3516 Q224.7188,25.5156 225.2656,25.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="240.5" y="34.9102">ListIterator</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="190.5" x2="318.5" y1="46" y2="46" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="197.5" y="54" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="209.5" y="61.4189">traversedList : MyList</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="197.5" y="67.8359" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="209.5" y="75.2549">currentIndex : int</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="190.5" x2="318.5" y1="81.6719" y2="81.6719" />
+        <ellipse cx="200.5" cy="92.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="209.5" y="97.0908">hasNext() : bool</text>
+        <ellipse cx="200.5" cy="106.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="209.5" y="110.9268">next() : Element</text>
+        <!--MD5=[17e10fc8d502417fe102ebaab71dba39]
+class ReverseListIterator-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="103.3438" id="ReverseListIterator" style="stroke: #A80036; stroke-width: 1.5;" width="136" x="354.5" y="14" />
+        <ellipse cx="369.5" cy="30" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M372.2656,25.875 Q372.4219,25.6563 372.6094,25.5469 Q372.7969,25.4375 373.0156,25.4375 Q373.3906,25.4375 373.625,25.6953 Q373.8594,25.9531 373.8594,26.5625 L373.8594,28.0156 Q373.8594,28.625 373.625,28.8906 Q373.3906,29.1563 373.0156,29.1563 Q372.6719,29.1563 372.4688,28.9531 Q372.2656,28.7656 372.1563,28.25 Q372.1094,27.8906 371.9219,27.7031 Q371.5938,27.3281 370.9844,27.1094 Q370.375,26.8906 369.75,26.8906 Q368.9844,26.8906 368.3516,27.2188 Q367.7188,27.5469 367.2266,28.2969 Q366.7344,29.0469 366.7344,30.0781 L366.7344,31.1719 Q366.7344,32.4063 367.625,33.2266 Q368.5156,34.0469 370.1094,34.0469 Q371.0469,34.0469 371.7031,33.7969 Q372.0938,33.6406 372.5156,33.2031 Q372.7813,32.9375 372.9297,32.8594 Q373.0781,32.7813 373.2813,32.7813 Q373.6094,32.7813 373.8672,33.0391 Q374.125,33.2969 374.125,33.6406 Q374.125,33.9844 373.7813,34.3906 Q373.2813,34.9688 372.4844,35.2969 Q371.4063,35.75 370.1094,35.75 Q368.5938,35.75 367.3906,35.125 Q366.4063,34.625 365.7188,33.5547 Q365.0313,32.4844 365.0313,31.2031 L365.0313,30.0469 Q365.0313,28.7188 365.6484,27.5703 Q366.2656,26.4219 367.3594,25.8047 Q368.4531,25.1875 369.6875,25.1875 Q370.4219,25.1875 371.0703,25.3516 Q371.7188,25.5156 372.2656,25.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="104" x="383.5" y="34.9102">ReverseListIterator</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="355.5" x2="489.5" y1="46" y2="46" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="362.5" y="54" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="374.5" y="61.4189">traversedList : MyList</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="362.5" y="67.8359" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="374.5" y="75.2549">currentIndex : int</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="355.5" x2="489.5" y1="81.6719" y2="81.6719" />
+        <ellipse cx="365.5" cy="92.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="374.5" y="97.0908">hasNext() : bool</text>
+        <ellipse cx="365.5" cy="106.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="374.5" y="110.9268">next() : Element</text>
+        <!--MD5=[7589d06f8e316a85c1e2db6e84d40fa3]
+class MyBTree-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="144.8516" id="MyBTree" style="stroke: #A80036; stroke-width: 1.5;" width="133" x="16" y="184" />
+        <ellipse cx="55.3" cy="200" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M58.0656,195.875 Q58.2219,195.6563 58.4094,195.5469 Q58.5969,195.4375 58.8156,195.4375 Q59.1906,195.4375 59.425,195.6953 Q59.6594,195.9531 59.6594,196.5625 L59.6594,198.0156 Q59.6594,198.625 59.425,198.8906 Q59.1906,199.1563 58.8156,199.1563 Q58.4719,199.1563 58.2688,198.9531 Q58.0656,198.7656 57.9563,198.25 Q57.9094,197.8906 57.7219,197.7031 Q57.3938,197.3281 56.7844,197.1094 Q56.175,196.8906 55.55,196.8906 Q54.7844,196.8906 54.1516,197.2188 Q53.5188,197.5469 53.0266,198.2969 Q52.5344,199.0469 52.5344,200.0781 L52.5344,201.1719 Q52.5344,202.4063 53.425,203.2266 Q54.3156,204.0469 55.9094,204.0469 Q56.8469,204.0469 57.5031,203.7969 Q57.8938,203.6406 58.3156,203.2031 Q58.5813,202.9375 58.7297,202.8594 Q58.8781,202.7813 59.0813,202.7813 Q59.4094,202.7813 59.6672,203.0391 Q59.925,203.2969 59.925,203.6406 Q59.925,203.9844 59.5813,204.3906 Q59.0813,204.9688 58.2844,205.2969 Q57.2063,205.75 55.9094,205.75 Q54.3938,205.75 53.1906,205.125 Q52.2063,204.625 51.5188,203.5547 Q50.8313,202.4844 50.8313,201.2031 L50.8313,200.0469 Q50.8313,198.7188 51.4484,197.5703 Q52.0656,196.4219 53.1594,195.8047 Q54.2531,195.1875 55.4875,195.1875 Q56.2219,195.1875 56.8703,195.3516 Q57.5188,195.5156 58.0656,195.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="74.7" y="204.9102">MyBTree</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="17" x2="148" y1="216" y2="216" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="24" y="224" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="36" y="231.4189">value : Element</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="24" y="237.8359" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="36" y="245.2549">left : MyBTree</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="24" y="251.6719" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="36" y="259.0908">right : MyBTree</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="17" x2="148" y1="265.5078" y2="265.5078" />
+        <ellipse cx="27" cy="276.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="80" x="36" y="280.9268">value() : Element</text>
+        <ellipse cx="27" cy="290.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="36" y="294.7627">left() : MyBTree</text>
+        <ellipse cx="27" cy="304.1797" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="36" y="308.5986">right() : MyBTree</text>
+        <ellipse cx="27" cy="318.0156" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="36" y="322.4346">newIterator() : Iterator</text>
+        <!--MD5=[f3db23db98279e12428508419b8dba42]
+class InOrderIterator-->
+        <rect fill="#FEFECE" filter="url(#fztto7ng4u4bn)" height="117.1797" id="InOrderIterator" style="stroke: #A80036; stroke-width: 1.5;" width="147" x="7" y="7" />
+        <ellipse cx="38.2" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M40.9656,18.875 Q41.1219,18.6563 41.3094,18.5469 Q41.4969,18.4375 41.7156,18.4375 Q42.0906,18.4375 42.325,18.6953 Q42.5594,18.9531 42.5594,19.5625 L42.5594,21.0156 Q42.5594,21.625 42.325,21.8906 Q42.0906,22.1563 41.7156,22.1563 Q41.3719,22.1563 41.1688,21.9531 Q40.9656,21.7656 40.8563,21.25 Q40.8094,20.8906 40.6219,20.7031 Q40.2938,20.3281 39.6844,20.1094 Q39.075,19.8906 38.45,19.8906 Q37.6844,19.8906 37.0516,20.2188 Q36.4188,20.5469 35.9266,21.2969 Q35.4344,22.0469 35.4344,23.0781 L35.4344,24.1719 Q35.4344,25.4063 36.325,26.2266 Q37.2156,27.0469 38.8094,27.0469 Q39.7469,27.0469 40.4031,26.7969 Q40.7938,26.6406 41.2156,26.2031 Q41.4813,25.9375 41.6297,25.8594 Q41.7781,25.7813 41.9813,25.7813 Q42.3094,25.7813 42.5672,26.0391 Q42.825,26.2969 42.825,26.6406 Q42.825,26.9844 42.4813,27.3906 Q41.9813,27.9688 41.1844,28.2969 Q40.1063,28.75 38.8094,28.75 Q37.2938,28.75 36.0906,28.125 Q35.1063,27.625 34.4188,26.5547 Q33.7313,25.4844 33.7313,24.2031 L33.7313,23.0469 Q33.7313,21.7188 34.3484,20.5703 Q34.9656,19.4219 36.0594,18.8047 Q37.1531,18.1875 38.3875,18.1875 Q39.1219,18.1875 39.7703,18.3516 Q40.4188,18.5156 40.9656,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="79" x="55.8" y="27.9102">InOrderIterator</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="153" y1="39" y2="39" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="15" y="47" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="27" y="54.4189">traversedTree : MyBTree</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="15" y="60.8359" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="84" x="27" y="68.2549">stack : [MyBTree]</text>
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="15" y="74.6719" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="27" y="82.0908">visited : [MyBTree]</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="153" y1="88.5078" y2="88.5078" />
+        <ellipse cx="18" cy="99.5078" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="27" y="103.9268">hasNext() : bool</text>
+        <ellipse cx="18" cy="113.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="27" y="117.7627">next() : element</text>
+        <!--MD5=[a6436b1464d08b67597ba4e7408b94c9]
+link ListIterator to Iterator-->
+        <path d="M251.016,117.149 C249.298,142.131 247.218,172.368 245.442,198.195 " fill="none" id="ListIterator-&gt;Iterator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="252.421,198.735,244.065,218.207,238.454,197.774,252.421,198.735" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[2182ac53e24c9f95a3938b10e2160d01]
+link ReverseListIterator to Iterator-->
+        <path d="M373.995,117.149 C348.403,143.872 317.055,176.606 291.276,203.524 " fill="none" id="ReverseListIterator-&gt;Iterator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="296.103,208.604,277.214,218.207,285.992,198.921,296.103,208.604" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[7942a64c95404ef8f617425ec1f239b6]
+link InOrderIterator to Iterator-->
+        <path d="M129.68,124.233 C151.072,149.346 175.96,178.562 196.818,203.047 " fill="none" id="InOrderIterator-&gt;Iterator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="202.225,198.6,209.866,218.364,191.568,207.678,202.225,198.6" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cc78faaf6a787bccc7921694ee8fa680]
+link MyList to Collection-->
+        <path d="M366.491,308.157 C344.105,329.549 318.278,354.2299 296.685,374.8642 " fill="none" id="MyList-&gt;Collection" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="301.461,379.9832,282.165,388.7401,291.788,369.8616,301.461,379.9832" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[a5174473dd207b18cb359ce6bdcef7b9]
+link MyBTree to Collection-->
+        <path d="M149.381,321.793 C167.829,339.528 187.429,358.3689 204.412,374.6947 " fill="none" id="MyBTree-&gt;Collection" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="209.298,369.6821,218.865,388.589,199.596,379.7749,209.298,369.6821" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[0c98253ac2c7c071f4be5ce9649f14be]
+link ListIterator to MyList-->
+        <path d="M306.6092,126.1885 C306.6092,126.1885 347.565,173.102 366.406,194.683 " fill="none" id="ListIterator-MyList" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="375.161,204.712,372.255,195.3016,371.8726,200.9455,366.2286,200.5631,375.161,204.712" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="371.8726" x2="366.6115" y1="200.9455" y2="194.9185" />
+        <polygon fill="#FFFFFF" points="298.717,117.149,299.65,124.2995,306.6092,126.1885,305.6763,119.038,298.717,117.149" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[96de34439c5322dcf78a13dc71ab811a]
+link ReverseListIterator to MyList-->
+        <path d="M421.5061,129.1475 C421.5061,129.1475 420.827,171.895 420.513,191.702 " fill="none" id="ReverseListIterator-MyList" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="420.306,204.712,424.4489,195.7769,420.3857,199.7126,416.4499,195.6494,420.306,204.712" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="420.3857" x2="420.5125" y1="199.7126" y2="191.7135" />
+        <polygon fill="#FFFFFF" points="421.696,117.149,417.6016,123.085,421.5061,129.1475,425.6006,123.2115,421.696,117.149" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[c80e2ae1fb3684a8e87c19477d734ba1]
+link InOrderIterator to MyBTree-->
+        <path d="M81.2388,136.2323 C81.2388,136.2323 81.485,159.585 81.6033,170.764 " fill="none" id="InOrderIterator-MyBTree" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="81.7409,183.765,85.6457,174.7233,81.6882,178.7653,77.6462,174.8077,81.7409,183.765" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="81.6882" x2="81.6033" y1="178.7653" y2="170.766" />
+        <polygon fill="#FFFFFF" points="81.1109,124.233,77.1751,130.2753,81.2388,136.2323,85.1746,130.19,81.1109,124.233" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b427de73df769b53fa499c600bd68564]
+@startuml
+
+	interface Iterator{
+		+ {abstract} hasNext() : bool
+		+ {abstract} next() : Element
+	}
+
+	interface Collection{
+		+ {abstract} newIterator() : Iterator
+	}
+
+	class MyList{
+		- elements : [Elements]
+		+ size() : int
+		+ elementAtIndex(index) : Element
+		+ newIterator() : Iterator
+	}
+
+	class ListIterator{
+		- traversedList : MyList
+		- currentIndex : int
+		+ hasNext() : bool
+		+ next() : Element
+	}
+
+	class ReverseListIterator{
+	- traversedList : MyList
+	- currentIndex : int
+		+ hasNext() : bool
+		+ next() : Element
+	}
+
+	class MyBTree{
+		- value : Element
+		- left : MyBTree
+		- right : MyBTree
+		+ value() : Element
+		+ left() : MyBTree
+		+ right() : MyBTree
+		+ newIterator() : Iterator
+	}
+
+	class InOrderIterator{
+		- traversedTree : MyBTree
+		- stack : [MyBTree]
+		- visited : [MyBTree]
+		+ hasNext() : bool
+		+ next() : element
+	}
+
+	ListIterator ..|> Iterator
+	ReverseListIterator ..|> Iterator
+	InOrderIterator ..|> Iterator
+	MyList ..|> Collection
+	MyBTree ..|> Collection
+	ListIterator o- -> MyList
+	ReverseListIterator o- -> MyList
+	InOrderIterator o- -> MyBTree
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 19:39:45 SGT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: PH
+-->
+    </g>
+</svg>

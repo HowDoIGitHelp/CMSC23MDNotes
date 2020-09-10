@@ -1,0 +1,28 @@
+@startuml
+
+  interface AbstractService{
+    + {abstract} serviceMethod1()
+    + {abstract} serviceMethod2()
+  }
+
+  class RealService{
+    + serviceMethod1()
+    + serviceMethod2()
+  }
+
+  interface RequiredInterface{
+    + {abstract} method1()
+    + {abstract} method2()
+  }
+
+  class ServiceAdapter{
+    - service : AbstractService
+    + method1()
+    + method2()
+  }
+
+  RealService ..|> AbstractService
+  ServiceAdapter ..|> RequiredInterface
+  ServiceAdapter o--> AbstractService
+
+@enduml

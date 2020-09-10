@@ -1,0 +1,37 @@
+@startuml
+
+	abstract class SearchAlgorithm{
+		# searchSpace : [int]
+		# currentIndex : int
+		# solution : [int]
+		# target : int
+		+ SearchAlgorithm(target:int, searchSpace:[int])
+		+ bruteForceSolution() : [int]
+		+ first() : int
+		+ next() : int
+		+ isSearching() : bool
+		+ {abstract} isValid(candidate) : bool
+		+ {abstract} updateSolution(candidate)
+	}
+
+	class EqualitySearchAlgorithm{
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+	class DivisibilitySearchAlgorithm{
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+	class MinimumSearchAlgorithm{
+		+ MinimumSearchAlgorithm(target:int, searchSpace:[int]) //overriding the constructor
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+
+	EqualitySearchAlgorithm --|> SearchAlgorithm
+	DivisibilitySearchAlgorithm --|> SearchAlgorithm
+	MinimumSearchAlgorithm --|> SearchAlgorithm
+@enduml

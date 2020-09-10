@@ -1,0 +1,24 @@
+@startuml
+  left to right direction
+  class SubClass
+  class SuperClass
+  class Realization
+  interface Abstraction
+
+  class Ownee
+  class Owner
+
+  class User
+  class Usee
+
+  class Client
+  class Dependency
+
+  SubClass --|> SuperClass : Specialization/Inheritance
+  Realization ..|> Abstraction : Realization/Implementation
+  Client --> Dependency : Dependency
+  Owner *--> Ownee : Composition
+  User o--> Usee : Aggregation
+
+
+@enduml

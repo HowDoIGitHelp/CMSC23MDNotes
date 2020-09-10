@@ -1,0 +1,45 @@
+@startuml
+interface BorrowableItem{
+  uniqueItemId() : int
+  commonName() : string
+}
+
+note left of LibraryCard
+  penalty(b:BorrowableItem, d:Date) -> float:
+    ...
+    day d = (d.getDay() +
+    d.getMonth()*30 +
+    d.getYear()* 360)
+    ...
+    if b is a Book:
+      ...something book related
+    else if b is a Periodical:
+      ...something periodical related
+    ...
+
+end note
+
+class LibraryCard{
+  -idNumber : int
+  -name : string
+  -borrowedBooks : {BorrowableItem:Date}
+  borrowItem() : void
+  borrowerReport() : string
+  returnItem() : void
+  penalty(BorrowableItem,Date) : float
+  itemsDue(Date) : [BorrowableItem]
+  totalPenalty(Date) : float
+}
+
+class Date{
+  -month : int
+  -day : int
+  -year : int
+  getMonth() : int
+  getDay() : int
+  getYear() : int
+}
+
+LibraryCard o--> BorrowableItem
+LibraryCard o--> Date
+@enduml

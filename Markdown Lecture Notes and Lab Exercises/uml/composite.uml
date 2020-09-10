@@ -1,0 +1,21 @@
+@startuml
+
+  interface Component{
+    + {abstract} execute()
+  }
+
+  class Composite{
+    - children : [Component]
+    + execute()
+    + addChild()
+    + removeChild()
+  }
+
+  class Leaf{
+    +execute()
+  }
+
+  Composite ..|> Component
+  Leaf ..|> Component
+  Composite o--> Component
+@enduml

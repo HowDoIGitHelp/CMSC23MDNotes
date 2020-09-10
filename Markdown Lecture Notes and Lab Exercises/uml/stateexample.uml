@@ -1,0 +1,53 @@
+@startuml
+
+  interface State{
+    + {abstract} compress()
+    + {abstract} release()
+    + {abstract} heat()
+    + {abstract} cool()
+  }
+
+  class SolidState{
+    - matter:Matter
+    + compress()
+    + release()
+    + heat()
+    + cool()
+  }
+
+  class LiquidState{
+    - matter:Matter
+    + compress()
+    + release()
+    + heat()
+    + cool()
+  }
+
+  class GaseousState{
+    - matter:Matter
+    + compress()
+    + release()
+    + heat()
+    + cool()
+  }
+
+  class Matter{
+    - state:State
+    + compress()
+    + release()
+    + heat()
+    + cool()
+  }
+
+  note bottom of Matter
+    these functions have the same name
+    but they basically call the state's method
+  endnote
+
+  SolidState ..|> State
+  LiquidState ..|> State
+  GaseousState ..|> State
+  Matter *--> State
+  State o-->Matter
+
+@enduml

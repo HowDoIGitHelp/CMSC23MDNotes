@@ -1,0 +1,23 @@
+@startuml
+
+interface BorrowableItem{
+  + {abstract} borrow()
+  + {abstract} name() : str
+}
+
+class Book{
+  - title : str
+  + borrow()
+  + name() : str
+}
+
+class IMacUnit{
+  - id : int
+  + borrow()
+  + name() : str
+}
+
+Book ..|> BorrowableItem
+IMacUnit ..|> BorrowableItem
+
+@enduml

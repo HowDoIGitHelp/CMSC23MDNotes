@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="376px" preserveAspectRatio="none" style="width:860px;height:376px;" version="1.1" viewBox="0 0 860 376" width="860px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fd53aooz2xgz5" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[bc7cacf8f04b69ca8624a1294c7b344e]
+class SearchAlgorithm-->
+        <rect fill="#FEFECE" filter="url(#fd53aooz2xgz5)" height="200.1953" id="SearchAlgorithm" style="stroke: #A80036; stroke-width: 1.5;" width="247" x="173.5" y="157" />
+        <ellipse cx="246.75" cy="173" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M248.9375,174.7656 L244.7969,174.7656 L244.375,175.7969 L244.7969,175.7969 Q245.4063,175.7969 245.6719,176.0313 Q245.9375,176.2656 245.9375,176.6563 Q245.9375,177.0313 245.6719,177.2656 Q245.4063,177.5 244.7969,177.5 L242.5,177.5 Q241.8906,177.5 241.6328,177.2656 Q241.375,177.0313 241.375,176.6406 Q241.375,176.2656 241.6484,176.0234 Q241.9219,175.7813 242.5469,175.7969 L245.2188,169.1406 L244.1094,169.1406 Q243.5,169.1406 243.2344,168.9063 Q242.9688,168.6719 242.9688,168.2813 Q242.9688,167.9063 243.2344,167.6719 Q243.5,167.4375 244.1094,167.4375 L247.7813,167.4375 L251.1719,175.7969 Q251.7656,175.7969 251.9531,175.9375 Q252.3438,176.2031 252.3438,176.6563 Q252.3438,177.0313 252.0859,177.2656 Q251.8281,177.5 251.2188,177.5 L248.9219,177.5 Q248.3125,177.5 248.0469,177.2656 Q247.7813,177.0313 247.7813,176.6406 Q247.7813,176.2656 248.0469,176.0313 Q248.3125,175.7969 248.9219,175.7969 L249.3438,175.7969 L248.9375,174.7656 Z M248.2188,173.0625 L246.8594,169.6875 L245.4844,173.0625 L248.2188,173.0625 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="92" x="267.25" y="177.9102">SearchAlgorithm</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="174.5" x2="419.5" y1="189" y2="189" />
+        <polygon fill="none" points="184.5,195,188.5,199,184.5,203,180.5,199" style="stroke: #B38D22; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="193.5" y="204.4189">searchSpace : [int]</text>
+        <polygon fill="none" points="184.5,208.8359,188.5,212.8359,184.5,216.8359,180.5,212.8359" style="stroke: #B38D22; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="193.5" y="218.2549">currentIndex : int</text>
+        <polygon fill="none" points="184.5,222.6719,188.5,226.6719,184.5,230.6719,180.5,226.6719" style="stroke: #B38D22; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="63" x="193.5" y="232.0908">solution : [int]</text>
+        <polygon fill="none" points="184.5,236.5078,188.5,240.5078,184.5,244.5078,180.5,240.5078" style="stroke: #B38D22; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="48" x="193.5" y="245.9268">target : int</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="174.5" x2="419.5" y1="252.3438" y2="252.3438" />
+        <ellipse cx="184.5" cy="263.3438" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="221" x="193.5" y="267.7627">SearchAlgorithm(target:int, searchSpace:[int])</text>
+        <ellipse cx="184.5" cy="277.1797" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="125" x="193.5" y="281.5986">bruteForceSolution() : [int]</text>
+        <ellipse cx="184.5" cy="291.0156" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="193.5" y="295.4346">first() : int</text>
+        <ellipse cx="184.5" cy="304.8516" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="193.5" y="309.2705">next() : int</text>
+        <ellipse cx="184.5" cy="318.6875" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="193.5" y="323.1064">isSearching() : bool</text>
+        <ellipse cx="184.5" cy="332.5234" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="121" x="193.5" y="336.9424">isValid(candidate) : bool</text>
+        <ellipse cx="184.5" cy="346.3594" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="129" x="193.5" y="350.7783">updateSolution(candidate)</text>
+        <!--MD5=[421a6a85ca74bd84cc6a900e11fdef82]
+class EqualitySearchAlgorithm-->
+        <rect fill="#FEFECE" filter="url(#fd53aooz2xgz5)" height="75.6719" id="EqualitySearchAlgorithm" style="stroke: #A80036; stroke-width: 1.5;" width="166" x="7" y="14" />
+        <ellipse cx="22" cy="30" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M24.7656,25.875 Q24.9219,25.6563 25.1094,25.5469 Q25.2969,25.4375 25.5156,25.4375 Q25.8906,25.4375 26.125,25.6953 Q26.3594,25.9531 26.3594,26.5625 L26.3594,28.0156 Q26.3594,28.625 26.125,28.8906 Q25.8906,29.1563 25.5156,29.1563 Q25.1719,29.1563 24.9688,28.9531 Q24.7656,28.7656 24.6563,28.25 Q24.6094,27.8906 24.4219,27.7031 Q24.0938,27.3281 23.4844,27.1094 Q22.875,26.8906 22.25,26.8906 Q21.4844,26.8906 20.8516,27.2188 Q20.2188,27.5469 19.7266,28.2969 Q19.2344,29.0469 19.2344,30.0781 L19.2344,31.1719 Q19.2344,32.4063 20.125,33.2266 Q21.0156,34.0469 22.6094,34.0469 Q23.5469,34.0469 24.2031,33.7969 Q24.5938,33.6406 25.0156,33.2031 Q25.2813,32.9375 25.4297,32.8594 Q25.5781,32.7813 25.7813,32.7813 Q26.1094,32.7813 26.3672,33.0391 Q26.625,33.2969 26.625,33.6406 Q26.625,33.9844 26.2813,34.3906 Q25.7813,34.9688 24.9844,35.2969 Q23.9063,35.75 22.6094,35.75 Q21.0938,35.75 19.8906,35.125 Q18.9063,34.625 18.2188,33.5547 Q17.5313,32.4844 17.5313,31.2031 L17.5313,30.0469 Q17.5313,28.7188 18.1484,27.5703 Q18.7656,26.4219 19.8594,25.8047 Q20.9531,25.1875 22.1875,25.1875 Q22.9219,25.1875 23.5703,25.3516 Q24.2188,25.5156 24.7656,25.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="134" x="36" y="34.9102">EqualitySearchAlgorithm</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="172" y1="46" y2="46" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="172" y1="54" y2="54" />
+        <ellipse cx="18" cy="65" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="27" y="69.4189">isValid(candidate) : bool</text>
+        <ellipse cx="18" cy="78.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="126" x="27" y="83.2549">updateSolution(candidate)</text>
+        <!--MD5=[16169b9b38d5799d0439a6f60e51132c]
+class DivisibilitySearchAlgorithm-->
+        <rect fill="#FEFECE" filter="url(#fd53aooz2xgz5)" height="75.6719" id="DivisibilitySearchAlgorithm" style="stroke: #A80036; stroke-width: 1.5;" width="177" x="208.5" y="14" />
+        <ellipse cx="223.5" cy="30" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M226.2656,25.875 Q226.4219,25.6563 226.6094,25.5469 Q226.7969,25.4375 227.0156,25.4375 Q227.3906,25.4375 227.625,25.6953 Q227.8594,25.9531 227.8594,26.5625 L227.8594,28.0156 Q227.8594,28.625 227.625,28.8906 Q227.3906,29.1563 227.0156,29.1563 Q226.6719,29.1563 226.4688,28.9531 Q226.2656,28.7656 226.1563,28.25 Q226.1094,27.8906 225.9219,27.7031 Q225.5938,27.3281 224.9844,27.1094 Q224.375,26.8906 223.75,26.8906 Q222.9844,26.8906 222.3516,27.2188 Q221.7188,27.5469 221.2266,28.2969 Q220.7344,29.0469 220.7344,30.0781 L220.7344,31.1719 Q220.7344,32.4063 221.625,33.2266 Q222.5156,34.0469 224.1094,34.0469 Q225.0469,34.0469 225.7031,33.7969 Q226.0938,33.6406 226.5156,33.2031 Q226.7813,32.9375 226.9297,32.8594 Q227.0781,32.7813 227.2813,32.7813 Q227.6094,32.7813 227.8672,33.0391 Q228.125,33.2969 228.125,33.6406 Q228.125,33.9844 227.7813,34.3906 Q227.2813,34.9688 226.4844,35.2969 Q225.4063,35.75 224.1094,35.75 Q222.5938,35.75 221.3906,35.125 Q220.4063,34.625 219.7188,33.5547 Q219.0313,32.4844 219.0313,31.2031 L219.0313,30.0469 Q219.0313,28.7188 219.6484,27.5703 Q220.2656,26.4219 221.3594,25.8047 Q222.4531,25.1875 223.6875,25.1875 Q224.4219,25.1875 225.0703,25.3516 Q225.7188,25.5156 226.2656,25.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="145" x="237.5" y="34.9102">DivisibilitySearchAlgorithm</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="209.5" x2="384.5" y1="46" y2="46" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="209.5" x2="384.5" y1="54" y2="54" />
+        <ellipse cx="219.5" cy="65" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="228.5" y="69.4189">isValid(candidate) : bool</text>
+        <ellipse cx="219.5" cy="78.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="126" x="228.5" y="83.2549">updateSolution(candidate)</text>
+        <!--MD5=[97ea61e5086695807dfb7cc5be35ca73]
+class MinimumSearchAlgorithm-->
+        <rect fill="#FEFECE" filter="url(#fd53aooz2xgz5)" height="89.5078" id="MinimumSearchAlgorithm" style="stroke: #A80036; stroke-width: 1.5;" width="421" x="420.5" y="7" />
+        <ellipse cx="555.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M558.5156,18.875 Q558.6719,18.6563 558.8594,18.5469 Q559.0469,18.4375 559.2656,18.4375 Q559.6406,18.4375 559.875,18.6953 Q560.1094,18.9531 560.1094,19.5625 L560.1094,21.0156 Q560.1094,21.625 559.875,21.8906 Q559.6406,22.1563 559.2656,22.1563 Q558.9219,22.1563 558.7188,21.9531 Q558.5156,21.7656 558.4063,21.25 Q558.3594,20.8906 558.1719,20.7031 Q557.8438,20.3281 557.2344,20.1094 Q556.625,19.8906 556,19.8906 Q555.2344,19.8906 554.6016,20.2188 Q553.9688,20.5469 553.4766,21.2969 Q552.9844,22.0469 552.9844,23.0781 L552.9844,24.1719 Q552.9844,25.4063 553.875,26.2266 Q554.7656,27.0469 556.3594,27.0469 Q557.2969,27.0469 557.9531,26.7969 Q558.3438,26.6406 558.7656,26.2031 Q559.0313,25.9375 559.1797,25.8594 Q559.3281,25.7813 559.5313,25.7813 Q559.8594,25.7813 560.1172,26.0391 Q560.375,26.2969 560.375,26.6406 Q560.375,26.9844 560.0313,27.3906 Q559.5313,27.9688 558.7344,28.2969 Q557.6563,28.75 556.3594,28.75 Q554.8438,28.75 553.6406,28.125 Q552.6563,27.625 551.9688,26.5547 Q551.2813,25.4844 551.2813,24.2031 L551.2813,23.0469 Q551.2813,21.7188 551.8984,20.5703 Q552.5156,19.4219 553.6094,18.8047 Q554.7031,18.1875 555.9375,18.1875 Q556.6719,18.1875 557.3203,18.3516 Q557.9688,18.5156 558.5156,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="142" x="576.25" y="27.9102">MinimumSearchAlgorithm</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="421.5" x2="840.5" y1="39" y2="39" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="421.5" x2="840.5" y1="47" y2="47" />
+        <ellipse cx="431.5" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="395" x="440.5" y="62.4189">MinimumSearchAlgorithm(target:int, searchSpace:[int]) //overriding the constructor</text>
+        <ellipse cx="431.5" cy="71.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="116" x="440.5" y="76.2549">isValid(candidate) : bool</text>
+        <ellipse cx="431.5" cy="85.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="126" x="440.5" y="90.0908">updateSolution(candidate)</text>
+        <!--MD5=[0612e5ba72bdfefe148200680b6adc74]
+link EqualitySearchAlgorithm to SearchAlgorithm-->
+        <path d="M127.967,90.233 C143.389,105.357 162.108,123.715 181.396,142.63 " fill="none" id="EqualitySearchAlgorithm-&gt;SearchAlgorithm" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="none" points="186.476,137.808,195.855,156.809,176.674,147.803,186.476,137.808" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ec85f73f0faccaff1e026a3b7e97bb5a]
+link DivisibilitySearchAlgorithm to SearchAlgorithm-->
+        <path d="M297,90.233 C297,103.734 297,119.812 297,136.562 " fill="none" id="DivisibilitySearchAlgorithm-&gt;SearchAlgorithm" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="none" points="304,136.809,297,156.809,290,136.809,304,136.809" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[321ac95c48dd1d8ceebb6dbdb061d4ce]
+link MinimumSearchAlgorithm to SearchAlgorithm-->
+        <path d="M558.527,97.048 C523.194,118.523 479.444,145.114 437.902,170.362 " fill="none" id="MinimumSearchAlgorithm-&gt;SearchAlgorithm" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="none" points="441.302,176.487,420.576,180.892,434.031,164.523,441.302,176.487" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ec9e30723171eb7797ea10f0ab410c7c]
+@startuml
+
+	abstract class SearchAlgorithm{
+		# searchSpace : [int]
+		# currentIndex : int
+		# solution : [int]
+		# target : int
+		+ SearchAlgorithm(target:int, searchSpace:[int])
+		+ bruteForceSolution() : [int]
+		+ first() : int
+		+ next() : int
+		+ isSearching() : bool
+		+ {abstract} isValid(candidate) : bool
+		+ {abstract} updateSolution(candidate)
+	}
+
+	class EqualitySearchAlgorithm{
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+	class DivisibilitySearchAlgorithm{
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+	class MinimumSearchAlgorithm{
+		+ MinimumSearchAlgorithm(target:int, searchSpace:[int]) //overriding the constructor
+		+ isValid(candidate) : bool
+		+ updateSolution(candidate)
+	}
+
+
+	EqualitySearchAlgorithm - -|> SearchAlgorithm
+	DivisibilitySearchAlgorithm - -|> SearchAlgorithm
+	MinimumSearchAlgorithm - -|> SearchAlgorithm
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 19:39:45 SGT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: PH
+-->
+    </g>
+</svg>

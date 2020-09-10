@@ -1,0 +1,71 @@
+@startuml
+  interface Command{
+    + {abstract} execute()
+    + {abstract} undo()
+  }
+
+  class DashUpCommand{
+    - board : Board
+    - backupLocation : (Int,Int)
+    + execute()
+    + undo()
+  }
+
+  class DashDownCommand{
+    - board : Board
+    - backupLocation : (Int,Int)
+    + execute()
+    + undo()
+  }
+
+  class DashLeftCommand{
+    - board : Board
+    - backupLocation : (Int,Int)
+    + execute()
+    + undo()
+  }
+
+  class DashRightCommand{
+    - board : Board
+    - backupLocation : (Int,Int)
+    + execute()
+    + undo()
+  }
+
+  class Board{
+    - isSolid : [ [bool] ]
+    - start : (Int, Int)
+    - end : (Int, Int)
+    - cLoc : (Int, Int)
+    + characterLocation()
+    + moveUp()
+    + moveRight()
+    + moveDown()
+    + moveLeft()
+    + canMoveUp() : bool
+    + canMoveRight() : bool
+    + canMoveDown() : bool
+    + canMoveLeft() : bool
+    + teleportCharacter(newLocation : (Int,Int))
+  }
+
+  class Controller{
+    - commandHistory : [Command]
+    - board : Board
+    + pressUp()
+    + pressDown()
+    + pressLeft()
+    + pressRight()
+    + undo()
+  }
+
+  DashUpCommand ..|> Command
+  DashDownCommand ..|> Command
+  DashRightCommand ..|> Command
+  DashLeftCommand ..|> Command
+  Controller o--> Command
+  DashUpCommand o--> Board
+  DashDownCommand o--> Board
+  DashRightCommand o--> Board
+  DashLeftCommand o--> Board
+@enduml

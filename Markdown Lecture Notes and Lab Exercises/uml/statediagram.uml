@@ -1,0 +1,9 @@
+@startuml
+  hide empty description
+  [*] --> InitialState
+  InitialState --> AnotherState : method
+  InitialState --> InitialState : anotherMethod
+  AnotherState --> InitialState : anotherMethod
+  AnotherState --> AnotherState : method
+
+@enduml

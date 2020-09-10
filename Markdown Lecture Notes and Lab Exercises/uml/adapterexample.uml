@@ -1,0 +1,23 @@
+@startuml
+
+  class Shipment{
+    - processDate : Date
+    - orderList : [Order]
+    - delivery : Delivery
+    + shipmentDetails() : str
+    + newDelivery(location) : Delivery
+  }
+
+  interface Printable{
+    + {abstract} __str__() : str
+  }
+
+  class PrintableShipment{
+    - shipment : Shipment
+    + __str__() : str
+  }
+
+  PrintableShipment ..|> Printable
+  PrintableShipment --> Shipment
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+  interface Command{
+    + {abstract} execute()
+    + {abstract} undo()
+  }
+
+  class RealCommand1{
+    - param
+    - receiver : Receiver
+    - backup : Receiver
+    + execute()
+    + undo()
+  }
+
+  class RealCommand2{
+    - param
+    - otherParam
+    - receiver : Receiver
+    - backup : Receiver
+    + execute()
+    + undo()
+  }
+
+  class Receiver{
+    + performOperation1(param)
+    + performOperation2(param,otherParam)
+    + restore()
+  }
+
+  class Invoker{
+    - commandHistory : [Command]
+    + invokeCommand1(param,receiver)
+    + invokeCommand2(param,otherParam,receiver)
+    + undoPreviousCommand()
+  }
+  RealCommand1 ..|> Command
+  RealCommand2 ..|> Command
+  Invoker o--> Command
+  RealCommand1 o--> Receiver
+  RealCommand2 o--> Receiver
+@enduml

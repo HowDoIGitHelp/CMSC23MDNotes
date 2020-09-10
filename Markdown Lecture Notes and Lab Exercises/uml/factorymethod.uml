@@ -1,0 +1,29 @@
+@startuml
+  class Factory{
+    + printANewProduct()
+    + newProduct() : Product
+  }
+
+  interface Product{
+    + {abstract} show()
+  }
+
+  class SpecialProductA{
+    + show()
+  }
+  class SpecialProductB{
+    + show()
+  }
+  class SpecialFactoryA{
+    + newProduct() : Product
+  }
+  class SpecialFactoryB{
+    + newProduct() : Product
+  }
+
+  SpecialProductA ..|> Product
+  SpecialProductB ..|> Product
+  SpecialFactoryA --|> Factory
+  SpecialFactoryB --|> Factory
+  Factory --> Product : produces,uses >
+@enduml

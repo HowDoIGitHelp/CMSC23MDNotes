@@ -1,0 +1,31 @@
+@startuml
+
+  class Sentence{
+    - words : [str]
+    + __str__() : str
+  }
+
+  abstract class FormattedSentence{
+    # wrappedSentence : Sentence
+    + {abstract} __str__() : str
+  }
+
+  class BorderedSentence{
+    + __str__() : str
+  }
+
+  class FancySentence{
+    + __str__() : str
+  }
+
+  class UpperCaseSentence{
+    + __str__() : str
+  }
+
+  FormattedSentence --|> Sentence
+  FormattedSentence o--> Sentence
+  BorderedSentence --|> FormattedSentence
+  FancySentence --|> FormattedSentence
+  UpperCaseSentence --|> FormattedSentence
+
+@enduml

@@ -1,0 +1,153 @@
+@startuml
+
+   interface Monster{
+      + {abstract} announce()
+      + {abstract} move()
+   }
+
+   interface Bokoblin{
+      + {abstract} bludgeon()
+      + {abstract} defend()
+   }
+
+   interface Moblin{
+      + {abstract} stab()
+      + {abstract} kick()
+   }
+
+   interface Lizalflos{
+      + {abstract} throwBoomerang()
+      + {abstract} hide()
+   }
+
+   class NormalBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class NormalMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+   class NormalLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   class BlueBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class BlueMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+   class BlueLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   class SilverBokoblin{
+      + announce()
+      + move()
+      + bludgeon()
+      + defend()
+   }
+
+   class SilverMoblin{
+      + announce()
+      + move()
+      + stab()
+      + kick()
+   }
+
+
+   class SilverLizalflos{
+      + announce()
+      + move()
+      + throwBoomerang()
+      + hide()
+   }
+
+   interface Dungeon{
+      + {abstract} newBokoblin() : Bokoblin
+      + {abstract} newMoblin() : Moblin
+      + {abstract} newLizalflos() : Lizalflos
+   }
+
+   class EasyDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class MediumDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class HardDungeon{
+      + newBokoblin() : Bokoblin
+      + newMoblin() : Moblin
+      + newLizalflos() : Lizalflos
+   }
+
+   class Encounter{
+      - enemies : [Monster]
+      - dungeon : Dungeon
+      + announceEnemies()
+      + moveEnemies()
+   }
+
+   Moblin ..|> Monster
+   Bokoblin ..|> Monster
+   Lizalflos ..|> Monster
+   NormalMoblin ..|> Moblin
+   NormalBokoblin ..|> Bokoblin
+   NormalLizalflos ..|> Lizalflos
+   BlueMoblin ..|> Moblin
+   BlueBokoblin ..|> Bokoblin
+   BlueLizalflos ..|> Lizalflos
+   SilverMoblin ..|> Moblin
+   SilverBokoblin ..|> Bokoblin
+   SilverLizalflos ..|> Lizalflos
+
+   EasyDungeon ..|> Dungeon
+   MediumDungeon ..|> Dungeon
+   HardDungeon ..|> Dungeon
+
+   EasyDungeon ..>   NormalMoblin
+   EasyDungeon ..>   NormalBokoblin
+   EasyDungeon ..>   NormalLizalflos
+
+   MediumDungeon ..>   BlueMoblin
+   MediumDungeon ..>   BlueBokoblin
+   MediumDungeon ..>   BlueLizalflos
+
+   HardDungeon ..>   SilverMoblin
+   HardDungeon ..>   SilverBokoblin
+   HardDungeon ..>   SilverLizalflos
+
+   Dungeon ..>   Moblin
+   Dungeon ..>   Bokoblin
+   Dungeon ..>   Lizalflos
+
+   Encounter o--> Monster
+   Encounter o--> Dungeon
+@enduml

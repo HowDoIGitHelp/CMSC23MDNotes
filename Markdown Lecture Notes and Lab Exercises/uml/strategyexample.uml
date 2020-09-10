@@ -1,0 +1,50 @@
+@startuml
+   left to right direction
+   interface Operation{
+      + {abstract} execute(left:Fraction, right:Fraction) : Fraction
+      + {abstract} __str__() : str
+   }
+
+   class Addition{
+      + execute(left:Fraction, right:Fraction) : Fraction
+      + __str__() : str
+   }
+
+   class Subtraction{
+      + execute(left:Fraction, right:Fraction) : Fraction
+      + __str__() : str
+   }
+
+   class Multiplication{
+      + execute(left:Fraction, right:Fraction) : Fraction
+      + __str__() : str
+   }
+
+   class Division{
+      + execute(left:Fraction, right:Fraction) : Fraction
+      + __str__() : str
+   }
+
+   class Calculation{
+      - left : Fraction
+      - right : Fraction
+      - operation : Operation
+      - result : Fraction
+      + __str__() : str
+   }
+
+   class Fraction{
+      - num : int
+      - denom : int
+      + __str__() : str
+   }
+
+   Addition ..|> Operation
+   Subtraction ..|> Operation
+   Division ..|> Operation
+   Multiplication ..|> Operation
+
+   Calculation *--> Fraction
+   Calculation o--> Operation
+
+@enduml

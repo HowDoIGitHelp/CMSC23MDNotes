@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="251px" preserveAspectRatio="none" style="width:323px;height:251px;" version="1.1" viewBox="0 0 323 251" width="323px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fk1vms1uywkph" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[7cb7f5b698ce295f657ad7877ce7904e]
+class AbstractService-->
+        <rect fill="#FEFECE" filter="url(#fk1vms1uywkph)" height="75.6719" id="AbstractService" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="7" y="157" />
+        <ellipse cx="22" cy="173" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M22.9531,169.6406 L22.9531,176.2969 L24.6719,176.2969 Q25.2813,176.2969 25.5469,176.5313 Q25.8125,176.7656 25.8125,177.1563 Q25.8125,177.5313 25.5469,177.7656 Q25.2813,178 24.6719,178 L19.5313,178 Q18.9219,178 18.6563,177.7656 Q18.3906,177.5313 18.3906,177.1406 Q18.3906,176.7656 18.6563,176.5313 Q18.9219,176.2969 19.5313,176.2969 L21.25,176.2969 L21.25,169.6406 L19.5313,169.6406 Q18.9219,169.6406 18.6563,169.4063 Q18.3906,169.1719 18.3906,168.7813 Q18.3906,168.4063 18.6563,168.1719 Q18.9219,167.9375 19.5313,167.9375 L24.6719,167.9375 Q25.2813,167.9375 25.5469,168.1719 Q25.8125,168.4063 25.8125,168.7813 Q25.8125,169.1719 25.5469,169.4063 Q25.2813,169.6406 24.6719,169.6406 L22.9531,169.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="86" x="36" y="177.9102">AbstractService</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="124" y1="189" y2="189" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="124" y1="197" y2="197" />
+        <ellipse cx="18" cy="208" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="86" x="27" y="212.4189">serviceMethod1()</text>
+        <ellipse cx="18" cy="221.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="86" x="27" y="226.2549">serviceMethod2()</text>
+        <!--MD5=[aab966486fd96073d72317adb8ea2550]
+class RealService-->
+        <rect fill="#FEFECE" filter="url(#fk1vms1uywkph)" height="75.6719" id="RealService" style="stroke: #A80036; stroke-width: 1.5;" width="111" x="7.5" y="14" />
+        <ellipse cx="28.35" cy="30" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M31.1156,25.875 Q31.2719,25.6563 31.4594,25.5469 Q31.6469,25.4375 31.8656,25.4375 Q32.2406,25.4375 32.475,25.6953 Q32.7094,25.9531 32.7094,26.5625 L32.7094,28.0156 Q32.7094,28.625 32.475,28.8906 Q32.2406,29.1563 31.8656,29.1563 Q31.5219,29.1563 31.3188,28.9531 Q31.1156,28.7656 31.0063,28.25 Q30.9594,27.8906 30.7719,27.7031 Q30.4438,27.3281 29.8344,27.1094 Q29.225,26.8906 28.6,26.8906 Q27.8344,26.8906 27.2016,27.2188 Q26.5688,27.5469 26.0766,28.2969 Q25.5844,29.0469 25.5844,30.0781 L25.5844,31.1719 Q25.5844,32.4063 26.475,33.2266 Q27.3656,34.0469 28.9594,34.0469 Q29.8969,34.0469 30.5531,33.7969 Q30.9438,33.6406 31.3656,33.2031 Q31.6313,32.9375 31.7797,32.8594 Q31.9281,32.7813 32.1313,32.7813 Q32.4594,32.7813 32.7172,33.0391 Q32.975,33.2969 32.975,33.6406 Q32.975,33.9844 32.6313,34.3906 Q32.1313,34.9688 31.3344,35.2969 Q30.2563,35.75 28.9594,35.75 Q27.4438,35.75 26.2406,35.125 Q25.2563,34.625 24.5688,33.5547 Q23.8813,32.4844 23.8813,31.2031 L23.8813,30.0469 Q23.8813,28.7188 24.4984,27.5703 Q25.1156,26.4219 26.2094,25.8047 Q27.3031,25.1875 28.5375,25.1875 Q29.2719,25.1875 29.9203,25.3516 Q30.5688,25.5156 31.1156,25.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="43.65" y="34.9102">RealService</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8.5" x2="117.5" y1="46" y2="46" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8.5" x2="117.5" y1="54" y2="54" />
+        <ellipse cx="18.5" cy="65" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="27.5" y="69.4189">serviceMethod1()</text>
+        <ellipse cx="18.5" cy="78.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="27.5" y="83.2549">serviceMethod2()</text>
+        <!--MD5=[3effbf9796dcd25585ef9bd291d49d15]
+class RequiredInterface-->
+        <rect fill="#FEFECE" filter="url(#fk1vms1uywkph)" height="75.6719" id="RequiredInterface" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="163.5" y="157" />
+        <ellipse cx="178.5" cy="173" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M179.4531,169.6406 L179.4531,176.2969 L181.1719,176.2969 Q181.7813,176.2969 182.0469,176.5313 Q182.3125,176.7656 182.3125,177.1563 Q182.3125,177.5313 182.0469,177.7656 Q181.7813,178 181.1719,178 L176.0313,178 Q175.4219,178 175.1563,177.7656 Q174.8906,177.5313 174.8906,177.1406 Q174.8906,176.7656 175.1563,176.5313 Q175.4219,176.2969 176.0313,176.2969 L177.75,176.2969 L177.75,169.6406 L176.0313,169.6406 Q175.4219,169.6406 175.1563,169.4063 Q174.8906,169.1719 174.8906,168.7813 Q174.8906,168.4063 175.1563,168.1719 Q175.4219,167.9375 176.0313,167.9375 L181.1719,167.9375 Q181.7813,167.9375 182.0469,168.1719 Q182.3125,168.4063 182.3125,168.7813 Q182.3125,169.1719 182.0469,169.4063 Q181.7813,169.6406 181.1719,169.6406 L179.4531,169.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="99" x="192.5" y="177.9102">RequiredInterface</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="164.5" x2="293.5" y1="189" y2="189" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="164.5" x2="293.5" y1="197" y2="197" />
+        <ellipse cx="174.5" cy="208" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="183.5" y="212.4189">method1()</text>
+        <ellipse cx="174.5" cy="221.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="183.5" y="226.2549">method2()</text>
+        <!--MD5=[4e934a6b2ba7aefbc17cfff0fb16f35c]
+class ServiceAdapter-->
+        <rect fill="#FEFECE" filter="url(#fk1vms1uywkph)" height="89.5078" id="ServiceAdapter" style="stroke: #A80036; stroke-width: 1.5;" width="150" x="154" y="7" />
+        <ellipse cx="185.2" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M187.9656,18.875 Q188.1219,18.6563 188.3094,18.5469 Q188.4969,18.4375 188.7156,18.4375 Q189.0906,18.4375 189.325,18.6953 Q189.5594,18.9531 189.5594,19.5625 L189.5594,21.0156 Q189.5594,21.625 189.325,21.8906 Q189.0906,22.1563 188.7156,22.1563 Q188.3719,22.1563 188.1688,21.9531 Q187.9656,21.7656 187.8563,21.25 Q187.8094,20.8906 187.6219,20.7031 Q187.2938,20.3281 186.6844,20.1094 Q186.075,19.8906 185.45,19.8906 Q184.6844,19.8906 184.0516,20.2188 Q183.4188,20.5469 182.9266,21.2969 Q182.4344,22.0469 182.4344,23.0781 L182.4344,24.1719 Q182.4344,25.4063 183.325,26.2266 Q184.2156,27.0469 185.8094,27.0469 Q186.7469,27.0469 187.4031,26.7969 Q187.7938,26.6406 188.2156,26.2031 Q188.4813,25.9375 188.6297,25.8594 Q188.7781,25.7813 188.9813,25.7813 Q189.3094,25.7813 189.5672,26.0391 Q189.825,26.2969 189.825,26.6406 Q189.825,26.9844 189.4813,27.3906 Q188.9813,27.9688 188.1844,28.2969 Q187.1063,28.75 185.8094,28.75 Q184.2938,28.75 183.0906,28.125 Q182.1063,27.625 181.4188,26.5547 Q180.7313,25.4844 180.7313,24.2031 L180.7313,23.0469 Q180.7313,21.7188 181.3484,20.5703 Q181.9656,19.4219 183.0594,18.8047 Q184.1531,18.1875 185.3875,18.1875 Q186.1219,18.1875 186.7703,18.3516 Q187.4188,18.5156 187.9656,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="82" x="202.8" y="27.9102">ServiceAdapter</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="155" x2="303" y1="39" y2="39" />
+        <rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="162" y="47" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="124" x="174" y="54.4189">service : AbstractService</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="155" x2="303" y1="60.8359" y2="60.8359" />
+        <ellipse cx="165" cy="71.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="174" y="76.2549">method1()</text>
+        <ellipse cx="165" cy="85.6719" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="174" y="90.0908">method2()</text>
+        <!--MD5=[8690be0272f17a12702b49ee2a80f052]
+link RealService to AbstractService-->
+        <path d="M63.7882,90.046 C64.0907,104.262 64.4434,120.842 64.7772,136.5289 " fill="none" id="RealService-&gt;AbstractService" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="71.7795,136.5674,65.2066,156.7118,57.7827,136.8652,71.7795,136.5674" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5040adb7cb9cc8694f60a4c8c1ae19ab]
+link ServiceAdapter to RequiredInterface-->
+        <path d="M229,97.226 C229,109.586 229,123.202 229,136.22 " fill="none" id="ServiceAdapter-&gt;RequiredInterface" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="236,136.5704,229,156.5703,222,136.5703,236,136.5704" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[3c07c627141eef34818545d2a3dc223d]
+link ServiceAdapter to AbstractService-->
+        <path d="M168.7974,105.0767 C168.7974,105.0767 134.577,134.6789 118.988,148.1635 " fill="none" id="ServiceAdapter-AbstractService" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="109.002,156.8019,118.4255,153.9386,112.7833,153.5306,113.1914,147.8885,109.002,156.8019" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="112.7833" x2="118.834" y1="153.5306" y2="148.2969" />
+        <polygon fill="#FFFFFF" points="177.873,97.226,170.7183,98.1261,168.7974,105.0767,175.9521,104.1765,177.873,97.226" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[920f1f0f55d0859d5811974e2540ed33]
+@startuml
+
+  interface AbstractService{
+    + {abstract} serviceMethod1()
+    + {abstract} serviceMethod2()
+  }
+
+  class RealService{
+    + serviceMethod1()
+    + serviceMethod2()
+  }
+
+  interface RequiredInterface{
+    + {abstract} method1()
+    + {abstract} method2()
+  }
+
+  class ServiceAdapter{
+    - service : AbstractService
+    + method1()
+    + method2()
+  }
+
+  RealService ..|> AbstractService
+  ServiceAdapter ..|> RequiredInterface
+  ServiceAdapter o- -> AbstractService
+
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 19:39:45 SGT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: PH
+-->
+    </g>
+</svg>

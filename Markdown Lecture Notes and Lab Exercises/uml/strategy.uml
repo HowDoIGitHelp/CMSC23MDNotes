@@ -1,0 +1,23 @@
+@startuml
+
+   interface Strategy{
+      + {abstract} execute(params)
+   }
+
+   class RealStrategy1{
+      + execute(params)
+   }
+
+   class RealStrategy2{
+      + execute(params)
+   }
+
+   class Client{
+      + higherOrderMethod(params,strategy:Strategy)
+   }
+
+   RealStrategy1 ..|> Strategy
+   RealStrategy2 ..|> Strategy
+   Client ..> Strategy
+
+@enduml

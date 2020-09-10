@@ -1,0 +1,18 @@
+@startuml
+
+	class Facade{
+		+ doSomething(param1:Class2)
+		+ something() : Class1
+		+ doSomethingElse()
+	}
+
+	ComplexSubsystem ..> Facade
+
+	package ComplexSubsystem{
+		Class1 o--> Class2
+		Class3 ..|> Class2
+		Class4 --|> Class1
+		Class5 *--> Class2
+	}
+
+@enduml

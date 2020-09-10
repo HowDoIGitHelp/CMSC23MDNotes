@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="359px" preserveAspectRatio="none" style="width:824px;height:359px;" version="1.1" viewBox="0 0 824 359" width="824px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="ffz7z74hrovmf" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[5f2bd739ea74403c351f6842fe5c7ba2]
+class ProductA-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductA" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="529.5" y="279" />
+        <ellipse cx="554.4" cy="295" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M555.3531,291.6406 L555.3531,298.2969 L557.0719,298.2969 Q557.6813,298.2969 557.9469,298.5313 Q558.2125,298.7656 558.2125,299.1563 Q558.2125,299.5313 557.9469,299.7656 Q557.6813,300 557.0719,300 L551.9313,300 Q551.3219,300 551.0563,299.7656 Q550.7906,299.5313 550.7906,299.1406 Q550.7906,298.7656 551.0563,298.5313 Q551.3219,298.2969 551.9313,298.2969 L553.65,298.2969 L553.65,291.6406 L551.9313,291.6406 Q551.3219,291.6406 551.0563,291.4063 Q550.7906,291.1719 550.7906,290.7813 Q550.7906,290.4063 551.0563,290.1719 Q551.3219,289.9375 551.9313,289.9375 L557.0719,289.9375 Q557.6813,289.9375 557.9469,290.1719 Q558.2125,290.4063 558.2125,290.7813 Q558.2125,291.1719 557.9469,291.4063 Q557.6813,291.6406 557.0719,291.6406 L555.3531,291.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="570.6" y="299.9102">ProductA</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="530.5" x2="632.5" y1="311" y2="311" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="530.5" x2="632.5" y1="319" y2="319" />
+        <ellipse cx="540.5" cy="330" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="549.5" y="334.4189">someMethodA()</text>
+        <!--MD5=[7d8bbe38ae7838c4b875a286fbfa656f]
+class ProductB-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductB" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="180.5" y="279" />
+        <ellipse cx="205.4" cy="295" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M206.3531,291.6406 L206.3531,298.2969 L208.0719,298.2969 Q208.6813,298.2969 208.9469,298.5313 Q209.2125,298.7656 209.2125,299.1563 Q209.2125,299.5313 208.9469,299.7656 Q208.6813,300 208.0719,300 L202.9313,300 Q202.3219,300 202.0563,299.7656 Q201.7906,299.5313 201.7906,299.1406 Q201.7906,298.7656 202.0563,298.5313 Q202.3219,298.2969 202.9313,298.2969 L204.65,298.2969 L204.65,291.6406 L202.9313,291.6406 Q202.3219,291.6406 202.0563,291.4063 Q201.7906,291.1719 201.7906,290.7813 Q201.7906,290.4063 202.0563,290.1719 Q202.3219,289.9375 202.9313,289.9375 L208.0719,289.9375 Q208.6813,289.9375 208.9469,290.1719 Q209.2125,290.4063 209.2125,290.7813 Q209.2125,291.1719 208.9469,291.4063 Q208.6813,291.6406 208.0719,291.6406 L206.3531,291.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="221.6" y="299.9102">ProductB</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="181.5" x2="283.5" y1="311" y2="311" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="181.5" x2="283.5" y1="319" y2="319" />
+        <ellipse cx="191.5" cy="330" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="200.5" y="334.4189">someMethodB()</text>
+        <!--MD5=[536fe7577e8cf19597ee85886b82cd6a]
+class AbstractFactory-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="75.6719" id="AbstractFactory" style="stroke: #A80036; stroke-width: 1.5;" width="152" x="331.5" y="143" />
+        <ellipse cx="362.25" cy="159" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M363.2031,155.6406 L363.2031,162.2969 L364.9219,162.2969 Q365.5313,162.2969 365.7969,162.5313 Q366.0625,162.7656 366.0625,163.1563 Q366.0625,163.5313 365.7969,163.7656 Q365.5313,164 364.9219,164 L359.7813,164 Q359.1719,164 358.9063,163.7656 Q358.6406,163.5313 358.6406,163.1406 Q358.6406,162.7656 358.9063,162.5313 Q359.1719,162.2969 359.7813,162.2969 L361.5,162.2969 L361.5,155.6406 L359.7813,155.6406 Q359.1719,155.6406 358.9063,155.4063 Q358.6406,155.1719 358.6406,154.7813 Q358.6406,154.4063 358.9063,154.1719 Q359.1719,153.9375 359.7813,153.9375 L364.9219,153.9375 Q365.5313,153.9375 365.7969,154.1719 Q366.0625,154.4063 366.0625,154.7813 Q366.0625,155.1719 365.7969,155.4063 Q365.5313,155.6406 364.9219,155.6406 L363.2031,155.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="379.75" y="163.9102">AbstractFactory</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="332.5" x2="482.5" y1="175" y2="175" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="332.5" x2="482.5" y1="183" y2="183" />
+        <ellipse cx="342.5" cy="194" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="126" x="351.5" y="198.4189">newProductA() : ProductA</text>
+        <ellipse cx="342.5" cy="207.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="126" x="351.5" y="212.2549">newProductB() : ProductB</text>
+        <!--MD5=[3aa98a1c4fd7b11853b08f8106b3bf21]
+class ProductAVariant1-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductAVariant1" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="518.5" y="150" />
+        <ellipse cx="533.5" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M536.2656,161.875 Q536.4219,161.6563 536.6094,161.5469 Q536.7969,161.4375 537.0156,161.4375 Q537.3906,161.4375 537.625,161.6953 Q537.8594,161.9531 537.8594,162.5625 L537.8594,164.0156 Q537.8594,164.625 537.625,164.8906 Q537.3906,165.1563 537.0156,165.1563 Q536.6719,165.1563 536.4688,164.9531 Q536.2656,164.7656 536.1563,164.25 Q536.1094,163.8906 535.9219,163.7031 Q535.5938,163.3281 534.9844,163.1094 Q534.375,162.8906 533.75,162.8906 Q532.9844,162.8906 532.3516,163.2188 Q531.7188,163.5469 531.2266,164.2969 Q530.7344,165.0469 530.7344,166.0781 L530.7344,167.1719 Q530.7344,168.4063 531.625,169.2266 Q532.5156,170.0469 534.1094,170.0469 Q535.0469,170.0469 535.7031,169.7969 Q536.0938,169.6406 536.5156,169.2031 Q536.7813,168.9375 536.9297,168.8594 Q537.0781,168.7813 537.2813,168.7813 Q537.6094,168.7813 537.8672,169.0391 Q538.125,169.2969 538.125,169.6406 Q538.125,169.9844 537.7813,170.3906 Q537.2813,170.9688 536.4844,171.2969 Q535.4063,171.75 534.1094,171.75 Q532.5938,171.75 531.3906,171.125 Q530.4063,170.625 529.7188,169.5547 Q529.0313,168.4844 529.0313,167.2031 L529.0313,166.0469 Q529.0313,164.7188 529.6484,163.5703 Q530.2656,162.4219 531.3594,161.8047 Q532.4531,161.1875 533.6875,161.1875 Q534.4219,161.1875 535.0703,161.3516 Q535.7188,161.5156 536.2656,161.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="94" x="547.5" y="170.9102">ProductAVariant1</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="519.5" x2="643.5" y1="182" y2="182" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="519.5" x2="643.5" y1="190" y2="190" />
+        <ellipse cx="529.5" cy="201" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="538.5" y="205.4189">someMethodA()</text>
+        <!--MD5=[b0be72acd3ed333dcdbdff727f222521]
+class ProductBVariant1-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductBVariant1" style="stroke: #A80036; stroke-width: 1.5;" width="127" x="7" y="150" />
+        <ellipse cx="22" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M24.7656,161.875 Q24.9219,161.6563 25.1094,161.5469 Q25.2969,161.4375 25.5156,161.4375 Q25.8906,161.4375 26.125,161.6953 Q26.3594,161.9531 26.3594,162.5625 L26.3594,164.0156 Q26.3594,164.625 26.125,164.8906 Q25.8906,165.1563 25.5156,165.1563 Q25.1719,165.1563 24.9688,164.9531 Q24.7656,164.7656 24.6563,164.25 Q24.6094,163.8906 24.4219,163.7031 Q24.0938,163.3281 23.4844,163.1094 Q22.875,162.8906 22.25,162.8906 Q21.4844,162.8906 20.8516,163.2188 Q20.2188,163.5469 19.7266,164.2969 Q19.2344,165.0469 19.2344,166.0781 L19.2344,167.1719 Q19.2344,168.4063 20.125,169.2266 Q21.0156,170.0469 22.6094,170.0469 Q23.5469,170.0469 24.2031,169.7969 Q24.5938,169.6406 25.0156,169.2031 Q25.2813,168.9375 25.4297,168.8594 Q25.5781,168.7813 25.7813,168.7813 Q26.1094,168.7813 26.3672,169.0391 Q26.625,169.2969 26.625,169.6406 Q26.625,169.9844 26.2813,170.3906 Q25.7813,170.9688 24.9844,171.2969 Q23.9063,171.75 22.6094,171.75 Q21.0938,171.75 19.8906,171.125 Q18.9063,170.625 18.2188,169.5547 Q17.5313,168.4844 17.5313,167.2031 L17.5313,166.0469 Q17.5313,164.7188 18.1484,163.5703 Q18.7656,162.4219 19.8594,161.8047 Q20.9531,161.1875 22.1875,161.1875 Q22.9219,161.1875 23.5703,161.3516 Q24.2188,161.5156 24.7656,161.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="36" y="170.9102">ProductBVariant1</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="133" y1="182" y2="182" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="133" y1="190" y2="190" />
+        <ellipse cx="18" cy="201" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="27" y="205.4189">someMethodB()</text>
+        <!--MD5=[61bec072b8ac7a49f5beed8266f4d830]
+class FactoryVariant1-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="75.6719" id="FactoryVariant1" style="stroke: #A80036; stroke-width: 1.5;" width="155" x="235" y="7" />
+        <ellipse cx="267.55" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M270.3156,18.875 Q270.4719,18.6563 270.6594,18.5469 Q270.8469,18.4375 271.0656,18.4375 Q271.4406,18.4375 271.675,18.6953 Q271.9094,18.9531 271.9094,19.5625 L271.9094,21.0156 Q271.9094,21.625 271.675,21.8906 Q271.4406,22.1563 271.0656,22.1563 Q270.7219,22.1563 270.5188,21.9531 Q270.3156,21.7656 270.2063,21.25 Q270.1594,20.8906 269.9719,20.7031 Q269.6438,20.3281 269.0344,20.1094 Q268.425,19.8906 267.8,19.8906 Q267.0344,19.8906 266.4016,20.2188 Q265.7688,20.5469 265.2766,21.2969 Q264.7844,22.0469 264.7844,23.0781 L264.7844,24.1719 Q264.7844,25.4063 265.675,26.2266 Q266.5656,27.0469 268.1594,27.0469 Q269.0969,27.0469 269.7531,26.7969 Q270.1438,26.6406 270.5656,26.2031 Q270.8313,25.9375 270.9797,25.8594 Q271.1281,25.7813 271.3313,25.7813 Q271.6594,25.7813 271.9172,26.0391 Q272.175,26.2969 272.175,26.6406 Q272.175,26.9844 271.8313,27.3906 Q271.3313,27.9688 270.5344,28.2969 Q269.4563,28.75 268.1594,28.75 Q266.6438,28.75 265.4406,28.125 Q264.4563,27.625 263.7688,26.5547 Q263.0813,25.4844 263.0813,24.2031 L263.0813,23.0469 Q263.0813,21.7188 263.6984,20.5703 Q264.3156,19.4219 265.4094,18.8047 Q266.5031,18.1875 267.7375,18.1875 Q268.4719,18.1875 269.1203,18.3516 Q269.7688,18.5156 270.3156,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="84" x="285.45" y="27.9102">FactoryVariant1</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="236" x2="389" y1="39" y2="39" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="236" x2="389" y1="47" y2="47" />
+        <ellipse cx="246" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="129" x="255" y="62.4189">newProductA() : ProductA</text>
+        <ellipse cx="246" cy="71.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="127" x="255" y="76.2549">newProductB() : ProductB</text>
+        <!--MD5=[2a6062102dfb29e5cb105a0e06c99a81]
+class ProductAVariant2-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductAVariant2" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="679.5" y="150" />
+        <ellipse cx="694.5" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M697.2656,161.875 Q697.4219,161.6563 697.6094,161.5469 Q697.7969,161.4375 698.0156,161.4375 Q698.3906,161.4375 698.625,161.6953 Q698.8594,161.9531 698.8594,162.5625 L698.8594,164.0156 Q698.8594,164.625 698.625,164.8906 Q698.3906,165.1563 698.0156,165.1563 Q697.6719,165.1563 697.4688,164.9531 Q697.2656,164.7656 697.1563,164.25 Q697.1094,163.8906 696.9219,163.7031 Q696.5938,163.3281 695.9844,163.1094 Q695.375,162.8906 694.75,162.8906 Q693.9844,162.8906 693.3516,163.2188 Q692.7188,163.5469 692.2266,164.2969 Q691.7344,165.0469 691.7344,166.0781 L691.7344,167.1719 Q691.7344,168.4063 692.625,169.2266 Q693.5156,170.0469 695.1094,170.0469 Q696.0469,170.0469 696.7031,169.7969 Q697.0938,169.6406 697.5156,169.2031 Q697.7813,168.9375 697.9297,168.8594 Q698.0781,168.7813 698.2813,168.7813 Q698.6094,168.7813 698.8672,169.0391 Q699.125,169.2969 699.125,169.6406 Q699.125,169.9844 698.7813,170.3906 Q698.2813,170.9688 697.4844,171.2969 Q696.4063,171.75 695.1094,171.75 Q693.5938,171.75 692.3906,171.125 Q691.4063,170.625 690.7188,169.5547 Q690.0313,168.4844 690.0313,167.2031 L690.0313,166.0469 Q690.0313,164.7188 690.6484,163.5703 Q691.2656,162.4219 692.3594,161.8047 Q693.4531,161.1875 694.6875,161.1875 Q695.4219,161.1875 696.0703,161.3516 Q696.7188,161.5156 697.2656,161.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="94" x="708.5" y="170.9102">ProductAVariant2</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="680.5" x2="804.5" y1="182" y2="182" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="680.5" x2="804.5" y1="190" y2="190" />
+        <ellipse cx="690.5" cy="201" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="699.5" y="205.4189">someMethodA()</text>
+        <!--MD5=[eeb3da5f50ab6fa7fe47b1bc5619a2ee]
+class ProductBVariant2-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="61.8359" id="ProductBVariant2" style="stroke: #A80036; stroke-width: 1.5;" width="127" x="169" y="150" />
+        <ellipse cx="184" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M186.7656,161.875 Q186.9219,161.6563 187.1094,161.5469 Q187.2969,161.4375 187.5156,161.4375 Q187.8906,161.4375 188.125,161.6953 Q188.3594,161.9531 188.3594,162.5625 L188.3594,164.0156 Q188.3594,164.625 188.125,164.8906 Q187.8906,165.1563 187.5156,165.1563 Q187.1719,165.1563 186.9688,164.9531 Q186.7656,164.7656 186.6563,164.25 Q186.6094,163.8906 186.4219,163.7031 Q186.0938,163.3281 185.4844,163.1094 Q184.875,162.8906 184.25,162.8906 Q183.4844,162.8906 182.8516,163.2188 Q182.2188,163.5469 181.7266,164.2969 Q181.2344,165.0469 181.2344,166.0781 L181.2344,167.1719 Q181.2344,168.4063 182.125,169.2266 Q183.0156,170.0469 184.6094,170.0469 Q185.5469,170.0469 186.2031,169.7969 Q186.5938,169.6406 187.0156,169.2031 Q187.2813,168.9375 187.4297,168.8594 Q187.5781,168.7813 187.7813,168.7813 Q188.1094,168.7813 188.3672,169.0391 Q188.625,169.2969 188.625,169.6406 Q188.625,169.9844 188.2813,170.3906 Q187.7813,170.9688 186.9844,171.2969 Q185.9063,171.75 184.6094,171.75 Q183.0938,171.75 181.8906,171.125 Q180.9063,170.625 180.2188,169.5547 Q179.5313,168.4844 179.5313,167.2031 L179.5313,166.0469 Q179.5313,164.7188 180.1484,163.5703 Q180.7656,162.4219 181.8594,161.8047 Q182.9531,161.1875 184.1875,161.1875 Q184.9219,161.1875 185.5703,161.3516 Q186.2188,161.5156 186.7656,161.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="198" y="170.9102">ProductBVariant2</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="170" x2="295" y1="182" y2="182" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="170" x2="295" y1="190" y2="190" />
+        <ellipse cx="180" cy="201" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="189" y="205.4189">someMethodB()</text>
+        <!--MD5=[c847fb467a290c24614876f64e59aac2]
+class FactoryVariant2-->
+        <rect fill="#FEFECE" filter="url(#ffz7z74hrovmf)" height="75.6719" id="FactoryVariant2" style="stroke: #A80036; stroke-width: 1.5;" width="155" x="425" y="7" />
+        <ellipse cx="457.55" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M460.3156,18.875 Q460.4719,18.6563 460.6594,18.5469 Q460.8469,18.4375 461.0656,18.4375 Q461.4406,18.4375 461.675,18.6953 Q461.9094,18.9531 461.9094,19.5625 L461.9094,21.0156 Q461.9094,21.625 461.675,21.8906 Q461.4406,22.1563 461.0656,22.1563 Q460.7219,22.1563 460.5188,21.9531 Q460.3156,21.7656 460.2063,21.25 Q460.1594,20.8906 459.9719,20.7031 Q459.6438,20.3281 459.0344,20.1094 Q458.425,19.8906 457.8,19.8906 Q457.0344,19.8906 456.4016,20.2188 Q455.7688,20.5469 455.2766,21.2969 Q454.7844,22.0469 454.7844,23.0781 L454.7844,24.1719 Q454.7844,25.4063 455.675,26.2266 Q456.5656,27.0469 458.1594,27.0469 Q459.0969,27.0469 459.7531,26.7969 Q460.1438,26.6406 460.5656,26.2031 Q460.8313,25.9375 460.9797,25.8594 Q461.1281,25.7813 461.3313,25.7813 Q461.6594,25.7813 461.9172,26.0391 Q462.175,26.2969 462.175,26.6406 Q462.175,26.9844 461.8313,27.3906 Q461.3313,27.9688 460.5344,28.2969 Q459.4563,28.75 458.1594,28.75 Q456.6438,28.75 455.4406,28.125 Q454.4563,27.625 453.7688,26.5547 Q453.0813,25.4844 453.0813,24.2031 L453.0813,23.0469 Q453.0813,21.7188 453.6984,20.5703 Q454.3156,19.4219 455.4094,18.8047 Q456.5031,18.1875 457.7375,18.1875 Q458.4719,18.1875 459.1203,18.3516 Q459.7688,18.5156 460.3156,18.875 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="84" x="475.45" y="27.9102">FactoryVariant2</text>
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="426" x2="579" y1="39" y2="39" />
+        <line style="stroke: #A80036; stroke-width: 1.5;" x1="426" x2="579" y1="47" y2="47" />
+        <ellipse cx="436" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="129" x="445" y="62.4189">newProductA() : ProductA</text>
+        <ellipse cx="436" cy="71.8359" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="127" x="445" y="76.2549">newProductB() : ProductB</text>
+        <!--MD5=[8a2487b95825fab6404edfa63c316118]
+link ProductAVariant1 to ProductA-->
+        <path d="M581.5,212.097 C581.5,225.993 581.5,242.8726 581.5,258.6252 " fill="none" id="ProductAVariant1-&gt;ProductA" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="588.5,258.6787,581.5,278.6787,574.5,258.6787,588.5,258.6787" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cde92f410aed33ee2df42afe600129bc]
+link ProductAVariant2 to ProductA-->
+        <path d="M704.345,212.097 C683.768,228.329 658.03,248.6314 635.437,266.4536 " fill="none" id="ProductAVariant2-&gt;ProductA" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="639.698,272.0083,619.66,278.899,631.027,261.0165,639.698,272.0083" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[099da68545868a256269386f84b70e64]
+link ProductBVariant1 to ProductB-->
+        <path d="M108.892,212.097 C129.597,228.329 155.494,248.6314 178.228,266.4536 " fill="none" id="ProductBVariant1-&gt;ProductB" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="182.682,261.0508,194.103,278.899,174.045,272.0687,182.682,261.0508" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[4a332b070f02afbed3a49c2c4028f029]
+link ProductBVariant2 to ProductB-->
+        <path d="M232.5,212.097 C232.5,225.993 232.5,242.8726 232.5,258.6252 " fill="none" id="ProductBVariant2-&gt;ProductB" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="239.5,258.6787,232.5,278.6787,225.5,258.6787,239.5,258.6787" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[8dbd52b12f0c3ca7d55014e94d3a4d58]
+link FactoryVariant1 to AbstractFactory-->
+        <path d="M338.963,83.326 C348.433,96.685 359.302,112.016 369.552,126.473 " fill="none" id="FactoryVariant1-&gt;AbstractFactory" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="375.322,122.509,381.179,142.874,363.901,130.606,375.322,122.509" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[352bc8598b4f55c0c11ed8f1b45314f3]
+link FactoryVariant2 to AbstractFactory-->
+        <path d="M476.037,83.326 C466.567,96.685 455.698,112.016 445.448,126.473 " fill="none" id="FactoryVariant2-&gt;AbstractFactory" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="none" points="451.099,130.606,433.821,142.874,439.678,122.509,451.099,130.606" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[f982fea34658af4d176fda36c8a8ee91]
+link AbstractFactory to ProductA-->
+        <path d="M458.296,219.075 C482.95,237.07 512.325,258.5104 536.208,275.9418 " fill="none" id="AbstractFactory-&gt;ProductA" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="540.295,278.9254,535.3829,270.389,536.2561,275.978,530.667,276.8512,540.295,278.9254" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cf5377c457a7aee0e3ccf04df29a95e1]
+link AbstractFactory to ProductB-->
+        <path d="M356.412,219.075 C331.616,237.07 302.072,258.5104 278.053,275.9418 " fill="none" id="AbstractFactory-&gt;ProductB" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="273.941,278.9254,283.5743,276.876,277.9875,275.9884,278.8751,270.4016,273.941,278.9254" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ece170c36c77dd5625506ca9c777cffc]
+@startuml
+  interface ProductA{
+    + {abstract} someMethodA()
+  }
+  interface ProductB{
+    + {abstract} someMethodB()
+  }
+
+  interface AbstractFactory{
+    + {abstract} newProductA() : ProductA
+    + {abstract} newProductB() : ProductB
+  }
+
+  class ProductAVariant1{
+    + someMethodA()
+  }
+  class ProductBVariant1{
+    + someMethodB()
+  }
+
+  class FactoryVariant1{
+    + newProductA() : ProductA
+    + newProductB() : ProductB
+  }
+
+  class ProductAVariant2{
+    + someMethodA()
+  }
+  class ProductBVariant2{
+    + someMethodB()
+  }
+
+  class FactoryVariant2{
+    + newProductA() : ProductA
+    + newProductB() : ProductB
+  }
+
+  ProductAVariant1 ..|> ProductA
+  ProductAVariant2 ..|> ProductA
+
+  ProductBVariant1 ..|> ProductB
+  ProductBVariant2 ..|> ProductB
+
+  FactoryVariant1 ..|> AbstractFactory
+  FactoryVariant2 ..|> AbstractFactory
+
+  AbstractFactory ..> ProductA
+  AbstractFactory ..> ProductB
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 19:39:45 SGT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) Client VM
+Default Encoding: Cp1252
+Language: en
+Country: PH
+-->
+    </g>
+</svg>

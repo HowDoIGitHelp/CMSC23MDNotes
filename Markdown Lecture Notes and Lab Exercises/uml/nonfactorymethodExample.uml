@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+  class Shipment{
+    - processDate : Date
+    - orderList : [Order]
+    - delivery : StandardDelivery
+    + shipmentDetails() : str
+  }
+
+  class StandardDelivery{
+    - location : str
+    - deliveryStatus : str
+    + estimatedDeliveryDate() : Date
+    + deliveryFee() : float
+    + deliveryDetails() : str
+    + changeDeliveryStatus() : void
+  }
+
+Shipment *--> StandardDelivery : produces,uses >
+
+@enduml

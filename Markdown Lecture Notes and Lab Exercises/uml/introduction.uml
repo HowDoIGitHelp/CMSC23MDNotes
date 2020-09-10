@@ -1,0 +1,17 @@
+@startuml
+class Book{
+  title : string
+  author : string
+  publishDate : Date
+  pages : [Page]
+  ISBN() : string
+  numPages() : int
+}
+
+class Employee{
+  name : string
+  jobTitle : string
+  salary : float
+  reassignJob() : void
+}
+@enduml

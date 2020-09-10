@@ -1,0 +1,37 @@
+@startuml
+
+  interface Observer{
+    + {abstract} update(updatedSubject:str)
+  }
+
+  class Publisher{
+    - subject : str
+    - subscribers : [Observer]
+    + manipulateSubject(someString:str)
+    + subscribe(newObserver:Observer)
+    + unsubscribe(exObserver:Observer)
+    + notifyObservers()
+  }
+
+  class RealObserver1{
+    - subject : str
+    + update(updatedSubject:str)
+  }
+
+  note bottom of RealObserver1
+    an observer may keep a copy of
+    the subjsct that gets updated
+    everytime it is notified by
+    the publisher
+  endnote
+
+  class RealObserver2{
+    - subject : str
+    + update(updatedSubject:str)
+  }
+
+  RealObserver1 ..|> Observer
+  RealObserver2 ..|> Observer
+  Publisher o--> Observer
+
+@enduml

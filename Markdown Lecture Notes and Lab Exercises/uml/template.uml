@@ -1,0 +1,37 @@
+@startuml
+
+	abstract class Template{
+		+ templateMethod()
+		+ {abstract} step1()
+		+ step2()
+		+ step3()
+		+ {abstract} step4()
+	}
+
+	class Specialization1{
+		+ step1()
+		+ step4()
+	}
+
+	note right of Template
+		templateMethod(){
+			step1()
+			for i in (0,3){
+				step2()
+			}
+			step3()
+			step(4)
+		}
+	end note
+
+
+	class Specialization2{
+		+ step1()
+		+ step2()
+		+ step4()
+	}
+
+	Specialization1 --|> Template
+	Specialization2 --|> Template
+
+@enduml

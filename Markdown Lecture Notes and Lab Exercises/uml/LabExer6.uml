@@ -1,0 +1,50 @@
+@startuml
+class Book{
+  -bookId : int
+  -title : string
+  -author : string
+  -publishDate : Date
+  -pages : [Page]
+  coverInfo() : string
+  uniqueItemId() : int
+  commonName() : string
+}
+
+class Periodical{
+  -periodicalId : int
+  -title : string
+  -issue : Date
+  -pages : [Page]
+  coverInfo() : string
+  uniqueItemId() : int
+  commonName() : string
+}
+
+class PC{
+  -pcID : int
+  uniqueItemId() :int
+  commonName() : string
+}
+
+
+interface BorrowableItem{
+  uniqueItemId() : int
+  commonName() : string
+}
+
+class LibraryCard{
+  -idNumber : int
+  -name : string
+  -borrowedItems : {BorrowableItem:Date}
+  borrowItem() : void
+  borrowerReport() : string
+}
+
+
+Book ..|> BorrowableItem
+Periodical ..|> BorrowableItem
+PC ..|> BorrowableItem
+LibraryCard --o BorrowableItem : borrows >
+
+
+@enduml
