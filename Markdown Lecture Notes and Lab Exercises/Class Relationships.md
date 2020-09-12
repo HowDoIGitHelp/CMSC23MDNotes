@@ -57,7 +57,7 @@ Specialization relationships are very similar to realization relationships. You 
 
 > Specialization has plenty of names. This relationship is also called **extension** between the special/child/sub class and general/parent/super class. Another name for it would be **inheritance**.
 
-![Specialization Example](copyright free drawings/SpecializationRelationship.png)
+![Specialization Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/SpecializationRelationship.png)
 
 Here's an example that would illustrate what the specialization relationship means. Consider a factory that builds robots. This factory is able to build `NormalBot`s which are the general type of robots. Instead of creating entirely separate mechanisms to build each type of robot, the factory is able to exploit the fact that other robots are just specializations of `NormalBot`. `Skybot` is just the same as `NormalBot` but it has extra flight capabilities. `ShadeBot` is just the same as `NormalBot` but it has UV Protection. Because of this the factory is able to use the building recipes for `NormalBot` to build `Skybot` and `ShadeBot`. All they need to do is to add some extra layers of construction such as adding wings or outfitting shades.
 
@@ -83,7 +83,7 @@ It is possible for a class to realize/specialize multiple abstractions/generaliz
 
 Dependency relationships, also known as **associations**, characterize how two classes interact with each other. A class which is dependent on another class, needs to know how to interact with it. These interactions range from being used as method parameters, being returned in methods, being used inside method bodies, being used as attributes and etc. A dependency relationship is one way (but it is also possible for two objects to be dependent on each other). A **client** class is dependent on some **dependency**. There are two types of dependencies:
 
-![Dependency Example](copyright free drawings\DependencyRelationship.png)
+![Dependency Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/DependencyRelationship.png)
 
 ### Aggregation
 
