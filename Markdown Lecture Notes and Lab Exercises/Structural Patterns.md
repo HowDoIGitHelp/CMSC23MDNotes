@@ -15,13 +15,13 @@ As your system evolves, the structure of your classes could get complicated. As 
 
 Some of your classes require extra features that can be added and removed during runtime. Sometimes you even need to support a set of extra features that can be arbitrarily combined with each other. You need to do this without breaking how these classes are being used by their clients.
 
-![decorator](copyright free drawings/decorator.png)
+![decorator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Decorator.png)
 
 ### Solution
 
 To solve this issue, all you have to do is to apply the open/closed principle. For every feature that can be arbitrarily added to some simple class, you need to create a `Decorator` that extends the features of classes using inheritance and composition at the same time. The neat thing about this pattern is that the `Decorator`s will have polymorphically the same type as the simple class due to inheritance. `Decorator`s will also be able to control instances of the simple class because of composition.
 
-![decorator](uml\decorator.png)
+![decorator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/decorator.png)
 
 To create an instance of a `SimpleClass` decorated by `Decorator1`, all you need to do is to wrap the `SimpleClass` instance with an instance of `Decorator1`. When this `Decorator1` instance, calls `doSomething()` it calls the wrapped `SimpleClass ` instance's `doSomething()` and do some extra behavior.
 
@@ -81,7 +81,7 @@ The formatting of a sentence is decided during runtime. These formats should als
 
 To accomplish these features, you need to implement the decorator pattern. Each formatting will be a decorator for `Sentence` objects. These formats need to inherit from some abstract `FormattedSentence` class. This abstract class is specified to compose and inherit from sentence. The behavior that needs to be decorated is the `__str__()` function since you need to change how sentence is printed for every format.
 
-![decorator example](uml\decoratorexample.png)
+![decorator example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/decoratorexample.png)
 
 ### Why this is elegant
 
@@ -100,7 +100,7 @@ To accomplish these features, you need to implement the decorator pattern. Each 
 
 As the system evolves, you'll likely encounter interfaces of instances that are incompatible with their intended clients. These interfaces do perform the necessary behavior, but maybe the method names are just different. This happens quite a lot since the interface of the dependency may be originally built for different reason. The interface may be an external module imported on existing client code. You can just change the incompatible interface to support the functionality you need but this is not always possible and may introduce code duplication.
 
-![adapter](copyright free drawings/adapter.png)
+![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Adapter.png)
 
 ### Solution
 
@@ -108,7 +108,7 @@ In the same way a usb-c interface is usable on a usb 2.0 using an adapter, you c
 
 Say you have an instance of `AbstractService` (it could be any realization of `AbstractService`), that needs to be used like an instance of `RequiredInterface` by some client. What you need to do is to create an adapter to `AbstractService` called `ServiceAdapter` which realizes `RequiredInterface`. To adapt the instance of `AbstractService`, you have to compose it inside the `ServiceAdapter`. So that `serviceMethod1()` is adapted to `method1()`.
 
-![adapter](uml\adapter.svg)
+![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/adapter.svg)
 
 Whenever, a `ServiceAdapter` calls `method1()` it instead delegates the behavior to the embedded service, which instead calls `serviceMethod1()`
 
@@ -120,7 +120,7 @@ Looking back at our previous lab exercises, some of the example classes contain 
 
 The best solution for this problem is to create an adapter for shipment called `PrintableShipment`. This adapter will realize some `Printable` abstraction, which only contains the abstract method `__str__()`. 
 
-![adapter example](uml\adapterexample.png)
+![adapter example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/adapterexample.png)
 
 ### Why this is elegant
 
@@ -142,7 +142,7 @@ When entities in your system needs to be represented like trees, then you repres
 
 The composite pattern describes a tree structure described polymorphically. A tree node can either be a general tree or a leaf. in the composite pattern, a `Component` (tree node) can either be `Composites` (general tree), or a `Leaf`. Leaves and Composites are realizations of `Component`.
 
-![composite](uml\composite.png)
+![composite](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/composite.png)
 
 ### Example
 
@@ -150,7 +150,7 @@ The composite pattern describes a tree structure described polymorphically. A tr
 
 The file system in your computers are described using a tree structure. The entities in your file system are either directories or files.
 
-![composite pattern](uml\compositeexample.png)
+![composite pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/compositeexample.png)
 
  What you need to do is to implement a simulation of a file system. Each node of the file system should be able to call the following methods:
 
@@ -182,7 +182,7 @@ Looking from the outside, simple functionality (like borrowing a book or deposit
 
 To solve this issue, you create a straightforward interface, that contains methods to encapsulate complicated functionality in your subsystem. Instead of using the internal classes to perform some functionality, you call the facade interface's method instead.
 
-![facade](uml\facade.png)
+![facade](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/facade.png)
 
 ### Why this is elegant
 

@@ -21,13 +21,13 @@ The exact type of the dependency (a product) created and used by some client (a 
 
 As you see this process is quite tedious. For every new product type that is added to your system, you perform surgery to the factory class. This process will end up forcing you to create smelly if-else checks to switch to the correct product type.
 
-![Factory Method](copyright free drawings/factory method.png)
+![Factory Method](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Factory%20Method.png)
 
 ### Solution
 
 You encapsulate the creation of a class inside a **factory method** that is specified to return an abstraction of the product. If there are other real product types that have to be produced, you create a specialized factory which overrides the factory method.
 
-![factory method class diagram](uml\factorymethod.svg)
+![factory method class diagram](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/factorymethod.svg)
 
 > Somewhere inside factory you have one or more instances of creating or using the product.
 
@@ -41,13 +41,13 @@ Consider you're developing the product delivery side of an online  marketplace a
 
 What you have is `Shipment` class that contains a `StandardDelivery` class. Inside the shipment class is the `shipmentDetails()` builder  which builds a string representing the details of the shipment, this  includes the delivery details (which requires access to the composed `StandardDelivery` instance). Inside the constructor of `Shipment` an instance of `StandardDelivery` is created so that every `Shipment` is set to be delivered using standard delivery.
 
-![online marketplace](uml\nonfactorymethodExample.png)
+![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/nonfactorymethodExample.png)
 
 This system does work. It works but it is still inelegant. As soon as your app grows, you will incorporate new delivery options like express delivery, or pickups or whatever. Every time you need to add a new delivery method you will need to perform surgery in `Shipment` since the `StandardDelivery` instance is created inside the constructor of `Shipment`. `Shipment`'s code is too coupled with `StandardDelivery`.
 
 To solve this you need to implement the factory method pattern.  Right now shipment is a factory since it constructs its own instance of `StandardDelivery`. To refactor this into elegant code, you need to so create an abstraction called`Delivery` first to support polymorphism. Inside `Shipment` instead of creating instances of `Delivery`'s using a constructor, you invoke a factory method that encapsulates the instantiation of `Delivery`. In this case we name this method `newDelivery()`. All it does is return an instance of `StandardDelivery` using its constructor.
 
-![online marketplace](uml\factorymethodExample.png)
+![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/factorymethodExample.png)
 
 In this new architecture, whenever there are new delivery methods a  shipment could have, all you have to do is to create a realization of  that delivery method. In this case the new delivery method is `ExpressDelivery` which delivers for two days but is twice as expensive. And instead of changing `Shipment` (violates Open/Closed Principle), you make an extension to `Shipment`. This extension is the specialization to shipment called `ExpressShipment` (a shipment that uses express delivery). In this specialization, you only need to override the factory method  delivery, so that every instance of delivery construction creates `ExpressDelivery`. The difference between `ExpressDelivery` and `Delivery` is that `ExpressDelivery` has a delivery fee of 1000 and the estimated delivery date is 1 day after the processing date.
 
@@ -74,13 +74,13 @@ In this new architecture, whenever there are new delivery methods a  shipment co
 
 Your system consists of a family of related products. These products also have different variants.  You need a way to create these products so that the products match the the same variant. The exact variants of the family of  products are decided during runtime, somewhere else in the code (similar to product creation in a factory method) 
 
-![Abstract Factory](copyright free drawings/abstract factory.png)
+![Abstract Factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Abstract%20Factory.png)
 
 ### Solution
 
 You create different kinds of factories that realize under the same abstract factory. The exact type of factory will decide the variant of the family of products that are created. To do this you need to create different factory methods for each product. These factory methods must be abstract methods in the abstract factory so that every factory realization can create all members of the product family.
 
-![abstract factory](uml\abstractFactory.svg)
+![abstract factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactory.svg)
 
 The family of products, are `ProductA` and `ProductB`, These products come in two variants, variant 1 and 2. `FactoryVariant1` is a realization of `Factory` which creates all of the product in variant 1 while `FactoryVariant2` creates all the products in variant 2.
 
@@ -153,7 +153,7 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster.
 
-![abstract factory example](uml\abstractFactoryExample.png)
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactoryExample.png)
 
 ### Why this is elegant
 
@@ -179,7 +179,7 @@ Inside the singleton. Create a static attribute that represents the singleton. S
 
 Disallow the usage of the normal constructor as much as possible. To access the shared static instance, use the builder.
 
-![singleton](uml\singleton.png)
+![singleton](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/singleton.png)
 
 > Disallowing the creation of a singleton depends on the language you use, you can set the constructor to private, or you can raise an error if you try to use the constructor outside the instance builder.
 >
