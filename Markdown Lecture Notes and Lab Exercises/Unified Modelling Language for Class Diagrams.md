@@ -16,7 +16,7 @@ The modelling language we are going to use to represent architecture would be UM
 
 The example below shows three classes. One is concrete class called `ExampleClass` (notice the "C" in the title that denotes it is a concrete class). Another is an abstraction called `ExampleAbstraction` (denoted by "I" which stands for interface). The last one is `ExampleAbstractClass` which is an abstract class (denoted by "A"). 
 
-![Class Diagrams](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/classExample.svg)
+![Class Diagrams](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/classExample.svg)
 
 Attributes are placed in the top portion and methods are placed in the bottom portion. The shape to the left of each attribute or method indicates its visibility. Filled shapes indicate visibilities for methods while unfilled shapes indicate visibilities for attributes.
 
@@ -24,9 +24,9 @@ Attributes are placed in the top portion and methods are placed in the bottom po
 
 |                          attribute                           |                            method                            | visibility |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :--------: |
-| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/private-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/private-method.png) |  private   |
-| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/protected-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/protected-method.png) | protected  |
-| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/public-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/public-method.png) |   public   |
+| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/private-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/private-method.png) |  private   |
+| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/protected-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/protected-method.png) | protected  |
+| ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public-field.png) | ![img](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public-method.png) |   public   |
 
 The names for abstract methods, abstractions, and abstract classes are italicized.
 
@@ -38,7 +38,7 @@ If possible, write the expected type of attributes, parameters and function retu
 
 Here's a reference arrows that indicate the relationship between two classes:
 
-![class relationships](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown Lecture Notes and Lab Exercises/uml/classRelationships.svg)
+![class relationships](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/classRelationships.svg)
 
 > Sometimes, instead of writing the specific kind of dependency arrow (aggregation or composition), I just write the general dependency arrow instead
 
