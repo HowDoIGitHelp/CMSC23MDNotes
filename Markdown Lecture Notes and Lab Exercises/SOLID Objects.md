@@ -28,7 +28,7 @@ Briefly, these five principles are:
 
 One of the canonical examples of violations against SRP is the concept known as the **god class**. A god class is a class that basically contains all the attributes and methods of the whole system. You'll recognize these god classes as those classes that control the behavior of objects (they contain the implementation of client objects' behavior). These god classes are also aware of all of the objects secrets (they expose and manipulate private attributes and methods).
 
-![god class library card](uml/godclasslibrarycard.png)
+![god class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/godclasslibrarycard.png)
 
 On the example above `LibraryCard` is a god class since it exposes the secrets of `Date` by forcing the creations of *evil* getters (`getMonth()`, `getDay()`, `getYear()`) for otherwise private details. Although it isn't obvious, it also tampers on the responsibilities of `BorrowableItem` by deciding by itself how penalty is calculated for each realization. 
 
@@ -53,7 +53,7 @@ A good class in OOP is both open and closed. It is open for extension but closed
 
 To understand this principle lets have an example of a system that is closed for extension:
 
-![god class library card](uml/closedforextension.png)
+![god class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/closedforextension.png)
 
 > Forgive the long Java-like method names, they're named as descriptive as possible so that I can s skip actually explaining what they do.
 
@@ -61,7 +61,7 @@ This is a system that indeed works perfectly. The bank will be able to apply the
 
 Instead of rearranging the organs of your classes to accommodate changes to behavior they are not even responsible for, you should close the classes for modification and open them for extension instead:
 
-![open for extension](uml/openforextension.png)
+![open for extension](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/openforextension.png)
 
 Since `applyMonthlyChange()` is an abstract method of account, all its realizations are required to implement it. We extend the functionality of `CreditAccount`, `DebitAccount`, and `PayrollAccount` by adding an extra method.
 
@@ -89,7 +89,7 @@ Sometimes the subtypes/realizations of a certain object may have diverse functio
 
 The best way to design these diverse systems it by refactoring your architecture to have diverse role interfaces instead.
 
-![god class library card](uml/roleinterfaces.png)
+![god class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/roleinterfaces.png)
 
 Now instead of cluttering you realizations with useless methods, your systems is now cluttered with role interfaces. This is a benevolent kind of clutter. Because more objects and looser dependencies make for a maintainable and therefore elegant system (in the same way a language with more words have less chances for ambiguity). Because of this clutter you can have rich polymorphism without sacrificing ISP. Although be careful not to over do it though. You wouldn't want a role interface for every conceivable method out there. 
 
