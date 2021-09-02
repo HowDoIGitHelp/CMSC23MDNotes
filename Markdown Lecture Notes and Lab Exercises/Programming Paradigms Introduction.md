@@ -72,7 +72,7 @@ It is a correct definition, but is it the only correct definition? It defines pr
 
 For someone who has been exposed to C, C++ and nothing else, you might feel that the natural way to code is the *imperative way* when in fact there are alternatives.
 
-![Programming Paradigms]()
+![Programming Paradigms](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/9f60baa87ff7f3fcc1c1e80272c8415efb48a191/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/Programming_paradigms.svg)
 
 The diagram[^3] here represents the alternative schools of thoughts describing how to program. This diagram taxonomizes programming languages by identifying which paradigms they are under. Most of these paradigms are either not pragmatic, not popular enough or not unique enough to be studied in this course. Instead we will be focusing on four major programming paradigms:
 

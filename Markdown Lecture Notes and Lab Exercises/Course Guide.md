@@ -1,6 +1,6 @@
 # Course Guide
 
-**CMSC 23 - Programming Paradigms** *1st Semester AY 2020 - 2021*
+**CMSC 23 - Programming Paradigms** *1st Semester AY 2021 - 2022*
 
 ## Course Description
 
@@ -70,7 +70,7 @@ After completing this course, you should be able to:
 
 ## Mode of Delivery
 
-This course will be delivered asynchronously through lecture notes with accompanying lecture videos. This course can also be found online on VLE. We wont be having scheduled zoom sessions but you're free to setup consultation on the scheduled times for this class.
+This course will be delivered asynchronously through lecture notes with accompanying lecture videos. This course can also be found online on VLE. We wont be having scheduled mandatory zoom sessions but you're free to setup consultation on the scheduled times for this class.
 
 Most of the work for this course would be dedicated to the lab exercises. 
 
@@ -98,9 +98,10 @@ You can contact me through sms, email, slack dms, or through discord. You can fi
 
 All of the resources in this course can be found in the course pack. The course pack includes:
 
-- **Lecture Notes** - You'll find these in the PDF file called *textbook.pdf*. 
-- **Lecture Videos** - There's a link to the youtube playlist here. If you want the master copies (not really super high quality but they're uncompressed version, you can find it here.)
-- **Lab Exercise guides** - Not really lab exercises since you'll be doing it at home, You can find them on the textbook as well.
+- **Lecture Notes** - You'll find these in the PDF file called *textbook.pdf*. Markdown Versions are also available
+- **Lecture Videos** - There's a link to the youtube playlist here. If you want the master copies I cant really put it in the course pack since it's too big. But if you want them just ask me.
+- **Lab Exercises** - You'll find these in the PDF file called *textbook.pdf*. Markdown versions are also available
+- **Lab Exercise Files** - Files for the lab exercises and examples I used in the videos
 - **Some sample code** - Some code that I use in class
 - **PowerPoint Presentations** - will not really be useful since the lecture notes are way more detailed
 - **Installs for Haskell, Prolog and Python** - Includes instructions for installation
@@ -130,7 +131,7 @@ There will be no exams in this course, 100% of your grades will come from the la
 
 ### Lab Exercises
 
-The deadlines written on the lab exercise guides are all for November 30, 2020, which is the end of the semester. But please do not start this at the end of the semester. You can refer to the study schedule above for the recommended pace.
+The deadlines written on the lab exercise guides are all for January 11, 2022, which is the end of the semester. But please do not start making all of these at the end of the semester. You can refer to the study schedule above for the recommended pace.
 
 - Lab Exercise 1 (Imperative Programming Review)
 - Lab Exercise 2 (Introduction to Haskell)
@@ -154,7 +155,7 @@ I wont be able to immediately correct your lab exercises and write feedback ever
 
 ## About the Instructor
 
-You know me. Its your CMSC 56 or 57 teacher. I've developed and taught this course for the first time last last year (enjoy some of the drawings I made just for this course). This is the third time I'm delivering this course. This course might be a little rough around the edges sometimes and it may lack some refinement, but I love teaching this course. When this was implemented face to face I saw my students enjoy the lab exercises in some form. To be honest I'm kind of disappointed that I wont be physically present while you're working on the lab exercises. But, don't worry I will try my best to help you remotely if you have issues in your code or something. 
+YI've developed and taught this course for the first time last last year (enjoy some of the drawings I made just for this course). This is the third time I'm delivering this course. This course might be a little rough around the edges sometimes and it may lack some refinement, but I love teaching this course. When this was implemented face to face I saw my students enjoy the lab exercises in some form. To be honest I'm kind of disappointed that I wont be physically present while you're working on the lab exercises. But, don't worry I will try my best to help you remotely if you have issues in your code or something. 
 
 Let's be understanding of each other in these strange times.
 
