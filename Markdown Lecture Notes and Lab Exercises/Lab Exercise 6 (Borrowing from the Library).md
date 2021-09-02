@@ -4,7 +4,7 @@
 
 You are to implement the following system. This system represents the borrowing and returning functions of a library. Here's the class diagram. **Edit the python file that came with this document.** The edited file is what you are going to submit.
 
-![UML](https://i.imgur.com/9zHBavi.png).
+![UML](https://i.imgur.com/9zHBavi.png)
 
 There is some code already written for you here:
 
@@ -87,7 +87,7 @@ print(l.borrowerReport())
 
 #### The class definitions above are still missing `Periodical` and `PC`. 
  - a **`Periodical`** represents a periodical (newspaper, magazines, etc). It is a realization of a `BorrowableItem`. It contains the following methods and attributes:
-      - `__init__`: initializes a periodical instance with the attributes `__periodicalID:int`, `__title:str`, `__title:str`
+      - `__init__`: initializes a periodical instance with the attributes `__periodicalID:int`, `__title:str`, `__issue:Date`, `__pages:[Page]`
      - `__periodicalID:int`: unique id for a periodical
      - `__title:str`: The title of the periodical ("National Geographic", "New York Times")
      - `__issue:Date`: The date when the issue was published
@@ -106,6 +106,8 @@ print(l.borrowerReport())
  - **`itemsDue(today:Date):[BorrowableItem]`** : returns a list of `BorrowableItem`s which are on or past the due date. The due date for a `Book` is 7 days, a `Periodical` is 1 day, and a `PC` is 0 days.
  - **`totalPenalty(today:Date):float`** : returns a float which is the total penalty for all the overdue items when calculated today
 
+> The parameter `today:Date` represents the date today. For example `itemsDue(today:Date)` will return a list of `BorrowableItem`s past the due date if if the date was `today`.
+
 Feel free (in fact you are encouraged) to add extra methods to any of the classes above that will help you in implementing the whole system. Just make sure the extra methods don't unnecessarily expose hidden attributes.
 
 ## Assessment Criteria
@@ -114,4 +116,4 @@ Feel free (in fact you are encouraged) to add extra methods to any of the classe
 - Completeness of `LibraryCard` methods - 20
 - Correctness of attribute and methods names - 10
 
-**Deadline November 30, 2020**
+**Deadline January 11, 2022**

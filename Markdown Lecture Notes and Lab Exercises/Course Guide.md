@@ -109,20 +109,20 @@ All of the resources in this course can be found in the course pack. The course 
 
 This class is asynchronous, but if you start too late, you might end up getting overwhelmed by the amount of work. Here's the recommended schedule for completing the resources and lab exercises.
 
-| Week Number | Topic                                                 | Videos to watch                                              | Lecture Notes to read                                        |       Lab Exercises       |
-| :---------: | ----------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | :-----------------------: |
-|      1      | Introduction to Programming Paradigms                 | Introduction to Programming Paradigms                        | Introduction to Programming Paradigms                        |           None            |
-|      2      | Imperative Programming Paradigm                       | Imperative Programming Paradigm                              | Imperative Programming Paradigm                              |   (Optional) Lab Exer 1   |
-|      3      | Functional Programming Paradigm                       | Functional Programming Paradigm, Lab Exercise 2, Lab Exercise 3 | Functional Programming Paradigm, Haskell Cheat Sheet         |  Lab Exer 2, Lab Exer 3   |
-|      4      | Logic Programming Paradigm                            | Logic Programming Paradigm                                   | Logic Programming Paradigm                                   |        Lab Exer 4,        |
-|      5      | Object Oriented Programming Paradigm                  | Object Oriented Programming Paradigm                         | Object Oriented Programming Paradigm, Python Introduction    |        Lab Exer 5,        |
-|      6      | OOP Principles: Class Relationships, Exceptions,      | OOP Principles, Class Relationships, OOPython                | OOP Principles, Class Relationships, OOPython, Exceptions    |        Lab Exer 6,        |
-|      7      | Solid Design Principles, Design Patterns Introduction | Solid Design Principles, Design Patterns Introduction        | UML for Class Relationships, Solid Design Principles, Design Patterns Introduction, Extra Stuff |        Lab Exer 7,        |
-|      8      | Creational Patterns                                   | Creational Patterns                                          | Creational Patterns                                          |  Lab Exer 8, Lab Exer 9   |
-|      9      | Behavioral Patterns I: State and Strategy             | Behavioral Patterns I: State and Strategy                    | Behavioral Patterns I: State and Strategy                    | Lab Exer 10, Lab Exer 11  |
-|     10      | Behavioral Patterns II: Command and Observer          | Behavioral Patterns II: Command and Observer                 | Behavioral Patterns II: Command and Observer                 | Lab Exer 12, Lab Exer 13, |
-|     11      | Behavioral Patterns III: Template and Iterator        | Behavioral Patterns III: Template and Iterator               | Behavioral Patterns III: Template and Iterator               | Lab Exer 14, Lab Exer 15  |
-|     12      | Structural Patterns                                   | Structural Patterns                                          | Structural Patterns                                          | Lab Exer 16, Lab Exer 17  |
+| Week Number | Topic                                                        | Videos to watch                                              | Lecture Notes to read                                        |       Lab Exercises       |
+| :---------: | ------------------------------------------------------------ | :----------------------------------------------------------- | ------------------------------------------------------------ | :-----------------------: |
+|      1      | Introduction to Programming Paradigms                        | Introduction to Programming Paradigms                        | Introduction to Programming Paradigms                        |           None            |
+|      2      | Imperative Programming Paradigm                              | Imperative Programming Paradigm                              | Imperative Programming Paradigm                              |   (Optional) Lab Exer 1   |
+|      3      | Functional Programming Paradigm                              | Functional Programming Paradigm, Lab Exercise 2, Lab Exercise 3 | Functional Programming Paradigm, Haskell Cheat Sheet         |  Lab Exer 2, Lab Exer 3   |
+|      4      | Logic Programming Paradigm                                   | Logic Programming Paradigm                                   | Logic Programming Paradigm                                   |        Lab Exer 4,        |
+|      5      | Object Oriented Programming Paradigm                         | Object Oriented Programming Paradigm                         | Object Oriented Programming Paradigm, Python Introduction    |        Lab Exer 5,        |
+|      6      | OOP Principles: Fundamentals of OOP, Class Relationships, Exceptions, | Fundamentals of OOP, Class Relationships, OOPython           | Fundamentals of OOP, Class Relationships, OOPython, Exceptions |        Lab Exer 6,        |
+|      7      | Solid Design Principles, Design Patterns Introduction        | Solid Design Principles, Design Patterns Introduction        | UML for Class Relationships, Solid Design Principles, Design Patterns Introduction, Extra Stuff |        Lab Exer 7,        |
+|      8      | Creational Patterns                                          | Creational Patterns                                          | Creational Patterns                                          |  Lab Exer 8, Lab Exer 9   |
+|      9      | Behavioral Patterns I: State and Strategy                    | Behavioral Patterns I: State and Strategy                    | Behavioral Patterns I: State and Strategy                    | Lab Exer 10, Lab Exer 11  |
+|     10      | Behavioral Patterns II: Command and Observer                 | Behavioral Patterns II: Command and Observer                 | Behavioral Patterns II: Command and Observer                 | Lab Exer 12, Lab Exer 13, |
+|     11      | Behavioral Patterns III: Template and Iterator               | Behavioral Patterns III: Template and Iterator               | Behavioral Patterns III: Template and Iterator               | Lab Exer 14, Lab Exer 15  |
+|     12      | Structural Patterns                                          | Structural Patterns                                          | Structural Patterns                                          | Lab Exer 16, Lab Exer 17  |
 
 ## Course Requirements
 
@@ -143,16 +143,18 @@ The deadlines written on the lab exercise guides are all for November 30, 2020, 
 - Lab Exercise 9 (Abstract Factory)
 - Lab Exercise 10 (Strategy)
 - Lab Exercise 11 (State)
-- Lab Exercise 12 (Commmand)
+- Lab Exercise 12 (Command)
 - Lab Exercise 13 (Observer)
 - Lab Exercise 14 (Template)
 - Lab Exercise 15 (Iterator)
 - Lab Exercise 16 (Decorator)
 - Lab Exercise 17 (Adapter)
 
+I wont be able to immediately correct your lab exercises and write feedback every time there is a new submission but if you do want me to check out your work if it's correct or if you're on the right track, feel free to reach out and I will look at it. Just message me since I wont be able to notice every new submission in vle.
+
 ## About the Instructor
 
-You know me. Its your CMSC 56 or 57 teacher. I've developed and taught this course for the first time last year (enjoy some of the ugly drawings I made just for this course). This is the second time I'm delivering this course. This course might be a little rough around the edges sometimes and it may lack some refinement, but I love teaching this course. For the previous run I saw my students enjoy the lab exercises in some form or another. To be honest I'm kind of disappointed that I wont be physically present while your working on the lab exercises. But, don't worry I will try my best to help you remotely if you have issues in your code or something. 
+You know me. Its your CMSC 56 or 57 teacher. I've developed and taught this course for the first time last last year (enjoy some of the drawings I made just for this course). This is the third time I'm delivering this course. This course might be a little rough around the edges sometimes and it may lack some refinement, but I love teaching this course. When this was implemented face to face I saw my students enjoy the lab exercises in some form. To be honest I'm kind of disappointed that I wont be physically present while you're working on the lab exercises. But, don't worry I will try my best to help you remotely if you have issues in your code or something. 
 
 Let's be understanding of each other in these strange times.
 

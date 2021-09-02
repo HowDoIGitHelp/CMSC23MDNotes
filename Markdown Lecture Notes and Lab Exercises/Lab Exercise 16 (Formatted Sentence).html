@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Lab Exercise 16 (Formatted Sentence)</title>
+</head>
+<body><h1 id='lab-exercise-16-formatted-sentence'>Lab Exercise 16 (Formatted Sentence)</h1>
+<h2 id='task'>Task</h2>
+<p>A sentence can be defined as a list of words (words are strings). The string representation of a sentence is the concatenation of all of the words in the list, separated by a space.</p>
+<pre><code class='language-python' lang='python'>from abc import ABC,abstractmethod
+
+class Sentence:
+    def __init__(self,words:[str]):
+        self.__words = words
+
+    def __str__(self) -&gt; str:
+        sentenceString = &quot;&quot;
+        for word in self.__words:
+            sentenceString += word + &quot; &quot;
+        return sentenceString[:-1]
+
+</code></pre>
+<p>Instances of sentences can be printed with formatting:</p>
+<ul>
+<li><p><strong>bordered</strong> - Given the sentence, <code>[&quot;hey&quot;,&quot;there&quot;]</code> it prints:</p>
+<pre><code>-----------
+|hey there|
+-----------
+</code></pre>
+</li>
+<li><p><strong>fancy</strong> - Given the sentence, <code>[&quot;hey&quot;,&quot;there&quot;]</code> it prints:</p>
+<pre><code>-+hey there+-
+</code></pre>
+</li>
+<li><p><strong>uppercase</strong> - Given the sentence, <code>[&quot;hey&quot;,&quot;there&quot;]</code> it prints:</p>
+<pre><code>HEY THERE
+</code></pre>
+</li>
+
+</ul>
+<p>The formatting of a sentence is decided during runtime. These formats should also allow for combinations with other formats:</p>
+<ul>
+<li><p><strong>bordered fancy</strong> - Given the sentence, <code>[&quot;hey&quot;,&quot;there&quot;]</code> it prints:</p>
+<pre><code>---------------
+|-+hey there+-|
+---------------
+</code></pre>
+</li>
+<li><p><strong>fancy uppercase</strong> - Given the sentence, <code>[&quot;hey&quot;,&quot;there&quot;]</code> it prints:</p>
+<pre><code>-+HEY THERE+-
+</code></pre>
+</li>
+
+</ul>
+<p>To accomplish these features, you need to implement the decorator pattern. Each formatting will be a decorator for <code>Sentence</code> objects. These formats need to inherit from some abstract <code>FormattedSentence</code> class. This abstract class is specified to compose and inherit from sentence. The behavior that needs to be decorated is the <code>__str__()</code> function since you need to change how sentence is printed for every format.</p>
+<p><img src="https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/decoratorexample.png" referrerpolicy="no-referrer" alt="decorator example"></p>
+<p><strong>Complete the system using the decorator pattern</strong></p>
+<h2 id='assessment-criteria'>Assessment Criteria</h2>
+<ul>
+<li>Completeness of the pattern - 40</li>
+<li>Elegance of method and attribute naming - 10</li>
+
+</ul>
+<p><strong>Deadline January 11, 2022</strong></p>
+</body>
+</html>

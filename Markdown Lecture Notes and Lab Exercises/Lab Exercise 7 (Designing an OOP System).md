@@ -24,3 +24,6 @@ You can place all of the classes into a single python file and you can also sepa
 *Feel free to add your own extra methods and extra features to this system. This is an open ended design exercise, go ahead and be creative. For example, I have not specified how the system might react if there are invalid withdrawals or transfers, it's up to you to implement those (do you print a message? or raise an error?)There is no single correct class architecture for this system.* 
 
 *I'm not actually expecting you to build perfectly a elegant architecture for this system, this exercise's purpose is to get you used to building OOP systems from scratch.* 
+
+**Deadline January 11, 2022**
+
