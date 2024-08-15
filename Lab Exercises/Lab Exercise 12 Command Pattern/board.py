@@ -3,7 +3,7 @@ class BoundaryCollisionError(Exception):
         self.collidingBoundary = point
 
 class Board:
-    def __init__(self,filename:str="boardFile.py"):
+    def __init__(self,filename:str="boardFile.in"):
         self.__isSolid = []
         with open(filename,"r") as f:
             self.__start = tuple(map(int,f.readline().split()))

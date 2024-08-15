@@ -59,7 +59,7 @@ The formatting of a sentence is decided during runtime. These formats should als
 
 To accomplish these features, you need to implement the decorator pattern. Each formatting will be a decorator for `Sentence` objects. These formats need to inherit from some abstract `FormattedSentence` class. This abstract class is specified to compose and inherit from sentence. The behavior that needs to be decorated is the `__str__()` function since you need to change how sentence is printed for every format.
 
-![decorator example](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/decoratorexample.png)
+![decorator example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/decoratorexample.png)
 
 **Complete the system using the decorator pattern**
 
@@ -67,5 +67,3 @@ To accomplish these features, you need to implement the decorator pattern. Each 
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

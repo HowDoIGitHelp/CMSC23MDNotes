@@ -10,7 +10,7 @@ while i.hasNext():
 	print(i.next())
 ```
 
-![iterator](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/iterator.svg)
+![iterator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/iterator.svg)
 
 ```python
 from abc import ABC,abstractmethod
@@ -95,5 +95,3 @@ A collection can have more than one `Iterator`s, if it makes sense for the colle
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

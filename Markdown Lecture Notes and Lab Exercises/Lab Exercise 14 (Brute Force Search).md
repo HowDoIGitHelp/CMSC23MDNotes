@@ -75,7 +75,7 @@ while(isStillSearching()):
 
 Because of this we can write a general brute force template method that would return the solution to brute force problems. To do this you create a superclass `SearchAlgorithm()` that contains the template method for brute force algorithms. If you want to customize this algorithm for special problems, all you have to do is to inherit from `SearchAlgorithm` and override only the necessary steps.
 
-![template example](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/templateexample.svg)
+![template example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/templateexample.svg)
 
 ```python
 class SearchAlgorithm(ABC):
@@ -121,5 +121,3 @@ class SearchAlgorithm(ABC):
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

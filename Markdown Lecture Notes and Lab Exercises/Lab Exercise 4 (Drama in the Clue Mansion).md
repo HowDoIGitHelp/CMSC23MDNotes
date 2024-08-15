@@ -8,7 +8,7 @@ You can use a knowledge base to represent human relationship networks. This is w
   1. *Miss Scarlet, Mrs. White, Mrs. Peacock, Dr. Orchid are female*
   2. Prof. Plum, Colonel Mustard, and Rev. Green are all male
   3. *Miss Scarlet hates Rev. Green.*
-  4. Rev. Green and Mrs. White hate each other.
+  4. Rev. Green hates Miss Scarlet
   5. Prof. Plum and Mrs. White hate each other.
   6. Col. Mustard hates all females and Prof. Plum.
   7. Miss Scarlet and Mrs. Peacock both like Dr. Orchid.
@@ -19,7 +19,7 @@ You can use a knowledge base to represent human relationship networks. This is w
   12. *People who hate each other are enemies*
   13. People who like each other are friends
   14. The enemies of someone's enemies is his/her friend.
-  
+
 - Based on the knowledge base you created, ask it the following queries by running `swipl labExer4.pl`. Write the solutions to each query into a text file.
   1. *Which pairs are enemies?*
   2. Which pairs are friends?
@@ -27,7 +27,7 @@ You can use a knowledge base to represent human relationship networks. This is w
   4. Which people like themselves?
   5. Which males are liked by females? (this query must be written as a conjunction)
   6. Which people are hated by the one they like? (this query must be written as a conjunction)
-  
+
 ## Some example facts and rules as guide
 
 (don't skip writing these facts and rules in your knowledge base so that it works)
@@ -85,5 +85,3 @@ false.
 
 - Completeness of knowledge base - 20
 - Accuracy of query results - 20
-
-**Deadline November 30, 2020**

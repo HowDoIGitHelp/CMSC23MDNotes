@@ -40,7 +40,7 @@ Python does indeed support higher order functions but your boss is anti-function
 
 To do this, you need to create an abstraction called `Operation` to represent the different operations. For each operation, you create a class that realizes `Operation`. 
 
-![strategy pattern example](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/strategyexample.png)
+![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/bab2c4e390f529f00af5cb16d9597609863b3cd7/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/strategyexample.svg)
 
 > `execute()` should have been named like a builder method (something like `solution()`), I'm keeping the name `execute()` since this is how Strategy patterns usually names this particular method.
 
@@ -50,5 +50,3 @@ To do this, you need to create an abstraction called `Operation` to represent th
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

@@ -94,7 +94,7 @@ class ExpressShipment(Shipment):
 
 The best solution for this problem is to create an adapter for shipment called `PrintableShipment`. This adapter will realize some `Printable` abstraction, which only contains the abstract method `__str__()`. 
 
-![adapter example](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/adapterexample.png)
+![adapter example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml//adapterexample.png)
 
 **Complete the system using the adapter pattern**
 
@@ -102,5 +102,3 @@ The best solution for this problem is to create an adapter for shipment called `
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

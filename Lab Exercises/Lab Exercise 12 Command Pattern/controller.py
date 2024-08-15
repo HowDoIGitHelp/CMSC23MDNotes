@@ -34,6 +34,7 @@ class Controller:
 
 b = Board("boardFile.in")
 c = Controller(b)
+"""
 print(b)
 c.pressRight()
 print(b)
@@ -58,4 +59,3 @@ while True:
         elif key == 77: #Up arrow
             c.pressRight()
     print(b)
-"""

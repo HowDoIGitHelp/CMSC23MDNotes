@@ -33,10 +33,8 @@ main = return ()
 
 - `compose :: (Int -> Int) -> (Int -> Int) -> (Int -> Int)` - Consumes two functions $f : \mathbb{Z} \to \mathbb{Z}$, and $g:  \mathbb{Z} \to \mathbb{Z}$ and produces the function $f \circ g$.
 - `subtractMaker :: Int -> (Int -> Int)` - Consumes an integer $x$ and produces a function that consumes an integer $y$ and produces $x-y$
-- `applyNTimes :: (Int -> Int) -> Int -> Int -> Int` - Consumes a function $f: \mathbb{Z} \to \mathbb{Z}$ and and two integers $n$ and $x$. `applyNTimes` produces an integer which is the result of the function applied to $x$, $n$-times. If $n$ is less than 0 it must produce zero applications of $f$ therefore it produces $x$.
+- `applyNTimes :: (Int -> Int) -> Int -> Int -> Int` - Consumes a function $f: \mathbb{Z} \to \mathbb{Z}$ and and two integers $n$ and $x$. `applyNTimes` produces an integer which is the result of the function applied to $x$, $n$-times. If $n$ is less than or equal to 0 it must produce zero applications of $f$ therefore it produces $x$.
 
 ## Assessment Criteria
 
 - Completeness of haskell functions - 40
-
-**Deadline November 30, 2020**

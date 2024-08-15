@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The modelling language we are going to use to represent architecture would be UML or **Unified Modelling Language**. We use this to show the relevant classes in the system including their attributes, methods and relationships with other classes. UML differ a little depending on the source. The syntax we'll be following in this class would be based on PlantUML.
+The modelling language we are going to use to represent architecture would be UML or **Unified Modelling Language**. We use this to show the relevant classes in the system including their attributes, methods and relationships with other classes. UML differ a little depending on the source. The specifications we'll be following in this class would be based on PlantUML.
 
 ## Learning Outcomes
 

@@ -14,14 +14,13 @@ class RealStrategy2(Strategy):
         print("real strategy 2 %s" % params)
 
 class Client:
-    def higherOrderMethod(self, s:Strategy):
-        data = "literal String"
-        print("parametrized behavior")
-        s.execute(data)
+    def higherOrderMethod(self, s:Strategy, params:str):
+        print("parametrized behavior:")
+        s.execute(params)
 
 
 s = Client()
 strat1:Strategy = RealStrategy1()
-s.higherOrderMethod(strat1)
+s.higherOrderMethod(strat1,"data")
 print()
-s.higherOrderMethod(RealStrategy2())
+s.higherOrderMethod(RealStrategy2(),"data")

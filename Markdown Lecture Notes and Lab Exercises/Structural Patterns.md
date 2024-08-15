@@ -86,7 +86,7 @@ To accomplish these features, you need to implement the decorator pattern. Each 
 ### Why this is elegant
 
 - **Open/Closed Principle** - Decorators extend classes via inheritance. It is easier to add new decorators without touching any exiting code.
-- A class which can have many variants because of diverse combinations of behaviors can be cleanly implemented using this pattern.
+- A class can have many variants because of diverse combinations of behaviors can be cleanly implemented using this pattern.
 - You can arbitrarily mix and match decorators without the worry of polymorphic incompatibility during runtime
 
 ### How to implement it
@@ -125,7 +125,7 @@ The best solution for this problem is to create an adapter for shipment called `
 ### Why this is elegant
 
 - **Open/Closed Principle** - Instead of changing existing incompatible interfaces, you can extend them by creating adapters.
-- Instead of cluttering up your code with duplicate functions and unused interface methods, you instead create adapters only when it is needed.
+- **Interface Segregation Principle** - Instead of cluttering up your code with duplicate functions and unused interface methods, you instead create adapters only when it is needed.
 
 ### How to implement it
 
@@ -182,7 +182,7 @@ Looking from the outside, simple functionality (like borrowing a book or deposit
 
 To solve this issue, you create a straightforward interface, that contains methods to encapsulate complicated functionality in your subsystem. Instead of using the internal classes to perform some functionality, you call the facade interface's method instead.
 
-![facade](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/facade.png)
+![facade](https://raw.githubusercontent.co  m/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/facade.png)
 
 ### Why this is elegant
 

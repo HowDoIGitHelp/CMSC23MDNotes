@@ -51,8 +51,11 @@ factory1 = FactoryVariant1()
 factory2 = FactoryVariant2()
 
 def clientFunction(factory:AbstractFactory):
-    factory.newProductA().someMethodA()
-    factory.newProductB().someMethodB()
+    a = factory.newProductA()
+    b = factory.newProductB()
+    
+    a.someMethodA()
+    b.someMethodB()
 
 clientFunction(factory1)
 print()

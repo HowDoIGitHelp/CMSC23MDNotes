@@ -198,12 +198,14 @@ print(b)
 
 What's missing right now is controller support. This is how a player controls the character on the maze:
 
-- `dpad_up()`, `dpad_down()`, `dpad_left()`, `dpad_right()` - The character dashes through the maze in the specified direction until it hits a boundary.
-- `a_button()` -  The character undoes the previous action it did.
+- `dpad_up()`, `dpad_down()`, `dpad_left()`, `dpad_right()` - The character dashes through the maze in the specified direction until it hits a boundary. (these methods are equivalent to `pressUp()`, `pressDown()`, and etc on the `Controller`)
+- `a_button()` -  The character undoes the previous action it did. (this is equivalent to `undo()` on `Controller`)
 
 To implement controller support you need to create a `Command` abstraction which is realized by all controller commands. The `Controller` (which represents the controller) is the invoker for the commands. Since commands are undoable, this controller needs to keep a command history, represented as a list. Every time a controller button is pressed, it creates the appropriate `Command`, executes it and appends it to the command history. Every time the `a_button()` is pressed to undo, the controller pops the last command from the command history and undoes it.
 
-![command example](uml\commandexample.png)
+![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/commandexample.png)
+
+> `backupLocation : (Int,Int)` is an attribute but the diagram shows it as a method. It's supposed to be a private attribute of type `(Int,Int)` tuple but planUML (the uml renderer im using) reads it as a tuple because of the tuple parentheses
 
 **Complete the system using the command pattern**
 
@@ -211,5 +213,3 @@ To implement controller support you need to create a `Command` abstraction which
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

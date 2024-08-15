@@ -86,7 +86,7 @@ complex
 A python `string` is a sequence of characters. Strings can be enclosed by single-quotes or double quotes (but you must pair single-quotes with single-quotes and double-quotes with double quotes). 
 
 ```python
-type(`This`)
+type('This')
 ```
 
 ```python
@@ -165,7 +165,7 @@ But the following doesn't:
 
 ```python
 if 1 == 0:
-	print("this"+True)
+    print("this"+True)
 ```
 
 If you choose to do so you can annotate the type of an identifier using the following syntax:
@@ -243,7 +243,6 @@ You can extract a copy of a sublist using the following indexing methods
 
 - `list[n:m]` produces a sublist from index n to m (including the nth element but excluding the mth element).
 - `list[:m]` equivalent to `list[0:m]`.
-- `list[n:]` equivalent to`list[n:-1]`.
 
 ```python
 l[1:3]
@@ -519,14 +518,14 @@ Python functions are written using the following syntax:
 
 ```python
 def f(parameters):
-	body
+    body
 ```
 
 For example creating the add function:
 
 ```python
 def add(x,y):
-    return x * y
+    return x + y
 ```
 
 ## Python file reading and writing
@@ -626,7 +625,7 @@ Type annotations are only annotations, you don't have to write them. But writing
 
 ## Python library import
 
-To import python libraries use the keyword math followed by the python library name. As much as possible write imports at the topmost part of your python files
+To import python libraries use the keyword `import` followed by the python library name. As much as possible write imports at the topmost part of your python files
 
 ```python
 import math

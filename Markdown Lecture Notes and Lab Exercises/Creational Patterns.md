@@ -17,7 +17,7 @@ Unfortunately native constructors capabilities are not powerful enough for our s
 
 ### Problem
 
-The exact type of the dependency (a product) created and used by some client (a factory) is decided by a client of that factory. Somewhere, inside this factory class, a specific product is being instantiated and maybe used (this instantiation happens maybe more than once). But, as it turns out, there are different types of products, (there's also the possibility of more product types in the future). You can change the code of the factory class to accommodate multiple product types. For every product, you modify the factory and add some if else clause to produce the correct product type.
+The exact type of the dependency (a product) created and used by some client (a factory) is decided by a client of that factory. Somewhere, inside this factory class, a specific product is being instantiated and maybe used (this instantiation happens maybe more than once). But, as it turns out, there are different types of products, (there's also the possibility of more product types in the future). You can change the code of the factory class to accommodate multiple product types. For every product, you modify the factory and add some if-else clause to produce the correct product type.
 
 As you see this process is quite tedious. For every new product type that is added to your system, you perform surgery to the factory class. This process will end up forcing you to create smelly if-else checks to switch to the correct product type.
 
@@ -56,7 +56,8 @@ In this new architecture, whenever there are new delivery methods a  shipment co
 - **Single Responsibility Principle** - the extra level of encapsulation on the construction of the product (factory method), allows the factory to be responsible of creating the exact product type it needs.
 - **Open/Closed Principle** - instead of modifying the factory to incorporate the creation of different product realizations, you instead create an extension of the factory. No need for introspective checks since the factory method supports polymorphism of the product it creates.
 - *Encapsulate what varies* - This pattern upholds one of OOP paradigms most important principles. Since the construction of product varies from product type to product type, it is encapsulated into the factory method.
-- This avoids tight coupling between the factory and the product
+  - This avoids tight **coupling** between the factory and the product
+
 
 > Coupled classes are classes which are very dependent on each other. Changing the code of one will most likely affect the other
 
@@ -84,7 +85,7 @@ You create different kinds of factories that realize under the same abstract fac
 
 The family of products, are `ProductA` and `ProductB`, These products come in two variants, variant 1 and 2. `FactoryVariant1` is a realization of `Factory` which creates all of the product in variant 1 while `FactoryVariant2` creates all the products in variant 2.
 
-> If it makes sense for the system you can make an abstract `Product` class for all the types of products.
+> If it makes sense for the system,  you can make an abstract `Product` class for all the types of products.
 
 When the client of an abstract factory produces its products, it doesn't need to know what kind of factory is producing the products. This means that the concrete type of a product (its variant) is not decided during compile time but instead it depends on the concrete type of the factory that is creating it.
 
@@ -164,10 +165,10 @@ To seamlessly incorporate these harder monsters in your system, you need to crea
 ### How to implement it:
 
 - For every product in the family of products, create an abstraction of it (`ProductA`, `ProductB`).
-- For every variant of the products, create a factory, (`FactoryVariant1`, `FactoryVariant2`). These factories must realize under an abstract `Factory`. The factory should contain abstract factory methods for each product, 
-- Inside every factory implement all factory methods.
+- For every variant of the products, create a factory, (`FactoryVariant1`, `FactoryVariant2`). These factories must realize under an abstract `AbstractFactory`. The factory should contain abstract factory methods for each product, 
+- Inside every factory realization implement all factory methods.
 
-## Singleton (Optional Read)
+## Singleton Pattern (Optional Read)
 
 ### Problem
 
@@ -191,7 +192,7 @@ Disallow the usage of the normal constructor as much as possible. To access the 
 
 It doesn't make sense for you to keep multiple copies of global variables in your application, so you decide to place them in a singleton class.
 
-#### Why this is NOT is elegant 
+#### Why this is NOT elegant 
 
 A singleton pattern is actually hated by most developers. Yes you can ensure that there is exactly one instance of a class, but its advantages come with a lot of drawbacks.
 

@@ -1,10 +1,18 @@
 # Lab Exercise 7 (Designing an OOP System)
+Links to relevant notes and videos
+- [OOPython Notes](https://hackmd.io/@RubAbella/BJQc35DNP)
+- [OOPython Video](https://www.youtube.com/watch?v=Djjc2k1_6WE)
+- [UML](https://hackmd.io/@RubAbella/BJBHus-YS)
+- [Exceptions](https://hackmd.io/@RubAbella/rk9RvE5Ew)
+- [Python Introduction Notes](https://hackmd.io/@RubAbella/Syz0e_k8B)
 
 ## Task
 
 **Banking System**
 
 **You are to design a banking system that supports the following features:**
+
+Before you start writing code for the system. Create a UML diagram that represents the system.
 
 - 3 kinds of bank accounts: 
   - payroll -  this account can withdraw funds. This account can receive funds from transfers but it cannot transfer.

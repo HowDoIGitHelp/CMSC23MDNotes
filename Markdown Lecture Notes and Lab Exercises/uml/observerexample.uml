@@ -8,8 +8,8 @@
     - currentWeather : Weather
     - currentHeadline : Headline
     - subscribers : [Subscriber]
-    + changeHeadline()
-    + changeWeather()
+    + changeHeadline(newHeadline:Headline)
+    + changeWeather(newWeather:Weather)
     + subscribe(newSubscriber:Subscriber)
     + unsubscribe(exSubscriber:Subscriber)
     + notifySubscribers()

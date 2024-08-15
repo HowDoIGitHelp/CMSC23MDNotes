@@ -45,7 +45,7 @@ The best implementation of the system contains multiple examples of SRP. The `Da
 
 The process of designing these cohesive systems requires not only OOP design techniques but also domain knowledge. The designer of the system, should know how a library system operates so that, he/she can accurately simulate their responsibilities on code.
 
-You can also apply SRP on individual methods inside objects. Methods should be responsible of one thing only. Keeping methods pure like these will help reduce unwanted side effects. The builder/manipulator naming scheme will help you with this. Also a method should not be responsible of handling the problems. The method should delegate that responsibility to the clients of that method. The methods itself should only report the problem. The best way to do this in OOP is by raising an exception.
+You can also apply SRP on individual methods inside objects. Methods should be responsible of one thing only. Keeping methods pure like these will help reduce unwanted side effects. The builder/manipulator naming scheme will help you with this. Also, a method should not be responsible of handling the problems such as errors/exceptions. The method should delegate that responsibility to the clients of that method. The methods itself should only report/raise/throw the problem. The best way to do this in OOP is by raising an exception.
 
 ### Open/Closed Principle
 
@@ -55,9 +55,9 @@ To understand this principle lets have an example of a system that is closed for
 
 ![god class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/closedforextension.png)
 
-> Forgive the long Java-like method names, they're named as descriptive as possible so that I can s skip actually explaining what they do.
+> Forgive the long Java-like method names, they're named as descriptive as possible so that I can skip actually explaining what they do.
 
-This is a system that indeed works perfectly. The bank will be able to apply the appropriate changes to the account types because of the `if-else` block that segregates the accounts based on its type (another instance of type discrimination so that's a hint that this is wrong). The problem with this is that whenever there are changes regarding the monthly changes or interest calculations, you would have to tamper with the contents of bank. This is **opening `Bank` up for modification**. Every time there's a change related to monthly updates you would have to do some kind of surgical procedure on `Bank` and rearrange its internal organs so that the change may be supported. This is extra rough on `Bank` because `Bank` shouldn't even be responsible for these behaviors (a violation of SRP). If there are new types of account, then you would have to open up `Bank` again and to add another `else if` block. Poor `Bank`, who knows how many more new types of accounts there are in the future. 
+This is a system that indeed works perfectly. The bank will be able to apply the appropriate changes to the account types because of the `if-else` block that segregates the accounts based on its type (another instance of type discrimination so that's a hint that this is bad design). The problem with this is that whenever there are changes regarding the monthly changes or interest calculations, you would have to tamper with the contents of bank. This is **opening `Bank` up for modification**. Every time there's a change related to monthly updates you would have to do some kind of surgical procedure on `Bank` and rearrange its internal organs so that the change may be supported. This is extra rough on `Bank` because `Bank` shouldn't even be responsible for these behaviors (a violation of SRP). If there are new types of account, then you would have to open up `Bank` again and to add another `else if` block. Poor `Bank`, who knows how many more new types of accounts there are in the future. 
 
 Instead of rearranging the organs of your classes to accommodate changes to behavior they are not even responsible for, you should close the classes for modification and open them for extension instead:
 
@@ -69,7 +69,7 @@ Since `applyMonthlyChange()` is an abstract method of account, all its realizati
 - inside `DebitAccount.applyMonthlyChange()` you call both `applyMontlyInterest()` and `deactivateIfUnderBalanced()` 
 - inside `PayrollAccount.applyMonthlyChange()` you do nothing
 
-Is a method that does nothing inelegant? Not really because this is an accurate representation as to how a `PayrollAccount` changes every month—  it doesn't. Also, in the future, the inertness of `PayrollAccount` may change so at least you have the function prepared.
+Is a method that does nothing inelegant? Not really because this is an accurate representation as to how a `PayrollAccount` changes every month—  it doesn't change. Also, in the future, the inertness of `PayrollAccount` may change so at least you have the function prepared.
 
 > The previous library card example and bank examples are indeed similar . This is because introspective checks like `isinstance` are again symptoms of inelegant design.
 
@@ -79,11 +79,11 @@ Another example of this is how you need to augment the `PayrollAccount` class to
 
 ### Liskov-Substitution Principle
 
-This principle basically dictates when should an object be a subtype or a realization of another object. Should `PayrollAccount` be  a realization of `Account`? If you can substitute any instance of an `Account`with a `PayrollAccount` then the answer is yes. The same is true if you want to establish an inheritance relationship between `Account` and `PayrollAccount`. The LSP is important because it ensures the polymorphic capabilities of your realizations and subtypes. 
+This principle basically dictates when should an object be a subtype or a realization of another object. Should `PayrollAccount` be  a realization of `Account`? If you can substitute any instance of an `Account`with a `PayrollAccount` then the answer is yes. The same is true if you want to establish an inheritance relationship between `Account` and `PayrollAccount`.  LSP is important because it ensures the polymorphic capabilities of your realizations and subtypes. 
 
 ### Interface Segregation Principle
 
-Sometimes the subtypes/realizations of a certain object may have diverse functionality. Some subtypes can deposit, some subtypes can't, all subtypes can be recipient for transfers but not all can be senders. The diversity of functionality supportability may sometimes force the designer to pollute the system with methods that the subtypes don't actually use. `PayrollAccount` will not use deposit but since it realizes `Account` then we reluctantly add it. This is a violation if LSP which states that an object should not be forced to implement methods it doesn't use.
+Sometimes the subtypes/realizations of a certain object may have diverse functionality. Some subtypes can deposit, some subtypes can't, all subtypes can be recipient for transfers but not all can be senders. The diversity of functionality support may sometimes force the designer to pollute the system with methods that the subtypes don't actually use. `PayrollAccount` will not use deposit but since it realizes `Account` then we reluctantly add it. This is a violation if LSP which states that an object should not be forced to implement methods it doesn't use.
 
 #### Role Interfaces
 
@@ -91,9 +91,9 @@ The best way to design these diverse systems it by refactoring your architecture
 
 ![god class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/roleinterfaces.png)
 
-Now instead of cluttering you realizations with useless methods, your systems is now cluttered with role interfaces. This is a benevolent kind of clutter. Because more objects and looser dependencies make for a maintainable and therefore elegant system (in the same way a language with more words have less chances for ambiguity). Because of this clutter you can have rich polymorphism without sacrificing ISP. Although be careful not to over do it though. You wouldn't want a role interface for every conceivable method out there. 
+Now instead of cluttering you realizations with useless methods, your systems is now cluttered with role interfaces. This is a benevolent kind of clutter. Because more objects and looser dependencies make for a maintainable and therefore elegant system (in the same way a language with more words have less chances for ambiguity). Because of this clutter, you can have rich polymorphism without sacrificing ISP. Although be careful not to overdo it though. You wouldn't want a role interface for every conceivable method out there. 
 
-When you have role interfaces, you can refine lines of your code by describing which exact role interface applies. For example, instead if writing transfer to be an process which is `Account` to `Account` they are `TransferSenderAccount` to `TransferRecipientAccount`.
+When you have role interfaces, you can refine lines of your code by describing which exact role interface applies. For example, instead of writing `transfer` to be an process which is `Account` to `Account` they are `TransferSenderAccount` to `TransferRecipientAccount`.
 
 ### Dependency Inversion Principle
 

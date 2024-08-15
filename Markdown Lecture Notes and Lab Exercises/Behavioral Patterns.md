@@ -40,7 +40,7 @@ You're creating a less sophisticated version of a fraction calculator. This calc
 - `__left` - represents the left operand fraction
 - `__right` - represents the right operand fraction
 - `__operation` - represents the operation ($+$,$-$,$\times$,$\div$)
-- `__answer` - represents the solution of the operation
+- `__answer` - represents the solution of the calculation
 
 Python does indeed support higher order functions but your boss is anti-functional programming so he forbids the use these features. Because of this you decide to implement the strategy pattern.
 
@@ -247,7 +247,7 @@ Say you have two or more *almost* identical behaviors from different classes. Re
 
 ### Solution
 
-To avoid code duplication, you break down your code into individual steps. By doing this you can create a superclass that contains the implementation for all common steps. This superclass will also contain the common implementation for the **template method**, the method that combines all steps into the original object behavior.  differences between steps will be resolved under different specializations of this  superclass.
+To avoid code duplication, you break down your code into individual steps. By doing this you can create a superclass that contains the implementation for all common steps. This superclass will also contain the common implementation for the **template method**, the method that combines all steps into the original object behavior.  Differences between steps will be resolved under different specializations of this  superclass.
 
 ![template method](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/template.png)
 
@@ -363,7 +363,7 @@ One of the most common iteration recipes that you'll likely implement is the **f
 For non built-in collections, you can create an iterator that does the traversal for you. On the bare minimum these iterators will realize some `Iterator` abstraction that contains the methods, `next()`, and `hasNext()`. From these methods alone you can easily perform complete traversals without knowing the exact type of the collection:
 
 ```python
-i = collection.newIterator()
+    i = collection.newIterator()
 while i.hasNext():
 	print(i.next())
 ```

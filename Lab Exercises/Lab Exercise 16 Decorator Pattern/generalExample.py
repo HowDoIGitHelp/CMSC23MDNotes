@@ -5,8 +5,8 @@ class SimpleClass:
         print("This is a simple class")
 
 class BaseDecorator(ABC,SimpleClass):
-    def __init__(self, wrappedObject):
-        self.wrappedObject = wrappedObject
+    def __init__(self, wrappedObject:SimpleClass):
+        self._wrappedObject = wrappedObject
 
     @abstractmethod
     def doSomething(self):
@@ -14,24 +14,29 @@ class BaseDecorator(ABC,SimpleClass):
 
 class Decorator1(BaseDecorator):
     def doSomething(self):
-        self.wrappedObject.doSomething()
+        self._wrappedObject.doSomething()
         print("Decorated with decoration1")
 
 class Decorator2(BaseDecorator):
     def doSomething(self):
         print("Decorated with decoration2")
-        self.wrappedObject.doSomething()
+        self._wrappedObject.doSomething()
 
-
+"""
 a = SimpleClass()
 a.doSomething()
+
 print()
-b = Decorator1(a)
+
+b:SimpleClass = Decorator1(a)
 b.doSomething()
 print()
 c = Decorator1(Decorator2(a))
 c.doSomething()
 
 print()
-d = Decorator1(b)
+d = Decorator1(Decorator2(Decorator1(b)))
 d.doSomething()
+
+print(isinstance(d,SimpleClass))
+"""

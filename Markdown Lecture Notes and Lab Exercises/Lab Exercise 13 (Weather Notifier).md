@@ -12,7 +12,7 @@ class Headline:
         self.__source = source
 
     def __str__(self) -> str:
-        return "%s(%s)\n%s" % (self.__headline, self.__source, self.__source)
+        return "%s(%s)\n%s" % (self.__headline, self.__source, self.__details)
 
 class Weather:
     def __init__(self, temp:float, humidity:float, outlook:str):
@@ -34,7 +34,7 @@ To implement this, you have to apply the observer pattern. Your subject would be
 
 Any platform, that is interested in the changes to the subject should realize a `Subscriber` abstraction (Observer), which contains the abstract method update().
 
-![observer example](C:/Users/rrabe/Google Drive/Lecture-Notes-And-Resources/CMSC 23/uml/observerexample.png)
+![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/observerexample.png)
 
 **Complete the system using the observer pattern.**
 
@@ -42,5 +42,3 @@ Any platform, that is interested in the changes to the subject should realize a 
 
 - Completeness of the pattern - 40
 - Elegance of method and attribute naming - 10
-
-**Deadline November 30, 2020**

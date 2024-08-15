@@ -2,7 +2,7 @@
 
 ## Introduction
 
-One of the features added to imperative programming was the elegant handling of errors. Exception handling provided OOP a mechanism to control what exactly the system does when parts of the fail. 
+One of the features added to imperative programming was the elegant handling of errors. Exception handling provided OOP a mechanism to control what exactly the system does when parts of the system fail. 
 
 ## Learning Outcomes
 
@@ -45,7 +45,7 @@ ZeroDivisionError: division by zero
 
 > Python has its own error raised when it encounter division by zero but well create our own for the sake of learning
 
-Problematic functions and methods like quotient don't always return a float. The problem for this quotient is that there is a possibility you'll end up dividing with zero. This introduces the concept of exception. Where the quotient function works **except** when the denominator is zero.
+Problematic functions and methods like `quotientUnsafe` don't always return a float. The problem for this `quotientUnsafe` function is that there is a possibility you'll end up dividing with zero. This introduces the concept of exception. Where the quotient function works **except** when the denominator is zero.
 
 To implement this kind of behavior. You create an if-else check (or any control statement) to make sure the denominator is not zero. If you do encounter a zero denominator you **`raise`** an error. Here you are raising a user defined error object called `DivisionByZeroError`.
 
@@ -81,13 +81,14 @@ some more behavior
 
 By enclosing the lines of code that could potentially raise errors, you create a safety net for the system. The system **tries** to execute these lines, and if there are no errors raised inside the `try` block then the system runs normally. Nothing abnormal would occur **except** when the problematic lines of code raises an error. In this specific case, the system is catching, a specific type of error called `DivisionByZeroError`. If a specific type of error is not specified in the exception block, the system will catch any general error.
 
-If a method with potential to raise errors like `quotient()`, is invoked inside another method, the caller method becomes a method with potential to raise errors as well. 
+If a method with potential to raise errors like `quotient()`, is invoked inside another method without using the try except block, the caller method becomes a method with potential to raise errors as well. 
 
 ```python
 def mixedFraction(a:float, b: float, c:float) -> float: #maybe a float
     return a + quotient(b,c)
 
 mixedFraction(1,1,0)
+print("some more behavior")
 ```
 
 ```python
@@ -114,9 +115,9 @@ DivisionByZeroError                       Traceback (most recent call last)
 DivisionByZeroError: (1, 0)
 ```
 
-Here, the `quotient()`'s caller,`mixedFraction()`, does not enclose the problematic line with a try-catch block. This means that `mixedFraction` is basically the ignoring any potential error, shifting the responsibility of dealing with the error to wherever `mixedFraction()` is called.
+Here, the `quotient()`'s caller,`mixedFraction()`, does not enclose the problematic line with a try-except block. This means that `mixedFraction` is basically the ignoring any potential error, shifting the responsibility of dealing with the error to wherever `mixedFraction()` is called.
 
-On the example below, `quotient()` is invoked inside `quotientString()`, but instead of ignoring the error, `quotientString()` deals with it using a try-catch block. When quotient fails, the function returns "undefined number" instead of a fraction string.
+On the example below, `quotient()` is invoked inside `quotientString()`, but instead of ignoring the error, `quotientString()` deals with it using a try-except block. When quotient fails, the function returns "undefined number" instead of a fraction string.
 
 ```python
 def quotientString(a:float,b:float) -> str: #always a string
@@ -142,7 +143,7 @@ By dealing with potential errors, `quotientString()` becomes a safe function tha
 You can catch multiple kinds of exceptions if you want to handle different exceptions differently. The exception `IndexError` is raised when an iterable type like list accesses a non-existent member. Here the function `quotientList` wants to append `math.inf` if you're dividing by zero and not append anything if you're dividing with non-existent list members.
 
 ```python
-def quotientList(l:[float],m:[float]) -> [float]: #always a list of float
+def quotientList(l:list[float],m:list[float]) -> [float]: #always a list of float
     r = []
     for i in range(0,len(l)):
         try:
@@ -163,7 +164,7 @@ quotientList([1,2,3,4,5,6],[3,0,2,2,1])
 
 So you've seen two ways to react with potential errors, to ignore them like `mixedFraction()` or to deal with them like `quotientString()`. Which is the proper way? You might think that dealing with errors is better since it's this way doesn't break the system. But actually the choice to ignore or to deal with errors depends on who has the correct responsibility in fixing the error. 
 
-If you immediately deal with the error as quickly as possible, you'll end up missing the importance of raising errors. The method `quotient()` for example, is responsible for providing the caller with a quotient, that must be this method's only responsibility. You should not give quotient the responsibility of fixing division by zeroes. That responsibility lies on its caller, because different caller's may have different ways to deal with the error. The method `quotientString()` deals with division by zero with "undefined number" while the method `quotientList()` deals with division by zero with "inf". These two callers have different ways of interpreting division by zero so they should be the one's responsible for dealing with the error.
+If you immediately deal with the error as quickly as possible, you'll end up missing the importance of raising errors. The method `quotient()` for example, is responsible for providing the caller with a quotient, that must be this method's only responsibility. You should not give `quotient` the responsibility of fixing division by zeroes. That responsibility lies on its caller, because different caller's may have different ways to deal with the error. The method `quotientString()` deals with division by zero with "undefined number" while the method `quotientList()` deals with division by zero with "inf". These two callers have different ways of interpreting division by zero so they should be the one's responsible for dealing with the error.
 
 
 
