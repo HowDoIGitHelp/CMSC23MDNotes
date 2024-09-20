@@ -1,0 +1,34 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.19)  20 SEP 2024 11:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**textbooksmall.tex
+(./TextbookSmall.tex
+LaTeX2e <2024-06-01> patch level 1
+L3 programming layer <2024-05-27>
+! Undefined control sequence.
+l.1 \chapter
+            {Programming Paradigms
+? ,,^^Z
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? ^^X
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? x
+ 
+Here is how much of TeX's memory you used:
+ 14 strings out of 474256
+ 295 string characters out of 5746292
+ 1918560 words of memory out of 5000000
+ 22784 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 11i,0n,13p,79b,8s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

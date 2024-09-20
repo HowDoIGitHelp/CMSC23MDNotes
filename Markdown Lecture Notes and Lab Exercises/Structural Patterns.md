@@ -182,7 +182,7 @@ Looking from the outside, simple functionality (like borrowing a book or deposit
 
 To solve this issue, you create a straightforward interface, that contains methods to encapsulate complicated functionality in your subsystem. Instead of using the internal classes to perform some functionality, you call the facade interface's method instead.
 
-![facade](https://raw.githubusercontent.co  m/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/facade.png)
+![facade](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/facade.png)
 
 ### Why this is elegant
 
