@@ -1,8 +1,11 @@
 numeral(0).
 numeral(s(X)) :- numeral(X).
+numeral(p(X)) :- numeral(X).
 
-add(A,0,A).
-add(A,s(B),s(C)) :- add(A,B,C).
+sum(A,0,A).
+sum(A,s(B),s(C)) :- sum(A,B,C).
 
-mult(_,0,0).
-mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
+difference(A,B,C) :- sum(B,C,A).
+
+product(_,0,0).
+product(A,s(B),C) :- product(A,B,D), sum(A,D,C).

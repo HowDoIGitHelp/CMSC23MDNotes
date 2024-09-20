@@ -106,4 +106,3 @@ The multi-paradigmness of programming languages tend to be the reason why some p
 
 Van Roy, Peter. (2012). [Programming Paradigms for Dummies](https://www.researchgate.net/publication/241111987_Programming_Paradigms_for_Dummies_What_Every_Programmer_Should_Know): What Every Programmer Should Know. 
 
-
