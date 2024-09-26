@@ -102,6 +102,8 @@ The process of modeling elegant object representations is basically determining 
 
 Creating interfaces like these provide OOP with the mechanism to create **abstractions** in the object level. An abstraction in computer science is basically a model of computation that is free from its implementation.  In the same way that functional programming creates abstractions of mathematical functions by writing lambdas without side effects, OOP creates abstractions of objects using interfaces that don't specify the exact implementation of an object. 
 
+
+
 In the example above, the interface `BorrowableItem` is an abstract representation of *something from the library that can be borrowed*. An interface like `BorrowableItem` contains method names and type signatures but it doesn't actually contain code. That is because a `BorrowableItem` is an abstract representation. We are not supposed to care about the implementation of the methods `uniqueItemId()` and `commonName()` all we should care about is that `uniqueItemId()` should return an `int` and `commonName()` should return a `string`.  
 
 The reason why this structure still works, is because we have a concrete class called `Book` which is a **realization** or an **implementation** of `BorrowableItem`. A book is *something from the library that can be borrowed*. Because a `Book` is a `BorrowableItem`, it must also behave based on the specifications of  a `BorrowableItem`. Meaning it must contain the methods `uniqueItemId()` and `commonName()` (which should also have the same type signature as the methods of `BorrowableItems`). Since `Book` is a concrete class it's methods `uniqueItemId()` and `commonName()` should be implemented (meaning there should be code inside these methods).
@@ -128,7 +130,58 @@ One of the most important design principle of object oriented programming is the
 - You should **encapsulate what varies**, meaning, things that always change should be encapsulated deep into the structure of your code. This will help with maintainability since the changing isolated data or behavior will have less impact to the to the whole system.
 - Encapsulation means both attributes and behaviors. Concrete objects should be given the responsibility of implementing their own behavior. This means that a method that describes the behavior of a certain class should belong to that class.
 
-### Inheritance (you can skip this, there's a better explanation in Class Relationships)
+Which implementation is better?
+
+**Tax rate as a global variable**
+
+```python
+TAX_RATE = 1.1
+
+product1_price = 100
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+
+final_price += product1_price * TAX_RATE
+final_price += product2_price * TAX_RATE
+final_price += exempt_product_price
+```
+
+**Tax rate hard coded for every instance of use**
+
+```python
+product1_price = 100
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+
+final_price += product1_price * 1.1
+final_price += product2_price * 1.1
+final_price += exempt_product_price
+```
+
+**A function called `taxedPrice()` which calculates tax**
+
+```python
+TAX_RATE = 1.1
+
+def taxedPrice(price):
+	return price * TAX_RATE
+
+product1_price = 100
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+
+final_price += taxedPrice(product1_price)
+final_price += taxedPrice(product2_price)
+final_price += exempt_product_price
+```
+
+Hardcoding tax calculation for every instance is the least encapsulated solution. This solution is the least future proof version since changes in tax rate will require changing every instance of tax calculation manually as well. To improve upon this we can encapsulate tax rate into a global variable. Anytime there are changes to the tax rate, we simply change the value of `TAX_RATE` and all tax calculations will be updated as well.
+
+This can be improved even more by encapsulating the tax calculation deeper into it's own helper function. This version makes it more resilient to tax policy changes. Maybe in the future, tax calculation becomes more complex than simple multiplication. If this does happen our code is ready to accept the change by simply changing the body of `taxedPrice()`.
+
+As seen here, we see how tax calculation is something that has potential to change. It is volatile. As mentioned earlier, it is prudent to encapsulate volatile code to make it easier to update.
+
+### Inheritance 
 
 Another important design principle in OOP is the concept of **inheritance**. Inheritance is the concept in which the definition of a class is derived from another class. An existing class, called the **super class** (also called the **base class** or the **parent class**) passes all visible attributes and methods to a **sub class** (also called the **derived class** or the **child class**). 
 
