@@ -94,7 +94,7 @@ The process of modeling elegant object representations is basically determining 
 
 > Don't worry if this diagram seems confusing at first since there will be a lecture on UML and how to interpret them
 
-![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public interface.svg)
+![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public%20interface.svg)
 
 #### Abstraction of Objects
 
@@ -110,7 +110,7 @@ Why even go through all this trouble? If *something from the library that can be
 
 For the current structure we created, this feels like extra code because our system is small enough right now. But imagine if our system grows and we need to incorporate other things from the library that are not books but can be borrowed. For example, a library also contains periodicals that you can borrow as well, and these periodicals do not follow the form of the book. You need a different representation for a periodical, therefore you need to create a new concrete class called `Periodical`. Since a periodical is also *something from the library that can be borrowed*, a periodical is another **realization** of `BorrowableItem`. And with the tiny effort of writing the implementation of a periodical (including the realized methods  `uniqueItemId()` and `commonName()` ), we added an extra interaction that allows a `LibraryCard` to borrow periodicals as well.
 
-![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public interface 2 realizations.svg)
+![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public%20interface%202%20realizations.svg)
 
 #### The Interface and the Implementation
 
