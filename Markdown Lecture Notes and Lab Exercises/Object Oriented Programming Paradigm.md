@@ -26,9 +26,10 @@ But instead of redesigning the concept of imperative paradigm to solve maintaina
 
 ## Fundamental Concepts of OOP
 
-Object oriented programming is usually defined using its three core design principles:
+Object oriented programming is usually defined using its four core design principles:
 
 - Encapsulation
+- Abstraction
 - Inheritance
 - Polymorphism
 
@@ -96,13 +97,13 @@ The process of modeling elegant object representations is basically determining 
 
 ![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public%20interface.svg)
 
+![abstraction borrowable item](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/refs/heads/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/abstractionBorrowableItems.PNG)
+
 #### Abstraction of Objects
 
 > The term abstraction is actually quite overloaded in OOP and CS in general. The "abstraction" I'm talking about in this context is the concept of abstraction.
 
 Creating interfaces like these provide OOP with the mechanism to create **abstractions** in the object level. An abstraction in computer science is basically a model of computation that is free from its implementation.  In the same way that functional programming creates abstractions of mathematical functions by writing lambdas without side effects, OOP creates abstractions of objects using interfaces that don't specify the exact implementation of an object. 
-
-
 
 In the example above, the interface `BorrowableItem` is an abstract representation of *something from the library that can be borrowed*. An interface like `BorrowableItem` contains method names and type signatures but it doesn't actually contain code. That is because a `BorrowableItem` is an abstract representation. We are not supposed to care about the implementation of the methods `uniqueItemId()` and `commonName()` all we should care about is that `uniqueItemId()` should return an `int` and `commonName()` should return a `string`.  
 
@@ -119,6 +120,8 @@ For the current structure we created, this feels like extra code because our sys
 Let's summarize what we learned so far by discussing how these capabilities characterize the philosophy of OOP. The paradigm aims to solve the issues of state and maintainability by allowing programmers to create boundaries between its mix of attributes and methods. The boundaries you enforce are basically the object structure you create. A library card name shouldn't mix with a book title so we put a boundary between them by **encapsulating** them into their respective objects. 
 
 You can imagine these objects as amorphous blobs with surface separating the methods and attributes inside it from other things in your code. These amorphous blobs have volume and surface. The volume of these blobs represent the **implementation** of these objects and the surface of these blobs represent the **interface** of these objects. The interaction, between two objects is characterized by the surfaces of objects, the implementation. The volume of the object shouldn't dictate how the objects relate to each other, in fact everything inside the object should be inaccessible to other objects. Objects should only see each other's surface. This means that the interaction between objects should be defined by their interface not their implementation.
+
+![abstraction borrowable item](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/refs/heads/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/abstractionPluggableDevice.PNG)
 
 Your job as an OOP programmer is to make sure that the complexity of the surface grows slower than the complexity of the core. This means that as your system evolves, changes that happen in the core, the implementation hidden inside each object, (as much as possible) shouldn't affect the surface, the interfaces of each object. This is what harmony and elegance in OOP means. Objects interact with each other seamlessly, and intuitively, regardless of what their inside look like.
 
