@@ -524,8 +524,12 @@ def f(parameters):
 For example creating the add function:
 
 ```python
-def add(x,y):
-    return x + y
+def add(x:int,y:int) -> int:
+    sum = x + y
+    return sum
+
+def minus(x,y):
+    return x - y
 ```
 
 ## Python file reading and writing
