@@ -8,7 +8,7 @@
   }
 
   class ExpressShipment{
-    + newDelivery(location) : Delivery //overrides Shipment.delivery()
+    + newDelivery(location) : Delivery //overrides Shipment.newDelivery()
   }
 
   interface Delivery{

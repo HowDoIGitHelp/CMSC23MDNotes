@@ -1,39 +1,47 @@
-from abc import ABC, abstractmethod
-
 class EmptyClass:
     pass
 
+
 class VoiceBox:
-    name : str = "Vincent"
+    name = "Vincent"
     def speak():
         print("Hi, I'm " + VoiceBox.name + " the VoiceBox")
 
 #VoiceBox.speak()
 #VoiceBox.name = "Vito"
 #VoiceBox.speak()
-#v : VoiceBox = VoiceBox()
-
 
 
 
 class Robot:
+    #dunder function
     def __init__(self, n:str):
         self.name = n
+        self.attr2 = "val1"
+        self.attr3 = 0
+        #r1.name = "Bonk"
 
     def talk(self):
+        #r1.name
+        self.attr4 = 0
         print("Howdy, it's me, "+ self.name)
 
     def communicate(self, partner : 'Robot'):
         print("Howdy, "+ partner.name + " it's me, "+ self.name)
 
-r1 : Robot = Robot("Bonk")
-r2 : Robot = Robot("Chonk")
+
+r1 = Robot("Bonk")
+r2 = Robot("Chonk")
+
+#print(r1.name)
+#print(r2.name)
 
 #r1.talk()
 #r2.talk()
 
-r1.name = "Donk"
+#r1.name = "Donk"
 
+#r1.talk()
 #r2.communicate(r1)
 
 class SkyBot(Robot):
@@ -41,15 +49,17 @@ class SkyBot(Robot):
         print("I'm "+ str(height) +"m high in the air. Skybot go zoom. ")
 
 r3:SkyBot = SkyBot("Zonk")
-#r3.talk()
-#r3.communicate(r3)
-#r3.fly(3)
+r3.talk()
+r3.communicate(r3)
+r3.fly(3)
 
 class ShadeBot(Robot):
+    #override
     def __init__(self, n:str, o:float):
         self.name = "Mr. " + n
         self.visorOpacity = o
 
+    #override
     def communicate(self,partner:Robot):
         if self.visorOpacity >= 1:
             print("Howdy, it's me, "+ self.name + ". Sorry I cant see you my shades are too dark")
@@ -57,23 +67,27 @@ class ShadeBot(Robot):
             print("Howdy, "+ partner.name + " it's me, "+ self.name)
 
 r4:ShadeBot = ShadeBot("Tonk", 1)
-#4.talk()
-#r4.communicate(r3)
+r4.talk()
+r4.communicate(r4)
+print(isinstance(r4,Robot)) #True
+print(isinstance(r4,ShadeBot)) #True
+print(isinstance(r4,SkyBot)) #False
+
+r1:Robot = Robot("Onk")
+print(isinstance(r1,Robot)) #True
+print(isinstance(r1,SkyBot)) #False
 
 
-
+from abc import ABC, abstractmethod
+#Abstract Base Class
 class BorrowableItem(ABC):
-    @abstractmethod
+    @abstractmethod        
     def borrow(self):
         pass
 
     @abstractmethod
     def name(self) -> str:
         pass
-
-
-    #def implementationRequirement(self):
-        #pass
 
 class Book(BorrowableItem):
     def __init__(self, title:str):
@@ -98,16 +112,19 @@ class IMacUnit(BorrowableItem):
 b : BorrowableItem = Book("Necronomicon")
 i : BorrowableItem = IMacUnit(5)
 
-#b.borrow()
-#i.borrow()
+items = [b,i]
 
+for item in items:
+    item.borrow()
+
+print(isinstance(b,BorrowableItem)) #True
+print(isinstance(b,Book)) #True
 
 class ClandestineClass:
     def __init__(self, publicValue:int, protectedValue:int, privateValue:int):
-        self.publicValue = publicValue
+        self.publicValue = publicValue#1
         self._protectedValue = protectedValue
         self.__privateValue = privateValue
-
 
     def doPublicly(self):
         print("Hey!, these are my values")
@@ -116,6 +133,7 @@ class ClandestineClass:
         print(self.__privateValue)
 
     def _doProtectedly(self):
+        self.__doPrivately()
         print("hey")
 
     def __doPrivately(self):
@@ -126,14 +144,17 @@ class SpecialClandestineClass(ClandestineClass):
         print("Do somethin inside special clandestine class")
         print(self.publicValue)
         print(self._protectedValue)
-        print(self.__privateValue)
 
-c:ClandestineClass = ClandestineClass(1,2,3)
+#c:ClandestineClass = ClandestineClass(1,2,3)
 #print(c.publicValue)
 #print(c._protectedValue)
 #print(c.__privateValue)
 #c.doPublicly()
+#c._doProtectedly()
+#c.__doPrivately()
 
+s : SpecialClandestineClass = SpecialClandestineClass(1,2,3)
+s.doSomethingSpecial()
 
 class AbstractClass(ABC):
     @abstractmethod
@@ -141,7 +162,8 @@ class AbstractClass(ABC):
         pass
 
     def printSomethingB(self):
-        print("I'm inherited. You can also override me if you want")
+        print("I'm a default method from Abstract Class")
+
 
 class ConcreteClass1(AbstractClass):
     def printSomethingA(self):
@@ -150,22 +172,22 @@ class ConcreteClass1(AbstractClass):
 class ConcreteClass2(AbstractClass):
     def printSomethingA(self):
         print("I'm implemented by Concrete Class 2")
-
+    #override
     def printSomethingB(self):
         print("I'm overriden by Concrete Class 2")
 
 c1:AbstractClass = ConcreteClass1()
 c2:AbstractClass = ConcreteClass2()
 
-c1.printSomethingA()
-c1.printSomethingB()
+#c1.printSomethingA()
+#c1.printSomethingB()
 print()
 c2.printSomethingA()
 c2.printSomethingB()
 
 
 
-s:SpecialClandestineClass = SpecialClandestineClass(1,2,3)
-s.doPublicly()
-print() #prints a new line for formatting
-s.doSomethingSpecial()
+#s:SpecialClandestineClass = SpecialClandestineClass(1,2,3)
+#s.doPublicly()
+#print() #prints a new line for formatting
+#s.doSomethingSpecial()

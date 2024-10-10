@@ -1,6 +1,6 @@
 #tax calculation 2
 
-TAX_RATE = 1.1
+TAX_RATE = 1.5
 
 product1_price = 100
 product2_price = 35
