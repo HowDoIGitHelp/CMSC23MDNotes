@@ -33,6 +33,9 @@ class AnotherState(State):
     def stateName(self):
         return "Another State"
 
+
+
+
 class Context:
     def __init__(self):
         self.__currentState = InitialState(self)
@@ -45,16 +48,3 @@ class Context:
     def display(self):
         print("context:")
         print("current state:" + self.__currentState.stateName())
-
-c =  Context()
-c.display()
-print()
-c.method()
-print()
-c.anotherMethod()
-print()
-c.method()
-print()
-c.method()
-print()
-c.display()

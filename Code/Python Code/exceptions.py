@@ -24,10 +24,8 @@ def quotientString(a:float,b:float) -> str: #always a string
     try:
         wholePart = math.floor(quotient(a,b))
         decimalPart = quotient(a,b) - wholePart
-        l = []
-        print(l[0])
         return str(wholePart) + " and " + str(decimalPart)
-    except Exception:
+    except DivisionByZeroError:
         return "undefined number"
 
 def quotientList(l:list[float],m:list[float]) -> [float]: #always a list of float

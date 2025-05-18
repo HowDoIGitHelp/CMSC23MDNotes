@@ -8,7 +8,7 @@ Some systems require complex and extremely decoupled relationships. Behavioral p
 
 1. Design systems that apply the strategy pattern
 2. Design systems that apply the state pattern
-3. Design systems that apply the command pattern
+3. ###### Design systems that apply the command pattern
 4. Design systems that apply the observer pattern
 5. Design systems that apply the template pattern
 6. Design systems that apply the iterator pattern
@@ -53,7 +53,7 @@ To do this, you need to create an abstraction called `Operation` to represent th
 ### Why this is elegant
 
 - **Open/Closed Principle** -  If you want to add new strategies, you wouldn't need to touch any existing code.
-- The implementation of a strategy is deeply tucked inside multiple layers of encapsulation.  Changing these implementations is very easy.
+- The implementation of a strategy is deeply tucked inside multiple layers of encapsulation.  Changing these implementations are very easy.
 - You can swap strategies during runtime in the same way you do in functional programming.
 
 ### How to implement it
@@ -363,7 +363,7 @@ One of the most common iteration recipes that you'll likely implement is the **f
 For non built-in collections, you can create an iterator that does the traversal for you. On the bare minimum these iterators will realize some `Iterator` abstraction that contains the methods, `next()`, and `hasNext()`. From these methods alone you can easily perform complete traversals without knowing the exact type of the collection:
 
 ```python
-    i = collection.newIterator()
+i = collection.newIterator()
 while i.hasNext():
 	print(i.next())
 ```

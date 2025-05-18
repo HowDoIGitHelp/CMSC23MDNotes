@@ -73,7 +73,7 @@ In this new architecture, whenever there are new delivery methods a  shipment co
 
 ### Problem
 
-Your system consists of a family of related products. These products also have different variants.  You need a way to create these products so that the products match the the same variant. The exact variants of the family of  products are decided during runtime, somewhere else in the code (similar to product creation in a factory method) 
+Your system consists of a family of related products. These products also have different variants.  You need a way to create these products so that the products match the the same variant. The exact variants of the family of  products are decided during runtime somewhere else in the code (similar to product creation in a factory method) 
 
 ![Abstract Factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Abstract%20Factory.png)
 
@@ -93,7 +93,7 @@ When the client of an abstract factory produces its products, it doesn't need to
 
 #### Bootleg Text-based Zelda Game
 
-You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalflos (different types have different moves). The exact type of monster is randomly decided as well. 
+You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalfos (different types have different moves). The exact type of monster is randomly decided as well. 
 
 Right now the game works like this:
 
@@ -165,7 +165,7 @@ To seamlessly incorporate these harder monsters in your system, you need to crea
 ### How to implement it:
 
 - For every product in the family of products, create an abstraction of it (`ProductA`, `ProductB`).
-- For every variant of the products, create a factory, (`FactoryVariant1`, `FactoryVariant2`). These factories must realize under an abstract `AbstractFactory`. The factory should contain abstract factory methods for each product, 
+- For every variant of the products, create a factory, (`FactoryVariant1`, `FactoryVariant2`). These factories must realize under an abstraction `AbstractFactory`. The factory should contain abstract factory methods for each product, 
 - Inside every factory realization implement all factory methods.
 
 ## Singleton Pattern (Optional Read)

@@ -21,6 +21,10 @@ class SpecialProductC(Product):
     def show(self):
         print("I'm an instance of the newest product type")
 
+class SpecialProductD(Product):
+    def show(self):
+        print("im a new product type")
+
 class Factory:
     def printANewProduct(self):
         p = self.newProduct()
@@ -40,6 +44,10 @@ class SpecialFactoryB(Factory):
 class SpecialFactoryC(Factory):
     def newProduct(self) -> Product:
         return SpecialProductC()
+
+class SpecialFactoryD(Factory):
+    def newProduct(self) -> Product:
+        return SpecialProductD()
 
 f:Factory = Factory()
 f.printANewProduct()

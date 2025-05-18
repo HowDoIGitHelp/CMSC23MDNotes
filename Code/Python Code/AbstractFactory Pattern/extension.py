@@ -2,11 +2,11 @@ from noPattern import *
 
 class ProductAVariant3(ProductA): #Clay Plate
     def someMethodA(self):
-        print("im a product a variant 3")
+        print("I'm a Clay Plate")
 
 class ProductBVariant3(ProductB): #Clay Bowl
     def someMethodB(self):
-        print("im a product b variant 3")
+        print("Clay Bowl")
 
 class FactoryVariant3(AbstractFactory):#Clay
     def newProductA(self) -> ProductA:
@@ -20,7 +20,5 @@ def clientFunction(variant:AbstractFactory):
     a.someMethodA()
     b.someMethodB()
 
-v1 = FactoryVariant1()
-v2 = FactoryVariant2()
-v3 = FactoryVariant3()
-clientFunction(v3)
+ #clay variant
+clientFunction(FactoryVariant2())

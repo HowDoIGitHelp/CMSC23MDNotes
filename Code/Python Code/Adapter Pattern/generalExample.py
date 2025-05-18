@@ -34,9 +34,3 @@ class ServiceAdapter(RequiredInterface):
     def method2(self,data:str):
         self.__service.serviceMethod2(data)
 
-
-s:AbstractService = RealService()
-a:RequiredInterface = ServiceAdapter(s)
-
-a.method1()
-a.method2("foo")

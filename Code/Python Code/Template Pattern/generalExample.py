@@ -38,7 +38,7 @@ class Specialization2(Template):
 
     def step4(self):
         print("step 4: do something else (s2)")
-
+"""
 s1:Template = Specialization1()
 s2:Template = Specialization2()
 
@@ -46,3 +46,4 @@ s1.templateMethod()
 print()
 print()
 s2.templateMethod()
+"""

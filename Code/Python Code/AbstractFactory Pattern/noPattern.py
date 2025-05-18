@@ -1,45 +1,23 @@
 from abc import ABC,abstractmethod
 
-class ProductA(ABC): #Plate
+
+class ProductA(ABC):
     @abstractmethod
     def someMethodA(self):
         pass
 
-class ProductB(ABC): #Bowl
+class ProductB(ABC):
     @abstractmethod
     def someMethodB(self):
         pass
-
-class ProductAVariant1(ProductA): #Ceramic Plate
-    def someMethodA(self):
-        print("im a ceramic")
-
-class ProductBVariant1(ProductB): #Ceramic Bowl
-    def someMethodB(self):
-        print("im a product b variant 1")
-
-class ProductAVariant2(ProductA): #Glass Plate
-    def someMethodA(self):
-        print("im a product a variant 2")
-
-class ProductBVariant2(ProductB): #Glass Bowl
-    def someMethodB(self):
-        print("im a product b variant 2")
 
 class AbstractFactory(ABC):
     @abstractmethod
     def newProductA(self) -> ProductA:
         pass
-
     @abstractmethod
     def newProductB(self) -> ProductB:
         pass
-
-class FactoryVariant1(AbstractFactory): #Ceramic
-    def newProductA(self) -> ProductA:
-        return ProductAVariant1()
-    def newProductB(self) -> ProductB:
-        return ProductBVariant1()
 
 class FactoryVariant2(AbstractFactory): #Glass
     def newProductA(self) -> ProductA:
@@ -47,12 +25,39 @@ class FactoryVariant2(AbstractFactory): #Glass
     def newProductB(self) -> ProductB:
         return ProductBVariant2()
 
-# def clientFunction(variant:AbstractFactory):
-#     a:ProductA = variant.newProductA()
-#     b:ProductB = variant.newProductB()
-#     a.someMethodA()
-#     b.someMethodB()
+class FactoryVariant1(AbstractFactory): #Ceramic
+    def newProductA(self) -> ProductA:
+        return ProductAVariant1()
+    def newProductB(self) -> ProductB:
+        return ProductBVariant1()
 
-# v1 = FactoryVariant1()
-# v2 = FactoryVariant2()
-# clientFunction(v2)
+class ProductAVariant1: #Ceramic Plate
+    def someMethodA(self):
+        print('Ceramic Plate')
+
+
+class ProductBVariant1: #Ceramic Bowl
+    def someMethodB(self):
+        print('Ceramic Bowl')
+
+class ProductAVariant2: #Glass Plate
+    def someMethodA(self):
+        print('Glass Plate')
+
+class ProductBVariant2: #Glass Bowl
+    def someMethodB(self):
+        print('Glass Bowl')
+
+
+
+def clientFunction(variant:AbstractFactory):
+    a = variant.newProductA()
+    b = variant.newProductB()
+
+    a.someMethodA()
+    b.someMethodB()
+
+
+f1 = FactoryVariant1()
+f2 = FactoryVariant2()
+#clientFunction(f2)

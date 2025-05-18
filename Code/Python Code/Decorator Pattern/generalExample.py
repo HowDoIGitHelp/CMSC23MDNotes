@@ -23,15 +23,3 @@ class Decorator2(BaseDecorator):
         self.wrappedObject.doSomething()
 
 
-a = SimpleClass()
-a.doSomething()
-print()
-b = Decorator1(a)
-b.doSomething()
-print()
-c = Decorator1(Decorator2(a))
-c.doSomething()
-
-print()
-d = Decorator1(b)
-d.doSomething()
