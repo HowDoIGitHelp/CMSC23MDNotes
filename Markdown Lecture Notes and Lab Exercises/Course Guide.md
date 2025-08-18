@@ -60,12 +60,12 @@ After completing this course, you should be able to:
 >    1. Factory method pattern
 >    2. Abstract factory pattern
 > 10. Behavioral Patterns
->    1. State pattern
->    2. Strategy pattern
->    3. Command pattern
->    4. Iterator pattern
->    5. Observer pattern
->    6. Template method patterns
+>     1. State pattern
+>     2. Strategy pattern
+>     3. Command pattern
+>     4. Iterator pattern
+>     5. Observer pattern
+>     6. Template method patterns
 
 ## Mode of Delivery
 
