@@ -1,6 +1,6 @@
 # Course Guide
 
-**CMSC 23 - Programming Paradigms** *1st Semester AY 2020 - 2021*
+**CMSC 23 - Programming Paradigms** *1st Semester AY 2025 - 2026*
 
 ## Course Description
 
@@ -38,7 +38,6 @@ After completing this course, you should be able to:
 >    2. Unification
 >    3. Proof Search
 >    4. Advantages and disadvantages
->
 > 5. Object-oriented programming
 >    1. OOP as a solution to the perils of state
 >    2. Classes and Objects
@@ -54,39 +53,31 @@ After completing this course, you should be able to:
 >    1. History of design patterns
 >    2. Why patterns and why not patterns
 >    3. Classification of design patterns
-> 8. Creational Patterns
+> 8. Structural Patterns
+>    1. Decorator Pattern
+>    2. Adapter pattern
+> 9. Creational Patterns
 >    1. Factory method pattern
 >    2. Abstract factory pattern
-> 9. Behavioral Patterns
+> 10. Behavioral Patterns
 >    1. State pattern
 >    2. Strategy pattern
 >    3. Command pattern
 >    4. Iterator pattern
 >    5. Observer pattern
 >    6. Template method patterns
-> 10. Structural Patterns
->     1. Decorator Pattern
->     2. Adapter pattern
 
 ## Mode of Delivery
 
-This course will be delivered asynchronously through lecture notes with accompanying lecture videos. This course can also be found online on VLE. We wont be having scheduled zoom sessions but you're free to setup consultation on the scheduled times for this class.
+Lectures are delivered face to face during lecture schedules. There are lecture videos available but some of them are not updated. On cases where we cannot meet face to face, I will announce if a substitute asynchronous/remote session will be held.
 
-Most of the work for this course would be dedicated to the lab exercises. 
-
-### Enrolling through VLE
+### Enrolling through UVEC
 
 Look for the course [Programming Paradigms](https://vle.upcebu.edu.ph/course/view.php?id=185) in VLE and enroll yourself to the course. Make sure you enroll using the correct enrollment key for your section:
 
-- Section A - **sectiona2020**
-- Section B - **sectionb2020**
-- Section C - **sectionc2020**
-
-### Joining the Slack workspace
-
-Make sure to join the [slack workspace](https://join.slack.com/t/up-4zo6452/shared_invite/zt-h0vbp2du-PAaMMZ5jr8C1NIo2odcAjg) as soon as you can.
-
->  https://join.slack.com/t/up-4zo6452/shared_invite/zt-h0vbp2du-PAaMMZ5jr8C1NIo2odcAjg
+- Section A - **sectiona2025**
+- Section B - **sectionb2025**
+- Section C - **sectionc2025**
 
 ### Asking Questions and Scheduling Remote Consultations
 
@@ -99,30 +90,10 @@ You can contact me through sms, email, slack dms, or through discord. You can fi
 All of the resources in this course can be found in the course pack. The course pack includes:
 
 - **Lecture Notes** - You'll find these in the PDF file called *textbook.pdf*. 
-- **Lecture Videos** - There's a link to the youtube playlist here. If you want the master copies (not really super high quality but they're uncompressed version, you can find it here.)
+- **Lecture Videos** - Lecture videos are available although they may not be complete or updated.
 - **Lab Exercise guides** - Not really lab exercises since you'll be doing it at home, You can find them on the textbook as well.
-- **Some sample code** - Some code that I use in class
-- **PowerPoint Presentations** - will not really be useful since the lecture notes are way more detailed
-- **Installs for Haskell, Prolog and Python** - Includes instructions for installation
-
-## Study Schedule
-
-This class is asynchronous, but if you start too late, you might end up getting overwhelmed by the amount of work. Here's the recommended schedule for completing the resources and lab exercises.
-
-| Week Number | Topic                                                        | Videos to watch                                              | Lecture Notes to read                                        |       Lab Exercises       |
-| :---------: | ------------------------------------------------------------ | :----------------------------------------------------------- | ------------------------------------------------------------ | :-----------------------: |
-|      1      | Introduction to Programming Paradigms                        | Introduction to Programming Paradigms                        | Introduction to Programming Paradigms                        |           None            |
-|      2      | Imperative Programming Paradigm                              | Imperative Programming Paradigm                              | Imperative Programming Paradigm                              |   (Optional) Lab Exer 1   |
-|      3      | Functional Programming Paradigm                              | Functional Programming Paradigm, Lab Exercise 2, Lab Exercise 3 | Functional Programming Paradigm, Haskell Cheat Sheet         |  Lab Exer 2, Lab Exer 3   |
-|      4      | Logic Programming Paradigm                                   | Logic Programming Paradigm                                   | Logic Programming Paradigm                                   |        Lab Exer 4,        |
-|      5      | Object Oriented Programming Paradigm                         | Object Oriented Programming Paradigm                         | Object Oriented Programming Paradigm, Python Introduction    |        Lab Exer 5,        |
-|      6      | OOP Principles: Fundamentals of OOP, Class Relationships, Exceptions, | Fundamentals of OOP, Class Relationships, OOPython           | Fundamentals of OOP, Class Relationships, OOPython, Exceptions |        Lab Exer 6,        |
-|      7      | Solid Design Principles, Design Patterns Introduction        | Solid Design Principles, Design Patterns Introduction        | UML for Class Relationships, Solid Design Principles, Design Patterns Introduction, Extra Stuff |        Lab Exer 7,        |
-|      8      | Creational Patterns                                          | Creational Patterns                                          | Creational Patterns                                          |  Lab Exer 8, Lab Exer 9   |
-|      9      | Behavioral Patterns I: State and Strategy                    | Behavioral Patterns I: State and Strategy                    | Behavioral Patterns I: State and Strategy                    | Lab Exer 10, Lab Exer 11  |
-|     10      | Behavioral Patterns II: Command and Observer                 | Behavioral Patterns II: Command and Observer                 | Behavioral Patterns II: Command and Observer                 | Lab Exer 12, Lab Exer 13, |
-|     11      | Behavioral Patterns III: Template and Iterator               | Behavioral Patterns III: Template and Iterator               | Behavioral Patterns III: Template and Iterator               | Lab Exer 14, Lab Exer 15  |
-|     12      | Structural Patterns                                          | Structural Patterns                                          | Structural Patterns                                          | Lab Exer 16, Lab Exer 17  |
+- **Some sample code** - Some code used during live coding demos
+- **Presentations** - Presentations used in class
 
 ## Course Requirements
 
@@ -130,7 +101,9 @@ There will be no exams in this course, 100% of your grades will come from the la
 
 ### Lab Exercises
 
-The deadlines written on the lab exercise guides are all for November 30, 2020, which is the end of the semester. But please do not start this at the end of the semester. You can refer to the study schedule above for the recommended pace.
+All lab exercises are available in UVEC. Lab exercises must be submitted at the end of the lab sessions the exercises are scheduled for. Lab exercises submitted after the deadline but within the day will have a 10% deduction (10% of the perfect score). Lab exercises submitted after the day will have a 20% deduction per day. Lab exercises submitted one week after the deadline will not be accepted.
+
+Please let me know if you encounter any issues in submitting the lab exercises.
 
 - Lab Exercise 1 (Imperative Programming Review)
 - Lab Exercise 2 (Introduction to Haskell)
@@ -150,18 +123,13 @@ The deadlines written on the lab exercise guides are all for November 30, 2020, 
 - Lab Exercise 16 (Decorator)
 - Lab Exercise 17 (Adapter)
 
-I wont be able to immediately correct your lab exercises and write feedback every time there is a new submission but if you do want me to check out your work if it's correct or if you're on the right track, feel free to reach out and I will look at it. Just message me since I wont be able to notice every new submission in vle.
+### Grade breakdown
 
-## About the Instructor
-
-You know me. Its your CMSC 56 or 57 teacher. I've developed and taught this course for the first time last last year (enjoy some of the drawings I made just for this course). This is the third time I'm delivering this course. This course might be a little rough around the edges sometimes and it may lack some refinement, but I love teaching this course. When this was implemented face to face I saw my students enjoy the lab exercises in some form. To be honest I'm kind of disappointed that I wont be physically present while you're working on the lab exercises. But, don't worry I will try my best to help you remotely if you have issues in your code or something. 
-
-Let's be understanding of each other in these strange times.
+|     | Percentage  |
+|-----| ----------- |
+| Lab Exercises and Seatworks | 40% |
+| Long Exams | 60% |
 
 ### How to reach me
 
-Don't share these info please
-
-- SMS +63 921 031 2455
-- email rrabella@up.edu.ph
-- discord ruberoni#5100
+- email/google chat: rrabella@up.edu.ph
