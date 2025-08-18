@@ -73,7 +73,7 @@ Lectures are delivered face to face during lecture schedules. There are lecture 
 
 ### Enrolling through UVEC
 
-Look for the course [Programming Paradigms](https://uvec.upcebu.edu.ph/course/view.php?id=185) in VLE and enroll yourself to the course. Make sure you enroll using the correct enrollment key for your section:
+Look for the course [Programming Paradigms](https://uvec.upcebu.edu.ph/course/view.php?id=185) in UVEC and enroll yourself to the course. Make sure you enroll using the correct enrollment key for your section:
 
 - Section A - **sectiona2025**
 - Section B - **sectionb2025**
