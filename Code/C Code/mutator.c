@@ -8,8 +8,9 @@ int main() {
     printf("%d %d\n",x,y); 
     x = mutator(&y,&x);
     printf("%d %d\n",x,y); 
-
+}
 int mutator(int *x, int *y){
     *y = *y + *x;
     return *y;
+    
 }
