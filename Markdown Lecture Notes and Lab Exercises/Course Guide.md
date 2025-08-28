@@ -95,9 +95,6 @@ All of the resources in this course can be found in the course pack. The course 
 - **Some sample code** - Some code used during live coding demos
 - **Presentations** - Presentations used in class
 
-## Course Requirements
-
-There will be no exams in this course, 100% of your grades will come from the lab exercises. 
 
 ### Lab Exercises
 
@@ -127,8 +124,8 @@ Please let me know if you encounter any issues in submitting the lab exercises.
 
 |     | Percentage  |
 |-----| ----------- |
-| Lab Exercises and Seatworks | 40% |
-| Long Exams | 60% |
+| Lab Exercises and Seatworks | 30% |
+| Long Exams | 70% |
 
 ### How to reach me
 
