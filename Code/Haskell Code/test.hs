@@ -18,6 +18,9 @@ addTwo x = x + 2
 addThree :: Int -> Int
 addThree x = x + 3
 
+add :: Int -> Int -> Int
+add x y = x + y
+
 addFour :: Int -> Int
 addFour x = x + 4
 
@@ -30,6 +33,4 @@ subtractMaker x = (\y -> x - y)
 
 
 
-(subtractMaker 3) 6
-\y -> x - y
-x = 3
+
