@@ -1,7 +1,5 @@
 
 
-
-
 s :: Int -> Int
 s x = x + 1
 
@@ -29,3 +27,9 @@ addMaker x = (\y -> y + x)
 
 subtractMaker :: Int -> (Int -> Int)
 subtractMaker x = (\y -> x - y)
+
+
+
+(subtractMaker 3) 6
+\y -> x - y
+x = 3
