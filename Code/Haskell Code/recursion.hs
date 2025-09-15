@@ -86,3 +86,9 @@ double :: [Int] -> [Int]
 double l = map f l
     where
         f = (\x -> x * 2)
+
+candidateFactors :: Int -> [Int]
+candidateFactors x = [2..((ceiling.sqrt.fromIntegral) x)]
+
+isDivisible :: Int -> Int-> Bool
+isDivisible x y = (mod x y) == 0
