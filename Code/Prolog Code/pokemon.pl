@@ -1,5 +1,6 @@
 firetype(charmander).
 firetype(charizard).
+fact1.
 watertype(squirtle).
 flyingtype(charizard).
 
