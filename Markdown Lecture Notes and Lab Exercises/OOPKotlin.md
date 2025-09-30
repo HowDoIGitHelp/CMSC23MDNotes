@@ -445,7 +445,7 @@ secretiveObject.v2
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[53], line 1, column 17: Cannot access 'v2': it is protected in 'ClandestineClass'
 
 
- 
+
 
 ```kotlin
 secretiveObject.v3
@@ -454,8 +454,6 @@ secretiveObject.v3
 
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[54], line 1, column 17: Cannot access 'v3': it is private in 'ClandestineClass'
 
-
- 
 
 
 As you see in the example above, accessing the attribute `v1` outside the scope of `ClandestineClass` works. On the other hand accessing the attributes `v2`, and `v3` will cause an error. This is because only `public` attributes can be accessed outside the scope of any give class.
