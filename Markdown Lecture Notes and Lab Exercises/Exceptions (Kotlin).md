@@ -34,11 +34,11 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 	at ExceptionsKt.main(exceptions.kt)
 ```
 
-> Kotlin has its own exception thrown when it encounters division by zero (ArithmeticException) but we'll create our own for the sake of learning.
+> Kotlin has its own exception thrown when it encounters division by zero (`ArithmeticException`) but we'll create our own for the sake of learning.
 
 Problematic functions and methods like `quotientUnsafe` don't always return a float. The problem for this `quotientUnsafe` function is that there is a possibility you'll end up dividing with zero. This introduces the concept of exceptions. Where the quotient function works **except** when the denominator is zero.
 
-To implement this kind of behavior. You can create an if-else check (or any control statement) to make sure the denominator is not zero. If you do encounter a zero denominator you **`throw`** an error. Here you are throwing a user defined error object called `DivisionByZeroError`. This user defined error must be defined to be a specialization of the built in class `Exception`.
+To implement this kind of behavior. You can create an if-else check (or any control statement) to make sure the denominator is not zero. If you do encounter a zero denominator you **`throw`** an error. Here you are throwing a user defined error object called `DivisionByZeroError`. This user defined exception must be defined to be a specialization of the built in class `Exception`.
 
 ```kotlin
 class DivisionByZeroError(message: String) : Exception(message)
@@ -124,7 +124,7 @@ undefined number
 
 By dealing with potential errors, `quotientString()` becomes a safe function that has no potential of throwing `DivisionByZeroError`.
 
-You can catch multiple kinds of exceptions if you want to handle different exceptions in different ways. Here you see different kind of `Exception` called `IndexOutOfBoundsException`. This exception is thrown when an indexed collection like `List` accesses a non-existent member. Here the function `quotientList` wants to append `Float.POSITIVE_INFINITY` if you're dividing by zero and not append anything if you're dividing with non-existent list members.
+You can catch multiple kinds of exceptions if you want to handle different exceptions in different ways. Here, you see different kind of `Exception` called `IndexOutOfBoundsException`. This exception is thrown when an indexed collection like `List` accesses a non-existent member. Here the function `quotientList` wants to append `Float.POSITIVE_INFINITY` if you're dividing by zero and not append anything if you're dividing with non-existent list members.
 
 ```kotlin
 fun quotientList(l: List<Float>, m: List<Float>): List<Float> {

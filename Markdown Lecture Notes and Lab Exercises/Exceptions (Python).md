@@ -1,4 +1,4 @@
-# Exceptions
+# Exceptions (Python)
 
 ## Introduction
 
@@ -43,11 +43,11 @@ ZeroDivisionError                         Traceback (most recent call last)
 ZeroDivisionError: division by zero
 ```
 
-> Python has its own error raised when it encounter division by zero but well create our own for the sake of learning
+> Python has its own error raised when it encounter division by zero (`ZeroDivisionError`) but well create our own for the sake of learning
 
 Problematic functions and methods like `quotientUnsafe` don't always return a float. The problem for this `quotientUnsafe` function is that there is a possibility you'll end up dividing with zero. This introduces the concept of exception. Where the quotient function works **except** when the denominator is zero.
 
-To implement this kind of behavior. You create an if-else check (or any control statement) to make sure the denominator is not zero. If you do encounter a zero denominator you **`raise`** an error. Here you are raising a user defined error object called `DivisionByZeroError`.
+To implement this kind of behavior. You create an if-else check (or any control statement) to make sure the denominator is not zero. If you do encounter a zero denominator you **`raise`** an error. Here you are raising a user defined error instance called `DivisionByZeroError`. This user defined error must be a specialization of the built in class `Exception`
 
 ```python
 class DivisionByZeroError(Exception):
@@ -140,7 +140,7 @@ undefined number
 
 By dealing with potential errors, `quotientString()` becomes a safe function that has no potential of breaking the system.
 
-You can catch multiple kinds of exceptions if you want to handle different exceptions differently. The exception `IndexError` is raised when an iterable type like list accesses a non-existent member. Here the function `quotientList` wants to append `math.inf` if you're dividing by zero and not append anything if you're dividing with non-existent list members.
+You can catch multiple kinds of exceptions if you want to handle different exceptions differently. Here, you see a different kind of `Exception` called `IndexError`. This exception is raised when an iterable type like list accesses a non-existent member. Here the function `quotientList` wants to append `math.inf` if you're dividing by zero and not append anything if you're dividing with non-existent list members.
 
 ```python
 def quotientList(l:list[float],m:list[float]) -> [float]: #always a list of float
