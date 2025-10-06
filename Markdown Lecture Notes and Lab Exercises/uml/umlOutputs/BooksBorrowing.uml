@@ -1,0 +1,75 @@
+@startuml
+class LibraryCard
+{
+
+    LibraryCard(idNumber: Int, name: String, borrowedItems: Map<BorrowableItem,LocalDate>)
+    - borrowedItems: Map<BorrowableItem,LocalDate>
+    - idNumber: Int
+    - name: String
+    + borrowItem(item: BorrowableItem, date: LocalDate)
+    + borrowerReport(): String
+    - daysOverdue(b: BorrowableItem, today: LocalDate): Int
+    + itemsDue(today: LocalDate): List<BorrowableItem>
+    + penalty(b: BorrowableItem, today: LocalDate): Float
+    + returnItem(b: BorrowableItem)
+    + totalPenalty(today: LocalDate): Float
+}
+
+
+abstract class BorrowableItem
+{
+
+    + borrowPeriod(): Int
+    + commonName(): String
+    + uniqueItemId(): Int
+}
+
+
+class Periodical
+{
+
+    Periodical(periodicalId: Int, title: String, issue: LocalDate, pages: List<Page>)
+    - issue: LocalDate
+    - pages: List<Page>
+    - periodicalId: Int
+    - title: String
+    + borrowPeriod(): Int
+    + commonName(): String
+    + uniqueItemId(): Int
+}
+Periodical ..|> BorrowableItem
+
+class Book
+{
+
+    Book(bookId: Int, title: String, author: String, publishDate: LocalDate, pages: List<Page>)
+    - author: String
+    - bookId: Int
+    - pages: List<Page>
+    - publishDate: LocalDate
+    - title: String
+    + borrowPeriod(): Int
+    + commonName(): String
+    + coverInfo(): String
+    + uniqueItemId(): Int
+}
+Book ..|> BorrowableItem
+
+class PC
+{
+
+    PC(pcID: Int)
+    - pcID: Int
+    + borrowPeriod(): Int
+    + commonName(): String
+    + uniqueItemId(): Int
+}
+PC ..|> BorrowableItem
+
+
+LibraryCard ..> BorrowableItem
+
+
+
+
+@enduml

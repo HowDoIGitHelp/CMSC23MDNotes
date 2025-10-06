@@ -2,93 +2,123 @@
 
 ## Task
 
-You are to implement the following system. This system represents the borrowing and returning functions of a library. Here's the class diagram. **Edit the python file that came with this document.** The edited file is what you are going to submit.
+You are to implement the following system. This system represents the borrowing and returning functions of a library. Here's the class diagram. **Edit the file that came with this document.** The edited file is what you are going to submit.
 
 ![UML](https://i.imgur.com/9zHBavi.png)
 
-There is some code already written for you here:
+Here is the available code:
 
-```python
-from abc import ABC, abstractmethod
-from datetime import date,timedelta
+```kotlin
+package booksBorrowing.requestedFiles
 
-def daysBetween(date1:date, date2:date) -> int:
-    difference:int = date1 -  date2
-    return difference.days
+import java.time.*
+import kotlin.collections.iterator
 
-class Page:
-    def __init__(self, sectionHeader:str, body: str):
-        self.__sectionHeader = sectionHeader
-        self.__body = body
+/**
+ * Something from the library that can be borrowed
+ *
+ */
+interface BorrowableItem{
+    /**
+     * @return unique identifier for the specific BorrowableItem instance
+     */
+    fun uniqueItemId(): Int
+    /**
+     * @return the common name for the specific BorrowableItem instance
+     */
+    fun commonName(): String
+}
 
-class BorrowableItem(ABC):
-    @abstractmethod
-    def uniqueItemId(self) -> int:
-        pass
-    @abstractmethod
-    def commonName(self) -> str:
-        pass
-
-
-
-class Book(BorrowableItem):
-    def __init__(self, bookId:int, title:str, author:str, publishDate:date, pages: list[Page]):
-        self.__bookId = bookId
-        self.__title = title
-        self.__publishDate = publishDate
-        self.__author = author
-        self.__pages = pages
-    def coverInfo(self) -> str:
-        return "Title: " + self.__title + "\nAuthor: " + self.__author
-    def uniqueItemId(self) -> int:
-        return self.__bookId
-    def commonName(self) -> str:
-        return "Borrowed Item:" + self.__title + " by " + self.__author
+/**
+ * this class simply holds page information of a Book
+ */
+class Page (
+    private val sectionHeader: String,
+    private val body: String
+)
 
 
-class LibraryCard:
-    def __init__(self, idNumber: int, name: str, borrowedItems: dict[BorrowableItem,date]):
-        self.__idNumber = idNumber
-        self.__name = name
-        self.__borrowedItems = borrowedItems
-    def borrowItem(self,item:BorrowableItem, date:date):
-        self.__borrowedItems[item] = date
-    def borrowerReport(self) -> str:
-        r:str = self.__name + "\n"
-        for borrowedItem in self.__borrowedItems:
-            r = r + borrowedItem.commonName() + ", borrow date:" + str(self.__borrowedItems[borrowedItem]) + "\n"
+/**
+ * A [BorrowableItem] realization that represents a book from a library
+ * @property bookId the unique identifier for the book, returned by [uniqueItemId]
+ * @property title the title of the book used alongside [author] for [coverInfo]
+ * @property author the author of the book used alongside [title] for [coverInfo]
+ * @property publishDate the date this book was published
+ * @property pages a list of [Page]s represents the books contents
+ */
+class Book (
+    private val bookId: Int,
+    private val title: String,
+    private val author: String,
+    private val publishDate: LocalDate,
+    private val pages: List<Page>
+): BorrowableItem {
+
+    /**
+     * Information found at the cover of the book
+     */
+    public fun coverInfo(): String {
+        return "$title by $author"
+    }
+
+    /**
+     * Unique identifier for this book instance
+     * @return [bookId]
+     */
+    override fun uniqueItemId(): Int {
+        return bookId
+    }
+
+    /**
+     * Common name for this book instance
+     * @return [coverInfo]
+     */
+    override fun commonName(): String {
+        return commonName()
+    }
+
+
+}
+
+/**
+ * Represents a Library Card. Contains borrower information
+ * @property idNumber unique identifier for the borrower
+ * @property name name of the borrower
+ * @property borrowedItems a mutable map containing the borrowed items mapped to when said items were borrowed
+ */
+class LibraryCard (
+    private val idNumber: Int,
+    private val name: String,
+    private val borrowedItems: MutableMap<BorrowableItem, LocalDate>
+) {
+
+    /**
+     * This method is used if a user borrows an item from the library.
+     * @param item the [BorrowableItem] instance borrowed,
+     * @param date the date this instance is borrowed
+     * When invoked [borrowedItems] gains a new entry corresponding to the passed [item] and [date]
+     */
+    public fun borrowItem(item: BorrowableItem, date: LocalDate) {
+        borrowedItems[item] = date
+    }
+
+    /**
+     * This method is used to generate the borrower information.
+     * it returns the borrower [name] along with a list of borrowed items and when the items were borrowed
+     */
+    public fun borrowerReport(): String {
+        var r = "$name\n"
+        for ((item, date) in borrowedItems) {
+            r += "${item.commonName()}, borrow date: $date"
+        }
         return r
+    }
+}
 ```
 
-Creating an instance of a `BorrowableItem` (in this case an instance of the particular realization, `Book`) is done using the following code.
 
-```python
-b:BorrowableItem = Book(10991,"Corpus Hermeticum", "Hermes Trismegistus", date(1991,1,9), [])
-print(b.commonName()) #commonName() returns the string representation of a borrowable item
-```
 
-Creating an instance of a `LibraryCard` is done using the following.
-
-```python
-l:LibraryCard = LibraryCard(9982,"Rubelito Abella",{})
-```
-
-A library card instance borrows something using the `borrowItem(item:BorrowableItem, date:date)` method. Inside the method, a new entry in the dictionary is created, with `item` as the key and `date` as the borrow date. The method `borrowerReport()` prints the library card owners name and the items he/she has borrowed. 
-
-```python
-l.borrowItem(b,date(2019,9,25))
-print(l.borrowerReport())
-```
-```
-Rubelito Abella
-Borrowed Item:Corpus Hermeticum by Hermes Trismegistus, borrow date:2019-09-25
-```
-
-### Some notes on the type annotations
-- `date` - is a type from the `datetime` library from python. You can see the library import above the code. In this system we use `date` to represent dates and calculate `daysBetween`.
-- `dict[BorrowableItem,date]` - this is the type of `LibraryCard`'s attribute:`__borrowedItem`. It is a dictionary with `BorrowableItem`s as the key and `date`s as the **borrow date** (not the due date) of the associated key. Please refer to [Python Introduction](https://hackmd.io/@RubAbella/Syz0e_k8B) for more info on dictionaries.
-
-### What you should do:
+## What you should do:
 
 #### The class definitions above are still missing `Periodical` and `PC`. 
  - a **`Periodical`** represents a periodical (newspaper, magazines, etc). It is a realization of a `BorrowableItem`. It contains the following methods and attributes:

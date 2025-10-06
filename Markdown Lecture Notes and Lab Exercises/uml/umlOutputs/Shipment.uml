@@ -1,0 +1,78 @@
+@startuml
+abstract class Delivery
+{
+
+    + changeDeliveryStatus(newStatus: String)
+    + deliveryDetails(): String
+    + deliveryFee(): Float
+    + estimatedDeliveryDate(processDate: LocalDate): LocalDate
+}
+
+
+class Order
+{
+
+    Order(productName: String, productPrice: Float)
+    - productName: String
+    - productPrice: Float
+    + orderString(): String
+    + price(): Float
+}
+
+
+class StandardDelivery
+{
+
+    StandardDelivery(location: String)
+    - deliveryStatus: String
+    - location: String
+    + changeDeliveryStatus(newStatus: String)
+    + deliveryDetails(): String
+    + deliveryFee(): Float
+    + estimatedDeliveryDate(processDate: LocalDate): LocalDate
+}
+StandardDelivery ..|> Delivery
+
+class Shipment
+{
+
+    Shipment(orderList: List<Order>, processDate: LocalDate, location: String)
+    # delivery: Delivery
+    # orderList: List<Order>
+    # processDate: LocalDate
+    + newDelivery(location: String): Delivery
+    + shipmentDetails(): String
+    # totalPrice(): Float
+}
+
+
+class ExpressDelivery
+{
+
+    ExpressDelivery(location: String)
+    - deliveryStatus: String
+    - location: String
+    + changeDeliveryStatus(newStatus: String)
+    + deliveryDetails(): String
+    + deliveryFee(): Float
+    + estimatedDeliveryDate(processDate: LocalDate): LocalDate
+}
+ExpressDelivery ..|> Delivery
+
+class ExpressShipment
+{
+
+    ExpressShipment(orderList: List<Order>, processDate: LocalDate, location: String)
+    + newDelivery(location: String): ExpressDelivery
+}
+ExpressShipment --|> Shipment
+
+
+
+
+
+Shipment ..> Delivery
+
+
+ExpressShipment ..> ExpressDelivery
+@enduml

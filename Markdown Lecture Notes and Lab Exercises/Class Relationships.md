@@ -8,7 +8,7 @@ The interactions between one an instance of a class to another is largely charac
 
 1. Differentiate realization relationships and specialization relationships
 2. Describe how class abstract methods work in realization relationships
-3. Describe the concept of inheritance
+3. x from abc import ABC, abstractmethodclass ProductA(ABC):    @abstractmethod    def someMethodA(self) -> str:        pass​class ProductB(ABC):    @abstractmethod    def someMethodB(self) -> str:        pass​class AbstractFactory(ABC):    @abstractmethod    def newProductA(self) -> ProductA: #builds a product A        pass    @abstractmethod    def newProductB(self) -> ProductB: #builds a product B        pass​class ProductBVariant1(ProductB):    def someMethodB(self) -> str:        print("Im a product b of Variant1")​class ProductBVariant2(ProductB):    def someMethodB(self) -> str:        print("Im a product b of Variant2")​class ProductAVariant1(ProductA):    def someMethodA(self) -> str:        print("Im a product a of Variant1")​class ProductAVariant2(ProductA):    def someMethodA(self) -> str:        print("Im a product a of Variant2")​class FactoryVariant1(AbstractFactory):    def newProductA(self) -> ProductA:        return ProductAVariant1()​    def newProductB(self) -> ProductB:        return ProductBVariant1()​class FactoryVariant2(AbstractFactory):    def newProductA(self) -> ProductA:        return ProductAVariant2()​    def newProductB(self) -> ProductB:        return ProductBVariant2()​factory1 = FactoryVariant1()factory2 = FactoryVariant2()​def clientFunction(factory:AbstractFactory):    a = factory.newProductA()    b = factory.newProductB()        a.someMethodA()    b.someMethodB()​clientFunction(factory1)print()clientFunction(factory2)python
 4. Differentiate aggregation relationships and composition relationships
 
 ---
@@ -81,17 +81,25 @@ It is possible for a class to realize/specialize multiple abstractions/generaliz
 
 ## Dependency Relationships
 
-Dependency relationships, also known as **associations**, characterize how two classes interact with each other. A class which is dependent on another class, needs to know how to interact with it. These interactions range from being used as method parameters, being returned in methods, being used inside method bodies, being used as attributes and etc. A dependency relationship is one way (but it is also possible for two objects to be dependent on each other). A **client** class is dependent on some **dependency**. There are two types of dependencies:
+Dependency relationships, characterize how two classes interact with each other. A class which is dependent on another class, needs to know how to interact with it. These interactions range from being used as method parameters, being returned in methods, being used inside method bodies, being used as attributes and etc. A dependency relationship is one way (but it is also possible for two objects to be dependent on each other). A **client** class is dependent on some **dependency**. 
+
+### Weak Dependency
+
+On weak dependency relationships a client class merely **uses** instances of a dependency. This is when, a class uses other classes as method parameters, local variables, or return types.
+
+### Structural Dependencies
+
+Structural dependencies, define relationships between a collective and its parts. If an object instance contains instances from a different class. Then they have a structural dependency.
 
 ![Dependency Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/DependencyRelationship.png)
 
-### Aggregation
+#### Aggregation
 
-Aggregation relationships are general usage and transactional dependencies. When a dependency is an aggregate of some client, it means that the client merely **uses** the instances of this dependency. These relationships are the looser forms of dependency, because the dependency instance can exist outside the lifetime of the client instance.
+When a dependency is an aggregate of some client, it means that the client merely **has** instances of this dependency. These relationships are the looser forms of structural dependency, because the dependency instance can exist outside the lifetime of the client instance.
 
 For example, in a videogame, a hostile enemy instance of `DragonPriest` spawns equipped with instances of`DragonPriestMask` and `DragonPriestStaff`. The `DragonPriest` instance is a client of the dependencies `DragonPriestMask` and `DragonPriestStaff`. `DragonPriest` interacts with these dependencies to calculate its attack damage, its defenses and etc. But when this specific instance of `DragonPriest` is defeated, it despawns, leaving behind the its `DragonPriestMask` and `DragonPriestStaff`. These instances will continue to exist since it can still be used by other client objects in the game, such as the player character, some storage chest or whatever. This means that the relationship between `DragonPriest` and the dependencies `DragonPriestMask` and `DragonPriestStaff` is aggregation.
 
-### Composition
+#### Composition
 
 Composition relationships are ownership dependencies. When a client is composed of some dependency, this means that the client **owns** the instances of this dependency. These relationships are stronger forms of dependency since the existence of the dependency instance is tied to the client, meaning, the dependency ceases to exist outside the lifetime of the client instance.
 
