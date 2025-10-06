@@ -1,4 +1,4 @@
-# Kotlin Introduction
+# Kotlin Syntax
 
 Kotlin is a high-level language with rich syntax support. Lets start by discussing how statements and expressions in kotlin look like. Unlike C or C++, statements in kotlin do not end with a semicolon. The boundary of a statement is defined by newlines. Below you have two statements
 
@@ -9,9 +9,7 @@ Kotlin is a high-level language with rich syntax support. Lets start by discussi
 ```
 
 
-   7
-
-
+    7
 
 # Kotlin types
 
@@ -25,7 +23,7 @@ Numbers in kotlin can be `Int`s `Floats`, `Long`, `Double` and more. An `Int` li
 ```
 
 
-   3
+    3
 
 
 
@@ -37,7 +35,7 @@ You can expose the specific type of an expression using the following syntax:
 ```
 
 
-   Int
+    Int
 
 
 
@@ -47,7 +45,7 @@ You can expose the specific type of an expression using the following syntax:
 ```
 
 
-   Int
+    Int
 
 
 
@@ -59,7 +57,7 @@ A number with decimal values are automatically interpreted as `Double`
 ```
 
 
-   Double
+    Double
 
 
 
@@ -69,7 +67,7 @@ A number with decimal values are automatically interpreted as `Double`
 ```
 
 
-   Double
+    Double
 
 
 
@@ -81,7 +79,7 @@ If you want to force kotlin to interpret a number literal as `Long`, add the pre
 ```
 
 
-   Long
+    Long
 
 
 
@@ -91,7 +89,7 @@ If you want to force kotlin to interpret a number literal as `Long`, add the pre
 ```
 
 
-   Long
+    Long
 
 
 
@@ -101,7 +99,7 @@ If you want to force kotlin to interpret a number literal as `Long`, add the pre
 ```
 
 
-   Float
+    Float
 
 
 
@@ -111,7 +109,7 @@ If you want to force kotlin to interpret a number literal as `Long`, add the pre
 ```
 
 
-   Float
+    Float
 
 
 
@@ -125,7 +123,7 @@ true::class.simpleName
 ```
 
 
-   Boolean
+    Boolean
 
 
 
@@ -135,7 +133,7 @@ false::class.simpleName
 ```
 
 
-   Boolean
+    Boolean
 
 
 
@@ -145,7 +143,7 @@ false::class.simpleName
 ```
 
 
-   Boolean
+    Boolean
 
 
 
@@ -159,7 +157,9 @@ Character literals are created by surrounding single characters with single quot
 ```
 
 
-   Char
+
+
+    Char
 
 
 
@@ -169,7 +169,7 @@ Character literals are created by surrounding single characters with single quot
 ```
 
 
-   Char
+    Char
 
 
 
@@ -179,7 +179,7 @@ Character literals are created by surrounding single characters with single quot
 ```
 
 
-   Char
+    Char
 
 
 
@@ -193,7 +193,7 @@ When combining different types using operations, only some combinations of types
 ```
 
 
-   7.0
+    7.0
 
 
 
@@ -203,7 +203,7 @@ When combining different types using operations, only some combinations of types
 ```
 
 
-   3
+    3
 
 
 
@@ -213,17 +213,18 @@ When combining different types using operations, only some combinations of types
 ```
 
 
-    org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[64], line 1, column 3: None of the following functions can be called with the arguments supplied:...
+    org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[64], line 1, column 3: None of the following functions can be called with the arguments supplied: 
+    
 
 
-   
+​    
 
 ```kotlin
 true + 0
 ```
 
 
-    org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[65], line 1, column 6: Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+    
 
 
 ​    
@@ -262,7 +263,7 @@ y::class.simpleName
 ```
 
 
-   Int
+    Int
 
 
 
@@ -304,7 +305,7 @@ A `Pair` in kotlin is a pair of values. You can create a pair literal using the 
 ```
 
 
-   (1, 5)
+    (1, 5)
 
 
 
@@ -317,7 +318,7 @@ point.first
 ```
 
 
-   2
+    2
 
 
 
@@ -327,7 +328,7 @@ point.second
 ```
 
 
-   5
+    5
 
 
 
@@ -338,7 +339,7 @@ u.first
 ```
 
 
-   true
+    true
 
 
 
@@ -352,7 +353,7 @@ booleanValue
 ```
 
 
-   true
+    true
 
 
 
@@ -362,7 +363,7 @@ charValue
 ```
 
 
-   a
+    a
 
 
 
@@ -381,7 +382,7 @@ numbers
 ```
 
 
-   [1, 2, 3, 4]
+    [1, 2, 3, 4]
 
 
 
@@ -394,7 +395,7 @@ emptylist
 ```
 
 
-   []
+    []
 
 
 
@@ -406,7 +407,7 @@ You can check if an element is a member of a Collection using the `in` operator
 ```
 
 
-   true
+    true
 
 
 
@@ -416,7 +417,7 @@ You can check if an element is a member of a Collection using the `in` operator
 ```
 
 
-   false
+    false
 
 
 
@@ -428,7 +429,7 @@ listOf(1,2,3,4) + listOf(5,6,7)
 ```
 
 
-   [1, 2, 3, 4, 5, 6, 7]
+    [1, 2, 3, 4, 5, 6, 7]
 
 
 
@@ -440,7 +441,7 @@ numbers.size //attribute where the size (number of elements) of the list is stor
 ```
 
 
-   4
+    4
 
 
 
@@ -450,7 +451,7 @@ numbers.elementAt(2) //returns the element at index 2 (third element)
 ```
 
 
-   3
+    3
 
 
 
@@ -462,7 +463,7 @@ numbers[2]
 ```
 
 
-   3
+    3
 
 
 
@@ -475,7 +476,6 @@ numbers[2] = 4
 
 
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[9], line 1, column 1: Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
-    
 
 
 ​    
@@ -490,7 +490,7 @@ numbers
 ```
 
 
-   [5, 6, 7, 8]
+    [5, 6, 7, 8]
 
 
 
@@ -513,7 +513,7 @@ series
 ```
 
 
-   [-1, 5, -3, -4]
+    [-1, 5, -3, -4]
 
 
 
@@ -526,7 +526,7 @@ series
 ```
 
 
-   [-1, 5, -3, -4, -5]
+    [-1, 5, -3, -4, -5]
 
 
 
@@ -539,7 +539,7 @@ series
 ```
 
 
-   [-1, 5, -4, -5]
+    [-1, 5, -4, -5]
 
 
 
@@ -550,7 +550,9 @@ series
 ```
 
 
-   [-1, -5]
+
+
+    [-1, -5]
 
 
 
@@ -577,7 +579,7 @@ range
 ```
 
 
-   0..10
+    0..10
 
 
 
@@ -587,7 +589,7 @@ range.elementAt(0)
 ```
 
 
-   0
+    0
 
 
 
@@ -597,7 +599,7 @@ range.elementAt(2)
 ```
 
 
-   2
+    2
 
 
 
@@ -607,7 +609,7 @@ range.toList() // We reveal the elements of the range by generating a list out o
 ```
 
 
-   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 
@@ -619,7 +621,7 @@ When specifying a step size you will create an `IntProgression` instead. This wi
 ```
 
 
-   [-3, -1, 1, 3]
+    [-3, -1, 1, 3]
 
 
 
@@ -629,7 +631,7 @@ When specifying a step size you will create an `IntProgression` instead. This wi
 ```
 
 
-   [10, 14, 18, 22, 26, 30, 34, 38, 42]
+    [10, 14, 18, 22, 26, 30, 34, 38, 42]
 
 
 
@@ -642,7 +644,7 @@ aList.slice(0..3) // creates a sublist from index 0 until index 3
 ```
 
 
-   [101, 102, 103, 104]
+    [101, 102, 103, 104]
 
 
 
@@ -652,7 +654,7 @@ aList.slice(5..(aList.size-1)) //creates a sublist from index 5 until the last a
 ```
 
 
-   [106, 107, 108, 109]
+    [106, 107, 108, 109]
 
 
 
@@ -662,7 +664,7 @@ aList.slice(8 downTo 0 step 2) // to create a decreasing progression use `downTo
 ```
 
 
-   [109, 107, 105, 103, 101]
+    [109, 107, 105, 103, 101]
 
 
 
@@ -677,7 +679,7 @@ str
 ```
 
 
-   this is a string
+    this is a string
 
 
 
@@ -687,7 +689,7 @@ str::class.simpleName
 ```
 
 
-   String
+    String
 
 
 
@@ -699,7 +701,7 @@ str.length // str uses the attribute length as the number of elements
 ```
 
 
-   16
+    16
 
 
 
@@ -709,7 +711,7 @@ str[2] // accessing individual elements
 ```
 
 
-   i
+    i
 
 
 
@@ -719,7 +721,7 @@ str + " too." // concatenation
 ```
 
 
-   this is a string too.
+    this is a string too.
 
 
 
@@ -729,7 +731,7 @@ str + " too." // concatenation
 ```
 
 
-   true
+    true
 
 
 
@@ -739,7 +741,7 @@ str + " too." // concatenation
 ```
 
 
-   true
+    true
 
 
 
@@ -779,7 +781,7 @@ Using string templates you can easily insert non-`String`s expressions into `Str
 ```
 
 
-   Sum is: 5
+    Sum is: 5
 
 
 
@@ -793,7 +795,7 @@ val list = listOf(1,2,3)
 ```
 
 
-   List elements:[1, 2, 3], size:3
+    List elements:[1, 2, 3], size:3
 
 
 
@@ -808,7 +810,7 @@ m
 ```
 
 
-   {a=1, b=2, x=-1}
+    {a=1, b=2, x=-1}
 
 
 
@@ -818,7 +820,7 @@ m::class.simpleName
 ```
 
 
-   LinkedHashMap
+    LinkedHashMap
 
 
 
@@ -830,7 +832,7 @@ m['a']
 ```
 
 
-   1
+    1
 
 
 
@@ -840,7 +842,7 @@ m['x']
 ```
 
 
-   -1
+    -1
 
 
 
@@ -852,7 +854,7 @@ m + mapOf('y' to -4)
 ```
 
 
-   {a=1, b=2, x=-1, y=-4}
+    {a=1, b=2, x=-1, y=-4}
 
 
 
@@ -862,7 +864,7 @@ m.size
 ```
 
 
-   3
+    3
 
 
 
@@ -872,7 +874,7 @@ m.size
 ```
 
 
-   true
+    true
 
 
 
@@ -892,7 +894,7 @@ foodtype[food]
 ```
 
 
-   fruit
+    fruit
 
 
 
@@ -905,7 +907,7 @@ foodtype
 ```
 
 
-   {apple=fruit, tomato=fruit, carrot=vegetable}
+    {apple=fruit, tomato=fruit, carrot=vegetable}
 
 
 
@@ -918,7 +920,7 @@ foodtype
 ```
 
 
-   {apple=fruit, tomato=fruit, carrot=vegetable, soy sauce=condiment}
+    {apple=fruit, tomato=fruit, carrot=vegetable, soy sauce=condiment}
 
 
 
@@ -931,7 +933,7 @@ foodtype
 ```
 
 
-   {apple=fruit, tomato=fruit, soy sauce=condiment}
+    {apple=fruit, tomato=fruit, soy sauce=condiment}
 
 
 
@@ -978,9 +980,7 @@ val number = -2
 ```
 
 
-   5
-
-
+    5
 
 You can also use other `selection` patterns in kotlin using `when` clauses: [kotlin control flow](https://kotlinlang.org/docs/control-flow.html)
 
@@ -996,7 +996,7 @@ sum
 ```
 
 
-   10
+    10
 
 
 
@@ -1090,9 +1090,7 @@ square(25)
 ```
 
 
-   625
-
-
+    625
 
 ### Optional parameters
 
@@ -1157,9 +1155,7 @@ nullable
 ```
 
 
-   null
-
-
+    null
 
 On cases where you need to declare that a type is nullable suchas the function return value below. You can append the type with a `?`:
 
@@ -1179,7 +1175,6 @@ value(database,"this") + 3
 
 
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[296], line 1, column 24: Operator call corresponds to a dot-qualified call 'value(database,"this").plus(3)' which is not allowed on a nullable receiver 'value(database,"this")'.
-    
 
 
 ​    
@@ -1206,7 +1201,7 @@ You can also use the specialized safe elvis operator `?:` that works like a tern
 ```
 
 
-   4
+    4
 
 
 
@@ -1216,7 +1211,7 @@ You can also use the specialized safe elvis operator `?:` that works like a tern
 ```
 
 
-   3
+    3
 
 
 
@@ -1275,7 +1270,7 @@ You can read and write files using the the class `File` in the `java.io*` packag
 ```kotlin
 import java.io.File
 
-val inputFile = FileClass("input.in")
+val inputFile = File("input.in")
 ```
 
 You can read the entire file using `readText()`
@@ -1286,7 +1281,7 @@ inputFile.readText()
 ```
 
 
-   content
+    content
     more content
     foo
     bar
@@ -1330,3 +1325,67 @@ To append, you can use `appendText()` instead
 output.appendText(" extra content")
 ```
 
+# Other Things
+
+## LocalDate
+
+Kotlin has plenty of classes related to date, one of them is imported from `java.time.LocalDate` which is available in the kotlin standard library.
+
+You can create date instances using the following:
+
+
+```kotlin
+import java.time.LocalDate
+
+LocalDate.of(2023, 5, 11)
+```
+
+
+    2023-05-11
+
+`LocalDate`s can be compared. Using the `<` comparison checks if the left operand comes before the right operand
+
+
+```kotlin
+LocalDate.of(2023, 5, 11) < LocalDate.of(2023, 4, 30)
+```
+
+
+    false
+
+You can add or subtract days/weeks/months/years to a `LocalDate`
+
+
+```kotlin
+LocalDate.of(2023, 5, 11).plusDays(44L)
+```
+
+
+    2023-06-24
+
+
+
+
+```kotlin
+LocalDate.of(2024, 5, 11).minusMonths(3L)
+```
+
+
+    2024-02-11
+
+You can subtract `LocalDate`s to obtain the time period between them using `Period`
+
+
+```kotlin
+import java.time.Period
+
+val period = Period.between(LocalDate.of(2023, 5, 11), LocalDate.of(2023, 2, 28))
+
+println(period.years)
+println(period.months)
+println(period.days)
+```
+
+    0
+    -2
+    -11
