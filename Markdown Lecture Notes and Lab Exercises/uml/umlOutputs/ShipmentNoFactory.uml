@@ -1,0 +1,30 @@
+@startuml
+class StandardDelivery
+{
+
+    StandardDelivery(location: String)
+    - deliveryStatus: String
+    - location: String
+    + changeDeliveryStatus(newStatus: String)
+    + deliveryDetails(): String
+    + deliveryFee(): Float
+    + estimatedDeliveryDate(processDate: LocalDate): LocalDate
+}
+
+
+class Shipment
+{
+
+    Shipment(orderList: List<Order>, processDate: LocalDate, location: String)
+    # delivery: StandardDelivery
+    # orderList: List<Order>
+    # processDate: LocalDate
+    + shipmentDetails(): String
+    + totalPrice(): Float
+}
+
+
+
+
+Shipment ..> StandardDelivery
+@enduml

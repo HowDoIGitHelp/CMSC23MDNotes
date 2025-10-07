@@ -9,17 +9,6 @@ abstract class Delivery
 }
 
 
-class Order
-{
-
-    Order(productName: String, productPrice: Float)
-    - productName: String
-    - productPrice: Float
-    + orderString(): String
-    + price(): Float
-}
-
-
 class StandardDelivery
 {
 
@@ -42,7 +31,7 @@ class Shipment
     # processDate: LocalDate
     + newDelivery(location: String): Delivery
     + shipmentDetails(): String
-    # totalPrice(): Float
+    + totalPrice(): Float
 }
 
 
@@ -66,7 +55,6 @@ class ExpressShipment
     + newDelivery(location: String): ExpressDelivery
 }
 ExpressShipment --|> Shipment
-
 
 
 
