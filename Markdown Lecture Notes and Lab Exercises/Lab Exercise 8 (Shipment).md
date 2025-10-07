@@ -8,7 +8,7 @@ Consider you're developing the product delivery side of an online  marketplace a
 
 What you have is `Shipment` class that contains a `StandardDelivery` class. Inside the shipment class is the `shipmentDetails()` builder  which builds a string representing the details of the shipment, this  includes the delivery details (which requires access to the composed `StandardDelivery` instance). Inside the constructor of `Shipment` an instance of `StandardDelivery` is created so that every `Shipment` is set to be delivered using standard delivery.
 
-![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/nonfactorymethodExample.png)
+![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Shipment.svg)
 
 ```python
 from datetime import date,timedelta
