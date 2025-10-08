@@ -4,81 +4,9 @@
 
 You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalflos (different types have different moves). The exact type of monster is randomly decided as well. 
 
-```python
-from random import randint
+**Right now the game works like this:**
 
-class NormalBokoblin:
-    def bludgeon(self):
-        print("Bokoblin bludgeons you with a boko club for 1 damage")
-    def defend(self):
-        print("Bokoblin defends itself with a boko shield")
-    def announce(self):
-        print("A bokoblin appeared")
-    def move(self):
-        if randint(1,3) > 1:
-            self.bludgeon()
-        else:
-            self.defend()
-
-class NormalMoblin:
-    def stab(self):
-        print("Moblin stabs you with a spear for 3 damage")
-    def kick(self):
-        print("Moblin kicks you for 1 damage")
-    def announce(self):
-        print("A moblin appeared")
-    def move(self):
-        if randint(1,3) > 1:
-            self.stab()
-        else:
-            self.kick()
-
-class NormalLizalflos:
-    def throwBoomerang(self):
-        print("Lizalflos throws its lizal boomerang at you for 2 damage")
-    def hide(self):
-        print("Lizalflos camouflages itself")
-    def announce(self):
-        print("A lizalflos appeared")
-    def move(self):
-        if randint(1,3) > 1:
-            self.throwBoomerang()
-        else:
-            self.hide()
-
-
-
-class Encounter:
-    def __init__(self):
-        self.__enemies = []
-        for i in range(randint(0,8)):
-            r = randint(1,3)
-            if r == 1:
-                self.__enemies.append(NormalBokoblin())
-            elif r==2:
-                self.__enemies.append(NormalMoblin())
-            else:
-                self.__enemies.append(NormalLizalflos())
-
-    def announceEnemies(self):
-        print("%d monsters appeared" % len(self.__enemies))
-        for enemy in self.__enemies:
-            enemy.announce()
-
-    def moveEnemies(self):
-        for enemy in self.__enemies:
-            enemy.move()
-
-
-
-encounter = Encounter()
-encounter.announceEnemies()
-print()
-encounter.moveEnemies()
-
-```
-
-Right now the game works like this:
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZeldaNoAbstractFactory.svg)
 
 When you enter a dungeon an `Encounter` instance is constructed. The encounter instance contains, a 0-8 random enemies. Using the newly created `Encounter` instance, `announceEnemies()` is invoked. This displays all the enemies in the encounter.
 
@@ -137,9 +65,12 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster. **Complete the system using the abstract factory pattern.**
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/bab2c4e390f529f00af5cb16d9597609863b3cd7/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZelda.svg)
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZelda.svg)
 
 ## Assessment Criteria
 
-- Completeness of the pattern - 40
-- Elegance of method and attribute naming - 10
+- Correct `EasyDungeon` behavior - 5
+- Correct `MediumDungeon` behavior - 5
+- Correct `HardDungeon` behavior - 5
+- Correct class structure - 15
+- Class architecture supports extensibility -10

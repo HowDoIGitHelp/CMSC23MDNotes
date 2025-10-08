@@ -1,7 +1,6 @@
 @startuml
 class StandardDelivery
 {
-
     StandardDelivery(location: String)
     - deliveryStatus: String
     - location: String
@@ -14,7 +13,6 @@ class StandardDelivery
 
 class Shipment
 {
-
     Shipment(orderList: List<Order>, processDate: LocalDate, location: String)
     # delivery: StandardDelivery
     # orderList: List<Order>
@@ -22,8 +20,6 @@ class Shipment
     + shipmentDetails(): String
     + totalPrice(): Float
 }
-
-
 
 
 Shipment ..> StandardDelivery
