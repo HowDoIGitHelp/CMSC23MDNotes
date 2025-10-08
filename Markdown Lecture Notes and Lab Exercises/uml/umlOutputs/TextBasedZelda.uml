@@ -1,0 +1,207 @@
+@startuml
+abstract class Monster
+{
+
+    + announce()
+    + move()
+}
+
+
+abstract class Bokoblin
+{
+
+    + announce()
+    + bludgeon()
+    + defend()
+    + move()
+}
+Bokoblin ..|> Monster
+
+abstract class Moblin
+{
+
+    + announce()
+    + kick()
+    + move()
+    + stab()
+}
+Moblin ..|> Monster
+
+abstract class Lizalflos
+{
+
+    + announce()
+    + hide()
+    + move()
+    + throwBoomerang()
+}
+Lizalflos ..|> Monster
+
+abstract class Dungeon
+{
+
+    + newBokoblin(): Bokoblin
+    + newLizalflos(): Lizalflos
+    + newMoblin(): Moblin
+}
+
+
+class NormalBokoblin
+{
+
+    NormalBokoblin()
+    + announce()
+    + bludgeon()
+    + defend()
+    + move()
+}
+NormalBokoblin ..|> Bokoblin
+
+class NormalMoblin
+{
+
+    NormalMoblin()
+    + announce()
+    + kick()
+    + move()
+    + stab()
+}
+NormalMoblin ..|> Moblin
+
+class NormalLizalflos
+{
+
+    NormalLizalflos()
+    + announce()
+    + hide()
+    + move()
+    + throwBoomerang()
+}
+NormalLizalflos ..|> Lizalflos
+
+class EasyDungeon
+{
+
+    EasyDungeon()
+    + newBokoblin(): Bokoblin
+    + newLizalflos(): Lizalflos
+    + newMoblin(): Moblin
+}
+EasyDungeon ..|> Dungeon
+
+class BlueBokoblin
+{
+
+    BlueBokoblin()
+    + announce()
+    + bludgeon()
+    + defend()
+    + move()
+}
+BlueBokoblin ..|> Bokoblin
+
+class BlueMoblin
+{
+
+    BlueMoblin()
+    + announce()
+    + kick()
+    + move()
+    + stab()
+}
+BlueMoblin ..|> Moblin
+
+class BlueLizalflos
+{
+
+    BlueLizalflos()
+    + announce()
+    + hide()
+    + move()
+    + throwBoomerang()
+}
+BlueLizalflos ..|> Lizalflos
+
+class MediumDungeon
+{
+
+    MediumDungeon()
+    + newBokoblin(): Bokoblin
+    + newLizalflos(): Lizalflos
+    + newMoblin(): Moblin
+}
+MediumDungeon ..|> Dungeon
+
+class SilverBokoblin
+{
+
+    SilverBokoblin()
+    + announce()
+    + bludgeon()
+    + defend()
+    + move()
+}
+SilverBokoblin ..|> Bokoblin
+
+class SilverMoblin
+{
+
+    SilverMoblin()
+    + announce()
+    + kick()
+    + move()
+    + stab()
+}
+SilverMoblin ..|> Moblin
+
+class SilverLizalflos
+{
+
+    SilverLizalflos()
+    + announce()
+    + hide()
+    + move()
+    + throwBoomerang()
+}
+SilverLizalflos ..|> Lizalflos
+
+class HardDungeon
+{
+
+    HardDungeon()
+    + newBokoblin(): Bokoblin
+    + newLizalflos(): Lizalflos
+    + newMoblin(): Moblin
+}
+HardDungeon ..|> Dungeon
+
+
+
+
+
+
+Dungeon ..> Bokoblin
+Dungeon ..> Lizalflos
+Dungeon ..> Moblin
+
+
+
+
+EasyDungeon ..> Bokoblin
+EasyDungeon ..> Lizalflos
+EasyDungeon ..> Moblin
+
+
+
+
+MediumDungeon ..> Bokoblin
+MediumDungeon ..> Lizalflos
+MediumDungeon ..> Moblin
+
+
+
+
+HardDungeon ..> Bokoblin
+HardDungeon ..> Lizalflos
+HardDungeon ..> Moblin
+@enduml

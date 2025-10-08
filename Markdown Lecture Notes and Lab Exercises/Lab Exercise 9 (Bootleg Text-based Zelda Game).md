@@ -80,7 +80,7 @@ encounter.moveEnemies()
 
 Right now the game works like this:
 
-As soon as you enter the dungeon, all the enemies are announced:
+When you enter a dungeon an `Encounter` instance is constructed. The encounter instance contains, a 0-8 random enemies. Using the newly created `Encounter` instance, `announceEnemies()` is invoked. This displays all the enemies in the encounter.
 
 ```
 5 monsters appeared
@@ -91,7 +91,7 @@ A moblin appeared
 A moblin appeared
 ```
 
-After this, each enemy in the encounter attacks. They randomly pick an attack from their moveset.
+After this, the encounter instance's `moveEnemies()` method is invoked. Using this each enemy in the encounter attacks. Each enemy will attack, choosing a random move from their moveset.
 
  ```
 Lizalflos thorws its lizal boomerang at you for 2 damage
@@ -137,7 +137,7 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster. **Complete the system using the abstract factory pattern.**
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/bab2c4e390f529f00af5cb16d9597609863b3cd7/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactoryExample.png)
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/bab2c4e390f529f00af5cb16d9597609863b3cd7/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZelda.svg)
 
 ## Assessment Criteria
 
