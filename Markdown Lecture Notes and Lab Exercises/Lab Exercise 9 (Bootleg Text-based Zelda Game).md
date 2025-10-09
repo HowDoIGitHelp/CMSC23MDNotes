@@ -1,7 +1,5 @@
 # Lab Exercise 9 (Bootleg Text-based Zelda Game)
 
-## Task
-
 You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalflos (different types have different moves). The exact type of monster is randomly decided as well. 
 
 **Right now the game works like this:**
@@ -19,7 +17,7 @@ A moblin appeared
 A moblin appeared
 ```
 
-After this, the encounter instance's `moveEnemies()` method is invoked. Using this each enemy in the encounter attacks. Each enemy will attack, choosing a random move from their moveset.
+After this, the encounter instance's `moveEnemies()` method is invoked. Using this, each enemy in the encounter attacks. During each attack, each enemy will choose a random move from their moveset.
 
  ```
 Lizalflos thorws its lizal boomerang at you for 2 damage

@@ -73,21 +73,23 @@ In this new architecture, whenever there are new delivery methods a  shipment co
 
 ### Problem
 
-Your system consists of a family of related products. These products also have different variants.  You need a way to create these products so that the products match the the same variant. The exact variants of the family of  products are decided during runtime somewhere else in the code (similar to product creation in a factory method) 
+Your system consists of a family of related products. These products also have different variants.  Some client class or function dependent on your products needs a way to create these products so that the products match the the same variant. The exact variants of the family of  products are decided during runtime somewhere else in the code (similar to product creation in a factory method). To accomplish this you can simply switch between products using some kind of selection (if-else, switch-case, when, etc.)
+
+This solution works right now, but what if there are new product variants? Every time there are new variants you will end up adding new branches to your client code. 
 
 ![Abstract Factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Abstract%20Factory.png)
 
 ### Solution
 
-You create different kinds of factories that realize under the same abstract factory. The exact type of factory will decide the variant of the family of products that are created. To do this you need to create different factory methods for each product. These factory methods must be abstract methods in the abstract factory so that every factory realization can create all members of the product family.
+You create different kinds of factories that realize under the same abstract factory. Said abstract factory will contain abstract factory methods that delegate product construction for each product type. These factory methods are named `newProductA()` and `newProductB()`.
+
+
 
 ![abstract factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactory.svg)
 
-The family of products, are `ProductA` and `ProductB`, These products come in two variants, variant 1 and 2. `FactoryVariant1` is a realization of `Factory` which creates all of the product in variant 1 while `FactoryVariant2` creates all the products in variant 2.
+For every possible variant, you create a realization if `AbstractFactory`. The exact realization of factory (`FactoryVariant1` or `FactoryVariant2`) will decide the variant of the family of products that are created. These realizations will implement the factory methods based on their variant. For example `FactoryVariant1`'s `newProductA()` will return a new instance of `ProductAVariant1`, while `FactoryVariant2`'s `newProductA()` will return a new instance of `ProductAVariant2`. Using this an instance of `AbstractFactory` can either produce products from variant 1 or variant 2 depending on its exact realization. 
 
-> If it makes sense for the system,  you can make an abstract `Product` class for all the types of products.
-
-When the client of an abstract factory produces its products, it doesn't need to know what kind of factory is producing the products. This means that the concrete type of a product (its variant) is not decided during compile time but instead it depends on the concrete type of the factory that is creating it.
+Whenever there are new variant types that are added to your system, you will not need to change any client code. All you need to do is to create new `Product` realizations based on the new variant as well new `AbstractFactory` realizations that produce these product variants.
 
 ### Example
 
