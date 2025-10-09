@@ -27,7 +27,7 @@ As you see this process is quite tedious. For every new product type that is add
 
 You encapsulate the creation of a class inside a **factory method** that is specified to return an abstraction of the product. If there are other real product types that have to be produced, you create a specialized factory which overrides the factory method.
 
-![factory method class diagram](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/factorymethod.svg)
+![factory method class diagram](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/factoryMethod.svg)
 
 > Somewhere inside factory you have one or more instances of creating or using the product.
 
@@ -41,13 +41,13 @@ Consider you're developing the product delivery side of an online  marketplace a
 
 What you have is `Shipment` class that contains a `StandardDelivery` class. Inside the shipment class is the `shipmentDetails()` builder  which builds a string representing the details of the shipment, this  includes the delivery details (which requires access to the composed `StandardDelivery` instance). Inside the constructor of `Shipment` an instance of `StandardDelivery` is created so that every `Shipment` is set to be delivered using standard delivery.
 
-![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/nonfactorymethodExample.png)
+![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/ShipmentNoFactory.svg)
 
 This system does work. It works but it is still inelegant. As soon as your app grows, you will incorporate new delivery options like express delivery, or pickups or whatever. Every time you need to add a new delivery method you will need to perform surgery in `Shipment` since the `StandardDelivery` instance is created inside the constructor of `Shipment`. `Shipment`'s code is too coupled with `StandardDelivery`.
 
 To solve this you need to implement the factory method pattern.  Right now shipment is a factory since it constructs its own instance of `StandardDelivery`. To refactor this into elegant code, you need to so create an abstraction called`Delivery` first to support polymorphism. Inside `Shipment` instead of creating instances of `Delivery`'s using a constructor, you invoke a factory method that encapsulates the instantiation of `Delivery`. In this case we name this method `newDelivery()`. All it does is return an instance of `StandardDelivery` using its constructor.
 
-![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/factorymethodExample.png)
+![online marketplace](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Shipment.svg)
 
 In this new architecture, whenever there are new delivery methods a  shipment could have, all you have to do is to create a realization of  that delivery method. In this case the new delivery method is `ExpressDelivery` which delivers for two days but is twice as expensive. And instead of changing `Shipment` (violates Open/Closed Principle), you make an extension to `Shipment`. This extension is the specialization to shipment called `ExpressShipment` (a shipment that uses express delivery). In this specialization, you only need to override the factory method  delivery, so that every instance of delivery construction creates `ExpressDelivery`. The difference between `ExpressDelivery` and `Delivery` is that `ExpressDelivery` has a delivery fee of 1000 and the estimated delivery date is 1 day after the processing date.
 
@@ -85,7 +85,7 @@ You create different kinds of factories that realize under the same abstract fac
 
 
 
-![abstract factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactory.svg)
+![abstract factory](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/abstractFactory.svg)
 
 For every possible variant, you create a realization if `AbstractFactory`. The exact realization of factory (`FactoryVariant1` or `FactoryVariant2`) will decide the variant of the family of products that are created. These realizations will implement the factory methods based on their variant. For example `FactoryVariant1`'s `newProductA()` will return a new instance of `ProductAVariant1`, while `FactoryVariant2`'s `newProductA()` will return a new instance of `ProductAVariant2`. Using this an instance of `AbstractFactory` can either produce products from variant 1 or variant 2 depending on its exact realization. 
 
@@ -156,7 +156,7 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster.
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/abstractFactoryExample.png)
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/abstractFactory.svg)
 
 ### Why this is elegant
 
