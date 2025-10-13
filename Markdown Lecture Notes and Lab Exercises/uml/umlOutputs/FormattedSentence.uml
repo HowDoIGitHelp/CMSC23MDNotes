@@ -1,0 +1,41 @@
+@startuml
+class Sentence
+{
+    Sentence(words: List<String>)
+    - words: List<String>
+    + toString(): String
+    + words(): List<String>
+}
+
+
+abstract class FormattedSentence
+{
+    FormattedSentence(wrappedSentence: Sentence)
+    # wrappedSentence: Sentence
+    + toString(): String
+}
+FormattedSentence --|> Sentence
+
+class BorderedSentence
+{
+    BorderedSentence(wrappedSentence: Sentence)
+    + toString(): String
+}
+BorderedSentence --|> FormattedSentence
+
+class FancySentence
+{
+    FancySentence(wrappedSentence: Sentence)
+    + toString(): String
+}
+FancySentence --|> FormattedSentence
+
+class UpperCaseSentence
+{
+    UpperCaseSentence(wrappedSentence: Sentence)
+    + toString(): String
+}
+UpperCaseSentence --|> FormattedSentence
+
+FormattedSentence ..> Sentence
+@enduml

@@ -104,13 +104,17 @@ As the system evolves, you'll likely encounter interfaces of instances that are 
 
 ### Solution
 
-In the same way a usb-c interface is usable on a usb 2.0 using an adapter, you can use an incompatible service on a client as a compatible instance using the adapter pattern. 
+In the same way a usb-c interface is usable on a usb 2.0 using an adapter, you can use an incompatible dependency on a client as a compatible instance using the adapter pattern. 
 
-Say you have an instance of `AbstractService` (it could be any realization of `AbstractService`), that needs to be used like an instance of `RequiredInterface` by some client. What you need to do is to create an adapter to `AbstractService` called `ServiceAdapter` which realizes `RequiredInterface`. To adapt the instance of `AbstractService`, you have to compose it inside the `ServiceAdapter`. So that `serviceMethod1()` is adapted to `method1()`.
+Say you have an instance of `AbstractDependency` (it could be any realization of `AbstractDependency`), that needs to be used like an instance of `RequiredInterface` by some client. In this example, the `RequiredInterface`'s `method()` works the same way as `AbstractDependency`'s `dependencyMethod()`. But unfortunately they have different names, thus creating the incompatibility.
+
+You can rename `dependencyMethod()` into `method()` and change `RealDependency`'s abstraction from `AbstractDependency` to `RequiredInterface`. This will fix the incompatibility but it will break existing clients of `AbstractDependency` since the method names have been changed. To avoid breaking clients of `RealDependency` you instead make it so that `RealDependency` realizes both `AbstractDependency` and `RequiredInterface`. This will fix the incompatibility without affecting any client code but this introduces redundant code and violates the Interface Segregation Principle. If `RealDependency` has specializations, it will clutter its specializations with redundant code as well.
+
+What you need to do is to create an adapter to `AbstractDependency` called `Adapter` which realizes `RequiredInterface`. To adapt the instance of `AbstractDependency`, you have to compose it inside the `Adapter`. This way `dependencyMethod()` is now adapted to `requiredMethod()`.
 
 ![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/adapter.svg)
 
-Whenever, a `ServiceAdapter` calls `method1()` it instead delegates the behavior to the embedded service, which instead calls `serviceMethod1()`
+Whenever, an instance of `Adapter` calls `method()` it instead delegates the behavior to the embedded `dependency`, which instead calls `dependencyMethod()`
 
 ### Example
 

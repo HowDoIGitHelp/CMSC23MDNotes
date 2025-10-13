@@ -1,0 +1,36 @@
+@startuml
+interface Printable
+{
+    + toString(): String
+}
+
+
+class PrintableShipment
+{
+    PrintableShipment(shipment: Shipment)
+    - shipment: Shipment
+    + toString(): String
+}
+PrintableShipment ..|> Printable
+
+class Shipment
+{
+    Shipment(orderList: List<Order>, processDate: LocalDate, location: String)
+    # delivery: Delivery
+    # orderList: List<Order>
+    # processDate: LocalDate
+    + newDelivery(location: String): Delivery
+    + shipmentDetails(): String
+    + totalPrice(): Float
+}
+
+
+class ExpressShipment
+{
+    ExpressShipment(orderList: List<Order>, processDate: LocalDate, location: String)
+    + newDelivery(location: String): ExpressDelivery
+}
+ExpressShipment --|> Shipment
+
+PrintableShipment ..> Shipment
+@enduml

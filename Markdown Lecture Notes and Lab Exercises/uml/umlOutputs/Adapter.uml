@@ -1,0 +1,30 @@
+@startuml
+interface AbstractDependency
+{
+    + dependencyMethod()
+}
+
+
+class RealDependency
+{
+    RealDependency()
+    + dependencyMethod()
+}
+RealDependency ..|> AbstractDependency
+
+interface RequiredInterface
+{
+    + requiredMethod()
+}
+
+
+class Adapter
+{
+    Adapter(embeddedDependency: AbstractDependency)
+    - embeddedDependency: AbstractDependency
+    + requiredMethod()
+}
+Adapter ..|> RequiredInterface
+
+Adapter ..> AbstractDependency
+@enduml

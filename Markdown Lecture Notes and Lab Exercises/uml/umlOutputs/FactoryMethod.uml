@@ -1,0 +1,54 @@
+@startuml
+interface Product
+{
+    + use()
+}
+
+
+class DefaultProduct
+{
+    DefaultProduct()
+    + use()
+}
+DefaultProduct ..|> Product
+
+class SpecialProductA
+{
+    SpecialProductA()
+    + use()
+}
+SpecialProductA ..|> Product
+
+class SpecialProductB
+{
+    SpecialProductB()
+    + use()
+}
+SpecialProductB ..|> Product
+
+class Factory
+{
+    Factory()
+    + clientMethod()
+    + newProduct(): Product
+}
+
+
+class SpecialFactoryA
+{
+    SpecialFactoryA()
+    + newProduct(): Product
+}
+SpecialFactoryA --|> Factory
+
+class SpecialFactoryB
+{
+    SpecialFactoryB()
+    + newProduct(): Product
+}
+SpecialFactoryB --|> Factory
+
+Factory ..> Product
+SpecialFactoryA ..> Product
+SpecialFactoryB ..> Product
+@enduml

@@ -1,0 +1,71 @@
+@startuml
+interface ProductA
+{
+    + show()
+}
+
+
+interface ProductB
+{
+    + use()
+}
+
+
+class ProductAVariant1
+{
+    ProductAVariant1()
+    + show()
+}
+ProductAVariant1 ..|> ProductA
+
+class ProductBVariant1
+{
+    ProductBVariant1()
+    + use()
+}
+ProductBVariant1 ..|> ProductB
+
+class ProductAVariant2
+{
+    ProductAVariant2()
+    + show()
+}
+ProductAVariant2 ..|> ProductA
+
+class ProductBVariant2
+{
+    ProductBVariant2()
+    + use()
+}
+ProductBVariant2 ..|> ProductB
+
+interface AbstractFactory
+{
+    + newProductA(): ProductA
+    + newProductB(): ProductB
+}
+
+
+class FactoryVariant1
+{
+    FactoryVariant1()
+    + newProductA(): ProductA
+    + newProductB(): ProductB
+}
+FactoryVariant1 ..|> AbstractFactory
+
+class FactoryVariant2
+{
+    FactoryVariant2()
+    + newProductA(): ProductA
+    + newProductB(): ProductB
+}
+FactoryVariant2 ..|> AbstractFactory
+
+AbstractFactory ..> ProductA
+AbstractFactory ..> ProductB
+FactoryVariant1 ..> ProductA
+FactoryVariant1 ..> ProductB
+FactoryVariant2 ..> ProductA
+FactoryVariant2 ..> ProductB
+@enduml
