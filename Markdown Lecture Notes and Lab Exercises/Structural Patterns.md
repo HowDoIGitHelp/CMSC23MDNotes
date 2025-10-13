@@ -112,7 +112,7 @@ You can rename `dependencyMethod()` into `method()` and change `RealDependency`'
 
 What you need to do is to create an adapter to `AbstractDependency` called `Adapter` which realizes `RequiredInterface`. To adapt the instance of `AbstractDependency`, you have to compose it inside the `Adapter`. This way `dependencyMethod()` is now adapted to `requiredMethod()`.
 
-![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/adapter.svg)
+![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Adapter.svg)
 
 Whenever, an instance of `Adapter` calls `method()` it instead delegates the behavior to the embedded `dependency`, which instead calls `dependencyMethod()`
 
