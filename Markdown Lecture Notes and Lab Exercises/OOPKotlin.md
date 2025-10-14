@@ -518,7 +518,7 @@ open class SpecialClandestineClass1(
 
 The specializations of a class will have access to `public` and `protected` attributes. The code above will not compile because `SpecialClandestineClass1` doesn't have access to the private attribute `v3`. 
 
-Ommiting `v3` inside the body of `method2`, the code now works:
+Omitting `v3` inside the body of `method2`, the code now works:
 
 
 ```kotlin
