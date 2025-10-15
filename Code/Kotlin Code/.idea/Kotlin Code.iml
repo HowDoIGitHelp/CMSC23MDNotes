@@ -10,7 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/FactoryMethodPattern/badRefactor" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FactoryMethodPattern/base" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FactoryMethodPattern/factoryMethod" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/DecoratorPattern/decorator" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OOPKotlin" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
