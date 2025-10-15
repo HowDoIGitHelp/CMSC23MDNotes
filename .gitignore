@@ -1,5 +1,5 @@
 solutions_and_tests/
-*desktop.ini
+[Dd]esktop.ini
 Code/C\ Code/output/
 Code/C\ Code/a.out
-*.idea/
+.idea/
