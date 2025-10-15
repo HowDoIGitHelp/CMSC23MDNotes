@@ -21,19 +21,20 @@ Some of your classes require extra features that can be added and removed during
 
 To solve this issue, all you have to do is to apply the open/closed principle. For every feature that can be arbitrarily added to some a simple class, you need to create a `Decorator` that extends the features of classes using inheritance and composition at the same time. The neat thing about this pattern is that the `Decorator`s will have polymorphically the same type as the simple class due to inheritance. `Decorator`s will also be able to control instances of the simple class because of composition.
 
-![decorator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/decorator.png)
+![decorator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutpus/Decorator.svg)
 
 To create an instance of a `SimpleClass` decorated by `Decorator1`, all you need to do is to wrap the `SimpleClass` instance with an instance of `Decorator1`. When this `Decorator1` instance, calls `doSomething()` it calls the wrapped `SimpleClass ` instance's `doSomething()` and do some extra behavior.
 
-```python
-#Decorator1's implementation of doSomething():
+```kotlin
+//Decorator1's implementation of doSomething():
 
-def doSomething(self):
-    self._wrappedObject.doSomething()
-    doSomthingExtra()
+override fun doSomething() {
+    wrappedObject.doSomething()
+    doSomethingExtra()
+}
 ```
 
-It would be handy to create a `BaseDecorator` abstract class that is inherited by all decorators. It's  not required but this class will form a class hierarchy for all decorators. Plus, you can write all of the common behavior and data into this class. It would be better for this class's `doSomething()` to be abstract, since it doesn't make sense for you to create instances of `BaseDecorator`.
+It would be handy to create a `BaseDecorator` abstract class that is inherited by all decorators. It's  not required but this class will form a class hierarchy for all decorators. Plus, you can write all of the common behavior and data into this class. It would be better for the `BaseDecorator()` `doSomething()` to be so that the decorator realizations are forced to override `doSomething()`.
 
 ### Example
 

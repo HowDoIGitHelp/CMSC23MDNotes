@@ -1,0 +1,34 @@
+@startuml
+class SimpleClass
+{
+    SimpleClass()
+    + doSomething()
+}
+
+
+abstract class BaseDecorator
+{
+    BaseDecorator(wrappedObject: SimpleClass)
+    # wrappedObject: SimpleClass
+    + doSomething()
+}
+BaseDecorator --|> SimpleClass
+
+class Decorator1
+{
+    Decorator1(wrappedObject: SimpleClass)
+    + doSomething()
+    - doSomethingExtra()
+}
+Decorator1 --|> BaseDecorator
+
+class Decorator2
+{
+    Decorator2(wrappedObject: SimpleClass)
+    + doSomething()
+    - doSomethingExtra()
+}
+Decorator2 --|> BaseDecorator
+
+BaseDecorator ..> SimpleClass
+@enduml
