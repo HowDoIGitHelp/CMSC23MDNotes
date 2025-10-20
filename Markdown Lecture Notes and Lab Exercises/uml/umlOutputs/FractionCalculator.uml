@@ -1,0 +1,70 @@
+@startuml
+class Fraction
+{
+    Fraction(num: Int, denom: Int)
+    - denom: Int
+    - num: Int
+    + denom(): Int
+    + num(): Int
+    + toString(): String
+}
+
+
+class Calculation
+{
+    Calculation(left: Fraction, right: Fraction, operation: Operation)
+    - answer: Fraction
+    - left: Fraction
+    - operation: Operation
+    - right: Fraction
+    + toString(): String
+}
+
+
+class Addition
+{
+    Addition()
+    + execute(left: Fraction, right: Fraction): Fraction
+    + toString(): String
+}
+Addition ..|> Operation
+
+class Subtraction
+{
+    Subtraction()
+    + execute(left: Fraction, right: Fraction): Fraction
+    + toString(): String
+}
+Subtraction ..|> Operation
+
+class Multiplication
+{
+    Multiplication()
+    + execute(left: Fraction, right: Fraction): Fraction
+    + toString(): String
+}
+Multiplication ..|> Operation
+
+class Division
+{
+    Division()
+    + execute(left: Fraction, right: Fraction): Fraction
+    + toString(): String
+}
+Division ..|> Operation
+
+interface Operation
+{
+    + execute(left: Fraction, right: Fraction): Fraction
+    + toString(): String
+}
+
+
+Calculation ..> Fraction
+Calculation ..> Operation
+Addition ..> Fraction
+Subtraction ..> Fraction
+Multiplication ..> Fraction
+Division ..> Fraction
+Operation ..> Fraction
+@enduml
