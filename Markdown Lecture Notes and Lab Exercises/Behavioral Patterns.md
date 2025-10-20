@@ -8,7 +8,7 @@ Some systems require complex and extremely decoupled relationships. Behavioral p
 
 1. Design systems that apply the strategy pattern
 2. Design systems that apply the state pattern
-3. ###### Design systems that apply the command pattern
+3. Design systems that apply the command pattern
 4. Design systems that apply the observer pattern
 5. Design systems that apply the template pattern
 6. Design systems that apply the iterator pattern
