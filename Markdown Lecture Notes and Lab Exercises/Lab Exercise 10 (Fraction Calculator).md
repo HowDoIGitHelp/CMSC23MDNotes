@@ -13,7 +13,7 @@ Kotlin does indeed support higher order functions but your boss is anti-function
 
 To do this, you need to create an abstraction called `Operation` to represent the different operations. For each operation, you create a class that realizes `Operation`. 
 
-![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/bab2c4e390f529f00af5cb16d9597609863b3cd7/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/FractionCalculator.svg)
+![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0f910e29bb0cc49a8510fdc72a6994fe58c5cac0/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/FractionCalculator.svg)
 
 > `execute()` should have been named like a builder method (something like `solution()`), I'm keeping the name `execute()` since this is how Strategy patterns usually names this particular method.
 
@@ -21,5 +21,5 @@ To do this, you need to create an abstraction called `Operation` to represent th
 
 ## Assessment Criteria
 
-- Completeness of the pattern - 40
-- Elegance of method and attribute naming - 10
+- Correct `Operation` realization functionality - 24
+- Pattern is open for extension = 16

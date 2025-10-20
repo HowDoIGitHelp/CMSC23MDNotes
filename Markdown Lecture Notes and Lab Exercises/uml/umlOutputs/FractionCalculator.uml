@@ -1,15 +1,4 @@
 @startuml
-class Fraction
-{
-    Fraction(num: Int, denom: Int)
-    - denom: Int
-    - num: Int
-    + denom(): Int
-    + num(): Int
-    + toString(): String
-}
-
-
 class Calculation
 {
     Calculation(left: Fraction, right: Fraction, operation: Operation)
@@ -60,11 +49,5 @@ interface Operation
 }
 
 
-Calculation ..> Fraction
 Calculation ..> Operation
-Addition ..> Fraction
-Subtraction ..> Fraction
-Multiplication ..> Fraction
-Division ..> Fraction
-Operation ..> Fraction
 @enduml
