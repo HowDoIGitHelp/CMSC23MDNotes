@@ -1,0 +1,65 @@
+@startuml
+interface State
+{
+    + compress()
+    + cool()
+    + heat()
+    + release()
+}
+
+
+class Matter
+{
+    Matter(name: String)
+    - name: String
+    - state: State
+    + changeState(newState: State)
+    + compress()
+    + cool()
+    + heat()
+    + release()
+    + toString(): String
+}
+
+
+class LiquidState
+{
+    LiquidState(owner: Matter)
+    - owner: Matter
+    + compress()
+    + cool()
+    + heat()
+    + release()
+    + toString(): String
+}
+LiquidState ..|> State
+
+class SolidState
+{
+    SolidState(owner: Matter)
+    - owner: Matter
+    + compress()
+    + cool()
+    + heat()
+    + release()
+    + toString(): String
+}
+SolidState ..|> State
+
+class GaseousState
+{
+    GaseousState(owner: Matter)
+    - owner: Matter
+    + compress()
+    + cool()
+    + heat()
+    + release()
+    + toString(): String
+}
+GaseousState ..|> State
+
+Matter ..> State
+LiquidState ..> Matter
+SolidState ..> Matter
+GaseousState ..> Matter
+@enduml
