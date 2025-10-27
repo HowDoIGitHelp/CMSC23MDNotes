@@ -1,0 +1,88 @@
+@startuml
+class Board
+{
+    Board(filename: String)
+    - cLoc: Pair<Int,Int>
+    - end: Pair<Int,Int>
+    - isSolid: List<List<Boolean>>
+    - start: Pair<Int,Int>
+    + canMoveDown(): Boolean
+    + canMoveLeft(): Boolean
+    + canMoveRight(): Boolean
+    + canMoveUp(): Boolean
+    + characterLocation(): Pair<Int,Int>
+    + moveDown()
+    + moveLeft()
+    + moveRight()
+    + moveUp()
+    + teleportCharacter(newLocation: Pair<Int,Int>)
+    + toString(): String
+}
+
+
+class Controller
+{
+    Controller(board: Board)
+    - board: Board
+    - commandHistory: List<Command>
+    + pressDown()
+    + pressLeft()
+    + pressRight()
+    + pressUp()
+    + undo()
+}
+
+
+interface Command
+{
+    + execute()
+    + undo()
+}
+
+
+class DashUpCommand
+{
+    DashUpCommand(board: Board)
+    - backUpLocation: Pair<Int,Int>
+    - board: Board
+    + execute()
+    + undo()
+}
+DashUpCommand ..|> Command
+
+class DashRightCommand
+{
+    DashRightCommand(board: Board)
+    - backUpLocation: Pair<Int,Int>
+    - board: Board
+    + execute()
+    + undo()
+}
+DashRightCommand ..|> Command
+
+class DashLeftCommand
+{
+    DashLeftCommand(board: Board)
+    - backUpLocation: Pair<Int,Int>
+    - board: Board
+    + execute()
+    + undo()
+}
+DashLeftCommand ..|> Command
+
+class DashDownCommand
+{
+    DashDownCommand(board: Board)
+    - backUpLocation: Pair<Int,Int>
+    - board: Board
+    + execute()
+    + undo()
+}
+DashDownCommand ..|> Command
+
+Controller ..> Board
+DashUpCommand ..> Board
+DashRightCommand ..> Board
+DashLeftCommand ..> Board
+DashDownCommand ..> Board
+@enduml
