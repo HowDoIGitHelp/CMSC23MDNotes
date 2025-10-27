@@ -55,6 +55,6 @@ fun clientMethod(factory: AbstractFactory) {
     productB.use()
 }
 
-fun main(args: Array<String>) {
+fun main() {
     clientMethod(FactoryVariant2())
 }

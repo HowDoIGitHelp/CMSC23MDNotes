@@ -65,7 +65,7 @@ In this new architecture, whenever there are new delivery methods a  shipment co
 
 1. Create an abstraction for all product types (`Product`).
 2. Inside the base factory create the the factory method function `newProduct():Product`. Make sure it is specified to return abstraction `Product`.  
-3. For every new product type that is added to the system, create 2 new classes: the new product type as a realization of  `Product` and, and the factory for the new product type as a realization of `Factory`.
+3. For every new product type that is added to the system, create 2 new classes: the new product type as a realization of  `Product` and, and the factory for the new product type as a specialization of `Factory`.
 4. Inside each factory specialization override `newProduct()` to return the correct realization of  `Product`. 
 5. Replace every instance of constructor calls inside `Factory` with a call to the factory method `newProduct()`.
 
@@ -95,7 +95,7 @@ Whenever there are new variant types that are added to your system, you will not
 
 #### Bootleg Text-based Zelda Game
 
-You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalfos (different types have different moves). The exact type of monster is randomly decided as well. 
+You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game, every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalfos (different types have different moves). The exact type of monster is randomly decided as well. 
 
 Right now the game works like this:
 
@@ -156,7 +156,7 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster.
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/abstractFactory.svg)
+![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZelda.svg)
 
 ### Why this is elegant
 

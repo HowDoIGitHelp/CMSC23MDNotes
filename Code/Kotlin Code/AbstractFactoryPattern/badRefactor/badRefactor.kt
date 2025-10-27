@@ -24,6 +24,18 @@ class ProductBVariant2 {
     }
 }
 
+class ProductAVariant3 {
+    fun show() {
+        println("Using ProductAVariant3")
+    }
+}
+
+class ProductBVariant3 {
+    fun use() {
+        println("Using ProductBVariant3")
+    }
+}
+
 fun clientMethod(chosenVariant: Int) {
     println("using products:")
     when(chosenVariant) {
@@ -39,9 +51,15 @@ fun clientMethod(chosenVariant: Int) {
             productA.show()
             productB.use()
         }
+        3 -> {
+            val productA = ProductAVariant3()
+            val productB = ProductBVariant3()
+            productA.show()
+            productB.use()
+        }
     }
 }
 
-fun main(args: Array<String>) {
-    clientMethod(args[0].toInt())
+fun main() {
+    clientMethod(3)
 }
