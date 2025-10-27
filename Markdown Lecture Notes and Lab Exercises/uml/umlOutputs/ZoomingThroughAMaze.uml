@@ -81,6 +81,7 @@ class DashDownCommand
 DashDownCommand ..|> Command
 
 Controller ..> Board
+Controller ..> Command
 DashUpCommand ..> Board
 DashRightCommand ..> Board
 DashLeftCommand ..> Board

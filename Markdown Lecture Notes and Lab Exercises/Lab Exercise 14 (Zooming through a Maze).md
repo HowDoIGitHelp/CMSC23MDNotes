@@ -5,7 +5,7 @@
 You're creating a maze navigation game thing. This is what the application currently has right now:
 
 - `Board` - this represents the layout of the maze. The layout is loaded from a file. It has these attributes:
-  - `isSolid: List<List<Boolean>>` - this is a 2 dimensional grid encoded as a nested list of booleans which represents the solid boundaries of the maze. For example if `__isSolid[row][col]` is true then it means that that cell on (row,col) is a boundary
+  - `isSolid: List<List<Boolean>>` - this is a 2 dimensional grid encoded as a nested list of booleans which represents the solid boundaries of the maze. For example if `isSolid[row][col]` is true then it means that that cell on (row,col) is a boundary
   - `start: Pair<Int,Int>` - a pair of integers that represent where the character starts
   - `end: Pair<Int,Int>`: - a pair of integers that represent the position of the end of the maze
   - `cLoc: Pair<Int,Int>` - a pair of integers that represents the current location of the character. This is a private attribute but you can return a copy of this attribute using `characterLocation(): Pair<Int,Int>`
@@ -24,7 +24,7 @@ What you need to add:
 
 What is missing in this system are the actual commands and command realizations.
 
-![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/commandexample.png)
+![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/ZoomingThroughAMaze.svg)
 
 ## Assessment Criteria
 
