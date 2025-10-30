@@ -1,0 +1,67 @@
+@startuml
+class PushNotifier
+{
+    PushNotifier(currentHeadline: Headline, currentWeather: Weather)
+    - currentHeadline: Headline
+    - currentWeather: Weather
+    - subscribers: List<Subscriber>
+    - notifySubscribers()
+    + subscribe(newSubscriber: Subscriber)
+    + unsubscribe(exSubscriber: Subscriber)
+    + updateHeadline(freshHeadline: Headline)
+    + updateWeather(freshWeather: Weather)
+}
+
+
+interface Subscriber
+{
+    + update(newHeadline: Headline, newWeather: Weather)
+}
+
+
+class EmailSubscriber
+{
+    EmailSubscriber(email: String)
+    - email: String
+    + update(newHeadline: Headline, newWeather: Weather)
+}
+EmailSubscriber ..|> Subscriber
+
+class FileLogger
+{
+    FileLogger(filename: String)
+    - file: File
+    + update(newHeadline: Headline, newWeather: Weather)
+}
+FileLogger ..|> Subscriber
+
+class Headline
+{
+    Headline(headline: String, details: String, source: String)
+    - details: String
+    - headline: String
+    - source: String
+    + toString(): String
+}
+
+
+class Weather
+{
+    Weather(temp: Float, humidity: Float, outlook: String)
+    - humidity: Float
+    - outlook: String
+    - temp: Float
+    + toString(): String
+}
+
+
+PushNotifier ..> Subscriber
+PushNotifier ..> Headline
+PushNotifier ..> Weather
+Subscriber ..> Headline
+Subscriber ..> Weather
+EmailSubscriber ..> Headline
+EmailSubscriber ..> Weather
+FileLogger ..> Headline
+FileLogger ..> Weather
+@enduml
