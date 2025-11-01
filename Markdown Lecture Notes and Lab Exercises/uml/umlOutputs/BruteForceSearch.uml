@@ -1,0 +1,45 @@
+@startuml
+abstract class SearchAlgorithm
+{
+    SearchAlgorithm(target: Int, searchSpace: List<Int>)
+    # currentIndex: Int
+    # searchSpace: List<Int>
+    # solutions: List<Int>
+    # target: Int
+    + bruteForceSolution(): List<Int>
+    + first(): Int
+    + isSearching(): Boolean
+    + isValid(candidate: Int): Boolean
+    + next(): Int
+    + updateSolution(candidate: Int)
+}
+
+
+class EqualitySearchAlgorithm
+{
+    EqualitySearchAlgorithm(target: Int, searchSpace: List<Int>)
+    + isValid(candidate: Int): Boolean
+    + updateSolution(candidate: Int)
+}
+EqualitySearchAlgorithm --|> SearchAlgorithm
+
+class DivisibilitySearchAlgorithm
+{
+    DivisibilitySearchAlgorithm(target: Int, searchSpace: List<Int>)
+    + isValid(candidate: Int): Boolean
+    + updateSolution(candidate: Int)
+}
+DivisibilitySearchAlgorithm --|> SearchAlgorithm
+
+class MinimumSearchAlgorithm
+{
+    MinimumSearchAlgorithm(searchSpace: List<Int>)
+    # currentIndex: Int
+    # solutions: List<Int>
+    + isValid(candidate: Int): Boolean
+    + updateSolution(candidate: Int)
+}
+MinimumSearchAlgorithm --|> SearchAlgorithm
+
+
+@enduml

@@ -8,7 +8,7 @@ To implement this, you have to apply the observer pattern. Your subject would be
 
 Any platform, that is interested in the changes to the subject should realize a `Subscriber` abstraction (Observer), which contains the abstract method update().
 
-![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/observerexample.png)
+![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/WeatherNotifier.svg)
 
 **Complete the system using the observer pattern.**
 
