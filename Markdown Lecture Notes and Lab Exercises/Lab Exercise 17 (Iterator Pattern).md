@@ -4,10 +4,10 @@
 
 For non built-in collections, you can create an iterator that does the traversal for you. On the bare minimum these iterators will realize some `Iterator` abstraction that contains the methods, `next()`, and `hasNext()`. From these methods alone you can easily perform complete traversals without knowing the exact type of the collection:
 
-```python
-i = collection.newIterator()
-while i.hasNext():
-	print(i.next())
+```kotlin
+val i = collection.newIterator()
+while (i.hasNext())
+	println(i.next())
 ```
 
 ![iterator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Iterator.svg)
