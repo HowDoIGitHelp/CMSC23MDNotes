@@ -1,0 +1,75 @@
+@startuml
+interface Collection
+{
+    + newIterator(): Iterator<T>
+}
+
+
+interface Iterator
+{
+    + hasNext(): Boolean
+    + next(): T
+}
+
+
+class ListIterator
+{
+    ListIterator(traversedList: MyList<T>)
+    - currentIndex: Int
+    - traversedList: MyList<T>
+    + hasNext(): Boolean
+    + next(): T
+}
+ListIterator ..|> Iterator
+
+class ReverseListIterator
+{
+    ReverseListIterator(traversedList: MyList<T>)
+    - currentIndex: Int
+    - traversedList: MyList<T>
+    + hasNext(): Boolean
+    + next(): T
+}
+ReverseListIterator ..|> Iterator
+
+class MyList
+{
+    MyList(elements: List<T>)
+    - elements: List<T>
+    + elementAtIndex(index: Int): T
+    + newIterator(): ListIterator<T>
+    + size(): Int
+}
+MyList ..|> Collection
+
+class MyBTree
+{
+    MyBTree(value: T, left: MyBTree<T>, right: MyBTree<T>)
+    - left: MyBTree<T>
+    - right: MyBTree<T>
+    - value: T
+    + left(): MyBTree<T>
+    + newIterator(): Iterator<T>
+    + right(): MyBTree<T>
+    + value(): T
+}
+MyBTree ..|> Collection
+
+class InOrderIterator
+{
+    InOrderIterator(traversedTree: MyBTree<T>)
+    - stack: List<MyBTree<T>>
+    - traversedTree: MyBTree<T>
+    - visited: List<MyBTree<T>>
+    + hasNext(): Boolean
+    + next(): T
+}
+InOrderIterator ..|> Iterator
+
+Collection ..> Iterator
+ListIterator ..> MyList
+ReverseListIterator ..> MyList
+MyList ..> ListIterator
+MyBTree ..> Iterator
+InOrderIterator ..> MyBTree
+@enduml

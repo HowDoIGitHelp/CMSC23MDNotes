@@ -1,4 +1,4 @@
-# Lab Exercise 14 (Brute Force Search)
+# Lab Exercise 16 (Brute Force Search)
 
 ## Task
 
@@ -85,4 +85,3 @@ Because of this we can write a general brute force template method that would re
 ## Assessment Criteria
 
 - Completeness of the pattern - 40
-- Elegance of method and attribute naming - 10
