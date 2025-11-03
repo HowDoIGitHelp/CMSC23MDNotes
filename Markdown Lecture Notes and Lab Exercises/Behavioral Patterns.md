@@ -111,7 +111,7 @@ When you compress/release/cool/heat the matter, you delegate the appropriate beh
 2. For every state the `Context` can have, create a realization of `State`. 
 3. `Context` owns an attribute that represents the current state (`currentState`) that it owns.
 4. If the state needs to control the `Context` instance that owns it, add a backreference to `Context` inside state.
-5. Whenever a `Context` instance performs state dependent methods, it calls `currentState.contextRelatedMethod()`  instead so that its behavior is dependent on its current state.
+5. Whenever a `Context` instance performs state dependent methods, it calls `currentState.stateDependentBehavior()`  instead so that its behavior is dependent on its current state.
 
 ## Command Pattern
 
