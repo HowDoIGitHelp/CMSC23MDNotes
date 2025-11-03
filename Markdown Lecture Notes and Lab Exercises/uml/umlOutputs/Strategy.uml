@@ -1,0 +1,23 @@
+@startuml
+interface Strategy
+{
+    + execute(param: String)
+}
+
+
+class Strategy1
+{
+    Strategy1()
+    + execute(param: String)
+}
+Strategy1 ..|> Strategy
+
+class Strategy2
+{
+    Strategy2()
+    + execute(param: String)
+}
+Strategy2 ..|> Strategy
+
+
+@enduml
