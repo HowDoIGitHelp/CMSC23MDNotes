@@ -27,7 +27,7 @@ Some systems require behavior that have to be parametrized for other behavior. T
 
 Functions that are not first class citizens are encapsulated inside a `Strategy` class. A strategy class simply contains the method `execute(params)`, which represents the behavior that should be passed into a higher order function. Any method that can be passed into the higher order function should realize `Strategy`.
 
-![Strategy pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/strategy.png)
+![Strategy pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Strategy.svg)
 
 The object `params` represent the data that you need to pass into the correct class. In this pattern you pass the the whole `Strategy` realization so that `strategy.execute(params)` perform the desired behavior. You can add other methods in the `Strategy` abstraction, if it makes sense for the system. 
 
@@ -37,18 +37,16 @@ The object `params` represent the data that you need to pass into the correct cl
 
 You're creating a less sophisticated version of a fraction calculator. This calculator only has arithmetic operations inside it, addition, subtraction, division, and multiplication. Inside this calculator, a calculation is represented in a `Calculation` instance. Every calculation has four parts:
 
-- `__left` - represents the left operand fraction
-- `__right` - represents the right operand fraction
-- `__operation` - represents the operation ($+$,$-$,$\times$,$\div$)
-- `__answer` - represents the solution of the calculation
+- `left` - represents the left operand fraction
+- `right` - represents the right operand fraction
+- `operation` - represents the operation ($+$,$-$,$\times$,$\div$)
+- `answer` - represents the solution of the operation
 
-Python does indeed support higher order functions but your boss is anti-functional programming so he forbids the use these features. Because of this you decide to implement the strategy pattern.
+Kotlin does indeed support higher order functions but your boss is anti-functional programming so they forbid the use these features. Because of this you decide to implement the strategy pattern.
 
 To do this, you need to create an abstraction called `Operation` to represent the different operations. For each operation, you create a class that realizes `Operation`. 
 
-![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/strategyexample.png)
-
-> `execute()` should have been named like a builder method (something like `solution()`), I'm keeping the name `execute()` since this is how Strategy patterns usually names this particular method.
+![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/FractionCalculator.svg)
 
 ### Why this is elegant
 
@@ -75,7 +73,7 @@ Some objects can change into many different states. If different objects behavio
 
 An object that can have many states should contain an attribute representing its state. Instead of performing, state dependent behavior directly inside the object, you delegate this responsibility to its embedded state instead. In this way the object will behave according to its current state.
 
-![state pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/state.png)
+![state pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/State.svg)
 
 The state may be required to contain backreference to the context object that owns it. This is only required if state methods requires to access/control the context that owns it.
 
@@ -87,19 +85,17 @@ The state may be required to contain backreference to the context object that ow
 
 The state of any given matter is dependent on the pressure and temperature of its environment. If you heat up some liquid enough it will turn to gas, if you compress it enough it will become solid.
 
-You are to build a less sophisticated version of this model in code. Matter comes in three states, solid, liquid, and gas. The state of the matter may change if you put/remove pressure on it or heat/cool it.
-
 The state diagram would look something like this:
 
 ![state diagram example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/statediagramexample.png)
 
 To implement something like this, you would need to create matter which owns an attribute called `state` which represents the matter's current state. Since there are three states, you create three realizations to a common abstraction to state. 
 
-When you compress/release/cool/heat the matter, you delegate the appropriate behavior and state change inside `state`'s version of that. Each `State` realization will need a backreference to the `Matter` that owns it so that it can change it's state.
+When you compress/release/cool/heat the matter, you delegate the appropriate behavior and state change inside `state`'s version of that behavior. Each `State` realization will need a backreference to the `Matter` that owns it. This backreference will allow the `State` instance to change the `Matter`instance that owns said `State` intance.
 
-> Delegating behavior to the composed state means that, when the `Matter` instances invoke, `compress()`, `relaease()` `heat()`, and `cool()`, the composed `State` owned by the matter calls its own version of `compress()`, `relaease()` `heat()`, and `cool()`.
+> Delegating behavior to the composed state means that, when the `Matter` instances invoke, `compress()`, `release()` `heat()`, and `cool()`, the composed `State` owned by the matter calls its own version of `compress()`, `relaease()` `heat()`, and `cool()`.
 
-![state example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/stateexample.png)
+![state example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/StatesOfMatter.svg)
 
 > Matter owns an instance of `State`, and that instance has an attribute called `matter`. The attribute `matter`  is the reference to the instance of `Matter` that owns it. The `State` instance needs this reference so that it can change the matter's state when it is compressed, released, heated, or cooled.
 
