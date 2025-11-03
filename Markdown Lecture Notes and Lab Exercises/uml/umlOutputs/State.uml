@@ -1,0 +1,40 @@
+@startuml
+class Context
+{
+    Context()
+    - currentState: State
+    + anotherBehavior()
+    + behavior()
+    + changeState(newState: State)
+}
+
+
+interface State
+{
+    + anotherStateDependentBehavior()
+    + stateDependentBehavior()
+}
+
+
+class InitialState
+{
+    InitialState(owner: Context)
+    - owner: Context
+    + anotherStateDependentBehavior()
+    + stateDependentBehavior()
+}
+InitialState ..|> State
+
+class AnotherState
+{
+    AnotherState(owner: Context)
+    - owner: Context
+    + anotherStateDependentBehavior()
+    + stateDependentBehavior()
+}
+AnotherState ..|> State
+
+Context ..> State
+InitialState ..> Context
+AnotherState ..> Context
+@enduml
