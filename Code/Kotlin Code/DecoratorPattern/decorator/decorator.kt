@@ -2,7 +2,7 @@ package decorator
 
 open class SimpleClass {
     open fun doSomething() {
-        println("doingSomething")
+        println("doing something")
     }
 }
 
