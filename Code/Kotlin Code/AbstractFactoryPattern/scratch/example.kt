@@ -8,6 +8,7 @@ interface ProductB {
     fun use()
 }
 
+
 interface AbstractFactory {
     fun newProductA(): ProductA
     fun newProductB(): ProductB

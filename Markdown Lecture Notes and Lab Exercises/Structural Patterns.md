@@ -34,7 +34,7 @@ override fun doSomething() {
 }
 ```
 
-It would be handy to create a `BaseDecorator` abstract class that is inherited by all decorators. It's  not required but this class will form a class hierarchy for all decorators. Plus, you can write all of the common behavior and data into this class. It would be better for the `BaseDecorator()` `doSomething()` to be so that the decorator realizations are forced to override `doSomething()`.
+It would be handy to create a `BaseDecorator` abstract class that is inherited by all decorators. It's  not required but this class will form a class hierarchy for all decorators. Plus, you can write all of the common behavior and data into this class. It would be better for the `BaseDecorator`'s `doSomething()` method to be abstract so that the decorator realizations are forced to override `doSomething()`.
 
 ### Example
 
@@ -105,7 +105,7 @@ As the system evolves, you'll likely encounter interfaces of instances that are 
 
 ### Solution
 
-In the same way a usb-c interface is usable on a usb 2.0 using an adapter, you can use an incompatible dependency on a client as a compatible instance using the adapter pattern. 
+In the same way vga is usable on an hdmi port using an adapter, you can use an incompatible dependency on a client as a compatible instance using the adapter pattern. 
 
 Say you have an instance of `AbstractDependency` (it could be any realization of `AbstractDependency`), that needs to be used like an instance of `RequiredInterface` by some client. In this example, the `RequiredInterface`'s `method()` works the same way as `AbstractDependency`'s `dependencyMethod()`. But unfortunately they have different names, thus creating the incompatibility.
 
@@ -115,15 +115,15 @@ What you need to do is to create an adapter to `AbstractDependency` called `Adap
 
 ![adapter](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Adapter.svg)
 
-Whenever, an instance of `Adapter` calls `method()` it instead delegates the behavior to the embedded `dependency`, which instead calls `dependencyMethod()`
+Whenever, an instance of `Adapter` calls `requiredMethod()` it instead delegates the behavior to the embedded `dependency`, which instead calls `dependencyMethod()`
 
 ### Example
 
 #### Printable Shipments
 
-Looking back at our previous lab exercises, some of the example classes contain string representation but do not implement the `__str__()` function. An example of this is `Shipment` back from the factory method example. It does contain a string representation builder called `shipmentDetails()`, but printing a shipment is quite tedious since you have to print, `s.shipmentDetails()`.  You can replace the name of `shipmentDetails()` to `__str__()` but this will potentially affect other clients of shipment. You can add the `__str__()` function which does exactly the same but this may introduce unwanted code duplication.
+Looking back at our previous lab exercises, some of the example classes contain string representation but do not implement the `toString()` function. An example of this is `Shipment` back from the factory method example. It does contain a string representation builder called `shipmentDetails()`, but printing a shipment is quite tedious since you have to print, `s.shipmentDetails()`.  You can replace the name of `shipmentDetails()` to `toString()` but this will potentially affect other clients of shipment. You can add the `toString()` function which does exactly the same but this may introduce unwanted code duplication.
 
-The best solution for this problem is to create an adapter for shipment called `PrintableShipment`. This adapter will realize some `Printable` abstraction, which only contains the abstract method `__str__()`. 
+The best solution for this problem is to create an adapter for shipment called `PrintableShipment`. This adapter will realize some `Printable` abstraction, which only contains the abstract method `toString()`. 
 
 ![adapter example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/PrintableShipment.svg)
 
