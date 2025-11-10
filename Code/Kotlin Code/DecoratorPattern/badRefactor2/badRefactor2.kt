@@ -33,7 +33,6 @@ fun main() {
     instance1.doSomething()
     println()
 
-
     val instance2 = ExtraClass1()
     instance2.doSomething()
     println()
