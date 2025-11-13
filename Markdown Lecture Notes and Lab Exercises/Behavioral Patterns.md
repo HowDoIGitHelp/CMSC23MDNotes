@@ -133,13 +133,13 @@ This separation of responsibility allows for the creation of extra features that
 
 - If you want the `Commands` to be undoable, you can store a backup of the receiver (and other affected objects) by the `Command` inside each instance of `Command` . Undoing a command will be as simple as restoring the receiver to its backup.
 
-![command pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/command.png)
+![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Command.svg)
 
 > Instead of passing the receiver in the `Invoker` methods, you can create an attribute called receiver inside `Invoker`. But doing this will make it so there is one `Receiver` instance for every `Invoker` instance.
 >
 > The commands should only affect the receiver. If the behavior that is performed changes a lot of objects, then make a `Receiver` class that encapsulates all of the affected objects. Doing this will make the implementation of undo easier since the backup inside of the command will simply be an older version of `Receiver`.
 >
-> Different command realizations are not necessarily of the same`Strategy`.  That's why the parameters of the behavior are stored as attributes of the command, not passed in the `execute()` function. This is so that no matter what the command is, all `execute()` functions will have the same type signatures.
+> Different command realizations are not necessarily of the same `Strategy`.  That's why the parameters of the behavior are stored as attributes of the command, not passed in the `execute()` function. This is so that no matter what the command is, all `execute()` functions will have the same type signatures.
 
 ### Example
 
@@ -163,7 +163,7 @@ What's missing right now is controller support. This is how a player controls th
 
 To implement controller support you need to create a `Command` abstraction which is realized by all controller commands. The `Controller` (which represents the controller) is the invoker for the commands. Since commands are undoable, this controller needs to keep a command history, represented as a list. Every time a controller button is pressed, it creates the appropriate `Command`, executes it and appends it to the command history. Every time the `a_button()` is pressed to undo, the controller pops the last command from the command history and undoes it.
 
-![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/commandexample.png)
+![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/ZoomingThroughAMaze.svg)
 
 ### Why this is elegant
 
@@ -200,7 +200,7 @@ To do this you need to encapsulate the interesting data (from now on lets call i
 
 Any instance of an `Observer` should be subscribed to the change notifications using `Publisher`'s `subscribe()` function. They can also be unsubscribed using the`unsubscribe()` function.
 
-![observer](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/observer.png)
+![observer](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Observer.svg)
 
 > Whenever an observer has updated, the publisher needs to pass all the necessary details in the notification. This is generally done by passing the updated subject in the `update(updatedSubject)` method.
 >
