@@ -1,0 +1,36 @@
+@startuml
+interface Observer
+{
+    + updateSubject(newSubject: String)
+}
+
+
+class Publisher
+{
+    Publisher()
+    - subject: String
+    - subscribers: List<Observer>
+    + notifyObservers()
+    + subscribe(newObserver: Observer)
+    + unsubscribe(exObserver: Observer)
+    + updateSubject(newSubject: String)
+}
+
+
+class RealObserver1
+{
+    RealObserver1()
+    + subjectCopy: String
+    + updateSubject(newSubject: String)
+}
+RealObserver1 ..|> Observer
+
+class RealObserver2
+{
+    RealObserver2()
+    + updateSubject(newSubject: String)
+}
+RealObserver2 ..|> Observer
+
+Publisher ..> Observer
+@enduml

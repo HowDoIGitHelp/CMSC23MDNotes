@@ -1,0 +1,57 @@
+@startuml
+interface Command
+{
+    + execute()
+    + undo()
+}
+
+
+class Invoker
+{
+    Invoker()
+    + commandHistory: List<Command>
+    + invokeBehavior1(param: String, receiver: Receiver)
+    + invokeBehavior2(param: String, otherParam: String, receiver: Receiver)
+    + undoPreviousCommand()
+}
+
+
+class Receiver
+{
+    Receiver()
+    + contents: String
+    + behavior1(param: String)
+    + behavior2(param: String, otherParam: String)
+    + copy(): Receiver
+    + restore()
+}
+
+
+class RealCommand1
+{
+    RealCommand1(param: String, receiver: Receiver)
+    + backup: Receiver
+    + param: String
+    + receiver: Receiver
+    + execute()
+    + undo()
+}
+RealCommand1 ..|> Command
+
+class RealCommand2
+{
+    RealCommand2(param: String, otherParam: String, receiver: Receiver)
+    + backup: Receiver
+    + otherParam: String
+    + param: String
+    + receiver: Receiver
+    + execute()
+    + undo()
+}
+RealCommand2 ..|> Command
+
+Invoker ..> Receiver
+Invoker ..> Command
+RealCommand1 ..> Receiver
+RealCommand2 ..> Receiver
+@enduml
