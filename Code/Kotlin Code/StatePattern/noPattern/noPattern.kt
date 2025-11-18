@@ -1,7 +1,7 @@
 package noPattern
 
 class Context {
-    var state: String = "InitialState"
+    var state: String = "InitialState" // AnotherState YetAnotherState
 
     fun stateDependentBehavior() {
         when (state) {
@@ -10,6 +10,9 @@ class Context {
             }
             "AnotherState" -> {
                 state = "InitialState"
+            }
+            "YetAnotherState" -> {
+                state = "YetAnotherState"
             }
             else -> println("invalid state")
         }
@@ -25,6 +28,9 @@ class Context {
             "AnotherState" -> {
                 println("Context currently not on initial state")
             }
+            "YetAnotherState" -> {
+                println("Context currently not on initial state")
+            }
             else -> println("invalid state")
         }
     }
@@ -33,7 +39,8 @@ class Context {
 fun clientFunction() {
     val c = Context()
 
-    c.stateDependentBehavior()
+    // c.stateDependentBehavior()
+    c.state = "YetAnotherState"
     c.anotherStateDependentBehavior()
 }
 
