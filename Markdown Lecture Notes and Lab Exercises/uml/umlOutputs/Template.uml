@@ -1,0 +1,30 @@
+@startuml
+abstract class Template
+{
+    Template()
+    # step1()
+    # step2()
+    # step3()
+    # step4()
+    + templateMethod()
+}
+
+
+class Specialization1
+{
+    Specialization1()
+    # step1()
+    # step4()
+}
+Specialization1 --|> Template
+
+class Specialization2
+{
+    Specialization2()
+    # step1()
+    # step4()
+}
+Specialization2 --|> Template
+
+
+@enduml
