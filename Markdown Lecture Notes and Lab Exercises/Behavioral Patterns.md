@@ -188,15 +188,15 @@ To implement controller support you need to create a `Command` abstraction which
 
 ### Problem
 
-What if you need to inform a lot of objects about the changes to some interesting data? If you globalize the data and let your client objects poll for changes all the time, this will affect the security and safety of your interesting data. Plus, global data is something that should be avoided as much as possible. Also, forcing your objects poll for changes all the time will be inefficient if your interesting data has not changed.
+What if you need to inform a lot of objects about the changes to some interesting data? If you globalize the data and let your client objects poll for changes all the time, this will affect the security and safety of your interesting data. Plus, global data is something that should be avoided as much as possible. Also, forcing your objects to poll for changes all the time will be inefficient if your interesting data has not changed.
 
 ![observer](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Observer.png)
 
 ### Solution
 
-The responsibility of sharing information about the changes to interesting data should not be placed in the clients of the data. You should create a notifier class that encapsulates the interesting data. This class should be responsible of notifying interested clients about changes on the data. 
+The responsibility of sharing information about the changes to interesting data should not be placed in the clients of the data. You should create a notifier class that encapsulates the interesting data. This class should be responsible of notifying interested clients about changes on the subject. 
 
-To do this you need to encapsulate the interesting data (from now on lets call it the `subject`), into a `Publisher` class. An instance of this class will be responsible of notifying the observers for any change in the `subject`. Whenever there are changes to the subject, the `Publisher` instance calls `notifyObservers()` so that all interested, observers will be informed of the change. Any class that is potentially interested in the `subject` should realize an `Observer` abstraction, which in the bare minimum contains, the `update(updatedSubject)` function. Inside `Publisher`'s `notifyObservers()` method, every subscriber (an interested observer) is updated (`subscriber.update()`).
+To do this you need to encapsulate the interesting data (from now on lets call it the `subject`), into a `Publisher` class. An instance of this class will be responsible of notifying the observers for any change in the `subject`. Whenever there are changes to the subject, the `Publisher` instance calls `notifyObservers()` so that all interested observers will be informed of the change. Any class that is potentially interested in the `subject` should realize an `Observer` abstraction, which in the bare minimum contains, the `update(updatedSubject)` function. Inside `Publisher`'s `notifyObservers()` method, every subscriber (an interested observer) is updated (`subscriber.update()`).
 
 Any instance of an `Observer` should be subscribed to the change notifications using `Publisher`'s `subscribe()` function. They can also be unsubscribed using the`unsubscribe()` function.
 
@@ -218,7 +218,12 @@ To implement this, you have to apply the observer pattern. Your subject would be
 
 Any platform, that is interested in the changes to the subject should realize a `Subscriber` abstraction (Observer), which contains the abstract method update().
 
-![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/observerexample.png)
+You need to implement th following observer realizations:
+
+- `EmailSubscriber` - every time the `currentWeather` or `currentHeadline` changes you send an email to the specified `email`. (you don't have to actually send an email. You can just simulate sending an email by printing something like "sending <weather> and <headline> to <email>").
+- `FileLogger` - every time the `currentWeather` or `currentHeadline` changes, you append the updated weather and headline to the file specified in the attribute `filename`. You actually have to update a file via kotlin/python file writing. 
+
+![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/WeatherNotifier.svg)
 
 ### Why this is elegant
 
