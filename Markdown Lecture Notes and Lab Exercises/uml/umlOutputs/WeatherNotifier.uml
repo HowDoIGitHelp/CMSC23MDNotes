@@ -4,7 +4,7 @@ class PushNotifier
     PushNotifier(currentHeadline: Headline, currentWeather: Weather)
     - currentHeadline: Headline
     - currentWeather: Weather
-    - subscribers: List<Subscriber>
+    - subscribers: MutableList<Subscriber>
     - notifySubscribers()
     + subscribe(newSubscriber: Subscriber)
     + unsubscribe(exSubscriber: Subscriber)

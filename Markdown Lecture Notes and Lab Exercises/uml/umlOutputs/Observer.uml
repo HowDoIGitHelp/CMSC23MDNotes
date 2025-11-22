@@ -9,7 +9,7 @@ class Publisher
 {
     Publisher()
     - subject: String
-    - subscribers: List<Observer>
+    - subscribers: MutableList<Observer>
     + notifyObservers()
     + subscribe(newObserver: Observer)
     + unsubscribe(exObserver: Observer)
