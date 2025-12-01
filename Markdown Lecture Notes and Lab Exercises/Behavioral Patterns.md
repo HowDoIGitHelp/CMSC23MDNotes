@@ -266,7 +266,7 @@ If you write brute force algorithms as search problems, they will have a common 
 
 Search for integers equal to the target
 
-```python
+```kotlin
 #searchSpace = [2,3,1,0,6,2,4]
 #target = 2
 
@@ -285,7 +285,7 @@ while(i<len(searchSpace)):
 
 Search for integers divisible by the target
 
-```python
+```kotlin
 #searchSpace = [2,3,1,0,6,2,4]
 #target = 2
 
@@ -304,7 +304,7 @@ while(i<len(searchSpace)):
 
 No target, searches for the smallest integer
 
-```python
+```kotlin
 #searchSpace = [2,3,1,0,6,2,4]
 #target = None
 
