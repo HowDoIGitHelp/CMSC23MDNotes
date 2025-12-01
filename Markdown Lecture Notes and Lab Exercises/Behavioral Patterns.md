@@ -275,7 +275,7 @@ solutions = []
 candidate = searchSpace[0]
 while(i<len(searchSpace)):
     if candidate == target:
-        solutions.append(candidate)
+        solutions.add(candidate)
     candidate = searchSpace[++i]
     
 #solution = [2,2]
@@ -294,7 +294,7 @@ solutions = []
 candidate = searchSpace[0]
 while(i<len(searchSpace)):
     if candidate % target == 0:
-        solution.append(candidate)
+        solution.add(candidate)
     candidate = searchSpace[++i]
     
 #solution = [2,0,6,2,4]
