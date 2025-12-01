@@ -13,7 +13,7 @@ class Specialization1 : Template {
     }
 }
 
-class Specialization2 : Template{
+class Specialization2 : Template {
     override fun method() {
         println("performing step 1 as specialization 2")
         println("performing step 2")
