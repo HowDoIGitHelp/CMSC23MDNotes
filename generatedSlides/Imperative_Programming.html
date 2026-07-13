@@ -30,3 +30,162 @@ class: center, middle
 
 ---
 
+# Learning Outcomes
+
+> **Quick Note on Imperative Programming and Procedural Programming**
+> 
+> People usually use the terms Imperative programming and procedural programming interchangeably. Procedural programming is a subparadigm of imperative programming family, but some people refer to procedural programming as imperative programming. That's because other imperative paradigms like object-oriented programming is derived from procedural programming. You can think procedural programming as the ancestor if other imperative paradigms.
+> 
+
+
+---
+
+# Learning Outcomes
+
+> In this lecture I refer to Imperative paradigm as a whole, but I will focus on the main ideas that are common between other imperative paradigms. Ideas from object-oriented programming paradigm can be found on a separate lecture.
+> 
+
+
+---
+
+# Learning Outcomes
+
+```assembly
+INC ITER
+MOV AH,7
+ADD AH, AL
+
+```
+
+---
+
+class: center, middle
+# The STATE
+
+---
+# The STATE
+
+- The **state** of a program or a process on a given instance is the snapshot of its immediate relevant environment and context.
+
+
+---
+
+# The STATE
+
+```c
+int x = 3
+int y = 4
+x = x + y
+
+```
+
+---
+
+# The STATE
+
+- At the start of runtime, the state of this program would be (*for all intents and purposes*) empty, since there are no relevant variables declared at this point.
+
+
+---
+
+# The STATE
+
+| variable | value |
+|:---:|:---:|
+| `x` | 3 |
+
+
+---
+
+# The STATE
+
+| variable | value |
+|:---:|:---:|
+| `x` | 3 |
+| `y` | 4 |
+
+
+---
+
+# The STATE
+
+| variable | value |
+|:---:|:---:|
+| `x` | 7 |
+| `y` | 4 |
+
+
+---
+
+class: center, middle
+# Assignment Statement
+
+---
+# Assignment Statement
+
+- Instead of communicating some kind proposition, the assignment statement has an **imperative mood**.
+- An equality a=b in math **declares** that some `a` is `b`, while an assignment operator `a=b` **commands** that `a`'s value is now the same as `b`.
+- Mutation is introduced once you perform an assignment to `a` again, signifying a **change** in the value of `a`.
+
+
+---
+
+class: center, middle
+# Structured Program Theorem
+
+---
+# Structured Program Theorem
+
+1. Executing one subprogram, and then another subprogram (sequence)
+2. Executing one of two subprograms according to the value of a boolean (selection)
+3. Repeatedly executing a subprogram as long as a boolean expression is true (iteration)
+
+
+---
+
+class: center, middle
+# Subparadigms under the Imperative family
+
+---
+class: center, middle
+# Procedural programming
+
+---
+# Procedural programming
+
+- Languages under this paradigm simplify a complex system by subdividing a program into different **procedures** or functions.
+
+
+---
+
+class: center, middle
+# Object-oriented programming
+
+---
+class: center, middle
+# Optional Readings
+
+---
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
