@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/Programming Paradigms Introduction.md</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Programming Paradigms Introduction
+
+---
+class: center, middle
+# Introduction
+
+---
+class: center, middle
+# Learning Outcomes
+
+---
+# Learning Outcomes
+
+1. Explain what a programming paradigm is.
+2. Identify the four main programming paradigms
+3. Explain why programming languages are shifting to multi-paradigmness
+
+
+---
+
+class: center, middle
+# The title of this course
+
+---
+class: center, middle
+# Paradigm
+
+---
+# Paradigm
+
+- You probably heard of the term **paradigm shift** somewhere, it describes some form of fundamental change in the way we think within scientific disciplines often characterizing a scientific revolution.
+
+
+---
+
+# Paradigm
+
+![Ptolemaic Geocentric model of the solar system](../resources/Ptolemaic_Model.png)
+
+---
+
+# Paradigm
+
+- A paradigm is "*a worldview underlying the theories and methodology of a particular subject*" [^1].
+- It is a set of ideas and concepts that describe some **way of thinking**.
+
+
+---
+
+class: center, middle
+# Programming
+
+---
+# Programming
+
+- As second year CS students, what is your definition of **programming**?
+- The way you answer this question may actually tell you which perspective or programming **PARADIGM** you follow.
+- When you say you are programming some kind of mechanism or behavior *what are you actually doing*?
+
+
+---
+
+# Programming
+
+> Computer programming is the process that professionals use to write code that instructs how a computer, application or software program performs. At its most basic, computer programming is a set of instructions to facilitate specific actions.[^2]
+> 
+
+
+---
+
+# Programming
+
+- When you write programs you're writing **instructions** for your computer.
+
+
+---
+
+# Programming
+
+1. Ask the user for a number
+2. Store that number to a variable called x.
+3. While x is greater than 7 do step 4 otherwise proceed
+4. Subtract 7 to x and store the difference to x
+5. Show the user the value of x
+
+
+---
+
+# Programming
+
+- A **programming language** is a medium that describes how to write instructions to communicate to your computer.
+
+
+---
+
+# Programming
+
+- It is a correct definition, but is it the *only* correct definition?
+- It defines programming under the paradigm **imperative programming**.
+
+
+---
+
+class: center, middle
+# Taxonomy of Programming Paradigms
+
+---
+# Taxonomy of Programming Paradigms
+
+- For someone who has been exposed to C, C++ and nothing else, you might feel that the natural way to code is the *imperative way* when in fact there are alternatives.
+
+
+---
+
+# Taxonomy of Programming Paradigms
+
+```mermaid
+graph TD;
+	Imperative-->Procedural;
+	Imperative-->ObjectOriented;
+	Declarative-->Functional;
+	Declarative-->Logic;
+
+```
+
+---
+
+class: center, middle
+# Multi-paradigm programming languages
+
+---
+# Multi-paradigm programming languages
+
+- Back then paradigms worked like programming language **classifications**.
+
+
+---
+
+# Multi-paradigm programming languages
+
+- Modern programming languages evolved to become **multi-paradigm**.
+- This inevitably happened because, as programming languages age and grow, more **features** are added to it.
+- These features are sometimes *borrowed from other paradigms* to solve a problem in a better way.
+
+
+---
+
+# Multi-paradigm programming languages
+
+- Instead, a language designer would *choose specific features* that they want to be supported on their programming language and implement it, regardless of its paradigm origins.
+
+
+---
+
+class: center, middle
+# Optional Readings
+
+---
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
