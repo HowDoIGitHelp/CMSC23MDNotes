@@ -2,7 +2,7 @@
 
 ## Introduction
 
-During the 1930’s a mathematician investigating the foundation of mathematics, named Alonzo Church, introduced a formal system of expressing computational logic.
+During the 1930s a mathematician investigating the foundation of mathematics, named Alonzo Church, introduced a formal system of expressing computational logic.
 The system he created was called **Lambda Calculus**.
 It was until the 1960s when the system found its way through different disciplines.
 It became something more than a mathematical formalism and became an important concept in linguistics and **computer science**[^1].
@@ -538,20 +538,20 @@ A pure function must satisfy these two:
 1. A pure function has no side effects
 2. A pure functions output must be dependent on the inputs alone
 
-> In fact if $f(a)=b$ and $f(a)=c$ where $b\neq c$ is not a function at all
+> In fact if $f(a)=b$ and $f(a)=c$ where $b\neq c$, then $f$ is not a function at all
 
 A good way to test if a function is pure is if you can (theoretically) create an infinitely long *lookup table* such that, looking up the value for a specific input is perfectly identical to calling the function with the same input.
 And if you think about it this is the essence of a function.
-It is a list of associations between the domain and the range.
+Functions are just of mappings between the domain and the range,
 
 #### The Absence of mutation
 
 One of the hallmarks that make imperative programming imperative is the assignment statement.
 It enables the program to advance to a new state.
 Purely functional programming languages like Haskell, lacks the mechanism to mutate anything.
-Using the "`=`" operator (which signals an assignment statement in imperative languages) in functional languages binds the value on the right-hand side to the left-hand side.
+Using the "`=`" operator (which signals an assignment statement in imperative languages) in functional languages *binds* the value on the right-hand side to the left-hand side.
 This mechanism is conceptually different from an assignment operation in C.
-For example:
+It is perfectly fine to do the following in C:
 
 ```C
 int x = 0;
@@ -559,12 +559,12 @@ x = 1;
 ```
 
 This code in C starts with a combined declaration and assignment: `int x = 0`.
-The second line then, **reassigns** the same variable `x` to the new value `1`.
-These lines of code correspond to a mutation on the variable `x`, (from `0` to `1`).
-The value of the variable `x` is not definite since it can change within the runtime of the program.
-Because of the existence of mutation, the values of variables are dependent on the current **state** of the program.
+The second line, **reassigns** the same variable `x` to the new value `1`.
+These lines of code correspond to a *mutation* on the variable `x`, (from `0` to `1`).
+Because mutation can happen anytime during runtime, the value of the variable `x` is not definite.
+This is why values of variables in imperative programming **depend on the current state** of the program.
 
-Replicating this C code in Haskell is in fact not allowed:
+On the other hand, replicating this C code in Haskell is in fact not allowed:
 
 ```haskell
 x = 0
@@ -580,72 +580,69 @@ main.hs:2:1: error:
          main.hs:2:1
 ```
 
-In Haskell, any "`=`" is a declaration of a binding.
-In fact all declarations in haskell are required to be **bound **to a value.
-These bindings are final (*in the scope of the identifier*).
+In Haskell, any "`=`" statement is a *declaration of a binding*.
+These bindings are *final* (in the scope of the identifier).
 It is even wrong to call `x` here a variable since its value does not vary.
 The correct way to call `x` is *identifier*, since it merely identifies the value bound to it.
 
 
 #### Consequences of Statelessness and Immutability
 
-Although Haskell's functions are our best representation of a mathematical function, this does not mean that it is pragmatically better than the classic impure functions of C.
-Restricting a programming language against side effects seems like an artificial disadvantage introduced only to faithfully implement mathematical functions.
+Haskell's functions are better representation of a mathematical functions. 
+But what is the point of faithfully representing mathematical functions?
 
-
-There are several reasons why programming without state is a better way of programming.
-Eliminating all side effects is demonstrably safer against accidental errors.
+There are several reasons why programming without state can lead to better code.
+Eliminating all side effects is demonstrably *safer* against accidental errors.
 Building a library of functions perfectly working without worrying about side effects makes the system easier to understand and more resilient to changes.
 
 ```c
 void f(int *x, int y){
-  *x = *x + y;
-  printf("%d\n",*x);
-  return;
+    *x = *x + y;
+    printf("%d\n",*x);
+    return;
 }
 int main(void) {
-  int x = 0;
-  f(&x, 3);
-  x = x - 2;
-  f(&x, 3);
+    int x = 0;
+    f(&x, 3);
+    x = x - 2;
+    f(&x, 3);
 }
 ```
 
-The exact behavior of the function `f` depends on where you call it.
+The exact behavior of the function `f()` **depends on where you use it**.
 Even if you use the same parameters, you're not guaranteed to get the same results.
 
 On small chunks of code, managing the consequences of having states such as global variables, will be trivial since you can reasonably track which variables are global (*or external in general*) and which functions interact with the global variables.
-Even with a few lines of code like the example, the function's effects and side effects are not very obvious.
+Even with a few lines of code like the example, the function's effects and *side effects* are not very obvious.
 
 As the system grows, using functions and variables without double-checking for side effects becomes much harder.
 As a consequence the whole system becomes a nightmare of impure functions on top of impure functions which may unexpectedly affect other parts of the system.
-On a corporate setting where multiple people are working on the same system, refactoring becomes unsafe without knowledge of all the side effects of the functions in use.
-On systems with shared resources and multi-threading it becomes extra-extra difficult to keep track of things without proper documentation.
+On a corporate setting where multiple people are working on the same system, refactoring becomes *unsafe* without knowledge of all the side effects of the functions in use.
+On systems with *shared resources* and multi-threading it becomes extra-extra difficult to keep track of things without proper documentation.
 
 Don't get this wrong, though.
-Even with all these disadvantages in the state-full mutable paradigm of imperative programming, one can still code robust and harmonious systems.
-You just have to be extra careful writing your code with discipline, only using global variables and side effects when it is safe and necessary.
-This is in fact the reason why writing smaller pure functions is considered good practice in any paradigm.
+Even with all these disadvantages in the state-full mutable paradigm of imperative programming, *one can still write robust and harmonious code*.
+You just have to be extra careful writing your code with discipline, *only using global variables and side effects when it is safe and necessary*.
+This is in fact the reason why *writing smaller pure functions* is considered good practice in any paradigm.
 After all, being able to code with states can be thought of as an extra feature.
 You can be a C programmer and just treat all your variables as immutable and all of your functions as pure.
 
-Functional programming has its own set of disadvantages as well, most of them related to this seemingly artificial crutch of statelessness and immutability.
-The most obvious one is that creating new values instead of changing an existing variable has extra overhead in both processing and memory, making functional programming slower and less efficient.
+Functional programming has its own set of *disadvantages* as well, most of them related to this seemingly artificial crutch of statelessness and immutability.
+The most obvious one is that creating new values instead of changing an existing variable has extra overhead in both processing and memory, making functional programming *slower and less efficient*.
 Programming without state can be difficult to do for certain mechanisms (*Like the external logger for example*).
 Simulating mechanisms like this may introduce conflict on how you compose your functions.
 It's not impossible though, you just have to learn some category theory concepts such as **monads**.
-Also, for most people who are used imperative programming, recursion, does not feel natural compared to iteration.
-But in my opinion, after being exposed to functional programming for some time, recursion makes much more sense than iteration.
-
+Also, for most people who are used imperative programming, *recursion*, does not feel natural compared to *iteration*.
+But in my opinion, after being exposed to functional programming for some time, recursion can make more sense than iteration.
 
 Nevertheless, these disadvantages are not insurmountable.
 In fact, there are a plenty of systems written in functional programming languages running without issues.
 Functional programming has had the reputation of being more conceptual and fancy than the classic imperative programming language.
 People mocked Haskell for its pristine white tower "elitist" approach to programming.
-But recently these functional programming languages like Haskell, F# and Scala has enjoyed improvements that has elevated it to be as pragmatic as your classic C, C++ or Java.
-In fact, functional programming has gained a considerable rise in popularity to an extent that mainstream programming languages with imperative roots like C#, Python, and JavaScript have started to introduced features patterned from pure functional programming languages.
-(Features such as higher-order functions and lambdas).
-With the risk of sounding editorial I even argue that learning functional programming concepts has become a necessity for any programmer, regardless of his/her paradigm preferences.\
+But recently these functional programming languages like Haskell, F# and Scala has enjoyed improvements that have elevated them to be as pragmatic as your classic C, C++ or Java.
+In fact, functional programming has gained a considerable rise in popularity to an extent that mainstream programming languages with imperative roots like C#, Python, and JavaScript have started to introduce *features patterned from pure functional programming languages*.
+Features such as **higher-order functions** and **lambdas**).
+With the risk of sounding editorial I even argue that learning functional programming concepts has become a *necessity* for any programmer, regardless of his/her paradigm preferences.
 
 [^1]: Church, A. (1932). A Set of Postulates for the Foundation of Logic. *Annals of Mathematics,* *33*(2), second series, 346-366. doi:10.2307/1968337
 

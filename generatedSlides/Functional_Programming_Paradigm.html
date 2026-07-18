@@ -309,7 +309,7 @@ applytwice f x = f (f x)
 
 > Type signature annotations are not required here, that's why they're called annotations. Adding these annotations will restrict the type the functions can be applied to. Type signature annotation syntax are understood like this
 > 
-> <autoslides.block.CodeBlock object at 0x44c4e5ae110>
+> <autoslides.block.CodeBlock object at 0x4d8bc5ae110>
 > 
 > The last type in the `->` series is the type the function produces (similar to its return type) and everything else before it are parameter types.
 > 
@@ -491,7 +491,7 @@ ghci> (\x -> x * x) 4
 
 > By the way, bindings are haskell's representation of a mathematical "let" statement. When you see an `=` operator like the following:
 > 
-> <autoslides.block.CodeBlock object at 0x44c4e732a10>
+> <autoslides.block.CodeBlock object at 0x4d8bc732a10>
 > 
 > This is not an assignment statement, but instead a let binding. **3** is bound to the identifier `x`. Similar to what happens when you say $\text{let } x = 3$ in math.
 > 
@@ -674,6 +674,24 @@ class: center, middle
 ---
 # Pure functions
 
+- We can define a function as the *mapping* between the elements of $A$ and $B$.
+- On the higher level perspective of category theory, functions are *morphisms* between objects of a given category.
+
+
+---
+
+# Pure functions
+
+`
+$$
+f:(A\to B)\\
+$$
+`
+
+---
+
+# Pure functions
+
 - We call these functions, **pure functions**.
 
 
@@ -684,7 +702,7 @@ class: center, middle
 ```c
 int square(int x){
 	addToExternalLogger("calculating square");
- return x*x;
+    return x*x;
 }
 
 ```
@@ -702,8 +720,8 @@ int square(int x){
 
 ```c
 int* increaseArray(int *a, int size){
- for(int i = 0; i < size; i++)
-  a[i]+1;
+    for(int i = 0; i < size; i++)
+    a[i]+1;
 }
 
 ```
@@ -741,8 +759,22 @@ String headsortails(){
 
 # Pure functions
 
-> In fact if $f(a)=b$ and $f(a)=c$ where $b\neq c$ is not a function at all
+> In fact if $f(a)=b$ and $f(a)=c$ where $b\neq c$, then $f$ is not a function at all
 > 
+
+
+---
+
+# Pure functions
+
+- A good way to test if a function is pure is if you can (theoretically) create an infinitely long *lookup table* such that, looking up the value for a specific input is perfectly identical to calling the function with the same input.
+
+
+---
+
+# The Absence of mutation
+
+- Using the "`=`" operator (which signals an assignment statement in imperative languages) in functional languages *binds* the value on the right-hand side to the left-hand side.
 
 
 ---
@@ -759,8 +791,9 @@ x = 1;
 
 # The Absence of mutation
 
-- The second line then, **reassigns** the same variable `x` to the new value `1`.
-- Because of the existence of mutation, the values of variables are dependent on the current **state** of the program.
+- The second line, **reassigns** the same variable `x` to the new value `1`.
+- These lines of code correspond to a *mutation* on the variable `x`, (from `0` to `1`).
+- This is why values of variables in imperative programming **depend on the current state** of the program.
 
 
 ---
@@ -789,8 +822,16 @@ main.hs:2:1: error:
 
 # The Absence of mutation
 
-- These bindings are final (*in the scope of the identifier*).
+- In Haskell, any "`=`" statement is a *declaration of a binding*.
+- These bindings are *final* (in the scope of the identifier).
 - The correct way to call `x` is *identifier*, since it merely identifies the value bound to it.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- Eliminating all side effects is demonstrably *safer* against accidental errors.
 
 
 ---
@@ -799,13 +840,13 @@ main.hs:2:1: error:
 
 ```c
 void f(int *x, int y){
-  *x = *x + y;
-  printf("%d\n",*x);
-  return;
+    *x = *x + y;
+    printf("%d\n",*x);
+    return;
 }
 int main(void) {
-  int x = 0;
-  f(&x, 3);
+    int x = 0;
+    f(&x, 3);
 ```
 
 ---
@@ -813,8 +854,8 @@ int main(void) {
 # Consequences of Statelessness and Immutability
 
 ```c
-  x = x - 2;
-  f(&x, 3);
+    x = x - 2;
+    f(&x, 3);
 }
 
 ```
@@ -823,15 +864,58 @@ int main(void) {
 
 # Consequences of Statelessness and Immutability
 
-- On small chunks of code, managing the consequences of having states such as global variables, will be trivial since you can reasonably track which variables are global (*or external in general*) and which functions interact with the global variables.
+- The exact behavior of the function `f()` **depends on where you use it**.
 
 
 ---
 
 # Consequences of Statelessness and Immutability
 
+- On small chunks of code, managing the consequences of having states such as global variables, will be trivial since you can reasonably track which variables are global (*or external in general*) and which functions interact with the global variables.
+- Even with a few lines of code like the example, the function's effects and *side effects* are not very obvious.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- On a corporate setting where multiple people are working on the same system, refactoring becomes *unsafe* without knowledge of all the side effects of the functions in use.
+- On systems with *shared resources* and multi-threading it becomes extra-extra difficult to keep track of things without proper documentation.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- Even with all these disadvantages in the state-full mutable paradigm of imperative programming, *one can still write robust and harmonious code*.
+- You just have to be extra careful writing your code with discipline, *only using global variables and side effects when it is safe and necessary*.
+- This is in fact the reason why *writing smaller pure functions* is considered good practice in any paradigm.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- Functional programming has its own set of *disadvantages* as well, most of them related to this seemingly artificial crutch of statelessness and immutability.
+- The most obvious one is that creating new values instead of changing an existing variable has extra overhead in both processing and memory, making functional programming *slower and less efficient*.
 - Programming without state can be difficult to do for certain mechanisms (*Like the external logger for example*).
 - It's not impossible though, you just have to learn some category theory concepts such as **monads**.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- Also, for most people who are used imperative programming, *recursion*, does not feel natural compared to *iteration*.
+
+
+---
+
+# Consequences of Statelessness and Immutability
+
+- In fact, functional programming has gained a considerable rise in popularity to an extent that mainstream programming languages with imperative roots like C#, Python, and JavaScript have started to introduce *features patterned from pure functional programming languages*.
+- Features such as **higher-order functions** and **lambdas**).
+- With the risk of sounding editorial I even argue that learning functional programming concepts has become a *necessity* for any programmer, regardless of his/her paradigm preferences.
 
 
 ---
