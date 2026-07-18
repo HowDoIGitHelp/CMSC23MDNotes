@@ -479,15 +479,15 @@ Let's go back to the definition of a function in mathematics.
 
 Across several, mathematical disciplines a function means the same thing.
 Consider two sets $A$ and $B$.
-we can define a function as the mapping between the elements of $A$ and $B$.
+We can define a function as the *mapping* between the elements of $A$ and $B$.
 The elements of $A$ and $B$ can be anything, they can be numbers, which shows us how a function can be represented by a formula or a graph.
 The elements of $A$ and $B$ can be matrices and vectors, which defines a function as a transformation between two vector spaces.
-On the higher level perspective of category theory, functions are morphisms between objects of a given category.
-At its core a function basically defines arrows between things.
+On the higher level perspective of category theory, functions are *morphisms* between objects of a given category.
 
 $$
 f:(A\to B)
 $$
+
 If you remember functions from discrete math, functions at its most basic form looks like the one above.
 
 Functions in functional programming languages like Haskell are (arguably) the closest computer representation of a mathematical function.
@@ -499,7 +499,7 @@ To fully understand this concept here are some examples of impure functions
 ```c
 int square(int x){
 	addToExternalLogger("calculating square");
- return x*x;
+    return x*x;
 }
 ```
 
@@ -513,8 +513,8 @@ It is a side effect since this line of code modifies values outside boundaries o
 
 ```c
 int* increaseArray(int *a, int size){
- for(int i = 0; i < size; i++)
-  a[i]+1;
+    for(int i = 0; i < size; i++)
+    a[i]+1;
 }
 ```
 
@@ -540,7 +540,7 @@ A pure function must satisfy these two:
 
 > In fact if $f(a)=b$ and $f(a)=c$ where $b\neq c$ is not a function at all
 
-A good way to test if a function is pure is if you can (theoretically) create an infinitely long lookup table such that looking up the value for a specific input is perfectly identical to calling the function with the same input.
+A good way to test if a function is pure is if you can (theoretically) create an infinitely long *lookup table* such that, looking up the value for a specific input is perfectly identical to calling the function with the same input.
 And if you think about it this is the essence of a function.
 It is a list of associations between the domain and the range.
 
