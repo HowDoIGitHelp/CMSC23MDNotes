@@ -3,3 +3,6 @@ solutions_and_tests/
 Code/C\ Code/output/
 Code/C\ Code/a.out
 .idea/
+
+# MyST build outputs
+_build
