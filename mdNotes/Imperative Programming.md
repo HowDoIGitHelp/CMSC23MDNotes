@@ -157,7 +157,7 @@ Languages under this paradigm simplify a complex system by subdividing a program
 
 ### Object-oriented programming
 
-Object-oriented programming focuses on modelling a system based on the real world ontology of objects.
+Object-oriented programming focuses on modelling a system based on the real world ontology of **objects**.
 It uses an expressive type system to program the interactions within a system.
 Most modern programming languages, like C++, Python, Java, etc, have some object-oriented programming features.
 
