@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 body {
     font-family: 'Droid Serif';
@@ -10,7 +11,7 @@ h1, h2, h3 {
     font-weight: normal;
 }
 .remark-code, .remark-inline-code {
-    font-family: 'Ubuntu Mono';
+    font-family: 'JetBrains Mono', 'Ubuntu Mono', monospace;
     font-size: revert;
 }
 
