@@ -86,10 +86,10 @@ $$
 $$
 
 When you beta-reduce some application $\mathscr{M}\mathscr{N}$, what you're doing is replacing all instances of the bound variable in $\mathscr{M}$ with $\mathscr{N}$.
-When, Here's another example, 
+Here's another example, 
 
 $$
-(\lambda u. \lambda v.uvu)\lambda x.x \to_{\beta} 
+(\lambda u. \lambda v.uvu)\lambda x.x \to_{\beta} \lambda v.(\lambda x.x)v(\lambda x.x)
 $$
 
 

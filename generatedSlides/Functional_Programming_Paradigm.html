@@ -107,7 +107,7 @@ $$
 
 `
 $$
-(\lambda u. \lambda v.uvu)\lambda x.x \to_{\beta} \\
+(\lambda u. \lambda v.uvu)\lambda x.x \to_{\beta} \lambda v.(\lambda x.x)v(\lambda x.x)\\
 $$
 `
 
@@ -309,7 +309,7 @@ applytwice f x = f (f x)
 
 > Type signature annotations are not required here, that's why they're called annotations. Adding these annotations will restrict the type the functions can be applied to. Type signature annotation syntax are understood like this
 > 
-> <autoslides.block.CodeBlock object at 0x4d8bc5ae110>
+> <autoslides.block.CodeBlock object at 0x3633a5ae110>
 > 
 > The last type in the `->` series is the type the function produces (similar to its return type) and everything else before it are parameter types.
 > 
@@ -491,7 +491,7 @@ ghci> (\x -> x * x) 4
 
 > By the way, bindings are haskell's representation of a mathematical "let" statement. When you see an `=` operator like the following:
 > 
-> <autoslides.block.CodeBlock object at 0x4d8bc732a10>
+> <autoslides.block.CodeBlock object at 0x3633a732a10>
 > 
 > This is not an assignment statement, but instead a let binding. **3** is bound to the identifier `x`. Similar to what happens when you say $\text{let } x = 3$ in math.
 > 
