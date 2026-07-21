@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/Logic Programming Paradigm.md</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Logic Programming Paradigm
+
+---
+class: center, middle
+# Introduction
+
+---
+# Introduction
+
+- Computer Scientists usually describe families of programming languages under the logic paradigm as a sub-paradigm of declarative programming (*declarative programming being any paradigm that is not imperative*).
+
+
+---
+
+class: center, middle
+# Learning Outcomes
+
+---
+# Learning Outcomes
+
+1. Create prolog facts, rules, and queries
+2. Explain the process of unification
+3. Explain how proof search is used to respond to queries
+4. Create recursive prolog rules
+
+
+---
+
+class: center, middle
+# Facts Rules and Queries
+
+---
+# Facts
+
+```prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+```
+
+---
+
+# Facts
+
+```prolog
+firetype(charmander).
+
+```
+
+---
+
+# Queries
+
+```prolog
+?- firetype(charmander).
+
+```
+
+---
+
+# Queries
+
+```prolog
+yes
+
+```
+
+---
+
+# Queries
+
+```prolog
+?- firetype(squirtle).
+
+```
+
+---
+
+# Queries
+
+```prolog
+no
+
+```
+
+---
+
+# Queries
+
+```prolog
+?- grasstype(pigeot)
+
+```
+
+---
+
+# Queries
+
+```prolog
+no
+
+```
+
+---
+
+# Rules
+
+```prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+resistanttofire(squirtle) :- watertype(squirtle).
+
+```
+
+---
+
+# Rules
+
+```prolog
+?- resistanttofire(squirtle)
+
+```
+
+---
+
+# Rules
+
+```prolog
+yes
+
+```
+
+---
+
+# Variables
+
+```prolog
+?- firetype(X)
+
+```
+
+---
+
+# Variables
+
+```prolog
+X = charmander
+X = charizard
+
+```
+
+---
+
+# Variables
+
+```prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+isresistantto(X,Y) :- watertype(X),firetype(Y).
+isresistantto(X,Y) :- watertype(X),watertype(Y).
+
+```
+
+---
+
+# Variables
+
+> for all pairs of X and Y, X is resistant to Y, if  X is water type and Y is fire type,
+> 
+
+
+---
+
+# Variables
+
+```prolog
+?- isresistantto(squirtle,charmander)
+
+```
+
+---
+
+# Variables
+
+```prolog
+yes
+
+```
+
+---
+
+# Variables
+
+```prolog
+?- isresistantto(squirtle,charizard)
+
+```
+
+---
+
+# Variables
+
+```prolog
+yes
+
+```
+
+---
+
+# Variables
+
+```prolog
+?- isresistantto(squirtle,squirtle)
+
+```
+
+---
+
+# Variables
+
+```prolog
+yes
+
+```
+
+---
+
+# Variables
+
+```prolog
+?- isresistantto(squirtle,X)
+
+```
+
+---
+
+# Variables
+
+```prolog
+X = charmander
+X = charizard
+X = squirtle
+
+```
+
+---
+
+# Prolog Syntax
+
+1. Constants. These can either be atoms (known to us as strings such as `squirtle` ) or numbers (such as `24`).
+2. Variables. (Those that start with an underscore or any uppercase letter such as as `X`, `Z3`,`_4310`,  and `List`.)
+
+
+---
+
+# Prolog Syntax
+
+3. Complex terms. These have the form: `functor(term_1,...,term_n)`. We've seen examples of these in predicates and queries such as `firetype(charmander)` and `isresistantto(X,Y)`
+
+
+---
+
+class: center, middle
+# Unification
+
+---
+# Unification
+
+```prolog
+?- firetype(X)
+X = charmander
+X = charizard
+
+```
+
+---
+
+# Unification
+
+- is through the use of the logical concept known as **unification**.
+
+
+---
+
+# Unification
+
+> Two terms unify if they are the same term or if they contain variables that can be uniformly instantiated with terms in such a way that the resulting terms are equal.
+> 
+
+
+---
+
+# Unification
+
+> Two terms $a$ and $b$ unify if and only if
+> 
+
+
+---
+
+# Unification
+
+> 1. $a$ and $b$ are constants and they are the same number or atom
+> 2. $a$ is a variable and $b$ is any type of term (in this case $a$ is instantiated to $b$) or $b$ is a variable and $a$ is any type of term (in this case $b$ is instantiated to $a$). This rule automatically unify any pair of variables
+> 3. $a$ and $b$ are complex terms and:
+>    1. They have the same functors and the same number of arguments
+>    2. all their corresponding arguments unify
+>    3. the variable instatiations are uniform or compatible (you cannot instantiate $x$ to some constant $a$ when unifying a pair and instantiate $x$ to another constant $b$ when unifying another pair of arguments)
+> 
+
+
+---
+
+# Unification
+
+```prolog
+?- =(squirtle,squirtle)
+yes
+
+```
+
+---
+
+# Unification
+
+```prolog
+?- =(squirtle,charmander)
+no
+
+```
+
+---
+
+# Unification
+
+```prolog
+?- =(squirtle,X)
+X=squirtle
+yes
+
+```
+
+---
+
+# Unification
+
+```prolog
+?- =(X,Y)
+X=_5071
+Y=_5071
+yes
+
+```
+
+---
+
+# Unification
+
+> The instantiations `X=_5071` and `Y=_5071` asserts that both `X` and `Y` share the same variables in this case. This is also known as `X` and `Y` being aliased, meaning that they share each others instantiations
+> 
+
+
+---
+
+# Unification
+
+```prolog
+?- =(watertype(X),watertype(squirtle))
+X=squirtle
+yes
+
+```
+
+---
+
+# Unification
+
+```prolog
+?- =(f(g(X),X),f(Y,a))
+X=a
+Y=g(X)
+yes
+
+```
+
+---
+
+# Programming with unification
+
+```prolog
+vertical(line(point(X,Y),point(X,Z))).
+horizontal(line(point(X,Y),point(Z,Y))). 
+
+```
+
+---
+
+# Programming with unification
+
+```prolog
+?- vertical(line(point(1,2),point(1,3)))
+
+```
+
+---
+
+# Programming with unification
+
+```prolog
+yes
+
+```
+
+---
+
+# Programming with unification
+
+```prolog
+?- horizontal(line(point(2,3),point(Y,4)))
+
+```
+
+---
+
+# Programming with unification
+
+```prolog
+no
+
+```
+
+---
+
+class: center, middle
+# Proof Search
+
+---
+# Proof Search
+
+```
+f(a).
+f(b).
+
+g(a).
+g(b).
+
+h(b).
+
+k(X) :- f(X), g(X), h(X). 
+
+```
+
+---
+
+# Proof Search
+
+```prolog
+?- k(Y)
+
+```
+
+---
+
+# Proof Search
+
+- This gives prolog a **goal**, unifying `k(Y)` with all possible known facts or inferable facts in the knowledge base.
+
+
+---
+
+# Proof Search
+
+```prolog
+?- k(_G34)
+
+```
+
+---
+
+# Proof Search
+
+> This query has the exact same meaning as `k(Y)`, since the variable names have no inherent meanings anyway. Prolog does this to create a goal containing variables guaranteed to be unused anywhere else. This removes any ambiguity with other variables named `Y` (no other variable is named `Y` but prolog still does this anyway).
+> 
+
+
+---
+
+# Proof Search
+
+> Since there are no other facts or rule heads that can be unified with  the goal `k(_G34)` prolog's proof search doesn't branch out.
+> 
+
+
+---
+
+# Proof Search
+
+> By unifying `k(_G34)`  and `k(X)`, the variables `_G34` and `X` are now aliased therefore they now share the same instantiations
+> 
+
+
+---
+
+# Path 2: `_G34 = b`
+
+```prolog
+Y = b
+yes
+
+```
+
+---
+
+class: center, middle
+# Recursive Definitions
+
+---
+# Recursive Definitions
+
+```prolog
+is_digesting(X,Y)  :-  just_ate(X,Y).
+is_digesting(X,Y)  :-
+    just_ate(X,Z),
+    is_digesting(Z,Y).
+
+just_ate(mosquito,blood(john)).
+just_ate(frog,mosquito).
+just_ate(stork,frog). 
+
+```
+
+---
+
+# Recursive Definitions
+
+> $X$ is digesting $Y$ if $X$ just ate $Y$ or $X$ ate some $Z$ that is digesting $Y$.
+> 
+> The `or` part of this implications hypothesis is represented in the knowledge base by giving the conclusion `is_digesting(X,Y)` two separate hypotheses to satisfy.
+> 
+
+
+---
+
+# Recursive Definitions
+
+```prolog
+?- is_digesting(stork,mosquito)
+
+```
+
+---
+
+# Representing numbers using logic
+
+> 0 is a numeral
+> 
+> the successor of 0, denoted by s(0) is also a numeral
+> 
+
+
+---
+
+# Representing numbers using logic
+
+```prolog
+numeral(0).
+numeral(s(X)) :- numeral(X).
+
+```
+
+---
+
+# Representing numbers using logic
+
+```prolog
+numeral(X)
+
+```
+
+---
+
+# Representing numbers using logic
+
+```prolog
+X = 0
+X = s(0)
+X = s(s(0))
+X = s(s(s(0)))
+...
+
+```
+
+---
+
+# Representing numbers using logic
+
+```prolog
+numeral(0).
+numeral(s(X)) :- numeral(X).
+
+add(A,0,A).
+add(A,s(B),s(C)) :- add(A,B,C).
+
+mult(_,0,0).
+mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
+
+```
+
+---
+
+class: center, middle
+# Advantages and Disadvantages of Logic Programming
+
+---
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
