@@ -2,7 +2,7 @@
 version: 1
 project:
   id: 35db06b9-bb3b-4f36-9c02-4f38df339fb5
-  title: CMSC 23 Programming Paradigms
+  title: "CMSC 23 Programming Paradigms"
   # description:
   # keywords: []
   authors: [Rubelito Abella]
@@ -14,9 +14,10 @@ project:
     - file: mdNotes/Imperative Programming.md
     - file: mdNotes/Functional Programming Paradigm.md
     - file: mdNotes/Logic Programming Paradigm.md
+    - file: mdNotes/Logic_Formalism.md
     
 site:
   template: book-theme
-  # options:
+  options:
   #   favicon: favicon.ico
-  #   logo: site_logo.png
+    logo: logo.png
