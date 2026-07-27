@@ -210,11 +210,13 @@ To convert it into an implication, we first write it as a disjunction using the 
 
 $$
 \begin{aligned}
-q & \equiv \\
-\bot \lor q & \equiv \\
-\top \to q
+q & \equiv \bot \lor q\\
+& \equiv \top \to q
 \end{aligned}
 $$
+
+Note that, a Horn formula made up of only facts and definite Horn clauses is always satisfiable by assigning TRUE to every variable.
+By assigning, TRUE to every variable, you ensure that each positive literal is TRUE, meaning each Horn clause is also TRUE.
 
 A Horn clause that is made up 1 or more negative literals, is called a **goal clause**.
 
