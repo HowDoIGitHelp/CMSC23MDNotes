@@ -91,11 +91,13 @@ $$
 \begin{aligned}
 & (\neg p) \land \\
 & (\neg q \lor r) \land \\
-& (\text{TRUE}) \land \\
-& (\neg r \lor \text{FALSE} \lor t) \land \\
-& (\text{FALSE} \lor t)
+& (\top) \land \\
+& (\neg r \lor \bot \lor t) \land \\
+& (\bot \lor t)
 \end{aligned}
 $$
+
+> In the previous formula, TRUE is denoted by the $\top$ symbol, and FALSE is denoted by the $\bot$ symbol.
 
 We just need to reduce the formula according to logical equivalencies:
 
@@ -115,8 +117,8 @@ $$
 \begin{aligned}
 & (\neg p) \land \\
 & (\neg q \lor r) \land \\
-& (\neg r \lor \text{TRUE}) \land \\
-& (\text{TRUE})
+& (\neg r \lor \top) \land \\
+& (\top)
 \end{aligned}
 $$
 
@@ -151,9 +153,9 @@ $$
 \begin{aligned}
 & (\neg p) \land \\
 & (\neg q \lor r) \land \\
-& (\text{TRUE}) \land \\
+& (\top) \land \\
 & (t) \land \\
-& (\text{FALSE} \lor \neg t)
+& (\bot \lor \neg t)
 \end{aligned}
 $$
 
@@ -174,8 +176,8 @@ $$
 \begin{aligned}
 & (\neg p) \land \\
 & (\neg q \lor r) \land \\
-& (\text{TRUE}) \land \\
-& (\text{FALSE})
+& (\top) \land \\
+& (\bot)
 \end{aligned}
 $$
 
@@ -209,8 +211,8 @@ To convert it into an implication, we first write it as a disjunction using the 
 $$
 \begin{aligned}
 q & \equiv \\
-\text{FALSE} \lor q & \equiv \\
-\text{TRUE} \to q
+\bot \lor q & \equiv \\
+\top \to q
 \end{aligned}
 $$
 
@@ -219,8 +221,8 @@ A Horn clause that is made up 1 or more negative literals, is called a **goal cl
 $$
 \begin{aligned}
 \neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n & \equiv \\
-\neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n \lor \text{FALSE} & \equiv \\
-(p_1 \land p_2 \land \cdots \land p_n) \to \text{FALSE}
+\neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n \lor \bot & \equiv \\
+(p_1 \land p_2 \land \cdots \land p_n) \to \bot
 \end{aligned}
 $$
 
