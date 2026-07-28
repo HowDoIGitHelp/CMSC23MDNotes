@@ -4,7 +4,7 @@
 
 Just as functional programming paradigm is patterned from the formalisms of lambda calculus, logic programming is patterned from predicate calculus.
 Computer Scientists usually describe families of programming languages under the logic paradigm as a sub-paradigm of declarative programming (*declarative programming being any paradigm that is not imperative*).
- In terms of application this paradigm is more closely related to  knowledge base programming languages like SQL.
+ In terms of application this paradigm is more closely related to knowledge base programming languages like SQL.
 While SQL uses relations (not tables) to represent knowledge, logic programming uses rules of logic and predicate calculus to represent knowledge.
 
 
@@ -77,7 +77,7 @@ Horn clauses like these are called facts because, these clauses are always assum
 #### Rules
 
 Aside from facts, you can also define rules in your knowledge base.
-To illustrate this, lets add one rule to our knowledge base.
+To illustrate this, let's add one rule to our knowledge base.
 
 ```prolog
 firetype(charmander).
@@ -122,7 +122,7 @@ Writing the following will basically ask Prolog, "hey, is it true that charmande
 ```
 
 Based on the knowledge base loaded earlier Prolog knows that this proposition is indeed true.
-Therefore it responds with:
+Therefore, it responds with:
 
 ```prolog
 true.
@@ -167,7 +167,7 @@ $$
 
 This negated query or goal is then combined into the knowledge base.
 If the knowledge base is unsatisfiable with the introduction of the goal, then that means that the goal introduced a contradiction.
-Therefore, the goals negation (the original query), must be **consistent** with the knowledge base's assumptions.
+Therefore, the goal's negation (the original query), must be **consistent** with the knowledge base's assumptions.
 This ultimately means that it is **true** with respect to the knowledge base.
 
 Here's an example, given the knowledge base:
@@ -184,7 +184,7 @@ And the query:
 ?- r
 ```
 
-To demonstrate the answer to the query easily, lets convert the clauses in the knowledge base into disjunctions and add the query as a goal[^rule_convert].
+To demonstrate the answer to the query easily, let's convert the clauses in the knowledge base into disjunctions and add the query as a goal[^rule_convert].
 
 $$
 \begin{aligned}
@@ -232,21 +232,53 @@ true.
 
 #### Variables
 
-Another important thing about Prolog constructs is that you can write them with variables.
-For example, a query can be written with a variable.
+Another important thing about Prolog constructs is that you can write them with **variables**[^variables].
+When you write with Prolog facts or rules, you are implicitly creating a *universally instantiated predicate*.
+For example, the fact `pokemon(X)`[^variable_syntax], corresponds to the proposition, $\forall x (\text{Pokemon}(x))$.
+By adding this to the knowledge base, you are assuming that for any value `x`, `pokemon(X)` is true.
+Therefore, asking the query, `pokemon(charizard)` will yield a `true` response.
+Of course, any value supplied to the predicate `pokemon` will yield true because of the universal quantification.
+
+```prolog
+pokemon(X).
+```
+
+```prolog
+?- pokemon(charizard).
+```
+
+```prolog
+true.
+```
+
+[^variables]: Variables, in the context of logic programming, do not refer to the same variables in imperative programming. These variables represent, mathematical variables that can be free or bound.
+
+[^variable_syntax]: Prolog variables must start with either a capital letter or an underscore.
+
+You can also use variables on queries.
+For example, if we use one of the previous knowledge bases and ask the query: `firetype(X)`.
+
+```prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+resistanttofire(squirtle) :- watertype(squirtle).
+```
 
 ```prolog
 ?- firetype(X)
 ```
 
-Basically asks the question, which values when substituted to `X` in the predicate `firetype(X)`  will yield true statements? This can be interpreted in natural language as "which Pokémon are fire type?" Therefore, this query will yield the response:
+This query basically asks, which values when substituted to `X` in the predicate `firetype(X)` will yield true statements? This can be interpreted in natural language as "which Pokémon are fire type?" Therefore, this query will yield the response:
 
 ```prolog
 X = charmander
 X = charizard
 ```
 
-Variables inside facts and rules allows the creation of richer knowledge bases.
+Variables used in rules allows the creation of richer knowledge bases.
 Instead of the rule `resistanttofire(squirtle) :- watertype(squirtle).` we can write a more general rule using variables:
 
 ```prolog
@@ -260,7 +292,7 @@ isresistantto(X,Y) :- watertype(X),watertype(Y).
 ```
 
 This introduces a more complicated rule `isresistanto(X,Y) :- watertype(X),firetype(Y)`.
-This rule's premise  is a conjunction of predicates `watertype(X)` and `firetype(Y)`.
+This rule's premise is a conjunction of predicates `watertype(X)` and `firetype(Y)`.
  
 
 If we imagine that the predicate, $isresistantto(x,y)$ means "x is resistant to y", the whole rule can be interpreted as 
@@ -275,33 +307,33 @@ $$
 By writing this rule, Prolog can infer the following facts:
 
 ```prolog
-?- isresistantto(squirtle,charmander)
+?- isresistantto(squirtle,charmander).
 ```
 
 ```prolog
-yes
+true.
 ```
 
 ```prolog
-?- isresistantto(squirtle,charizard)
+?- isresistantto(squirtle,charizard).
 ```
 
 ```prolog
-yes
+true.
 ```
 
 ```prolog
-?- isresistantto(squirtle,squirtle)
+?- isresistantto(squirtle,squirtle).
 ```
 
 ```prolog
-yes
+true.
 ```
 
 If you ask Prolog a harder question like the following:
 
 ```prolog
-?- isresistantto(squirtle,X)
+?- isresistantto(squirtle,X).
 ```
 
 Prolog interprets this as "which values of `X` make the proposition: squirtle is resistant to X, true? Therefore, Prolog will look for the pokemon, squirtle is resistant to, therefore you with the output:
@@ -312,69 +344,77 @@ X = charizard
 X = squirtle
 ```
 
-#### Prolog Syntax
+You can even ask Prolog for all possible pairs of resistance relationships in the knowledge base.
+You can do this by using two different variables for each argument in the predicate.
+
+```prolog
+?- isresistantto(X,Y).
+```
+
+### Unification
 
 There are three types of Prolog terms [^1].
 By composing these terms you can express rich knowledge bases.
 
 1. Constants. These can either be atoms (known to us as strings such as `squirtle`) or numbers (such as `24`).
-
 2. Variables. (Those that start with an underscore or any uppercase letter such as `X`, `Z3`,`_4310`, and `List`.)  
-
 3. Complex terms. These have the form: `functor(term_1,...,term_n)`. We've seen examples of these in predicates and queries such as `firetype(charmander)` and `isresistantto(X,Y)`
 
-### Unification
-
-The way Prolog is able to respond to complex queries such as:
-
-```prolog
-?- firetype(X)
-X = charmander
-X = charizard
-```
-
-is through the use of the logical concept known as **unification**.
-Unification algorithmically identify logical substitutions in symbolic expressions such as Prolog facts, queries and rules.
-Unification is defined in Prolog as the following:
+The way Prolog is able to respond to interesting queries involving constants, variables and complex terms is through the **unification**.
+Unification algorithmically identify **logically consistent substitutions** involving constants, variables, and complex terms.
+Unification in the context of Prolog works along the following rule:
 
 >  Two terms unify if they are the same term or if they contain variables that can be uniformly instantiated with terms in such a way that the resulting terms are equal.
 
->
-
 This definition gives us the unification of trivial cases such as the unification of constants `squirtle` and `squirtle`.
 Prolog also unifies the complex terms `watertype(squirtle)` and `watertype(squirtle)` and the variables `X` and `X`.
-The complex terms `watertype(squirtle)` and `watertype(blastoise)` will not unite.
+On the other hand, the complex terms `watertype(squirtle)` and `watertype(blastoise)` will not unite.
 
 Prolog also unifies the variable `X` with the constant `squirtle`.
-Although they are not the same, the variable `X` can be uniformly instantiated to `squirtle` (i.e.
-`X = squirtle`).
-What this specific unification case means is that, you can find some binding of the constant `squirtle` to the variable `X` without breaking other unification rules.
-This successful binding means that these values indeed unify.
-By the same intuition, `watertype(X)` and `watertype(squirtle)` will also unify buy instantiating (`X=squirtle`).
+Although they are not the same, the variable `X` can be assigned to `squirtle`.
+By the same intuition, `watertype(X)` and `watertype(squirtle)` will also unify.
+Unification involving variables, create what is known as an instantiation.
+Unifying `watertype(X)` and `watertype(squirtle)` will create the instantiation `X=squirtle`.
 
-
-On the other hand the complex terms `isresistantto(X,charmander)` and `isresistantto(squirtle,X)` does not unify since you cannot find an instantiation of `X` that makes them equal.
+On the other hand the complex terms `isresistantto(X,charmander)` and `isresistantto(squirtle,X)` do not unify since you cannot find a consistent instantiation of `X`.
 The instantiation `X=squirtle` evaluates to the terms `isresistantto(squirtle,charmander)` and `isresistantto(squirtle,squirtle)`.
-On the other hand, the instantiation `X=charmander` makes the terms `isresistantto(charmander,charmander)` and `isresistantto(squirtle,charmander)`.
-Both of these scenarios break because it forces the incorrect unification of the constant `squirtle` and `charmander`.
+The instantiation `X=charmander` makes the terms `isresistantto(charmander,charmander)` and `isresistantto(squirtle,charmander)`.
+
+$$
+\begin{aligned}
+\text{Let } x = \text{ squirtle}\\
+\text{isresistantto}(\text{squirtle}, \text{charmander})\\
+\text{isresistantto}(\text{squirtle}, \text{squirtle})
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\text{Let } x = \text{ charmander}\\
+\text{isresistantto}(\text{charmander}, \text{charmander})\\
+\text{isresistantto}(\text{squirtle}, \text{charmander})
+\end{aligned}
+$$
+
+Either scenarios cannot work because the constants `squirtle` and `charmander` do not unify with each other.
 
 The process of unification can be summarized by the following[^1]: 
 
-> Two terms $a$ and $b$ unify if and only if
->
-> 1. $a$ and $b$ are constants and they are the same number or atom
-> 2. $a$ is a variable and $b$ is any type of term (in this case $a$ is instantiated to $b$) or $b$ is a variable and $a$ is any type of term (in this case $b$ is instantiated to $a$).
-This rule automatically unify any pair of variables
-> 3. $a$ and $b$ are complex terms and:
->    1. They have the same functors and the same number of arguments
->    2. all their corresponding arguments unify
->    3. the variable instatiations are uniform or compatible (you cannot instantiate $x$ to some constant $a$ when unifying a pair and instantiate $x$ to another constant $b$ when unifying another pair of arguments)
+Two terms $a$ and $b$ unify if and only if
+
+1. $a$ and $b$ are constants and they are the same number or atom
+2. $a$ is a variable and $b$ is any type of term (in this case $a$ is instantiated to $b$) or $b$ is a variable and $a$ is any type of term (in this case $b$ is instantiated to $a$).
+is rule automatically unify any pair of variables
+3. $a$ and $b$ are complex terms and:
+   1. They have the same functors and the same number of arguments
+   2. all their corresponding arguments unify
+   3. the variable instatiations are uniform or compatible (you cannot instantiate $x$ to some constant $a$ when unifying a pair and instantiate $x$ to another constant $b$ when unifying another pair of arguments)
 
 You can demonstrate unification in the Prolog terminal using the predicate `=/2` (this means the `=` functor with two arguments).
 
 ```prolog
 ?- =(squirtle,squirtle)
-yes
+true.
 ```
 
 ```prolog
@@ -385,31 +425,31 @@ no
 ```prolog
 ?- =(squirtle,X)
 X=squirtle
-yes
+true.
 ```
 
 ```prolog
 ?- =(X,Y)
 X=_5071
 Y=_5071
-yes
+true.
 ```
+[^dummy]
 
-> The instantiations `X=_5071` and `Y=_5071` asserts that both `X` and `Y` share the same variables in this case.
-
-This is also known as `X` and `Y` being aliased, meaning that they share each others instantiations
+[^dummy]: The instantiations `X=_5071` and `Y=_5071` show that both `X` and `Y` are instantiated to the same dummy variable created by Prolog.
+This is also known as `X` and `Y` being aliased to each other, meaning that they share each others instantiations.
 
 ```prolog
 ?- =(watertype(X),watertype(squirtle))
 X=squirtle
-yes
+true.
 ```
 
 ```prolog
 ?- =(f(g(X),X),f(Y,a))
 X=a
 Y=g(X)
-yes
+true.
 ```
 
 #### Programming with unification
@@ -421,7 +461,6 @@ For example, the following is a knowledge base describing the characteristics of
 ```prolog
 vertical(line(point(X,Y),point(X,Z))).
 horizontal(line(point(X,Y),point(Z,Y))).
-
 ```
 
 Instances of line that unify with these predicates, are also instances of vertical and horizontal line.
@@ -434,30 +473,43 @@ Therefore, asking the query:
 Will yield the response:
 
 ```prolog
-yes
+true.
 ```
 
 It is indeed a vertical line.
 And the knowledge base makes sense, since any line that has the same x coordinate is vertical and any line that has the same y coordinate is horizontal.
 
 
-We can even ask more general queries to haskell such as:
+We can even ask more general queries to Prolog such as:
 
 ```prolog
-?- horizontal(line(point(2,3),point(Y,4)))
+?- horizontal(line(point(2,3),point(U,4)))
 ```
 
-Which basically asks Prolog for horizontal lines starting at $(2,3)$ and ends at a point with $4$ as the $y$-coordinate.
-Since Prolog can't unify this query with any value for $Y$ (horizontal lines must have the same $y$-coordinate), Prolog responds:
+This query corresponds to asking Prolog for horizontal lines starting at $(2,3)$ and ends at a point with $4$ as the $y$-coordinate.
+Prolog attempts the following variable unifications:
 
 ```prolog
-no
+=(X,2)
+=(Y,3)
+=(U,Z)
+=(Y,4)
 ```
 
-### Proof Search
+Individually, these queries unify.
+But the unification creates inconsistent instantiations, namely, `Y=3` and `Y=4`.
+These instantiations are inconsistent because `3` does not unify with `4`.
+Since Prolog can't unify this query with any value for `U` (horizontal lines must have the same $y$-coordinate), Prolog responds:
 
-Here we will discuss the process called proof search.
-This is the algorithm that Prolog uses to check for unifications and answer queries.
+```prolog
+false.
+```
+
+### Single Linear Definite Resolution
+
+Prolog uses the algorithm called **Single Linear Definite Resolution** (SLD Resolution) to answer queries in an efficient way.
+The process is equivalent to checking if the combination of the knowledge base clauses and the goal leads to an unsatisfiable formula.
+But this method provides a step-by-step process that can be easily implemented by computers.
 Let's start with an example:
 
 ```
