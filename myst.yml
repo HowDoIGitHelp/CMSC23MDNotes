@@ -13,8 +13,8 @@ project:
     - file: mdNotes/Programming_Paradigms_Introduction.md
     - file: mdNotes/Imperative_Programming.md
     - file: mdNotes/Functional_Programming_Paradigm.md
-    - file: mdNotes/Logic_Programming_Paradigm.md
     - file: mdNotes/Logic_Formalism.md
+    - file: mdNotes/Logic_Programming_Paradigm.md
     
 site:
   template: book-theme
