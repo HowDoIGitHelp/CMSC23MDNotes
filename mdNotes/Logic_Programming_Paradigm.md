@@ -297,7 +297,7 @@ This rule's premise is a conjunction of predicates `watertype(X)` and `firetype(
 
 If we imagine that the predicate, $isresistantto(x,y)$ means "x is resistant to y", the whole rule can be interpreted as 
 
-> for all pairs of X and Y, X is resistant to Y, if  X is water type and Y is fire type,
+> for all pairs of X and Y, X is resistant to Y, if X is water type and Y is fire type,
 
 This statement, can be written as the following quantification statement:
 
@@ -336,7 +336,7 @@ If you ask Prolog a harder question like the following:
 ?- isresistantto(squirtle,X).
 ```
 
-Prolog interprets this as "which values of `X` make the proposition: squirtle is resistant to X, true? Therefore, Prolog will look for the pokemon, squirtle is resistant to, therefore you with the output:
+Prolog interprets this as "which values of `X` make the proposition: squirtle is resistant to X, true? Therefore, Prolog will look for the pokémon, squirtle is resistant to, therefore you with the output:
 
 ```prolog
 X = charmander
@@ -361,7 +361,7 @@ By composing these terms you can express rich knowledge bases.
 3. Complex terms. These have the form: `functor(term_1,...,term_n)`. We've seen examples of these in predicates and queries such as `firetype(charmander)` and `isresistantto(X,Y)`
 
 The way Prolog is able to respond to interesting queries involving constants, variables and complex terms is through the **unification**.
-Unification algorithmically identify **logically consistent substitutions** involving constants, variables, and complex terms.
+Unification algorithmically identifies **logically consistent substitutions** involving constants, variables, and complex terms.
 Unification in the context of Prolog works along the following rule:
 
 >  Two terms unify if they are the same term or if they contain variables that can be uniformly instantiated with terms in such a way that the resulting terms are equal.
@@ -396,15 +396,14 @@ $$
 \end{aligned}
 $$
 
-Either scenarios cannot work because the constants `squirtle` and `charmander` do not unify with each other.
+Both scenarios cannot work because the constants `squirtle` and `charmander` do not unify with each other.
 
 The process of unification can be summarized by the following[^1]: 
 
 Two terms $a$ and $b$ unify if and only if
 
-1. $a$ and $b$ are constants and they are the same number or atom
-2. $a$ is a variable and $b$ is any type of term (in this case $a$ is instantiated to $b$) or $b$ is a variable and $a$ is any type of term (in this case $b$ is instantiated to $a$).
-is rule automatically unify any pair of variables
+1. $a$ and $b$ are constants, and they are the same number or atom
+2. $a$ is a variable and $b$ is any type of term (in this case $a$ is instantiated to $b$) or $b$ is a variable and $a$ is any type of term (in this case $b$ is instantiated to $a$). This rule automatically unifies any pair of variables
 3. $a$ and $b$ are complex terms and:
    1. They have the same functors and the same number of arguments
    2. all their corresponding arguments unify
@@ -437,7 +436,7 @@ true.
 [^dummy]
 
 [^dummy]: The instantiations `X=_5071` and `Y=_5071` show that both `X` and `Y` are instantiated to the same dummy variable created by Prolog.
-This is also known as `X` and `Y` being aliased to each other, meaning that they share each others instantiations.
+This is also known as `X` and `Y` being aliased to each other, meaning that they share each other's instantiations.
 
 ```prolog
 ?- =(watertype(X),watertype(squirtle))
@@ -505,12 +504,52 @@ Since Prolog can't unify this query with any value for `U` (horizontal lines mus
 false.
 ```
 
-### Single Linear Definite Resolution
+### Selective Linear Definite Resolution
 
-Prolog uses the algorithm called **Single Linear Definite Resolution** (SLD Resolution) to answer queries in an efficient way.
+Prolog uses the algorithm called **Selective Linear Definite Resolution** (SLD Resolution) to answer queries efficiently.
 The process is equivalent to checking if the combination of the knowledge base clauses and the goal leads to an unsatisfiable formula.
 But this method provides a step-by-step process that can be easily implemented by computers.
-Let's start with an example:
+
+Let's start with a simple example:
+
+```prolog
+q(a).
+s(b).
+p(X).
+```
+
+```
+?- p(a), p(b)
+```
+
+Given the query, `p(a), p(b)`, Prolog produces a goal by negating the query.
+The goal is now $\neg p(a) \lor \neg p(b)$.
+Since the goal is a disjunction, it must prove that a contradiction arises from both $\neg p(a)$ and $\neg p(b)$.
+This creates two separate sub goals $\neg p(a)$ and $\neg p(b)$.
+One of the aspects of SLD resolution is how it only *selects* one **subgoal** out of the conjunction of goals.
+Prolog selects the leftmost subgoal first, in this case, $\neg p(a)$.
+
+Prolog searches the entire knowledge base from top to bottom, and tries to unify the current subgoal with any fact or rule head in the knowledge base.
+A successful unification, resolves the subgoal away.
+In this case, $\neg p(a)$, unifies with $p(X)$, creating the instantiation $X = a$.
+
+If the resolution is unclear, you can write $\neg p(a)$ and $p(X)$ as separate clauses[^comp_unif].
+
+$$
+\begin{aligned}
+p(X) \lor \bot\\
+\neg p(a) \lor \bot\\
+\hline
+\bot \lor \bot
+\end{aligned}
+$$
+
+[^comp_unif]: $p(X)$ and $\neg p(a)$ are complements of each other through unification. Remember that `p(X)` in Prolog implicitly means $\forall x p(x)$. Through universal instantiation, we know that $\forall x p(x)$ implies that $p(a)$ is true. And we know that $p(a)$ is a complement of $\neg p(a)$.
+
+This resolves $\neg p(a)$ leaving $\neg p(b)$ as the only remaining subgoal to be resolved.
+
+
+
 
 ```
 f(a).
@@ -542,13 +581,13 @@ So in the perspective of Prolog, the new goal is now:
 
 > This query has the exact same meaning as `k(Y)`, since the variable names have no inherent meanings anyway.
 Prolog does this to create a goal containing variables guaranteed to be unused anywhere else.
-This removes any ambiguity with other variables named `Y` (no other variable is named `Y` but Prolog still does this anyway).
+This removes any ambiguity with other variables named `Y` (no other variable is named `Y`, but Prolog still does this anyway).
 
 Prolog goes through the whole knowledge base from top to bottom and from left to right, attempting to unify the current goal, `k(_G34)` to a fact or a head of a rule.
 In this case since there are no facts `k(_G34)` can unify with, it unifies with the head (or the conclusion) of a rule, `k(X) :- f(X), g(X), h(X)`.
  
 
-> Since there are no other facts or rule heads that can be unified with  the goal `k(_G34)` Prolog's proof search doesn't branch out.
+> Since there are no other facts or rule heads that can be unified with the goal `k(_G34)` Prolog's proof search doesn't branch out.
 
 Since this is a rule, we can prove that `k(_G34)` is true by proving the premises, ` f(_G34), g(_G34), h(_G34)`.
 This gives Prolog three new goals, proving the conjunction of the predicates,  `f(_G34), g(_G34), h(_G34)`
@@ -563,7 +602,7 @@ Since the knowledge base contains both facts `f(a)` and `f(b)`  there will now b
 ##### Path 1: `_G34 = a`
 
 From this instantiation, Prolog is now left with the new goals `g(a), h(a)`.
-Starting with `g(a)`, Prolog searches the knowledge base again and unifies `g(a)` to `g(a)`, reducing  the goal to`h(a)`.
+Starting with `g(a)`, Prolog searches the knowledge base again and unifies `g(a)` to `g(a)`, reducing the goal to`h(a)`.
 Since `h(a)` cannot be unified with any fact or rule head, this path ends up unprovable.
 
 ##### Path 2: `_G34 = b`
