@@ -451,18 +451,30 @@ Y=g(X)
 true.
 ```
 
+Unification with variables is an implementation of **universal instantiation**.
+Remember that a `p(X)` in Prolog implicitly means $\forall x p(x)$.
+When you assume `p(X)` in the knowledge base, you assume that $\forall x p(x)$ which implies via *universal instantiation* that $p(a)$ is also true (for some constant $a$).
+
+When you have two variables unified to each other, they automatically unify because the actual variable name used does not matter at all.
+For example, `p(X)` will unify with `p(Y)`, because there is no semantic difference between that universal quantifications $\forall x p(x)$ and $\forall y p(y)$.
+
+Using the same intuition you'll find why the terms `p(X,a)` and `p(b,X)` will not unify.
+These terms represent $\forall X p(X,a)$ and $\forall X p(b,X)$, which can only consistently instantiate if $X=a$, $X=b$, and $a=b$.
+
+
 #### Programming with unification
 
 Unification is crucial with how one can write interesting logic programs.
 By creating knowledge bases that take advantage of unification, you can generalize structures based on the facts and rules of its characteristics.
-For example, the following is a knowledge base describing the characteristics of vertical and horizontal lines:
+For example, the following is a knowledge base describing the characteristics of vertical and horizontal lines[^functor]:
 
 ```prolog
 vertical(line(point(X,Y),point(X,Z))).
 horizontal(line(point(X,Y),point(Z,Y))).
 ```
 
-Instances of line that unify with these predicates, are also instances of vertical and horizontal line.
+[^functor]: Note that the functors `line`, and `point` are not predicates. These are simply used as a way to structure the arguments. Only the outermost functors `vertical` and `horizontal` are considered predicates.
+
 Therefore, asking the query:
 
 ```prolog
@@ -546,12 +558,14 @@ $$
 
 [^comp_unif]: $p(X)$ and $\neg p(a)$ are complements of each other through unification. Remember that `p(X)` in Prolog implicitly means $\forall x p(x)$. Through universal instantiation, we know that $\forall x p(x)$ implies that $p(a)$ is true. And we know that $p(a)$ is a complement of $\neg p(a)$.
 
-This resolves $\neg p(a)$ leaving $\neg p(b)$ as the only remaining subgoal to be resolved.
+This resolves $\neg p(a)$, cancelling it out. Thus, leaving $\neg p(b)$ as the only remaining subgoal to be resolved.
+Prolog repeats the process for $\neg p(b)$, unifying with $p(X)$ with the instantiation $X=b$.
+Resolving $\neg p(b)$ leaves all subgoals resolved.
+With all subgoals resolved and refuted, the query is proven `true` by contradiction.
 
+Let's try an example that involves rules on the knowledge base.
 
-
-
-```
+```prolog
 f(a).
 f(b).
 
@@ -564,62 +578,82 @@ k(X) :- f(X), g(X), h(X).
 
 ```
 
-Asking Prolog the query,
+With the query:
 
 ```prolog
-?- k(Y)
+?- k(Y).
 ```
 
-This gives Prolog a **goal**, unifying `k(Y)` with all possible known facts or inferable facts in the knowledge base.
+The goal produced from the query is $\neg k(Y)$.
 
-Whenever Prolog unifies queries containing variables, it creates a new internal variable to alias it with `Y`.
-So in the perspective of Prolog, the new goal is now:
+| Current Goal     |
+|:-----------------|
+| $\neg k(Y)$      |
+
+Prolog goes through the entire knowledge base from top to bottom finding unification with the head of `k(X) :- f(X), g(X), h(X)`.
+The resolution of a rule and a goal leaves a resolvent which serves as new subgoals[^modus_tollens].
+
+$$
+\begin{aligned}
+\neg k(Y) \lor \bot\\
+k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X)\\
+\hline
+\neg f(X) \lor \neg g(X) \lor \neg h(X)\\
+\end{aligned}
+$$
+
+[^modus_tollens]: This resolution is just modus tollens.
+
+With $\neg k(Y)$ resolved away, and the resolvent added to the goals, we are left with the following goal.
+
+| Current Goal     |
+|:-----------------|
+| $\neg f(X) \lor \neg g(X) \lor \neg h(X)$      |
+
+With this new goal, Prolog starts resolving the leftmost subgoal, $\neg f(X)$.
+This subgoal unifies with two facts, `f(a)` and `f(b)`.
+Whenever this happens, Prolog creates two branches (one for each possible unification).
+Prolog tries to complete the refutation one branch at a time in a depth first manner.
+The other branch will be revisited once one branch is completed.
+
+For the unification to be consistent, the other subgoals must also unify with respect to the instantiation $X = a$.
+With this, $f(X)$ is resolved away, and the goal narrows down to the following:
+
+| Branch $X = a$ goal (current)    | Branch $X = b$ goal |
+|:---------|:---------|
+| $\neg g(a) \lor \neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+
+In this case, it tries to complete the branch formed from $X=a$ first.
+The subgoal $\neg g(a)$ unifies with `g(a)` in the knowledge base.
+
+| Branch $X = a$ goal (current)    | Branch $X = b$ goal |
+|:---------|:---------|
+| $\neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+
+The subgoal $\neg h(a)$ does not unify with any clause in the knowledge base.
+Therefore, it cannot be resolved away.
+This means that the branch for $X = a$ completes without refutation.
+
+| Branch $X = a$ goal (not refuted)    | Branch $X = b$ goal |
+|:---------|:---------|
+| $\neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+
+From here, Prolog proceeds to resolve the goal of the $X = b$ branch.
+In this branch both subgoals do unify, with $g(b)$ and $h(b)$.
+This resolves the goal which completes the branch.
+
+| Branch $X = a$ goal (not refuted)    | Branch $X = b$ goal (refuted)|
+|:---------|:---------|
+| $\neg h(a)$ | $\bot$ |
+
+Since one branch is refuted, Prolog responds to the query with `true`.
+Prolog also shows which instantiations/branches lead to a refutation.
+In this case, $X=b$ is refuted and since $X = Y$:
 
 ```prolog
-?- k(_G34)
+Y = b,
+true.
 ```
-
-> This query has the exact same meaning as `k(Y)`, since the variable names have no inherent meanings anyway.
-Prolog does this to create a goal containing variables guaranteed to be unused anywhere else.
-This removes any ambiguity with other variables named `Y` (no other variable is named `Y`, but Prolog still does this anyway).
-
-Prolog goes through the whole knowledge base from top to bottom and from left to right, attempting to unify the current goal, `k(_G34)` to a fact or a head of a rule.
-In this case since there are no facts `k(_G34)` can unify with, it unifies with the head (or the conclusion) of a rule, `k(X) :- f(X), g(X), h(X)`.
- 
-
-> Since there are no other facts or rule heads that can be unified with the goal `k(_G34)` Prolog's proof search doesn't branch out.
-
-Since this is a rule, we can prove that `k(_G34)` is true by proving the premises, ` f(_G34), g(_G34), h(_G34)`.
-This gives Prolog three new goals, proving the conjunction of the predicates,  `f(_G34), g(_G34), h(_G34)`
-
-> By unifying `k(_G34)`  and `k(X)`, the variables `_G34` and `X` are now aliased therefore they now share the same instantiations
-
-Prolog unifies the three goals one by one, left to right.
-So, starting with the goal `f(_G34)`, Prolog searches the whole knowledge base again, attempting to unify `f(_G34)` with facts or rule heads.
-Since the knowledge base contains both facts `f(a)` and `f(b)`  there will now be two paths in this search, instantiating `_G34` to `a` and instantiating `_G34` to `b`.
-
-
-##### Path 1: `_G34 = a`
-
-From this instantiation, Prolog is now left with the new goals `g(a), h(a)`.
-Starting with `g(a)`, Prolog searches the knowledge base again and unifies `g(a)` to `g(a)`, reducing the goal to`h(a)`.
-Since `h(a)` cannot be unified with any fact or rule head, this path ends up unprovable.
-
-##### Path 2: `_G34 = b`
-
-From this instantiation, Prolog no has the new goals `g(b), h(b)`.
-Starting with `g(b)`, Prolog searches the knowledge base from the top again and finds the unification `g(b)` to `g(b)`, reducing the goal to `h(b)`.
-It then finds the unification, `h(b)` thus completing the goal and proving the query for the instantiation`_G34 = b`.
-
-
-By completing all possible paths Prolog responds to the query:
-
-```prolog
-Y = b
-yes
-```
-
-Since there are no other instantiations that prove the goals, `Y = b` is the only possible answer.
 
 ### Recursive Definitions
 
@@ -674,7 +708,7 @@ numeral(0).
 numeral(s(X)) :- numeral(X).
 ```
 
-This knowledge base will then define all of the possible natural numbers out there, demonstrated by the query:
+This knowledge base will then define all the possible natural numbers out there, demonstrated by the query:
 
 ```prolog
 numeral(X)
@@ -706,7 +740,7 @@ mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
 Logic programming shares a lot of similarities with functional programming.
 It also shares its advantages and disadvantages as well.
 Both paradigms offer a safer and more consistent framework since they are both patterned form mathematical formalisms.
-Functional programming has lambda calculus and logic programming has predicate calculus.
+Functional programming has lambda calculus and logic programming is based on First Order Predicate Calculus.
 
 Being non-imperative also gives them an edge of automatically being immune to the perils of state and at the same time being prone to the perils of its absence.
 
@@ -717,8 +751,8 @@ The beauty of unification and proof search shines on these domains as they often
 
 Logic programming's disadvantages are indeed similar to functional programming, but much worse.
 The obvious inefficiency due to the absence of state is much more evident in logic programming because of the thorough approach of backtracking in proof search.
-The strangeness of logic programming as compared to the imperative way of thinking is also much worse than functional programming (at least functional and imperative share the concept of functions Prolog only has predicates, Haskell is strange but Prolog is way stranger).
-Because of these logic programming is relegated to solving niche problems in various domains.
+The strangeness of logic programming as compared to the imperative way of thinking is also much worse than functional programming (at least functional and imperative share the concept of functions Prolog only has predicates, Haskell is strange, but Prolog is way stranger).
+Because of these, logic programming is relegated to solving niche problems in various domains.
 Just like functional programming though, the spirit of logic programming can be found in other paradigms through the existence of unification libraries.
 Although logic paradigm is admittedly less relevant than other paradigms, its strange features are definitely useful and worth studying.
 
