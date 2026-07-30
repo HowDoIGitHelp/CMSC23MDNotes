@@ -662,32 +662,28 @@ While functional programming makes heavy use of recursive functions to implement
 For example: consider the following knowledge base:
 
 ```prolog
-is_digesting(X,Y)  :-  just_ate(X,Y).
-is_digesting(X,Y)  :-
-    just_ate(X,Z),
-    is_digesting(Z,Y).
+is_ancestor(Parent, Child) :- is_parent(Parent, Child).
+is_ancestor(Ancestor, Descendant) :-
+    is_parent(Parent, Descendant), 
+    is_ancestor(Ancestor, Parent).
 
-just_ate(mosquito,blood(john)).
-just_ate(frog,mosquito).
-just_ate(stork,frog).
-
+is_parent(juan, francisco).
+is_parent(cirila, francisco).
+is_parent(teodora, jose).
+is_parent(francisco, jose).
+is_parent(brigida, teodora).
+is_parent(lorenzo, teodora).
 ```
 
-You'll notice that the rule `is_digesting` is special since one of its goals is itself.
-You can interpret this rule as:
-
-> $X$ is digesting $Y$ if $X$ just ate $Y$ or[^or] $X$ ate some $Z$ that is digesting $Y$.
-
-[^or]: The `or` part of this implications hypothesis is represented in the knowledge base by giving the conclusion `is_digesting(X,Y)` two separate hypotheses to satisfy.
-
-Posing the query:
+You'll notice that the rule `is_ancestor` is special since one of its goals is itself.
+The query below will yield a `true` response due to the recursive nature of the `is_ancestor` rule.
 
 ```prolog
-?- is_digesting(stork,mosquito)
+?- is_ancestor(juan, jose).
 ```
 
-Following the process of proof search, the query `is_digesting(stork,mosquito)` is unified with the line 2, giving it a new goal `just_ate(X,Z), is_digesting(Z,Y)`.
-The goal`just_ate(X,Z)` will then match to `just_ate(stork, frog)` and the 2nd goal, `is_digesting(X,Y)` is then inferred from `just_ate(frog,mosquito)`.
+The query will match both rule heads, but the first instance (the base case) will lead to an unresolved goal since `is_parent(juan, jose)` cannot be resolved.
+On the other hand the second instance of the rule (the recursive case), will lead to a propagation of goals that will resolve.
 
 #### Representing numbers using logic
 
