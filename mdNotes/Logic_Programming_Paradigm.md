@@ -676,10 +676,9 @@ just_ate(stork,frog).
 You'll notice that the rule `is_digesting` is special since one of its goals is itself.
 You can interpret this rule as:
 
-> $X$ is digesting $Y$ if $X$ just ate $Y$ or $X$ ate some $Z$ that is digesting $Y$.
+> $X$ is digesting $Y$ if $X$ just ate $Y$ or[^or] $X$ ate some $Z$ that is digesting $Y$.
 
->
-> The `or` part of this implications hypothesis is represented in the knowledge base by giving the conclusion `is_digesting(X,Y)` two separate hypotheses to satisfy.
+[^or]: The `or` part of this implications hypothesis is represented in the knowledge base by giving the conclusion `is_digesting(X,Y)` two separate hypotheses to satisfy.
 
 Posing the query:
 
