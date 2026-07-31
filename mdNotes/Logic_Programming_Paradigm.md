@@ -17,7 +17,7 @@ While SQL uses relations (not tables) to represent knowledge, logic programming 
 
 ---
 
-For this secton we will use the programming language Prolog as the representative of logic paradigm.
+For this section we will use the programming language Prolog as the representative of logic paradigm.
 Other logic programming families are answer set programming, ABYSS and Datalog.
 
 ### Facts Rules and Queries
@@ -685,28 +685,28 @@ The query below will yield a `true` response due to the recursive nature of the 
 The query will match both rule heads, but the first instance (the base case) will lead to an unresolved goal since `is_parent(juan, jose)` cannot be resolved.
 On the other hand the second instance of the rule (the recursive case), will lead to a propagation of goals that will resolve.
 
-#### Representing numbers using logic
+### Numbers in Logic Programming
 
 Since logic calculus is a formalism for the foundation of mathematics, how do numbers emerge from predicates and propositions?
 
 This is also another concept shared between, logic calculus and lambda calculus.
-You can represent numerals (specifically natural numbers) using Peano's axioms:
+You can represent numerals (specifically integers) using Peano's axioms:
 
-> 0 is a numeral
->
-> the successor of 0, denoted by s(0) is also a numeral
+> 0 is an integer.
+
+> the successor of an integer, denoted by s(n) is also an integer.
 
 You can represent these axioms as a knowledge base:
 
 ```prolog
-numeral(0).
-numeral(s(X)) :- numeral(X).
+int(0).
+int(s(X)) :- int(X).
 ```
 
 This knowledge base will then define all the possible natural numbers out there, demonstrated by the query:
 
 ```prolog
-numeral(X)
+int(X)
 ```
 
 ```prolog
@@ -717,11 +717,25 @@ X = s(s(s(0)))
 ...
 ```
 
-Using this representation, you can then define arithmetic operations such as addition and multiplication (also based on Peano's axioms)
+Using this representation, you can then define arithmetic operations such as addition and multiplication (also based on Peano's axioms).
+
+$$
+\begin{aligned}
+&a + 0 = a\\
+&a + b = c \to a + (b + 1) = (c + 1)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+&a * 0 = 0\\
+&a * b = d \land a + d = c \to a * (b + 1) = c
+\end{aligned}
+$$
 
 ```prolog
-numeral(0).
-numeral(s(X)) :- numeral(X).
+int(0).
+int(s(X)) :- int(X).
 
 add(A,0,A).
 add(A,s(B),s(C)) :- add(A,B,C).
@@ -729,6 +743,42 @@ add(A,s(B),s(C)) :- add(A,B,C).
 mult(_,0,0).
 mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
 ```
+
+While this representation of numbers is a good way of demonstrating how numbers can be defined using logic, it's not really that usable.
+We want to numbers to be easily readable, that's why we use base-10 Arabic numerals to represent numbers.
+Prolog does have a builtin representation for numbers.
+Numbers are accepted terms in the form of constants.
+You can also apply some predicates to numbers like `=`, `<`, `>`.
+
+```prolog
+positive(X) :- X > 0.
+```
+
+```prolog
+?- positive(2).
+true.
+```
+
+Unfortunately, these representations are also very limited.
+Predicates like `=`, `<`, and `>`, break the logical nature of Prolog.
+If you try to use these predicates with uninstantiated variables, you will end up with an error.
+
+```prolog
+?- X = 2.
+Arguments are not sufficiently instantiated
+In:
+   [1] 2>_2258
+```
+
+To solve this limitation, the library `clp(fd)` and `clp(z)` was created.
+The library `clp(fd)` stands for **Constraint Logic Programming Over Finite Domains**.
+This library offers predicates that can be used to apply logical reasoning on integers.
+This library was further refined to a more complete and more advanced library called `clp(z)` or **Constrained Programming Over Integers**.
+
+These libraries feature the following predicates:
+
+
+
 
 ### Advantages and Disadvantages of Logic Programming
 
