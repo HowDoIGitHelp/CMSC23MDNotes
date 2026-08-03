@@ -49,9 +49,11 @@ In Prolog `firetype(X)` represents a predicate you've learned in discrete math, 
 And just like predicates, this means `X` is firetype.
 Therefore, the fact `firetype(charmander)` represents the proposition, "*charmander is firetype*"
 
-So, to summarize, the fact `firetype(charmander)` is basically a representation of the proposition, $firetype("charmander")$ where $firetype$ is a predicate and $charmander$ is a value assigned to the predicate.
+So, to summarize, the fact `firetype(charmander)` is basically a representation of the proposition, $firetype("charmander")$ where `firetype/1`[^predicate] is a predicate and `charmander` is a value assigned to the predicate.
 Every fact in your knowledge base represents propositions that can be assumed to be true.
 Facts that are not in your knowledge base represents propositions that you cannot assume to be true.
+
+[^predicate]: `firetype/1` indicates a predicate named `firetype` with `1` argument.
 
 You can also write non-predicate based propositions in your knowledge base.
 For example:
@@ -237,7 +239,7 @@ When you write with Prolog facts or rules, you are implicitly creating a *univer
 For example, the fact `pokemon(X)`[^variable_syntax], corresponds to the proposition, $\forall x (\text{Pokemon}(x))$.
 By adding this to the knowledge base, you are assuming that for any value `x`, `pokemon(X)` is true.
 Therefore, asking the query, `pokemon(charizard)` will yield a `true` response.
-Of course, any value supplied to the predicate `pokemon` will yield true because of the universal quantification.
+Of course, any value supplied to the predicate `pokemon/1` will yield true because of the universal quantification.
 
 ```prolog
 pokemon(X).
@@ -353,18 +355,18 @@ You can do this by using two different variables for each argument in the predic
 
 ### Unification
 
-There are three types of Prolog terms [^1].
+There are three types of Prolog terms [@blackburn_learn_2006].
 By composing these terms you can express rich knowledge bases.
 
 1. Constants. These can either be atoms (known to us as strings such as `squirtle`) or numbers (such as `24`).
-2. Variables. (Those that start with an underscore or any uppercase letter such as `X`, `Z3`,`_4310`, and `List`.)  
+2. Variables. Those that start with an underscore or any uppercase letter such as `X`, `Z3`,`_4310`, and `List`.
 3. Complex terms. These have the form: `functor(term_1,...,term_n)`. We've seen examples of these in predicates and queries such as `firetype(charmander)` and `isresistantto(X,Y)`
 
 The way Prolog is able to respond to interesting queries involving constants, variables and complex terms is through the **unification**.
 Unification algorithmically identifies **logically consistent substitutions** involving constants, variables, and complex terms.
 Unification in the context of Prolog works along the following rule:
 
->  Two terms unify if they are the same term or if they contain variables that can be uniformly instantiated with terms in such a way that the resulting terms are equal.
+> Two terms unify if they are the same term or if they contain variables that can be uniformly instantiated with terms in such a way that the resulting terms are equal.
 
 This definition gives us the unification of trivial cases such as the unification of constants `squirtle` and `squirtle`.
 Prolog also unifies the complex terms `watertype(squirtle)` and `watertype(squirtle)` and the variables `X` and `X`.
@@ -407,7 +409,7 @@ Two terms $a$ and $b$ unify if and only if
 3. $a$ and $b$ are complex terms and:
    1. They have the same functors and the same number of arguments
    2. all their corresponding arguments unify
-   3. the variable instatiations are uniform or compatible (you cannot instantiate $x$ to some constant $a$ when unifying a pair and instantiate $x$ to another constant $b$ when unifying another pair of arguments)
+   3. the variable instantiations are uniform or compatible (you cannot instantiate $x$ to some constant $a$ when unifying a pair and instantiate $x$ to another constant $b$ when unifying another pair of arguments)
 
 You can demonstrate unification in the Prolog terminal using the predicate `=/2` (this means the `=` functor with two arguments).
 
@@ -473,7 +475,7 @@ vertical(line(point(X,Y),point(X,Z))).
 horizontal(line(point(X,Y),point(Z,Y))).
 ```
 
-[^functor]: Note that the functors `line`, and `point` are not predicates. These are simply used as a way to structure the arguments. Only the outermost functors `vertical` and `horizontal` are considered predicates.
+[^functor]: Note that the functors `line`, and `point` are not predicates. These are simply used as a way to structure the arguments. Only the outermost functors `vertical/1` and `horizontal/1` are considered predicates.
 
 Therefore, asking the query:
 
@@ -563,7 +565,7 @@ Prolog repeats the process for $\neg p(b)$, unifying with $p(X)$ with the instan
 Resolving $\neg p(b)$ leaves all subgoals resolved.
 With all subgoals resolved and refuted, the query is proven `true` by contradiction.
 
-Let's try an example that involves rules on the knowledge base.
+Let's try an example that involves rules on the knowledge base (example from @blackburn_learn_2006).
 
 ```prolog
 f(a).
@@ -575,7 +577,6 @@ g(b).
 h(b).
 
 k(X) :- f(X), g(X), h(X).
-
 ```
 
 With the query:
@@ -694,7 +695,7 @@ You can represent numerals (specifically integers) using Peano's axioms:
 
 > 0 is an integer.
 
-> the successor of an integer, denoted by s(n) is also an integer.
+> The successor of an integer, denoted by s(n) is also an integer.
 
 You can represent these axioms as a knowledge base:
 
@@ -717,7 +718,7 @@ X = s(s(s(0)))
 ...
 ```
 
-Using this representation, you can then define arithmetic operations such as addition and multiplication (also based on Peano's axioms).
+Using this representation, you can then define arithmetic operations such as addition and multiplication (also based on Peano's axioms) [@hosch_peano_2010].
 
 $$
 \begin{aligned}
@@ -748,7 +749,7 @@ While this representation of numbers is a good way of demonstrating how numbers 
 We want to numbers to be easily readable, that's why we use base-10 Arabic numerals to represent numbers.
 Prolog does have a builtin representation for numbers.
 Numbers are accepted terms in the form of constants.
-You can also apply some predicates to numbers like `=`, `<`, `>`.
+You can also apply some predicates to numbers like `=`, `<`, `>`[^infix].
 
 ```prolog
 positive(X) :- X > 0.
@@ -759,8 +760,10 @@ positive(X) :- X > 0.
 true.
 ```
 
+[^infix]: Note that equality and inequality operators are also predicates. In the examples here they are written as infix operators, but you can still use them using the prefix functor syntax (i.e. `=(2,3)`)
+
 Unfortunately, these representations are also very limited.
-Predicates like `=`, `<`, and `>`, break the logical nature of Prolog.
+Predicates like `=`, `<`, and `>` break the logical nature of Prolog.
 If you try to use these predicates with uninstantiated variables, you will end up with an error.
 
 ```prolog
@@ -775,10 +778,91 @@ The library `clp(fd)` stands for **Constraint Logic Programming Over Finite Doma
 This library offers predicates that can be used to apply logical reasoning on integers.
 This library was further refined to a more complete and more advanced library called `clp(z)` or **Constrained Programming Over Integers**.
 
-These libraries feature the following predicates:
+These libraries include special predicates known as constraints.
+**Constraints** are predicates that restrict a variable to a specific set of values.
+Constraints are usually applied to *numerical variables* to define the domain of said variable.
+The libraries, `clp(fd)` and `clp(z)` include the equality and inequality constraints [@triska_power_2026].
+
+- `X #= Y`: $x = y$
+- `X #< Y`: $x < y$
+- `X #> Y`: $x > y$
+- `X #\= Y`: $x \neq y$
+- `X #>= Y`: $x \geq y$
+- `X #=< Y`: $x \leq y$
 
 
+To import libraries in your knowledge base, use the headless rule syntax[^clpfd_import].
 
+```prolog
+:- use_module(library(clpfd)).
+```
+
+[^clpfd_import]: Older implementations, like `swi-prolog` comes with `clpfd` but not `clpz`. Newer implementations like `scryer-prolog` come with both.
+
+You can import it on the REPL by directly writing the `use_module` predicate as a query.
+With the library loaded in the repl, you can use the constraints on your queries.
+
+```prolog
+?- use_module(library(clpfd)).
+true.
+```
+
+When you use the `#<` constraint with a variable, it restricts said variable's domain to satisfy the constraint.
+
+```prolog
+?- X #< 3.
+X in inf..2.
+```
+
+In the example above, with the constraint `X #< 3`, the integer variable `X` can only have values in the range $[-\infty, 2]$.
+
+When used with numerical expressions, you can use Prolog as solver.
+
+```prolog
+?- 4 #= 2*X + 2.
+X = 1.
+```
+
+Using constraint programming, will be limited when used as a solver since the domain is finite and you the answers are based on relations.
+If the solution to your equation is not an integer, then the variable `X` doesn't have a valid integer that satisfies the constraint[^clpr].
+In such case, Prolog will respond with `false`
+
+```prolog
+?- 0 #= 2*X + 3.
+false.
+```
+
+[^clpr]: There are libraries that support constraint logical programming over real numbers like `clpr` which also comes bundled with `swi-prolog`.
+
+You can combine multiple constraints into a conjunction to further control the domain of an integer.
+In the example below, the values of `X` can only be in the range $[3,11] \cup [13,\infty]$[^inf_sup].
+
+```prolog
+?- X #>= 3, X #\= 12.
+X in 3..11\/13..sup.
+```
+
+[^inf_sup]: `inf` stands for infimum, the smallest value in the domain and `sup` stands for supremum, the largest value in the domain.
+
+You can also directly use the `in` predicate to create constraints over a domain expression.
+In the example below, the domain ranges `0..10` and `9..12` are combined using the union operator, `\/`.
+
+```prolog
+?- X in 0..10 \/ 9..12.
+X in 0..12.
+```
+
+To enumerate values in a domain, you can add the predicate `indomain/1` with a conjunction.
+
+```prolog
+?- X in 0..10, 1 #\= X mod 2, indomain(X).
+X = 0 ;
+X = 2 ;
+X = 4 ;
+X = 6 ;
+X = 8 ;
+X = 10.
+```
 
 ### Advantages and Disadvantages of Logic Programming
 
@@ -800,6 +884,3 @@ The strangeness of logic programming as compared to the imperative way of thinki
 Because of these, logic programming is relegated to solving niche problems in various domains.
 Just like functional programming though, the spirit of logic programming can be found in other paradigms through the existence of unification libraries.
 Although logic paradigm is admittedly less relevant than other paradigms, its strange features are definitely useful and worth studying.
-
-[^1]: Blackburn P., Bos J., Streignitz K., (2012) Learn Prolog Now http://www.learnProlognow.org Accessed August 21, 2020
-
