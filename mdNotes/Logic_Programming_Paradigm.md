@@ -864,6 +864,36 @@ X = 8 ;
 X = 10.
 ```
 
+### Data Structures
+
+As discussed before, Prolog support compound terms in its syntax.
+Depending on where a term appears in Prolog code, it can be treated as a predicate with arguments, or a term representing data.
+
+```prolog
+a(X).
+b(c(d(Y)), e).
+f(X) :- g(h), i(j).
+k.
+```
+
+If a Prolog term appears as a fact, the head of a rule, or in the body of the rule, it is treated as a predicate with arguments.
+In the example above, `a/1`, `b/2`, `f/1`, `g/1`, `i/1`, `k/0` are considered as predicates.
+On the other hand, if a term appears as a predicate argument or a term argument, then it is treated as a term representing data.
+In the example above, `X`, `c(d(Y))`, `d(Y)`, `Y`, `e`, `h`,`j`, are considered terms representing data.
+
+Compound terms can be used to represent compound data, for example, you can represent identity, using the generic term `id(Name, Age)`.
+
+```prolog
+:- use_module(library(clpfd)).
+
+person(id(artman, 16)).
+person(id(bartman, 19)).
+person(id(cartman, 21)).
+adult(Name) :-
+    person(id(Name, Age)),
+    Age #>= 18.
+```
+
 ### Advantages and Disadvantages of Logic Programming
 
 Logic programming shares a lot of similarities with functional programming.
