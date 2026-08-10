@@ -44,7 +44,7 @@ The importance of this seemingly pointless relationship lies in OOP's data hidin
 We will explore more about why these relationships are very common in a future discussion about SOLID principles.
 For now, I'll show one of the reasons why this is useful through an example:
 
-![Realization Relationship Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/RealizationRelationship.png)
+![Realization Relationship Example](../copyright_free_drawings/RealizationRelationship.png)
 
 Consider a library system.
 In a library, you are able to borrow resources such as books, newspapers, and computers.
@@ -92,7 +92,7 @@ Specialization has plenty of names.
 This relationship is also called **extension** between the special/child/subclass and general/parent/super class.
 Another name for it would be **inheritance**.
 
-![Specialization Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/SpecializationRelationship.png)
+![Specialization Example](../copyright_free_drawings/SpecializationRelationship.png)
 
 Here's an example that would illustrate what the specialization relationship means.
 Consider a factory that builds robots.
@@ -158,7 +158,7 @@ Structural dependencies, define relationships between a collective and its parts
 If an object instance contains instances from a different class.
 Then they have a structural dependency.
 
-![Dependency Example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/DependencyRelationship.png)
+![Dependency Example](../copyright_free_drawings/DependencyRelationship.png)
 
 #### Aggregation
 

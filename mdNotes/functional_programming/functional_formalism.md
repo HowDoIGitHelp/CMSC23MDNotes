@@ -13,8 +13,8 @@ These concepts may seem strange at first since it imagines a mathematical founda
 Let $\Lambda$ be the set of expressions under the Lambda calculus formalism
 
 1. **Variables**. If x is a variable, then $x \in \Lambda$ 
-2. **Abstractions**. If $x$ is a variable and $\mathscr{M} \in \Lambda$, then $(\lambda x. \mathscr{M}) \in \Lambda$.
-3. **Applications**. If $\mathscr{M} \in \Lambda \land \mathscr{N} \in \Lambda$, then $(\mathscr{M} \mathscr{N}) \in \Lambda$.
+2. **Abstractions**. If $x$ is a variable and $\mathcal{M} \in \Lambda$, then $(\lambda x. \mathcal{M}) \in \Lambda$.
+3. **Applications**. If $\mathcal{M} \in \Lambda \land \mathcal{N} \in \Lambda$, then $(\mathcal{M} \mathcal{N}) \in \Lambda$.
 
 Take a look at these important precedence conventions.
 You might get confused if you read some lambda calculus expressions.
@@ -23,19 +23,19 @@ Some people often omit parentheses or single-parametrizations to write shorter e
 1. Application is left associative
    
    $$
-   \mathscr{M_1}\mathscr{M_2}\mathscr{M_3} \equiv ((\mathscr{M_1}\mathscr{M_2})\mathscr{M_3})
+   \mathcal{M_1}\mathcal{M_2}\mathcal{M_3} \equiv ((\mathcal{M_1}\mathcal{M_2})\mathcal{M_3})
    $$
 
 2. Consecutive abstractions can be uncurried
    
    $$
-   \lambda xyz.\mathscr{M}\equiv\lambda x.\lambda y.\lambda z.\mathscr{M}
+   \lambda xyz.\mathcal{M}\equiv\lambda x.\lambda y.\lambda z.\mathcal{M}
    $$
 
 3. The body of an abstraction extends to the right
 
    $$
-   \lambda x.\mathscr{M}\mathscr{N}\equiv\lambda x.(\mathscr{M}\mathscr{N})
+   \lambda x.\mathcal{M}\mathcal{N}\equiv\lambda x.(\mathcal{M}\mathcal{N})
    $$
 
 ## Reductions
@@ -52,8 +52,8 @@ $$
 $$
 
 Given a lambda calculus abstraction $\lambda x.
-\mathscr{M}$, this abstraction's bound variable is $x$.
-The bound variable $x$ may appear somewhere in $\mathscr{M}$, the body of the abstraction.
+\mathcal{M}$, this abstraction's bound variable is $x$.
+The bound variable $x$ may appear somewhere in $\mathcal{M}$, the body of the abstraction.
 An alpha equivalence basically shows that the name of the variable has no inherent meaning.
 Therefore, you can replace it with any other variable name.
 
@@ -67,7 +67,7 @@ $$
 (\lambda x.x)y\to_\beta y
 $$
 
-When you beta-reduce some application $\mathscr{M}\mathscr{N}$, what you're doing is replacing all instances of the bound variable in $\mathscr{M}$ with $\mathscr{N}$.
+When you beta-reduce some application $\mathcal{M}\mathcal{N}$, what you're doing is replacing all instances of the bound variable in $\mathcal{M}$ with $\mathcal{N}$.
 Here's another example, 
 
 $$
@@ -78,10 +78,10 @@ $$
 ### $\eta$ reductions
 
 $\eta$ reductions describe equivalencies that arise because of free variables.
-If $x$ is a variable and does not appear free in $\mathscr{M}$ then:
+If $x$ is a variable and does not appear free in $\mathcal{M}$ then:
 
 $$
-\lambda x.(\mathscr{M}x) \to_\eta \mathscr{M}
+\lambda x.(\mathcal{M}x) \to_\eta \mathcal{M}
 $$
 
 The lambda expression here is just some redundant abstraction.
@@ -96,8 +96,8 @@ $$
 $$
 
 In the outermost level, the expression is the application of $\lambda x.\lambda y.(xy)$ to itself.
-It follows the second type of lambda calculus expression discussed earlier, $\mathscr{M}\mathscr{N}$ where $\mathscr{M}\in \Lambda$ and $\mathscr{N}\in \Lambda$.
- In this context $\mathscr{M} = (\lambda x.\lambda y.(xy))$ and also $\mathscr{N} = (\lambda x.\lambda y.(xy))$.
+It follows the second type of lambda calculus expression discussed earlier, $\mathcal{M}\mathcal{N}$ where $\mathcal{M}\in \Lambda$ and $\mathcal{N}\in \Lambda$.
+ In this context $\mathcal{M} = (\lambda x.\lambda y.(xy))$ and also $\mathcal{N} = (\lambda x.\lambda y.(xy))$.
 
 
 When you start evaluating this expression, you might be tempted to automatically apply a $\beta$ reduction by itself:
@@ -296,7 +296,7 @@ Continuing this process and generalizing successions will lead us the following 
 |    $\vdots$    |            $\vdots$             |
 | $\overline{n}$ | $\lambda s. \lambda z. s^n(z)$[^superscript]  |
 
-[^superscript]: $\mathscr{M}^n(\mathscr{N})$ is a shorthand notation for $n$ applications of $\mathscr{M}$ to $\mathscr{N}$ or $\mathscr{M}(\cdots(\mathscr{M}(\mathscr{M}(\mathscr{N})))\cdots)$.
+[^superscript]: $\mathcal{M}^n(\mathcal{N})$ is a shorthand notation for $n$ applications of $\mathcal{M}$ to $\mathcal{N}$ or $\mathcal{M}(\cdots(\mathcal{M}(\mathcal{M}(\mathcal{N})))\cdots)$.
 
 Another useful definition of a successor function would be:
 

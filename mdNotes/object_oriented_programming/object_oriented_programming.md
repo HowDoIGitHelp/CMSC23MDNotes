@@ -102,7 +102,7 @@ These attributes also simulate the form of a real world book.
 This object also has methods called `ISBN()` and `numPages()`.
 The attributes of an employee are `name`, `string`, and `salary`, and it has a method called `reassignJob()`.
 
-![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/introduction.svg)
+![Class diagram of a book class](../uml/introduction.svg)
 
 The following are representations of objects:
 
@@ -158,9 +158,9 @@ You can even hide those attributes and let the `LibraryCard` only interact with 
  It doesn't need access to the attributes of the book to do this.
 It interacts with the Book itself as a whole.
 
-![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public%20interface.svg)
+![Class diagram of a book class](../uml/public_interface.svg)
 
-![abstraction borrowable item](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/refs/heads/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/abstractionBorrowableItems.PNG)
+![abstraction borrowable item](../copyright_free_drawings/abstractionBorrowableItems.PNG)
 
 #### Abstraction of Objects
 
@@ -193,7 +193,7 @@ You need a different representation for a periodical, therefore you need to crea
 Since a periodical is also *something from the library that can be borrowed*, a periodical is another **realization** of `BorrowableItem`.
 And with the tiny effort of writing the implementation of a periodical (including the realized methods `uniqueItemId()` and `commonName()`), we added an extra interaction that allows a `LibraryCard` to borrow periodicals as well.
 
-![Class diagram of a book class](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/public%20interface%202%20realizations.svg)
+![Class diagram of a book class](../uml/public_interface_2_realizations.svg)
 
 #### The Interface and the Implementation
 
@@ -211,7 +211,7 @@ The volume of the object shouldn't dictate how the objects relate to each other,
 Objects should only see each other's surface.
 This means that the interaction between objects should be defined by their interface not their implementation.
 
-![Abstraction borrowable item](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/refs/heads/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/abstractionPluggableDevice.PNG)
+![Abstraction borrowable item](../copyright_free_drawings/abstractionPluggableDevice.PNG)
 
 Your job as an OOP programmer is to make sure that the complexity of the surface grows slower than the complexity of the core.
 This means that as your system evolves, changes that happen in the core, the implementation hidden inside each object, (as much as possible) shouldn't affect the surface, the interfaces of each object.

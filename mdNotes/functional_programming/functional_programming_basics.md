@@ -157,7 +157,7 @@ $$
 \lambda y. \text{add }x y
 $$
 
-[^backslash_labda]: In fact, the reason why Haskell syntax uses the `\` character to represent lambda expressions is because this is your keyboard's best physical approximation of the Greek letter $\lambda$.
+[^backslash_lambda]: In fact, the reason why Haskell syntax uses the `\` character to represent lambda expressions is because this is your keyboard's best physical approximation of the Greek letter $\lambda$.
 
 [^plus]: Extra note: "$+$" does not exist in the universe of lambda calculus so instead what's used here is a reference to a lambda calculus abstraction called "$\text{add}$".
 
@@ -224,7 +224,7 @@ addx$.
 If we look back to lambda calculus you'll notice how abstractions are defined to be:
 
 $$
-\lambda x. \mathscr{M}
+\lambda x. \mathcal{M}
 $$
 
 Here we can see that abstractions are defined to have exactly one parameter.

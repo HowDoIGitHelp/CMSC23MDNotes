@@ -31,7 +31,7 @@ A god class is a class that basically contains all the attributes and methods of
 You'll recognize these god classes as those classes that control the behavior of objects (they contain the implementation of client objects' behavior).
 These god classes are also aware of all the objects secrets (they expose and manipulate private attributes and methods).
 
-![God class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/godclasslibrarycard.png)
+![God class library card](../uml/godclasslibrarycard.png)
 
 On the example above `LibraryCard` is a god class since it exposes the secrets of `Date` by forcing the creations of *evil* getters (`getMonth()`, `getDay()`, `getYear()`) for otherwise private details.
 Although it isn't obvious, it also tampers on the responsibilities of `BorrowableItem` by deciding by itself how penalty is calculated for each realization.
@@ -75,7 +75,7 @@ It is open for extension but closed for modification.
 
 To understand this principle let's have an example of a system that is closed for extension:
 
-![God class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/closedforextension.png)
+![God class library card](../uml/closedforextension.png)
 [^long_names]
 
 [^long_names]: Forgive the long Java-like method names, they're named as descriptive as possible so that I can skip actually explaining what they do.
@@ -92,7 +92,7 @@ Poor `Bank`, who knows how many more new types of accounts there are in the futu
 
 Instead of rearranging the organs of your classes to accommodate changes to behavior they are not even responsible for, you should close the classes for modification and open them for extension instead:
 
-![open for extension](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/openforextension.png)
+![open for extension](../uml/openforextension.png)
 
 Since `applyMonthlyChange()` is an abstract method of account, all its realizations are required to implement it.
 We extend the functionality of `CreditAccount`, `DebitAccount`, and `PayrollAccount` by adding an extra method.
@@ -133,7 +133,7 @@ This is a violation if LSP which states that an object should not be forced to i
 
 The best way to design these diverse systems is by refactoring your architecture to have diverse role interfaces instead.
 
-![God class library card](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/roleinterfaces.png)
+![God class library card](../uml/roleinterfaces.png)
 
 Now instead of cluttering you realizations with useless methods, your system is now cluttered with role interfaces.
 This is a benevolent kind of clutter.

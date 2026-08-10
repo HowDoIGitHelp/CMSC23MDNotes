@@ -89,12 +89,12 @@ In this example the supertype animal is a generaliztion of the subtype mammal.
 Although it isn't shown, `Mammal` will also have the attributes `name` and `weight` and the method `sound()` since it inherits these from the parent class.
 Mammal has a method of its own called `lactate()` which it doesn't share with animal.
 
-![Inheritance](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/inheritance.png)
+![Inheritance](../uml/inheritance.svg)
 
 A subclass can also be a super class for another class.
 This is used to represent specializations of specializations.
 
-![Inheritance](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/0d3f08a4183f221cff911a426c2d5213dc5e96d8/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/inheritance2.png)
+![Inheritance](../uml/inheritance2.svg)
 
 The class primates will then inherit all visible attributes and mehtods of `Mammal` which include those that are inherited from `Animal`.
 
