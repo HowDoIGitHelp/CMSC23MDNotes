@@ -1,4 +1,4 @@
-# Imperative Programming
+# Imperative Programming Paradigm
 
 ## Introduction
 
@@ -15,15 +15,17 @@ At the end of this discussion you should be able to
 4. Create structure programs to represent algorithms
 5. Differentiate the subparadigms procedural programming and object-oriented programming
 
-> **Quick Note on Imperative Programming and Procedural Programming**
->
-> People usually use the terms Imperative programming and procedural programming interchangeably.
-> Procedural programming is a subparadigm of imperative programming family, but some people refer to procedural programming as imperative programming.
-> That's because other imperative paradigms like object-oriented programming is derived from procedural programming.
-> You can think procedural programming as the ancestor if other imperative paradigms.
-> 
-> In this lecture I refer to Imperative paradigm as a whole, but I will focus on the main ideas that are common between other imperative paradigms.
+### Quick Note on Imperative Programming and Procedural Programming
+
+People usually use the terms Imperative programming and procedural programming interchangeably.
+Procedural programming is a subparadigm of imperative programming family, but some people refer to procedural programming as imperative programming.
+That's because other imperative paradigms like object-oriented programming is derived from procedural programming.
+You can think procedural programming as the ancestor if other imperative paradigms.
+
+In this lecture I refer to Imperative paradigm as a whole, but I will focus on the main ideas that are common between other imperative paradigms.
 Ideas from object-oriented programming paradigm can be found on a separate lecture.
+
+# Popularity of the Imperative Paradigm
 
 Imperative programming has turned out to be the *natural* paradigm of programming languages.
 The members of the imperative programming family have been dominating the market share of programming languages throughout the years with titans like BASIC, Pascal, C, Java and many more.

@@ -6,14 +6,6 @@ header-includes:
 
 # Programming Paradigms Introduction
 
-## Introduction
-
-I've probably talked about my issue about the title of this course.
-You see, it's a misnomer, it's not named correctly.
-Most of this course will actually focus on objective oriented programming, you can see it in the syllabus.
-That being the case, it should have been named object-oriented programming instead.
-But we ARE going to spend some weeks to talk about programming paradigms at the start of this course.
-
 ## Learning Outcomes
 
 At the end of this discussion you should be able to:
@@ -44,7 +36,7 @@ One notable example of a paradigm is the shift from Ptolemaic or Geocentric cosm
 Based on this context you can kind of formulate what the word paradigm means.
 This one connotes a similar meaning in the context of programming:
 
-A paradigm is "*a worldview underlying the theories and methodology of a particular subject*" [^1].
+A paradigm is "*a framework containing the basic assumptions, ways of thinking, and methodology that are commonly accepted by members of a scientific community.*" [@noauthor_paradigm_nodate].
 It is a set of ideas and concepts that describe some **way of thinking**.
 
 If we go back to the geocentric vs heliocentric paradigms in astronomy, you can't really definitively say that the heliocentric model is the only correct model of the solar system, you can still reconcile the geocentric model's perspective of putting the earth in the center by modelling heavenly bodies' movement with epicycles.
@@ -67,7 +59,7 @@ How do you define what a program is, and what is its relationship to a computer?
 Here's one definition from the internet: 
 
 > Computer programming is the process that professionals use to write code that instructs how a computer, application or software program performs.
-> At its most basic, computer programming is a set of instructions to facilitate specific actions.[^2]
+> At its most basic, computer programming is a set of instructions to facilitate specific actions.[@cote_what_2025]
 
 That is correct.
 Let me simplify that definition to this.
@@ -97,7 +89,7 @@ I will not begrudge you if this is the only definition you know since there is a
 
 For someone who has been exposed to C, C++ and nothing else, you might feel that the natural way to code is the *imperative way* when in fact there are alternatives.
 
-The diagram[^3] here represents the alternative schools of thoughts describing how to program.
+The diagram[@movgp0_overview_2013] here represents the alternative schools of thoughts describing how to program.
 This diagram taxonomizes programming languages by identifying which paradigms they are under.
 Most of these paradigms are either not pragmatic, not popular enough or not unique enough to be studied in this course.
 Instead, we will be focusing on four major programming paradigms:
@@ -136,14 +128,3 @@ This is the reason why established and mainstream programming languages like Jav
 
 The multi-paradigmness of programming languages tend to be the reason why some programming language designers have abandoned the notion of building based on a strict paradigm.
 Instead, a language designer would *choose specific features* that they want to be supported on their programming language and implement it, regardless of its paradigm origins.
-
-
-[^1]: In Lexico.com, Available at [https://www.lexico.com/en/definition/paradigm ](https://www.lexico.com/en/definition/paradigm Accessed August 28)Accessed August 28, 2020
-[^2]: What is Computer Programming and How to Become a Computer Programmer, SNHU from https://www.snhu.edu/about-us/newsroom/2018/06/what-is-computer-programming Accessed August 28, 2020
-[^3]: Programming Paradigms according to VanRoy by [MovGP0](https://commons.wikimedia.org/wiki/User:MovGP0) used under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) from https://en.wikipedia.org/wiki/Programming_paradigm#/media/File:Programming_paradigms.svg
-
-## Optional Readings
-
-Van Roy, Peter. (2012). [Programming Paradigms for Dummies](https://www.researchgate.net/publication/241111987_Programming_Paradigms_for_Dummies_What_Every_Programmer_Should_Know): What Every Programmer Should Know.
-
-
