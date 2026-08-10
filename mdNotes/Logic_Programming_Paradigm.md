@@ -881,7 +881,9 @@ In the example above, `a/1`, `b/2`, `f/1`, `g/1`, `i/1`, `k/0` are considered as
 On the other hand, if a term appears as a predicate argument or a term argument, then it is treated as a term representing data.
 In the example above, `X`, `c(d(Y))`, `d(Y)`, `Y`, `e`, `h`,`j`, are considered terms representing data.
 
-Compound terms can be used to represent compound data, for example, you can represent identity, using the generic term `id(Name, Age)`.
+#### Compound data
+
+Compound terms can be used to represent compound data, for example, you can represent a compound data structure that represents identity, using the generic term `id(Name, Age)`.
 
 ```prolog
 :- use_module(library(clpfd)).
@@ -893,6 +895,37 @@ adult(Name) :-
     person(id(Name, Age)),
     Age #>= 18.
 ```
+
+#### Lists
+
+Prolog uses a special representation for lists.
+An **empty list** is represented by the special atom `[]`.
+A special functor can be used to denote recursively from here.
+For example, we can define use `list/2` to denote any list.
+Any term defined as `list(Head, Tail)` is a *list*, if `Tail` is a *list*.
+
+With this you can represent a list with *one element* as `list(elem1, [])`.
+You can define a list with *two elements* as `list(elem1, list(elem2, []))`.
+
+As the number of elements grow, this representation can be cumbersome, so Prolog uses a special syntax to lists with any number of elements using comma separated terms.
+For example, a *list with four elements* can be written as `[elem1, elem2, elem3, elem4]`.
+Prolog still allows us to use the *head-tail* pattern for defining lists as `[Head|Tail]`.
+Such a list is valid if `Tail` is also a *valid list*.
+For example, the four element list can be represented as `[elem1 | [elem2, elem3, elem4]]`.
+
+```prolog
+?- =([elem1, elem2, elem3, elem4], [elem1 | [elem2, elem3, elem4]]).
+true.
+```
+
+You can also combine, comma separated lists with the head-tail pattern as such:
+
+```prolog
+?- =([elem1, elem2, elem3, elem4], [elem1, elem2 | [elem3, elem4]]).
+true.
+```
+
+
 
 ### Advantages and Disadvantages of Logic Programming
 
