@@ -4,7 +4,7 @@
 
 You are to implement the following system. This system represents the borrowing and returning functions of a library. Here's the class diagram. **Edit the file that came with this document.** The edited file is what you are going to submit.
 
-![UML](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/706f15bf8a0c7ed2267233efbdb3d89e918175ad/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/BooksBorrowing.svg)
+![UML](../uml/umlOutputs/BooksBorrowing.svg)
 
 Here are the classes currently available in the existing code base:
 

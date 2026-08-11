@@ -10,7 +10,7 @@ while (i.hasNext())
 	println(i.next())
 ```
 
-![iterator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Iterator.svg)
+![iterator](../uml/umlOutputs/Iterator.svg)
 
 The `hasNext()` method, returns a boolean value that indicates whether or not there are more elements to be traversed. The `next()` method, returns the next element in the traversal. 
 

@@ -1,10 +1,11 @@
 # Lab Exercise 7 (Designing an OOP System)
 Links to relevant notes and videos
-- [OOPython Notes](https://hackmd.io/@RubAbella/BJQc35DNP)
-- [OOPython Video](https://www.youtube.com/watch?v=Djjc2k1_6WE)
-- [UML](https://hackmd.io/@RubAbella/BJBHus-YS)
-- [Exceptions](https://hackmd.io/@RubAbella/rk9RvE5Ew)
-- [Python Introduction Notes](https://hackmd.io/@RubAbella/Syz0e_k8B)
+
+- [Python Introduction](kotlin-introduction)
+- [OOP Kotlin Notes](/oop-kotlin)
+- [OOP Kotlin Video](https://www.youtube.com/watch?v=CiUicGm5f7s&list=PLWQOTeFPeCeuh9Eylf2qUsgqZ1bhZfxav&index=12)
+- [UML](/uml-for-class-diagrams)
+- [Exceptions](exceptions)
 
 ## Task
 

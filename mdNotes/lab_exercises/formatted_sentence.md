@@ -44,7 +44,7 @@ The formatting of a sentence is decided during runtime. These formats should als
 
 To accomplish these features, you need to implement the decorator pattern. Each formatting will be a decorator for `Sentence` objects. These formats need to inherit from some abstract `FormattedSentence` class. This abstract class is specified to compose and inherit from sentence. The behavior that needs to be decorated is the `toString()` .
 
-![decorator example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/FormattedSentence.svg)
+![decorator example](../uml/umlOutputs/FormattedSentence.svg)
 
 **Complete the system using the decorator pattern**
 

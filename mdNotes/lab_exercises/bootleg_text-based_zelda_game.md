@@ -4,7 +4,7 @@ You're creating the dungeon encounter mechanics of some bootleg text-based zelda
 
 **Right now the game works like this:**
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZeldaNoAbstractFactory.svg)
+![abstract factory example](../uml/umlOutputs/TextBasedZeldaNoAbstractFactory.svg)
 
 When you enter a dungeon an `Encounter` instance is constructed. The encounter instance contains, a 0-8 random enemies. Using the newly created `Encounter` instance, `announceEnemies()` is invoked. This displays all the enemies in the encounter.
 
@@ -63,7 +63,7 @@ These monsters are silver colored extra stronger versions of the monsters
 
 To seamlessly incorporate these harder monsters in your system, you need to create an abstract factory for each dungeon difficulty.  There are now three variants for each monster. For every variant, there is a factory that spawns new instances of each monster. **Complete the system using the abstract factory pattern.**
 
-![abstract factory example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/TextBasedZelda.svg)
+![abstract factory example](../uml/umlOutputs/TextBasedZelda.svg)
 
 ## Assessment Criteria
 

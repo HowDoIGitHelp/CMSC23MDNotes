@@ -24,7 +24,7 @@ What you need to add:
 
 What is missing in this system are the actual commands and command realizations.
 
-![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/ZoomingThroughAMaze.svg)
+![command example](../uml/umlOutputs/ZoomingThroughAMaze.svg)
 
 ## Assessment Criteria
 
