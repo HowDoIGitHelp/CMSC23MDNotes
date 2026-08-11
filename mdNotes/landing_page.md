@@ -1,10 +1,26 @@
-# Course Guide
+---
+title: Welcome to My Landing Page
+site:
+  hide_title_block: true
+  hide_toc: true
+  hide_outline: true
+---
 
-**CMSC 23 - Programming Paradigms** *1st Semester AY 2025 - 2026*
++++ {"kind": "split-image"}
 
-## Course Description
+CMSC 23
 
-Major programming paradigms: imperative, functional, logic, and object-oriented programming. The first half of of the course is a tour of these paradigms. The second half of the course focuses on object-oriented programming paradigm.
+## Programming Paradigms
+
+**2 lecture units, 3 laboratory units**
+
+Major programming paradigms: imperative, functional, logic, and object-oriented programming. The first half of the course is a tour of these paradigms. The second half of the course focuses on object-oriented programming paradigm.
+
+![](/resources/Ada_Lovelace.jpg)
+
+{button}`Go to Lecture Notes </programming-paradigms-introduction>`
+
++++ {"kind": "justified"}
 
 ## Course Learning Outcomes
 
@@ -20,52 +36,8 @@ After completing this course, you should be able to:
 
 ## Course Outline
 
-> 1. Introduction to programming paradigms
->    1. Paradigms and the definition of programming
->    2. Taxonomy of programming languages
->    3. Multi-paradigm languages
-> 2. Imperative programming
->    1. Communicating imperatively
->    2. State
->    3. Assignment statements
->    4. Structured program theorem
-> 3. Functional programming
->    1. Lambda Calculus
->    2. Higher-Order functions
->    3. Consequences of Statelesness
-> 4. Logic programming
->    1. Prolog facts, queries, and rules
->    2. Unification
->    3. Proof Search
->    4. Advantages and disadvantages
-> 5. Object-oriented programming
->    1. OOP as a solution to the perils of state
->    2. Classes and Objects
->    3. The surface and the volume
->    4. Fundamental concepts of OOP
-> 6. SOLID Design principles
->    1. Single-Responsibility Principle
->    2. Open/Closed Principle
->    3. Liskov Substitution Principle
->    4. Interface Segregation Principle
->    5. Dependency Inversion Principle
-> 7. Design Patterns Introduction
->    1. History of design patterns
->    2. Why patterns and why not patterns
->    3. Classification of design patterns
-> 8. Structural Patterns
->    1. Decorator Pattern
->    2. Adapter pattern
-> 9. Creational Patterns
->    1. Factory method pattern
->    2. Abstract factory pattern
-> 10. Behavioral Patterns
->     1. State pattern
->     2. Strategy pattern
->     3. Command pattern
->     4. Iterator pattern
->     5. Observer pattern
->     6. Template method patterns
+:::{toc}
+:::
 
 ## Mode of Delivery
 
@@ -81,7 +53,7 @@ Look for the course [Programming Paradigms](https://uvec.upcebu.edu.ph/course/vi
 
 ### Asking Questions and Scheduling Remote Consultations
 
-I'll try to make myself available for questions most of the time but you'll have a better chance of reaching me during our schedules for lec and lab. You can schedule consultation as a group. Use that time to ask questions about the lecture or ask for help in answering lab exercises.
+I'll try to make myself available for questions most of the time, but you'll have a better chance of reaching me during our schedules for lec and lab. You can schedule consultation as a group. Use that time to ask questions about the lecture or ask for help in answering lab exercises.
 
 You can contact me through sms, email, slack dms, or through discord. You can find ways to reach me at the last section of this guide.
 
@@ -90,7 +62,7 @@ You can contact me through sms, email, slack dms, or through discord. You can fi
 All the resources in this course can be found in the course pack. The course pack includes:
 
 - **Lecture Notes** - You'll find these in the PDF file called *textbook.pdf*. 
-- **Lecture Videos** - Lecture videos are available although they may not be complete or updated.
+- **Lecture Videos** - Lecture videos are available, although they may not be complete or updated.
 - **Lab Exercise guides** - Not really lab exercises since you'll be doing it at home, You can find them on the textbook as well.
 - **Some sample code** - Some code used during live coding demos
 - **Presentations** - Presentations used in class
@@ -122,7 +94,7 @@ Please let me know if you encounter any issues in submitting the lab exercises.
 
 ### Grade breakdown
 
-|     | Percentage  |
+| Grade Component | Percentage  |
 |-----| ----------- |
 | Lab Exercises and Seatworks | 40% |
 | Long Exams | 60% |
@@ -130,3 +102,7 @@ Please let me know if you encounter any issues in submitting the lab exercises.
 ### How to reach me
 
 - email/google chat: rrabella@up.edu.ph
+
+#### Photo attribution
+
+Watercolour portrait of Ada King, Countess of Lovelace, c. 1940, By Alfred Edward Chalon - Science Museum Group, Public Domain, https://commons.wikimedia.org/w/index.php?curid=28131684
