@@ -1,10 +1,10 @@
-# Haskell Cheat Sheet
+# Haskell Introduction
 
 ## Setting up Haskell
 
 To start writing Haskell code, install Haskell through stack. Stack is found in the folder called "Haskell/Stack" inside the provided course pack. Copy the Stack folder and place it in your computer. To be able to use stack anywhere, add your copy of the stack folder in the PATH variable of your computer.
 
-Once stack has been set-up using the steps above, you can run the GHC repl using the command 
+Once stack has been set up using the steps above, you can run the GHC repl using the command 
 
 ```
 > stack ghci
@@ -12,7 +12,7 @@ Once stack has been set-up using the steps above, you can run the GHC repl using
 
 The first time you run this code, stack will automatically install the GHC compiler. 
 
-After downloading GHC, you will be taken to the Prelude part of the your GHC repl. To test if everything is working properly, try the following Haskell expression:
+After downloading GHC, you will be taken to the Prelude part of your GHC repl. To test if everything is working properly, try the following Haskell expression:
 
 ```haskell
 Prelude> show (1 + 3)
@@ -62,13 +62,13 @@ Double of an integer, $\text{double} : \mathbb{Z} \to \mathbb{Z}$
 double :: Int -> Int
 ```
 
-Sum of the length of two strings (strings in Haskell are arrays of `Char`, an array of specific types are written enclosed in square brackets, `[Type]` represents an array of `Type`s)
+Sum of the length of two strings (strings in Haskell are arrays of `Char`, an array of specific types are written enclosed in square brackets, `[Type]` represents an array of `Type`)
 
 ```haskell
 len :: [Char] -> [Char] -> Int
 ```
 
-Check if some integer is even (boolean values are written capitalized, `True` and `False`, )
+Check if some integer is even (boolean values are written capitalized, `True` and `False`)
 
 ```haskell
 isEven :: Int -> Bool
@@ -114,7 +114,7 @@ One of haskell's condition expressions are if-then-else expression. Because a ha
 if <bool-exp> then <exp1> else <exp2>
 ```
 
-The expression inside the if clause must be an expression that evaluates into a boolean value. If the expression `<bool-exp>` evaluates to `True`, then the whole if-then-else expression evaluates to whatever `<exp1>` evaluates to. If `<bool-exp>` evaluates to `False`, then the whole if-then-else expression evaluates to whatever `<exp2>` evaluates to. The then clause and else clause cannot be empty and they must evaluate to the same type
+The expression inside the if-clause must be an expression that evaluates into a boolean value. If the expression `<bool-exp>` evaluates to `True`, then the whole if-then-else expression evaluates to whatever `<exp1>` evaluates to. If `<bool-exp>` evaluates to `False`, then the whole if-then-else expression evaluates to whatever `<exp2>` evaluates to. The then clause and else clause cannot be empty, and both clauses must evaluate to the same type
 
 > Haskell boolean literals start with uppercase letters, `True` and `False`.
 

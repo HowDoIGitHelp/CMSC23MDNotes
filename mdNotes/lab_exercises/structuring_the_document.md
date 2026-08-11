@@ -1,6 +1,4 @@
-# Lab Exercise 1 (Structuring the Document) (Optional)
-
-> This is meant as review of imperative programming languages like C. This Lab Exercise is optional.
+# Lab Exercise 1 (Structuring the Document)
 
 ## Task
 

@@ -21,13 +21,13 @@ Some systems require complex and extremely decoupled relationships. Behavioral p
 
 Some systems require behavior that have to be parametrized for other behavior. This is easily done in a functional programming environment since higher order functions are used to represent these. In programming languages that don't support these features, the strategy pattern is used.
 
-![strategy](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Strategy.png)
+![strategy](../copyright_free_drawings/strategy.png)
 
 ### Solution
 
 Functions that are not first class citizens are encapsulated inside a `Strategy` class. A strategy class simply contains the method `execute(params)`, which represents the behavior that should be passed into a higher order function. Any method that can be passed into the higher order function should realize `Strategy`.
 
-![Strategy pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Strategy.svg)
+![Strategy pattern](../uml/umlOutputs/Strategy.svg)
 
 The object `params` represent the data that you need to pass into the correct class. In this pattern you pass the the whole `Strategy` realization so that `strategy.execute(params)` perform the desired behavior. You can add other methods in the `Strategy` abstraction, if it makes sense for the system. 
 
@@ -46,7 +46,7 @@ Kotlin does indeed support higher order functions but your boss is anti-function
 
 To do this, you need to create an abstraction called `Operation` to represent the different operations. For each operation, you create a class that realizes `Operation`. 
 
-![strategy pattern example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/FractionCalculator.svg)
+![strategy pattern example](../uml/umlOutputs/FractionCalculator.svg)
 
 ### Why this is elegant
 
@@ -67,17 +67,17 @@ To do this, you need to create an abstraction called `Operation` to represent th
 
 Some objects can change into many different states. If different objects behavior is dependent on its current state, it would require, bulky and annoying if-else blocks to handle its dynamic behavior.
 
-![State](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/State.png)
+![State](../copyright_free_drawings/state.png)
 
 ### Solution
 
 An object that can have many states should contain an attribute representing its state. Instead of performing, state dependent behavior directly inside the object, you delegate this responsibility to its embedded state instead. In this way the object will behave according to its current state.
 
-![state pattern](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/State.svg)
+![state pattern](../uml/umlOutputs/State.svg)
 
 The state may be required to contain backreference to the context object that owns it. This is only required if state methods requires to access/control the context that owns it.
 
-![state diagram](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/statediagram.png)
+![state diagram](../uml/statediagram.png)
 
 ### Example
 
@@ -87,7 +87,7 @@ The state of any given matter is dependent on the pressure and temperature of it
 
 The state diagram would look something like this:
 
-![state diagram example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/statediagramexample.png)
+![state diagram example](../uml/statediagramexample.png)
 
 To implement something like this, you would need to create matter which owns an attribute called `state` which represents the matter's current state. Since there are three states, you create three realizations to a common abstraction to state. 
 
@@ -95,7 +95,7 @@ When you compress/release/cool/heat the matter, you delegate the appropriate beh
 
 > Delegating behavior to the composed state means that, when the `Matter` instances invoke, `compress()`, `release()` `heat()`, and `cool()`, the composed `State` owned by the matter calls its own version of `compress()`, `relaease()` `heat()`, and `cool()`.
 
-![state example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/StatesOfMatter.svg)
+![state example](../uml/umlOutputs/StatesOfMatter.svg)
 
 > Matter owns an instance of `State`, and that instance has an attribute called `matter`. The attribute `matter`  is the reference to the instance of `Matter` that owns it. The `State` instance needs this reference so that it can change the matter's state when it is compressed, released, heated, or cooled.
 
@@ -119,7 +119,7 @@ When you compress/release/cool/heat the matter, you delegate the appropriate beh
 
 Sometimes, object behavior contain complicated constraints. Sometimes, the system require the behavior to be invoked by an object but performed by another (this is common in presentation layer/domain layer separation in MVC enterprise systems). Sometimes, the system requires behavior to be undone. Sometimes the system requires a history of the behaviors that were being performed.
 
-![Command (What does this strange picture mean?)](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Command.png)
+![Command (What does this strange picture mean?)](../copyright_free_drawings/command.png)
 
 ### Solution
 
@@ -133,7 +133,7 @@ This separation of responsibility allows for the creation of extra features that
 
 - If you want the `Commands` to be undoable, you can store a backup of the receiver (and other affected objects) by the `Command` inside each instance of `Command` . Undoing a command will be as simple as restoring the receiver to its backup.
 
-![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Command.svg)
+![command example](../uml/umlOutputs/Command.svg)
 
 > Instead of passing the receiver in the `Invoker` methods, you can create an attribute called receiver inside `Invoker`. But doing this will make it so there is one `Receiver` instance for every `Invoker` instance.
 >
@@ -163,7 +163,7 @@ What's missing right now is controller support. This is how a player controls th
 
 To implement controller support you need to create a `Command` abstraction which is realized by all controller commands. The `Controller` (which represents the controller) is the invoker for the commands. Since commands are undoable, this controller needs to keep a command history, represented as a list. Every time a controller button is pressed, it creates the appropriate `Command`, executes it and appends it to the command history. Every time the `a_button()` is pressed to undo, the controller pops the last command from the command history and undoes it.
 
-![command example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/ZoomingThroughAMaze.svg)
+![command example](../uml/umlOutputs/ZoomingThroughAMaze.svg)
 
 ### Why this is elegant
 
@@ -190,7 +190,7 @@ To implement controller support you need to create a `Command` abstraction which
 
 What if you need to inform a lot of objects about the changes to some interesting data? If you globalize the data and let your client objects poll for changes all the time, this will affect the security and safety of your interesting data. Plus, global data is something that should be avoided as much as possible. Also, forcing your objects to poll for changes all the time will be inefficient if your interesting data has not changed.
 
-![observer](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Observer.png)
+![observer](../copyright_free_drawings/observer.png)
 
 ### Solution
 
@@ -200,7 +200,7 @@ To do this you need to encapsulate the interesting data (from now on lets call i
 
 Any instance of an `Observer` should be subscribed to the change notifications using `Publisher`'s `subscribe()` function. They can also be unsubscribed using the`unsubscribe()` function.
 
-![observer](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Observer.svg)
+![observer](../uml/umlOutputs/Observer.svg)
 
 > Whenever an observer has updated, the publisher needs to pass all the necessary details in the notification. This is generally done by passing the updated subject in the `update(updatedSubject)` method.
 >
@@ -223,7 +223,7 @@ You need to implement th following observer realizations:
 - `EmailSubscriber` - every time the `currentWeather` or `currentHeadline` changes you send an email to the specified `email`. (you don't have to actually send an email. You can just simulate sending an email by printing something like "sending <weather> and <headline> to <email>").
 - `FileLogger` - every time the `currentWeather` or `currentHeadline` changes, you append the updated weather and headline to the file specified in the attribute `filename`. You actually have to update a file via kotlin/python file writing. 
 
-![observer example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/WeatherNotifier.svg)
+![observer example](../uml/umlOutputs/WeatherNotifier.svg)
 
 ### Why this is elegant
 
@@ -244,13 +244,13 @@ You need to implement th following observer realizations:
 
 Say you have two or more *almost* identical behaviors from different classes. Rewriting these object behaviors as separate methods for each class duplicates many parts of the code (especially if the behavior has a lot of lines of code). 
 
-![template](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Template.png)
+![template](../copyright_free_drawings/template.png)
 
 ### Solution
 
 To avoid code duplication, you break down your code into individual steps. By doing this you can create a superclass that contains the implementation for all common steps. This superclass will also contain the common implementation for the **template method**, the method that combines all steps into the original object behavior.  Differences between steps will be resolved under different specializations of this  superclass.
 
-![template method](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Template.svg)
+![template method](../uml/umlOutputs/Template.svg)
 
 The method `templateMethod()` calls each of the steps defined in `step1()`, `step2()`, `step3()` and `step4()`. The exact type of the instance (either `Specialization1` or `Specialization2`) decides which versions of the steps are executed. For example, if the exact instance of the class is a `Specialization1`, it performs the template method with special versions of `step1()` and `step4()` (since `Specialization1` overrides them) but the other parts are inherited from the `Template`. 
 
@@ -333,7 +333,7 @@ while(isStillSearching()):
 
 Because of this we can write a general brute force template method that would return the solution to brute force problems. To do this you create a superclass `SearchAlgorithm()` that contains the template method for brute force algorithms. If you want to customize this algorithm for special problems, all you have to do is to inherit from `SearchAlgorithm` and override only the necessary steps.
 
-![template example](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/templateexample.svg)
+![template example](../uml/templateexample.svg)
 
 > is `isValid()` and  `updateSolution(candidate)` is different for each algorithm so it doesn't have a default implementation. It would be best to make these steps abstract.
 
@@ -357,7 +357,7 @@ Because of this we can write a general brute force template method that would re
 
 One of the most common iteration recipes that you'll likely implement is the **for-each** loop. This loop traverses a collection, and performing some kind of operation along the way. Most programming languages implement  for each loops on built in collections like arrays, sets, and trees. But what about non-built in collections?
 
-![iterator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/copyright%20free%20drawings/Iterator.png)
+![iterator](../copyright_free_drawings/iterator.png)
 
 ### Solution
 
@@ -369,7 +369,7 @@ while i.hasNext():
 	print(i.next())
 ```
 
-![iterator](https://raw.githubusercontent.com/HowDoIGitHelp/CMSC23MDNotes/master/Markdown%20Lecture%20Notes%20and%20Lab%20Exercises/uml/umlOutputs/Iterator.svg)
+![iterator](../uml/umlOutputs/Iterator.svg)
 
 The `hasNext()` method, returns a boolean value that indicates whether or not there are more elements to be traversed. The `next()` method, returns the next element in the traversal. 
 

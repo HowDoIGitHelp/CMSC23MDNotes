@@ -1,4 +1,4 @@
-# Introduction
+# OOP kotlin
 
 While kotlin is a modern multiparadaigm language. Its supports rich OOP support. In fact kotlin is very strongly OOP flavored. Every type in kotlin is a class and every value is an object.
 

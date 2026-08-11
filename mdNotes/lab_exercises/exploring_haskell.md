@@ -1,4 +1,4 @@
-# Lab Exercise 2
+# Lab Exercise 2 (Exploring Haskell)
 
 ## Task
 
@@ -19,9 +19,7 @@ main = return ()
 #### **Recursive Functions**
 
 - `modulus :: Int -> Int -> Int` - Consumes two integers $x$ and $m$ and produces $x \mod m$ 
-
 - `factorial :: Int -> Int` - Consumes an integer and produces the factorial of the integer
-
 - `summation :: Int -> Int` - Consumes a natural number and produces the summation of numbers from 1 to n. $\sum_{i=1}^{n}{i}$. 
 
   ```haskell

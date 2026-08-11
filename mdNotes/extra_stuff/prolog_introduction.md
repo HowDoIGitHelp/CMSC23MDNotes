@@ -1,4 +1,4 @@
-# Prolog Cheat Sheet
+# Prolog Introduction
 
 ## Setting up prolog
 
