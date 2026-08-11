@@ -12,8 +12,6 @@ Computer Scientists usually describe families of programming languages under the
 3. Explain how proof search is used to respond to queries
 4. Create recursive Prolog rules
 
----
-
 For this section we will use the programming language Prolog as the representative of logic paradigm.
 Other logic programming families are answer set programming, ABYSS and Datalog.
 
@@ -44,7 +42,7 @@ In Prolog `firetype(X)` represents a predicate you've learned in discrete math, 
 And just like predicates, this means `X` is firetype.
 Therefore, the fact `firetype(charmander)` represents the proposition, "*charmander is firetype*"
 
-So, to summarize, the fact `firetype(charmander)` is basically a representation of the proposition, $firetype("charmander")$ where `firetype/1`[^predicate] is a predicate and `charmander` is a value assigned to the predicate.
+So, to summarize, the fact `firetype(charmander)` is basically a representation of the proposition, $firetype(charmander)$ where `firetype/1`[^predicate] is a predicate and `charmander` is a value assigned to the predicate.
 Every fact in your knowledge base represents propositions that can be assumed to be true.
 Facts that are not in your knowledge base represents propositions that you cannot assume to be true.
 
@@ -305,25 +303,16 @@ By writing this rule, Prolog can infer the following facts:
 
 ```prolog
 ?- isresistantto(squirtle,charmander).
-```
-
-```prolog
 true.
 ```
 
 ```prolog
 ?- isresistantto(squirtle,charizard).
-```
-
-```prolog
 true.
 ```
 
 ```prolog
 ?- isresistantto(squirtle,squirtle).
-```
-
-```prolog
 true.
 ```
 
@@ -346,4 +335,9 @@ You can do this by using two different variables for each argument in the predic
 
 ```prolog
 ?- isresistantto(X,Y).
+X = squirtle,
+Y = charmander ;
+X = squirtle,
+Y = charizard ;
+X = Y, Y = squirtle.
 ```
