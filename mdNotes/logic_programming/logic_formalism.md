@@ -49,12 +49,12 @@ Each disjunction is also known as a clause (e.g. $(u \lor \neg w \lor w)$).
 We call unnegated values like $u$ as a positive literal while negated values like $\neg w$ as a negative literal.
 
 Any boolean formula can be expanded into CNF using **logical equivalences**.
-The equivalent CNF of a boolean formula is easier to solve since we just need to find satisfiable assignments for each clause consistently (which is still not difficult).
+The equivalent CNF of a boolean formula is easier to solve since we just need to find satisfiable assignments for each clause consistently (which is still not easy).
 
 ### Horn Clauses
 
 **Horn clauses** are special clauses where there is at most one positive literal in the disjunction.
-A boolean formula in CNF where area clauses are Horn clauses is called a **Horn formula**.
+A boolean formula in CNF where all clauses are Horn clauses is called a **Horn formula**.
 The satisfiability of a Horn formula is much easier to solve.
 
 $$
