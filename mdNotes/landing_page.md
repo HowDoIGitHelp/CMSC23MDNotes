@@ -1,5 +1,5 @@
 ---
-title: Welcome to My Landing Page
+title: CMSC 23 Programming Paradigms
 site:
   hide_title_block: true
   hide_toc: true
