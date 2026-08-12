@@ -131,7 +131,7 @@ An assignment statements effect to your computer is characterized by the progres
 
 ## Structured Program Theorem
 
-Creating meaningful programs in imperative programming is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem**.
+Creating meaningful programs in imperative programming is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem** [@bohm_flow_1966].
 This theorem was one of the theoretical frameworks proposed to characterize imperative programming.
 
 The theorem describes a formalism of a class called control flow graphs which are capable of representing any computable function.
@@ -150,6 +150,8 @@ The constructs described by this formalism became the natural architecture for p
 This is the reason why CS students like you are introduced to programming using control flow graphs or flow charts.
 This is also the reason why programming languages like Pascal, C, Java and their derivatives are designed the way they are.
 
+![Flowcharts](../mermaid_diagrams/flowchart.svg)
+
 ## Subparadigms under the Imperative family
 
 ### Procedural programming
@@ -161,8 +163,4 @@ Languages under this paradigm simplify a complex system by subdividing a program
 
 Object-oriented programming focuses on modelling a system based on the real world ontology of **objects**.
 It uses an expressive type system to program the interactions within a system.
-Most modern programming languages, like C++, Python, Java, etc, have some object-oriented programming features.
-
-## Optional Readings
-
-Rapaport W. (2004) [Great Idea III: The Boehm-Jacopini Theorem and Structured Programming](https://cse.buffalo.edu/~rapaport/111F04/greatidea3.html). [CSE 111, Fall 2004](http://www.cse.buffalo.edu/~rapaport/111F04.html) Accessed August 31, 2020
+Most modern programming languages, like C++, Python, Java, etc., have some object-oriented programming features.

@@ -1,9 +1,3 @@
----
-header-includes:
- - \usepackage{fvextra}
- - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
----
-
 # Programming Paradigms Introduction
 
 ## Learning Outcomes
@@ -89,21 +83,25 @@ I will not begrudge you if this is the only definition you know since there is a
 
 For someone who has been exposed to C, C++ and nothing else, you might feel that the natural way to code is the *imperative way* when in fact there are alternatives.
 
-The diagram[@movgp0_overview_2013] here represents the alternative schools of thoughts describing how to program.
+The diagram [@movgp0_overview_2013] here represents the alternative schools of thoughts describing how to program.
 This diagram taxonomizes programming languages by identifying which paradigms they are under.
 Most of these paradigms are either not pragmatic, not popular enough or not unique enough to be studied in this course.
 Instead, we will be focusing on four major programming paradigms:
 
-```mermaid
-graph TD;
-	Imperative-->Procedural;
-	Imperative-->ObjectOriented;
-	Declarative-->Functional;
-	Declarative-->Logic;
-```
+![Flowcharts](mermaid_diagrams/programming_paradigms.svg)
 
-Under the imperative family, procedural programming and objective oriented programming.
-Under the declarative family, functional programming and logic programming.
+Under the **imperative paradigm** family, we have procedural programming and objective oriented programming.
+Languages under the imperative paradigm create programs that go through different *states*.
+The *initial state* of an imperative program is the problem statement.
+From here the program follows ordered steps, with respect to the current state.
+Each step in the program can also constitute a *state change*.
+The solution is found at the *final state* of the program.
+
+Under the **declarative family**, we have functional programming and logic programming.
+Declarative programs are not broken into ordered steps.
+Instead, declarative programs solve a problem by *defining a problem set* according to the language.
+For example, problem can be defined as a *composition of functions*, or a *logical relation*.
+The program then searches for valid solutions with respect to the definitions declared in the program.
 
 This course will give you an overview on these programming paradigms.
 Each of these are built upon the foundation of some mathematical formalism.
@@ -119,12 +117,16 @@ The programming language C for example is a strong follower of procedural progra
 Therefore, you can think of C as classified under procedural programming.
 
 But as time passed by classifying a newer programming language under one paradigm became harder and harder.
-A programming language like python for example is mostly procedural, object-oriented, but sometimes functional.
+A programming language like python for example is mostly procedural, object-oriented, but has functional programming features.
 
 Modern programming languages evolved to become **multi-paradigm**.
-This inevitably happened because, as programming languages age and grow, more **features** are added to it.
+This inevitably happened because, as programming languages evolve, more **features** are added to it.
 These features are sometimes *borrowed from other paradigms* to solve a problem in a better way.
 This is the reason why established and mainstream programming languages like Java, C++, or Python tend to be multi-paradigm.
 
 The multi-paradigmness of programming languages tend to be the reason why some programming language designers have abandoned the notion of building based on a strict paradigm.
 Instead, a language designer would *choose specific features* that they want to be supported on their programming language and implement it, regardless of its paradigm origins.
+
+Instead of thinking of paradigms as classifications, you should think of paradigms as *different ways to solve problems*.
+You can solve one problem by applying the concepts and philosophies of imperative paradigm, and solve another problem by applying the concepts and philosophies of functional paradigm.
+You can even come up with a solution that combines the concepts and philosophies of different paradigms.

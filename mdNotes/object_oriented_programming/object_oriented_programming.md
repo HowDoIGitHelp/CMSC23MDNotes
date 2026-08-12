@@ -160,7 +160,7 @@ It interacts with the Book itself as a whole.
 
 ![Class diagram of a book class](../uml/public_interface.svg)
 
-![abstraction borrowable item](../copyright_free_drawings/abstractionBorrowableItems.PNG)
+![abstraction borrowable item](../copyright_free_drawings/abstractionborrowableitems.png)
 
 #### Abstraction of Objects
 
@@ -211,7 +211,7 @@ The volume of the object shouldn't dictate how the objects relate to each other,
 Objects should only see each other's surface.
 This means that the interaction between objects should be defined by their interface not their implementation.
 
-![Abstraction borrowable item](../copyright_free_drawings/abstractionPluggableDevice.PNG)
+![Abstraction borrowable item](../copyright_free_drawings/abstractionpluggabledevice.png)
 
 Your job as an OOP programmer is to make sure that the complexity of the surface grows slower than the complexity of the core.
 This means that as your system evolves, changes that happen in the core, the implementation hidden inside each object, (as much as possible) shouldn't affect the surface, the interfaces of each object.
