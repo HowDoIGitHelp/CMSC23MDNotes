@@ -23,19 +23,19 @@ Some people often omit parentheses or single-parametrizations to write shorter e
 1. Application is left associative
    
    $$
-   \mathcal{M_1}\mathcal{M_2}\mathcal{M_3} \equiv ((\mathcal{M_1}\mathcal{M_2})\mathcal{M_3})
+   \mathcal{M_1}\mathcal{M_2}\mathcal{M_3} = ((\mathcal{M_1}\mathcal{M_2})\mathcal{M_3})
    $$
 
 2. Consecutive abstractions can be uncurried
    
    $$
-   \lambda xyz.\mathcal{M}\equiv\lambda x.\lambda y.\lambda z.\mathcal{M}
+   \lambda xyz.\mathcal{M}=\lambda x.\lambda y.\lambda z.\mathcal{M}
    $$
 
 3. The body of an abstraction extends to the right
 
    $$
-   \lambda x.\mathcal{M}\mathcal{N}\equiv\lambda x.(\mathcal{M}\mathcal{N})
+   \lambda x.\mathcal{M}\mathcal{N}=\lambda x.(\mathcal{M}\mathcal{N})
    $$
 
 ## Reductions
@@ -64,14 +64,14 @@ This process is similar to applying a function in the context of programming.
 For example, we use the identity function ($\lambda x.x$) and apply it to some free variable $y$.
 
 $$
-(\lambda x.x)y\to_\beta y
+(\lambda x.x)y=_\beta y
 $$
 
 When you beta-reduce some application $\mathcal{M}\mathcal{N}$, what you're doing is replacing all instances of the bound variable in $\mathcal{M}$ with $\mathcal{N}$.
 Here's another example, 
 
 $$
-(\lambda u. \lambda v.uvu)\lambda x.x \to_{\beta} \lambda v.(\lambda x.x)v(\lambda x.x)
+(\lambda u. \lambda v.uvu)\lambda x.x =_{\beta} \lambda v.(\lambda x.x)v(\lambda x.x)
 $$
 
 
@@ -81,7 +81,7 @@ $\eta$ reductions describe equivalencies that arise because of free variables.
 If $x$ is a variable and does not appear free in $\mathcal{M}$ then:
 
 $$
-\lambda x.(\mathcal{M}x) \to_\eta \mathcal{M}
+\lambda x.(\mathcal{M}x) =_\eta \mathcal{M}
 $$
 
 The lambda expression here is just some redundant abstraction.
@@ -104,8 +104,8 @@ When you start evaluating this expression, you might be tempted to automatically
 
 $$
 \begin{aligned}
-(\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))&\to_{\beta}\lambda y.((\lambda x.\lambda y.(xy))y)\\
-&\to_{\beta}\lambda y.\lambda y.(yy)
+(\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))&=_{\beta}\lambda y.((\lambda x.\lambda y.(xy))y)\\
+&=_{\beta}\lambda y.\lambda y.(yy)
 \end{aligned}
 $$
 
@@ -118,7 +118,7 @@ This can be done by replacing the right abstractions' bound variables with $u$ a
 Again, this alpha reduction doesn't change the meaning of the abstraction, it merely renames the bound variables.
 
 $$
-(\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))\equiv_\alpha(\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv))
+(\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))=_\alpha(\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv))
 $$
 
 The correct reduction now is as follows.
@@ -126,8 +126,8 @@ Still a $\beta$ reduction but without the ambiguity of similar variable names.
 
 $$
 \begin{aligned}
-(\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv))&\to_\beta \lambda y.((\lambda u.\lambda v.(uv))y)\\
-&\to_\beta \lambda y.\lambda v.(yv)
+(\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv))&=_\beta \lambda y.((\lambda u.\lambda v.(uv))y)\\
+&=_\beta \lambda y.\lambda v.(yv)
 \end{aligned}
 $$
 

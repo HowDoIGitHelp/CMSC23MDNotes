@@ -42,6 +42,7 @@ project:
     - title: Extra Stuff
       children:
         - file: mdNotes/extra_stuff/haskell_introduction.md
+        - file: mdNotes/extra_stuff/recursion.md
         - file: mdNotes/extra_stuff/prolog_introduction.md
         - file: mdNotes/extra_stuff/resolution.md
         - file: mdNotes/extra_stuff/kotlin_introduction.md
