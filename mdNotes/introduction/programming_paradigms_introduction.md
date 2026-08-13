@@ -25,7 +25,7 @@ This word comes up often in academia.
 You probably heard of the term **paradigm shift** somewhere, it describes some form of fundamental change in the way we think within scientific disciplines often characterizing a scientific revolution.
 One notable example of a paradigm is the shift from Ptolemaic or Geocentric cosmology to Copernican or Heliocentric cosmology.
 
-![Ptolemaic Geocentric model of the solar system](../resources/Ptolemaic_Model.png)
+![Ptolemaic Geocentric model of the solar system](../../resources/Ptolemaic_Model.png)
 
 Based on this context you can kind of formulate what the word paradigm means.
 This one connotes a similar meaning in the context of programming:
@@ -88,7 +88,7 @@ This diagram taxonomizes programming languages by identifying which paradigms th
 Most of these paradigms are either not pragmatic, not popular enough or not unique enough to be studied in this course.
 Instead, we will be focusing on four major programming paradigms:
 
-![Flowcharts](mermaid_diagrams/programming_paradigms.svg)
+![Programming Paradigms](../mermaid_diagrams/programming_paradigms.png)
 
 Under the **imperative paradigm** family, we have procedural programming and objective oriented programming.
 Languages under the imperative paradigm create programs that go through different *states*.

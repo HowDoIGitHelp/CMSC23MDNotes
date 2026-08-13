@@ -150,7 +150,7 @@ The constructs described by this formalism became the natural architecture for p
 This is the reason why CS students like you are introduced to programming using control flow graphs or flow charts.
 This is also the reason why programming languages like Pascal, C, Java and their derivatives are designed the way they are.
 
-![Flowcharts](../mermaid_diagrams/flowchart.svg)
+![Flowcharts](../mermaid_diagrams/flowchart.png)
 
 ## Subparadigms under the Imperative family
 
