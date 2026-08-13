@@ -3,7 +3,7 @@ fix f = f (fix f)
 
 s :: (Int -> Int) -> Int -> Int
 s r 0 = 0
-s r n = n + (r (n - 1))
+s r n = n + r (n - 1)
 
 
 summation :: Int -> Int

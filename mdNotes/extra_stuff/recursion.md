@@ -1,4 +1,4 @@
-# Recursion
+# Recursion from Fixed Point Combinators
 
 Haskell and other functional programming languages are based on lambda calculus formalism.
 But how is recursion achieved from lambda calculus?
@@ -67,7 +67,7 @@ u\\
 \end{aligned}
 $$
 
-In lambda calculus, *all functions have fixed points*.
+All functions in lambda calculus have `fixed points`.
 This can be proven using a *fixed point combinator*.
 A fixed point combinator is a special function that can produce the fixed point of any lambda calculus function.
 There are many fixed point combinators, the example below, known as the Y-combinator is discovered by Haskell Curry.
@@ -103,4 +103,110 @@ Y S &= S( S (S( \cdots S (Y S) \cdots )))\\
 \end{aligned}
 $$
 
+You can write a fix point combinator in Haskell by using the fix point property $Y F = F (Y F)$.
 
+```haskell
+y :: (a -> a) -> a
+y f = f (y f)
+```
+
+As you can see this definition contains a recursive call.
+We can avoid a recursive call by using the property of all fix points: $u$ is a fixed point if $f(u) = u$[^circular_definition].
+
+```haskell
+y :: (a -> a) -> a
+y f = u
+    where u = f u
+```
+
+In fact this is very similar to how the `fix` function is defined, Haskell's built-in fixed point combinator[^circular_definition].
+
+```haskell
+fix :: (a -> a) -> a
+fix f = let x = f x in x
+```
+
+[^circular_definition]: The where clause `u = f u` from `y` and let clause `x = f x` are circularly dependent definitions that might be a problem for other languages. But since Haskell is lazily evaluated, it will not end up being a syntax error.
+
+When you use the fixed point combinator on any `(a -> a)` function, it also ends up as repetitive application of a function, repeated an infinite amount of times.
+For example, given the successor function `s`.
+
+```haskell
+s :: Int -> Int
+s n = n + 1
+```
+
+When applying the `fix` to `s`, the evaluation looks like this:
+
+```haskell
+fix s
+let x = f x in x
+let x = f x in (f x) --substitute value of x with (f x)
+let x = f x in (f (f x)) --substitute value of x with (f x) again
+let x = f x in (f (f (f x)))
+...
+let x = f x in (f (f (f ... (f x) ...)))
+```
+
+Note that what actually happens under the hood in Haskell is more complicated than this, but in for the purposes of visualization, let's assume that this is correct.
+
+We can use this repetitive nature of `fix` to show how recursion can be achieved without recursive calls.
+
+Using the summation function as an example:
+
+```haskell
+sum :: Int -> Int
+sum 0 = 0
+sum n = n + sum (n + 1)
+```
+
+First, we convert summation into a higher order function that accepts some `r :: (Int -> Int)` as a first argument and some `n :: Int` as a second argument.
+
+```haskell
+sum :: (Int -> Int) -> Int -> Int
+sum r 0 = 0
+sum r n = n + sum (n - 1)
+```
+
+We then replace the recursive call to `sum` with `r`
+
+```haskell
+sum :: (Int -> Int) -> Int -> Int
+sum r 0 = 0
+sum r n = n + r (n - 1)
+```
+
+To complete the repetition, we apply `fix` to `sum`.
+The resulting function will be our completed `summation` function.
+
+```haskell
+summation = fix sum
+```
+
+To see how this is equivalent to the recursive version, we can simulate its evaluation when `summation` is applied to `3`.
+
+```haskell
+summation 3
+(fix sum) 3
+(let x = sum x in x) 3
+(let x = sum x in (sum x)) 3 --evaluate the partial application, (sum x)
+(let x = sum x in (\n -> sum x n)) 3
+(let x = sum x in (sum x 3)) --apply lambda to 3
+(let x = sum x in (3 + x 2)) --evaluate (sum x 3)
+(let x = sum x in (3 + (sum x) 2)) --evaluate x based on x = sum x
+(let x = sum x in (3 + (\n -> sum x n) 2))
+(let x = sum x in (3 + (sum x 2)))
+(let x = sum x in (3 + (2 + x 1)))
+(let x = sum x in (3 + (2 + (sum x) 1)))
+(let x = sum x in (3 + (2 + (sum x 1)))) --partial application and apply to 1
+(let x = sum x in (3 + (2 + (1 + x 0))))
+(let x = sum x in (3 + (2 + (1 + (sum x) 0))))
+(let x = sum x in (3 + (2 + (1 + (sum x 0)))))
+(let x = sum x in (3 + (2 + (1 + 0)))) --evaluate sum x 0 = 0 (base case)
+(3 + (2 + (1 + 0))) --evaluate the let binding
+6
+```
+
+You can achieve the same result in fewer steps using the fix point `y f = f (y f)`.
+
+Actual recursion in haskell is achieved using a cyclical graph, which is not too dissimilar to the circularly dependent fix point `let x = f x in x`.
