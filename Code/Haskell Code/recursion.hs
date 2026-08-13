@@ -1,3 +1,5 @@
+{-# LANGUAGE BangPatterns #-}
+
 line :: Int -> String
 line n = 
     if n < 1 
@@ -92,3 +94,37 @@ candidateFactors x = [2..((ceiling.sqrt.fromIntegral) x)]
 
 isDivisible :: Int -> Int-> Bool
 isDivisible x y = (mod x y) == 0
+
+n_asterisks :: Int -> String
+n_asterisks n = 
+    if n <= 0 then ""
+    else "*" ++ n_asterisks (n - 1)
+
+is_not_greater :: Int -> [Int] -> Bool
+is_not_greater n list = 
+    if (length list) == 0 then True
+    else (n <= (head list)) && is_not_greater n (tail list)
+
+is_sorted :: [Int] -> Bool
+is_sorted list = 
+    if (length list) == 0 then True
+    else (is_not_greater (head list) (tail list)) && (is_sorted (tail list))
+
+index_of :: Int -> [Int] -> Int
+index_of elem list = index_of_inner elem list 0
+    where
+        index_of_inner elem list index = 
+            if (length list) == 0 then error "element not found"
+            else if ((head list) == elem) then index
+                else (index_of_inner elem (tail list) (index + 1))
+
+summation :: Int -> Int-> Int
+summation 0 0 = 0
+summation n m = n + summation (n - 1) (m - 1)
+
+tail_summation :: Int -> Int
+tail_summation n = s n 0
+    where
+        s 0 !sum = sum
+        s n !sum = s (n - 1) (n + sum)
+

@@ -18,6 +18,7 @@ project:
         - file: mdNotes/functional_programming/functional_formalism.md
         - file: mdNotes/functional_programming/functional_programming_basics.md
         - file: mdNotes/functional_programming/stateless_paradigm.md
+        - file: mdNotes/functional_programming/recursion.md
         - file: mdNotes/functional_programming/advantages_and_disadvantages_fp.md
     - title: Logic Programming Paradigm
       children:
@@ -42,7 +43,7 @@ project:
     - title: Extra Stuff
       children:
         - file: mdNotes/extra_stuff/haskell_introduction.md
-        - file: mdNotes/extra_stuff/recursion.md
+        - file: mdNotes/extra_stuff/recursion_and_fixed_point_combinators.md
         - file: mdNotes/extra_stuff/prolog_introduction.md
         - file: mdNotes/extra_stuff/resolution.md
         - file: mdNotes/extra_stuff/kotlin_introduction.md

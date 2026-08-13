@@ -159,7 +159,7 @@ $$
 
 [^backslash_lambda]: In fact, the reason why Haskell syntax uses the `\` character to represent lambda expressions is because this is your keyboard's best physical approximation of the Greek letter $\lambda$.
 
-[^plus]: Extra note: "$+$" does not exist in the universe of lambda calculus so instead what's used here is a reference to a lambda calculus abstraction called "$\text{add}$".
+[^plus]: Extra note: "$+$" does not exist in the universe of lambda calculus so instead what's used here is a reference to a lambda calculus abstraction called "$\text{add}$". You can check its definition in the optional reading [Lambda Calculus Encodings](/functional-formalism)
 
 What this expression means then is that `addMaker` *produces a lambda expression*, which essentially behaves exactly like a function.
 This allows you to create functions during runtime.
@@ -244,7 +244,7 @@ plus = \x -> (\y -> x + y)
 ```
 
 Here `plus` is a higher level function that accepts a single argument `x` and produces the closure `(\y -> x + y)`.
-This expression is a direct implementation of the following lambda calculus abstraction:
+This expression is a direct implementation of the following lambda calculus abstraction[^plus].
 
 $$
 \text{plus}=\lambda x.\lambda y. \text{add }x y
@@ -262,7 +262,7 @@ You can even omit the first `->` and the `\` near `y`, and it will mean the same
 plus = \x y -> x + y
 ```
 
-Which looks almost exactly similar to a relaxed lambda calculus expression with multiple parameters:
+Which looks almost exactly similar to a lambda calculus expression with multiple parameters:
 
 $$
 \lambda xy.\text{add }xy
@@ -300,9 +300,9 @@ plus = \x -> (\y -> x + y)
 
 This means that the expression`(plus 3)` will have the same meaning regardless of the way you define `plus`.
 The expression `(plus 3)` has a special name, it is called a **partial application**.
-When you apply a function that is supposed to accept $n$ parameters to $m$ values (where $m<n$), this means is that you're supplying the function less parameters than it is expecting.
+When you apply a function that is supposed to accept $n$ parameters to $m$ values (where $m<n$), i.e. you are supplying the function *less parameters* than it is expecting.
 Instead of getting the value, you get a partial application of that function which will evaluate to a *closure*.
 
-The process of converting a multi parameter function or lambda to a nested single parameter lambda is called **currying**.
+The process of converting a multiparameter function or lambda to a nested single parameter lambda is called **currying**.
 This term is named after the mathematician Haskell Brooks Curry, which is the same Haskell, the programming language is named after.
 
