@@ -11,7 +11,7 @@ Kotlin is a high-level language with rich syntax support. Lets start by discussi
 
     7
 
-# Kotlin types
+## Kotlin types
 
 ### Numerical types
 
@@ -27,7 +27,7 @@ Numbers in kotlin can be `Int`s `Floats`, `Long`, `Double` and more. An `Int` li
 
 
 
-You can expose the specific type of an expression using the following syntax:
+You can expose the specific type of some expression using the following syntax:
 
 
 ```kotlin
@@ -217,17 +217,10 @@ When combining different types using operations, only some combinations of types
     
 
 
-​    
 
 ```kotlin
 true + 0
 ```
-
-
-    
-
-
-​    
 
 
 ### Values and Variables
@@ -250,8 +243,6 @@ var y
 
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[43], line 1, column 1: Abstract property 'y' in non-abstract class 'Line_42_jupyter'
 
-
-​    
 
 
 The value assigned to a `var` or `val` allows kotlin to **infer** the type of said `var` or `val`.
@@ -288,10 +279,7 @@ z = 4
     org.jetbrains.kotlinx.jupyter.exceptions.ReplCompilerException: at Cell In[49], line 2, column 1: Val cannot be reassigned
 
 
-​    
-
-
-# Compound Types
+## Compound Types
 
 Compound types are types that are made of other types.
 
@@ -367,7 +355,7 @@ charValue
 
 
 
-# Collections
+## Collections
 
 Collections in kotlin are like specialized arrays. They can hold a series of values and include useful member functions and attributes. 
 
@@ -937,7 +925,7 @@ foodtype
 
 
 
-# Selection and Repetition
+## Selection and Repetition
 
 Selection and repetition in kotlin is written similar to c's selection and repetition.
 
@@ -1059,7 +1047,7 @@ for (i in 10 downTo -10 step 3)
 
     10,7,4,1,-2,-5,-8,
 
-# Functions
+## Functions
 
 You can define functions in haskell using the `fun` declaration:
 
@@ -1136,7 +1124,7 @@ introduce(age = 90, name = "Rub")
     Rub, 90
 
 
-# Null Safety
+## Null Safety
 
 By default, all types in kotlin cannot have a `null` value. We call these types non-nullable. Kotlin can infer if a specific `var`, `val`, parameter, or function return has the potential to be `null`. In the example below, kotlin infers the value `nullable` as a nullable integers. This is because if database is indexed with a nonexistent key (like `"invalid"`), then it cannot supply a value. As a result `database[q]` has a potential to evaluate into `null`
 
@@ -1224,7 +1212,7 @@ fun value(map: Map<String,Int>, key: String): Int { // removing the `?` will not
 }
 ```
 
-# Imports and Packages
+## Imports and Packages
 
 To import definitions from external packages you can use the import statement. The line below imports the class `File` found in the package `java.io`.
 
@@ -1262,7 +1250,7 @@ package library
 
 All of the definitions (classes, functions global variables) in every `.kt` file with the package header `library` will be included. This allows you to use defintions across different files as long as they are in the same package
 
-# File writing and reading
+## File writing and reading
 
 You can read and write files using the the class `File` in the `java.io*` package.
 
@@ -1325,9 +1313,9 @@ To append, you can use `appendText()` instead
 output.appendText(" extra content")
 ```
 
-# Other Things
+## Other Things
 
-## LocalDate
+### LocalDate
 
 Kotlin has plenty of classes related to date, one of them is imported from `java.time.LocalDate` which is available in the kotlin standard library.
 

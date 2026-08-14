@@ -25,7 +25,7 @@ You can think procedural programming as the ancestor if other imperative paradig
 In this lecture I refer to Imperative paradigm as a whole, but I will focus on the main ideas that are common between other imperative paradigms.
 Ideas from object-oriented programming paradigm can be found on a separate lecture.
 
-# Popularity of the Imperative Paradigm
+## Popularity of the Imperative Paradigm
 
 Imperative programming has turned out to be the *natural* paradigm of programming languages.
 The members of the imperative programming family have been dominating the market share of programming languages throughout the years with titans like BASIC, Pascal, C, Java and many more.

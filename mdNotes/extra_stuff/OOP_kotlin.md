@@ -2,7 +2,7 @@
 
 While kotlin is a modern multiparadaigm language. Its supports rich OOP support. In fact kotlin is very strongly OOP flavored. Every type in kotlin is a class and every value is an object.
 
-# Kotlin Classes
+## Kotlin Classes
 
 Creating classes in kotlin is very easy, here's an empty class called `EmptyClass`:
 
@@ -52,7 +52,7 @@ v.speak()
     Hi I'm a voicebox that speaks
 
 
-# Customizing the Constructor
+## Customizing the Constructor
 
 All class definitions automatically come with a default constructor. But to add nuance to how instances are created we can change the constructor.
 
@@ -181,7 +181,7 @@ class Person (val name: String) {
 }
 ```
 
-# Kotlin Specializations and Realizations
+## Kotlin Specializations and Realizations
 
 All classes in kotlin inherit from the `Any` generalization. The `Any` class is a class that doesn't have any generalization.
 
@@ -302,7 +302,7 @@ sh1.communicate(s1)
     Howdy, it's me Tonk. Sorry I cant see you my shades are too dark
 
 
-## Realization
+### Realization
 
 To create an abstraction in kotlin you simply use the keyword `interface`. Any abstraction's methods must be declared to be `abstract`. The `abstract` modifier allows these functions to have no body. Note that abstract functions are open by default so you dont need the `open` modifier
 
@@ -397,7 +397,7 @@ class Research: BorrowableItem{
 ​    
 
 
-# Visibility Control
+## Visibility Control
 
 To implement proper data hiding principle sin OOP, kotlin has the visibility modifers `public`, `private`, and `protected`.
 
@@ -559,7 +559,7 @@ Here is a summary of visibility modifiers and where they can be accessed
 | private    |  no                         | no                            |
 
 
-# Abstract Classes
+## Abstract Classes
 
 Abstract classes are hybrids of interfaces and concrete classes. Abstract classes, unlike interfaces, can have attributes and contructors. Also, unlike concrete classes, it can be defined with abstract methods.
 
