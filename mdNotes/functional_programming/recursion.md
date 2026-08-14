@@ -259,4 +259,5 @@ You might need to force some more optimzation to force haskell to eagerly evalua
 
 ## Extra Reading
 
-[Recursion and Fixed Point Combinators](/recursion-and-fixed-point-combinators)
+[Haskell Introduction](/haskell-introduction) - for some helpful haskell syntax
+[Recursion and Fixed Point Combinators](/recursion-and-fixed-point-combinators) - to learn how recursion emerges from the lambda calculus formalism
