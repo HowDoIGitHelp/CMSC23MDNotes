@@ -2,6 +2,8 @@
 
 Here is a list of the lab exercises for this course.
 
+You can check the deadlines for the following lab exercises [here](https://docs.google.com/spreadsheets/d/1oOvP9HMNypkZ9GtjwbCi4EYNbNCXMYe9VlVzNHHsBWk/edit?usp=sharing)
+
 1. [Structuring the Document](/structuring-the-document)
 2. [Exploring Haskell](/exploring-haskell)
 3. [Higher Order Functions for List Comprehension](/higher-order-functions)
