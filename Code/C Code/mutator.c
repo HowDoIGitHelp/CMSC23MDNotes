@@ -12,5 +12,4 @@ int main() {
 int mutator(int *x, int *y){
     *y = *y + *x;
     return *y;
-    
 }
