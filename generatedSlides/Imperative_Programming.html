@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-  <title>mdNotes/Imperative Programming.md</title>
+  <title>{Title}</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="slides.css">
+    <link rel="stylesheet" href="../resources/slides.css">
     </head>
         <body>
             <textarea id="source">
 class: center, middle
-# Imperative Programming
+# Imperative Programming Paradigm
 
 ---
 class: center, middle
@@ -37,39 +37,29 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
-
-> **Quick Note on Imperative Programming and Procedural Programming**
-> 
-> People usually use the terms Imperative programming and procedural programming interchangeably. Procedural programming is a subparadigm of imperative programming family, but some people refer to procedural programming as imperative programming. That's because other imperative paradigms like object-oriented programming is derived from procedural programming. You can think procedural programming as the ancestor if other imperative paradigms.
-> 
-
+class: center, middle
+# Quick Note on Imperative Programming and Procedural Programming
 
 ---
-
-# Learning Outcomes
-
-> In this lecture I refer to Imperative paradigm as a whole, but I will focus on the main ideas that are common between other imperative paradigms. Ideas from object-oriented programming paradigm can be found on a separate lecture.
-> 
-
+class: center, middle
+# Popularity of the Imperative Paradigm
 
 ---
-
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 - Imperative programming has turned out to be the *natural* paradigm of programming languages.
 
 
 ---
 
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 - This paradigm's dominance could be attributed to most computer scientists’ preference towards **pragmatic** and **efficient** programming languages.
 
 
 ---
 
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 - If you want the computer to do something for you, then you *communicate* to the computer that you want this and that to be done.
 - And if you manage to give the computer correct and comprehensive **instructions** then you'll end up getting what you want.
@@ -77,7 +67,7 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 - If we rewind back to the dawn of programming languages you'll see that early programming languages were built to **communicate to computer hardware**.
 - As a result of this, programming languages naturally adopted syntax with **imperative** moods.
@@ -85,7 +75,7 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 ```assembly
 INC ITER
@@ -96,7 +86,7 @@ ADD AH, AL
 
 ---
 
-# Learning Outcomes
+# Popularity of the Imperative Paradigm
 
 - As time went by, newer *higher level programming languages* emerged (higher level meaning farther from hardware and closer to human language) like Basic, Pascal, and C.
 - The syntax of these programming languages were written as **abstractions** of hardware code.
@@ -228,7 +218,7 @@ class: center, middle
 ---
 # Structured Program Theorem
 
-- Creating meaningful programs in imperative programming is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem**.
+- Creating meaningful programs in imperative programming is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem** [@bohm_flow_1966].
 
 
 ---
@@ -246,6 +236,12 @@ class: center, middle
 2. Executing one of two subprograms according to the value of a boolean (selection)
 3. Repeatedly executing a subprogram as long as a boolean expression is true (iteration)
 
+
+---
+
+# Structured Program Theorem
+
+![Flowcharts](../mdNotes/mermaid_diagrams/flowchart.png)
 
 ---
 
@@ -276,10 +272,6 @@ class: center, middle
 
 ---
 
-class: center, middle
-# Optional Readings
-
----
         </textarea>
         <script>
             MathJax = {
