@@ -4,10 +4,10 @@ Create a C library that contains the following functions.
 
 [Link to uvec vpl](https://uvec.upcebu.edu.ph/mod/vpl/view.php?id=53292)
 
--  `void* log_variable(char* var_name, void* var_address, VAR_TYPE var_type)`
+-  `void* log_variable(char* label, void* var_address, VAR_TYPE var_type)`
 
     This function prints the current value of the variable at the address `var_address`
-    The datatype will be indicated by an enum called `VAR_TYPE` argument called `var_type`.
+    The datatype will be indicated by an enum `VAR_TYPE` called `var_type`.
     The argument `label` can be any string.
 
     This function should print one log line according to the following format.
@@ -18,10 +18,10 @@ Create a C library that contains the following functions.
 
     There should be a newline after the logline.
 
-- `void* log_array(char* array_name, void* arr_address, int array_size, VAR_TYPE var_type)`
+- `void* log_array(char* label, void* arr_address, int array_size, VAR_TYPE var_type)`
 
-    This function prints the current value of the array at the address `var_address`
-    The datatype will be indicated by an enum called `VAR_TYPE` argument called `var_type`.
+    This function prints the current value of the array at the address `arr_address`
+    The datatype will be indicated by the enum `VAR_TYPE` called `var_type`.
     The argument `label` can be any string.
     The argument `array_size` corresponds to the number of elements in the array.
     The elements should be printed in one line, separated by spaces.

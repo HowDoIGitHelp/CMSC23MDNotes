@@ -86,7 +86,7 @@ Lab exercises submitted one week after the deadline will not be accepted.
 
 Please let me know if you encounter any issues in submitting the lab exercises.
 
-1. [Structuring the Document](/structuring-the-document)
+1. [Imperative Programming Review](/imperative-programming-review)
 2. [Exploring Haskell](/exploring-haskell)
 3. [Higher Order Functions for List Comprehension](/higher-order-functions)
 4. [Drama in the Clue Mansion](/drama-in-the-clue-mansion)
