@@ -306,3 +306,40 @@ Instead of getting the value, you get a partial application of that function whi
 The process of converting a multiparameter function or lambda to a nested single parameter lambda is called **currying**.
 This term is named after the mathematician Haskell Brooks Curry, which is the same Haskell, the programming language is named after.
 
+Partial application can be very useful since you quickly create lambdas from the definition of existing functions.
+For example, a function that adds 15 to an element as such:
+
+```haskell
+addFifteen = \x -> 15 + x
+```
+
+But with partial application, this be defined with the following:
+
+```haskell
+addFifteen = plus 15
+```
+
+We can show that these are equivalent definitions by currying `plus`
+
+```haskell
+addFifteen = plus 15
+addFifteen = (\x -> (\y -> x + y)) 15
+addFifteen = \y -> 15 + y
+addFifteen = \x -> 15 + x --alpha equivalent to the lambda above
+```
+
+Also, all operations in haskell are also functions.
+This means you can also use partial applications with them.
+A function can be used like a function if it is written using preorder notation, instead of inorder notation.
+
+```haskell
+ghci> (+) 3 2
+5
+```
+
+Since `+` is a function, it can be partially applied.
+
+```haskell
+ghci> applytwice (+ 3) 4
+10
+```
