@@ -7,6 +7,7 @@ pandoc \
     mdNotes/functional_programming/functional_programming_basics.md mdNotes/n.md \
     mdNotes/functional_programming/stateless_paradigm.md mdNotes/n.md \
     mdNotes/functional_programming/recursion.md mdNotes/n.md \
+    mdNotes/functional_programming/higher_order_functions_for_lists.md \
     mdNotes/functional_programming/advantages_and_disadvantages_fp.md mdNotes/n.md \
     mdNotes/logic_programming/logic_formalism.md mdNotes/n.md \
     mdNotes/logic_programming/logic_programming_basics.md mdNotes/n.md \
