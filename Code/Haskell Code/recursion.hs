@@ -128,3 +128,18 @@ tail_summation n = s n 0
         s 0 !sum = sum
         s n !sum = s (n - 1) (n + sum)
 
+merge :: Ord a => [a] -> [a] -> [a]
+merge l [] = l
+merge [] l = l
+merge (x:xs) (y:ys)
+    | x <= y = x : merge xs (y:ys)
+    | otherwise = y : merge (x:xs) ys
+
+mergeSort :: Ord a => [a] -> [a]
+mergeSort [] = []
+mergeSort [x] = [x]
+mergeSort l = merge (mergeSort left) (mergeSort right)
+    where
+        n = quot (length l) 2
+        left = take n l
+        right = drop n l
