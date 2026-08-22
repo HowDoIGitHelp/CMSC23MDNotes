@@ -12,7 +12,7 @@ We've discussed functional programming paradigms using the language haskell as a
 ### Recursive Functions
 
 - `modulus :: Int -> Int -> Int` - Takes two integers $x$ and $m$ and returns $x \mod m$. Do not use the built-in `mod` function in haskell
-- `largestPowerOf2 :: Int -> Int` - Takes an integer and returns the largest power of 2 that is less than or equal to said integer.
+- `largestPowerOf2 :: Int -> Int` - Takes a positive integer and returns the largest power of 2 that is less than or equal to said integer.
 - `factorial :: Int -> Int` - Takes an integer and returns the factorial of the integer
 - `summation :: Int -> Int` - Takes a natural number and returns the summation of numbers from 1 to n. $\sum_{i=1}^{n}{i}$. 
 
