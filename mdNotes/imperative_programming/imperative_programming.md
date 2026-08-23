@@ -99,11 +99,11 @@ And at the last line, the value of `x` is updated by adding the value of `y`, so
 You can inspect the state of a program using *debugging tools* like `gdb` for gcc.
 To enable debugging using `gdb`, you need to add the appropriate debug flag (`-g`) during compilation.
 
-```
+```bash
 gcc -g program.c -o executable
 ```
 
-```
+```bash
 gdb ./executable
 ```
 
