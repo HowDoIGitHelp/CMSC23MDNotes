@@ -104,17 +104,17 @@ void main() {
 
 ```
 i: 0
-sort progress: -2 1 0 -2 3 3
+sort progress: -2 1 0 -2 3 3 4
 i: 1
-sort progress: -2 0 1 -2 3 3
+sort progress: -2 0 1 -2 3 3 4
 i: 2
-sort progress: -2 -2 0 1 3 3
+sort progress: -2 -2 0 1 3 3 4
 i: 3
-sort progress: -2 -2 0 1 3 3
+sort progress: -2 -2 0 1 3 3 4
 i: 4
-sort progress: -2 -2 0 1 3 3
+sort progress: -2 -2 0 1 3 3 4
 i: 5
-sort progress: -2 -2 0 1 3 3
+sort progress: -2 -2 0 1 3 3 4
 ```
 
 Another example with strings:
