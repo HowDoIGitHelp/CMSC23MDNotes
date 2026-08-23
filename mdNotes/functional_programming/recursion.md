@@ -192,7 +192,7 @@ summation n =
     else n + summation (n - 1)
 ```
 
-Let's try expanding tracing the evaluation of such recursive function in the call stack, starting with `summation 3`
+Let's try expanding the evaluation of such recursive function in the call stack, starting with `summation 3`
 
 ```haskell
 summation 3
@@ -244,7 +244,7 @@ s 0 6
 With tail call recursion you don't really need to keep the previous function calls in memory to evaluate the recursive call.
 This is because the evaluation of every recursive call is the solution itself.
 For example, the last call `s 0 6` will evaluate to 6, the second to the last call, `s 1 5` will also evaluate to `6`.
-Because of the tail call recursion, the recurrence relation we end up with the property: `s n sum = s (n - 1) (n + sum)`.
+Because of tail call recursion, the recurrence relation we end up with the property: `s n sum = s (n - 1) (n + sum)`.
 
 When you compare this with non-tail call recursion: `summation n = n + summation n - 1)`.
 The evaluation `n + ...` has to be kept in memory to evaluate to the final answer.

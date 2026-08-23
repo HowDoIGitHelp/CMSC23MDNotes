@@ -56,12 +56,14 @@ int* increaseArray(int *a, int size){
 A pass by address/reference function which changes the value of a parameter will automatically be an impure function since changing the value of `a` is a **mutation**, which is a side effect.
 
 
-```java
-String headsortails(){
-	if(randInt()%2==0)
-		return "heads";
+```kotlin
+fun headsortails(n: Int) {
+    val results: MutableList<String> = mutableListOf()
+	if ((0..1).random() == 0)
+		results.add("Heads")
 	else
-		return "tails";
+        results.add("Tails")
+    return results
 }
 ```
 
@@ -77,13 +79,37 @@ A pure function must satisfy these two:
 
 A good way to test if a function is pure is if you can (theoretically) create an infinitely long *lookup table* such that, looking up the value for a specific input is perfectly identical to calling the function with the same input.
 And if you think about it this is the essence of a function.
-Functions are just of mappings between the domain and the range,
+Functions are just of mappings between the domain and the range.
 
-### The Absence of mutation
+For example, a `square :: Int -> Int` function can be replaced by such look-up table:
 
-One of the hallmarks that make imperative programming imperative is the assignment statement.
+| Domain (`x :: Int`) | Range (`(square x) :: Int`) |
+|:---:|:---:|
+| $\vdots$ | $\vdots$ |
+| $-2$     |  $4$     |
+| $-1$     |  $1$     |
+|  $0$     |  $0$     |
+|  $1$     |  $1$     |
+|  $2$     |  $4$     |
+| $\vdots$ | $\vdots$ |
+
+Compare this with the `headsortails()` function in kotlin, which cannot be represented by a lookup table, since the same input can result to different output.
+
+| Domain (`n :: Int`) | Range (`(headsortails(n)) :: MutableList<String>`) |
+|:---:|:---:|
+| $0$      |  `[]`     |
+| $1$      |  `["Heads"]`     |
+| $1$      |  `["Tails"]`     |
+| $2$      |  `["Heads", "Heads"]`     |
+| $2$      |  `["Heads", "Tails]"`     |
+| $\vdots$ | $\vdots$ |
+
+### Bindings vs Assignment and Referential Transparency
+
+One of the defining features of imperative programming is the assignment statement.
 It enables the program to advance to a new state.
-Purely functional programming languages like Haskell, lacks the mechanism to mutate anything.
+Purely functional programming languages like Haskell *do not have assignment statements*.
+Therefore, it lacks the mechanism to mutate anything.
 Using the "`=`" operator (which signals an assignment statement in imperative languages) in functional languages *binds* the value on the right-hand side to the left-hand side.
 This mechanism is conceptually different from an assignment operation in C.
 It is perfectly fine to do the following in C:
@@ -94,12 +120,13 @@ x = 1;
 ```
 
 This code in C starts with a combined declaration and assignment: `int x = 0`.
-The second line, **reassigns** the same variable `x` to the new value `1`.
-These lines of code correspond to a *mutation* on the variable `x`, (from `0` to `1`).
+The second line, **mutates** the value stored in address of `x` to the new value `1`.
 Because mutation can happen anytime during runtime, the value of the variable `x` is not definite.
-This is why values of variables in imperative programming **depend on the current state** of the program.
+Variables in imperative programming **depend on the current state** of the program.
 
-On the other hand, replicating this C code in Haskell is in fact not allowed:
+![States](../mermaid_diagrams/state_changes.png)
+
+Going back to functional programming, if you replicate this C code in Haskell, you'll find that this is not allowed.
 
 ```haskell
 x = 0
@@ -115,12 +142,14 @@ main.hs:2:1: error:
          main.hs:2:1
 ```
 
-In Haskell, any "`=`" statement is a *declaration of a binding*.
-These bindings are *final* (in the scope of the identifier).
-It is even wrong to call `x` here a variable since its value does not vary.
-The correct way to call `x` is *identifier*, since it merely identifies the value bound to it.
+In Haskell, any "`=`" statement is a declaration of a **binding**.
+For example, with `x = 0`, `x` is now **bound** to the value `0`.
+These bindings are **final** within its scope.
+Anywhere else in the scope, the value of `x` will always be `0`.
+Because of this you can predict the evaluation of any expression simply by *replacing* the variable with its bound value.
+This property is known as **referential transparency** [@hughes_why_1989].
 
-### Consequences of Statelessness and Immutability
+## Consequences of Functional Purity, Statelessness, and Immutability
 
 Haskell's functions are better representations of mathematical functions. 
 But what is the point of faithfully representing mathematical functions?
@@ -143,20 +172,36 @@ int main(void) {
 }
 ```
 
-The exact behavior of the function `f()` **depends on where you use it**.
+In the previous example, the exact behavior of the function `f()` **depends on where you use it**.
 Even if you use the same parameters, you're not guaranteed to get the same results.
 
-On small chunks of code, managing the consequences of having states such as global variables, will be trivial since you can reasonably track which variables are global (*or external in general*) and which functions interact with the global variables.
-Even with a few lines of code like the example, the function's effects and *side effects* are not very obvious.
+On small chunks of code like these, managing the consequences of having side effects will be easy since you can reasonably track the interactions of the variables and the functions.
+But when your code grows, the interactions become more complex.
+At some point, the function's side effects are not very obvious.
 
-As the system grows, using functions and variables without double-checking for side effects becomes much harder.
-As a consequence the whole system becomes a nightmare of impure functions on top of impure functions which may unexpectedly affect other parts of the system.
-On a corporate setting where multiple people are working on the same system, refactoring becomes *unsafe* without knowledge of all the side effects of the functions in use.
-On systems with *shared resources* and multi-threading it becomes extra-extra difficult to keep track of things without proper documentation.
+When this happens, using functions and variables without double-checking for side effects becomes much harder.
+As a consequence the whole system becomes a nightmare of impure functions on top of impure functions.
+Changes to one a variable may unexpectedly affect other parts of the system.
+On a corporate setting where multiple people are working on the same codebase, refactoring becomes *unsafe* without knowledge of all the side effects of the functions in use.
+On systems with *shared resources* and multi-threading it becomes even more difficult to keep track of things without proper documentation.
+These are the consequences of **referential opacity**, the opposite of referential transparency.
 
-Even with all these disadvantages in the state-full mutable paradigm of imperative programming, *one can still write robust and harmonious code*.
-You just have to be extra careful writing your code with discipline, *only using global variables and side effects when it is safe and necessary*.
-This is in fact the reason why *writing smaller pure functions* is considered good practice in any paradigm.
-After all, being able to code with states can be thought of as an extra feature.
+This is why functional programming (and other declarative paradigms) come with restrictions by design.
+It sacrifices assignment statements and all its derived capabilities to prioritize *safety and readability*.
+Without assignment statements, there is no state.
+And because of this, functional programming is referentially transparent and therefore easier to trace.
+And without assignment statements, all of its functions are pure and have no side effects.
+
+### Statelessness as a paradigm
+
+But at the end of the day, statelessness is just a paradigm.
+You can use any programming language and apply the philosophy of statelessness to the programs that your write.
+
+Applying the paradigm of statelessness is just to writing code with more *discipline*.
+For example, you can use C and never use global variables.
+You can make sure to write only pure functions.
 You can be a C programmer and just treat all your variables as immutable and all of your functions as pure.
+Imperative languages even help to apply the strict disciplines of statelessness.
+For example, C and C++ has a `const` modifier that restricts reassignment.
+Kotlin has `val` and immutable classes.
 
