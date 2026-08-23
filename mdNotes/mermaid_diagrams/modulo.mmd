@@ -1,0 +1,6 @@
+flowchart LR
+  I[Initial State] --> A
+  A[x = 24] --> B{x > 7?}
+  B -->|yes| C[x = x - 7]
+  B -->|no| D[Final State]
+  C --> B
