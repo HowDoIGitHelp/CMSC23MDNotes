@@ -65,7 +65,7 @@ When you write programs you're writing **instructions** for your computer.
 1. Ask the user for a number
 2. Store that number to a variable called x.
 3. While x is greater than 7 do step 4 otherwise proceed
-4. Subtract 7 to x and store the difference to x
+4. Subtract 7 from x and store the difference to x
 5. Show the user the value of x
 
 That is a good definition of programming.
