@@ -17,6 +17,39 @@
   it
 }
 
+
+#show outline.entry.where(
+  level: 1
+): set block(above: 1.2em)
+
+#show title: set text(size: 1.5em)
+#show title: set align(center)
+
+#v(14em)
+
+#title[
+  CMSC 23 \
+  Programming Paradigms
+]
+
+#grid(
+  columns: (1fr),
+  align(center)[
+    Rubelito Abella \
+    University of the Philippines Cebu \
+    #link("mailto:rrabella@up.edu.ph")
+  ],
+)
+
+$if(toc)$
+  #outline(
+    title: [Table of Contents], 
+    indent: 1.2em,
+    $if(toc-depth)$ depth: $toc-depth$ $endif$
+  )
+  #v(2em) // Add spacing after TOC
+$endif$
+
 #set page(
   footer: context {
     let page_num = counter(page).display()
@@ -28,5 +61,8 @@
     }
   }
 )
+
+#counter(page).update(1)
+#set page(numbering: "1")
 
 $body$
