@@ -43,11 +43,11 @@
 
 $if(toc)$
   #outline(
-    title: [Table of Contents], 
+    title: [Table of Contents],
     indent: 1.2em,
     $if(toc-depth)$ depth: $toc-depth$ $endif$
   )
-  #v(2em) // Add spacing after TOC
+  #v(2em)
 $endif$
 
 #set page(
