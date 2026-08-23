@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-  <title>{Title}</title>
+  <title>imperative_programming.md</title>
         <meta charset="utf-8">
     <link rel="stylesheet" href="../resources/slides.css">
     </head>
@@ -31,7 +31,7 @@ class: center, middle
 1. Explain how imperative programming became the natural paradigm
 2. Explain the concept of state in the context of imperative programming
 3. Explain how the assignment statement enables the progression of states
-4. Create structure programs to represent algorithms
+4. Create structured programs to represent algorithms
 5. Differentiate the subparadigms procedural programming and object-oriented programming
 
 
@@ -155,6 +155,31 @@ x = x + y
 
 ---
 
+# The STATE
+
+- You can inspect the state of a program using *debugging tools* like `gdb` for gcc.
+
+
+---
+
+# The STATE
+
+```
+gcc -g program.c -o executable
+
+```
+
+---
+
+# The STATE
+
+```
+gdb ./executable
+
+```
+
+---
+
 class: center, middle
 # Assignment Statement
 
@@ -178,9 +203,7 @@ class: center, middle
 # Assignment Statement
 
 - Assignment statements are usually executed through the use of the **“`=`”** operator (some languages like Pascal use “`:=`” instead).
-- Instead of communicating some kind proposition, the assignment statement has an **imperative mood**.
-- An equality a=b in math **declares** that some `a` is `b`, while an assignment operator `a=b` **commands** that `a`'s value is now the same as `b`.
-- Mutation is introduced once you perform an assignment to `a` again, signifying a **change** in the value of `a`.
+- Instead of communicating some kind proposition[^equality] that says two values are equal, the assignment statement has an **imperative mood**.
 
 
 ---
@@ -195,7 +218,12 @@ class: center, middle
 
 # Assignment Statement
 
-- That particular "something" is manifests as **changes** to your program's context.
+![State changes](../mdNotes/mermaid_diagrams/state_changes.png)
+
+---
+
+# Assignment Statement
+
 - And you can compare the difference between the before and after of a specific assignment by comparing the **before-assignment** state and the **after-assignment state**.
 - The *progression* from one state to another characterizes the effect of an assignment.
 
@@ -206,8 +234,15 @@ class: center, middle
 
 - Imperative programming is characterized by **imperative statements**.
 - The most important type of these statements is the **assignment statement**.
-- An assignment statements effect to your computer is characterized by the progression from one **state** to another.
-- *Assignment statements make states*, and if you combine many of these assignment statements arranged in a particular manner, you can create a meaningful program that does something for you.
+- An assignment statement's effect to your computer is characterized by the *progression* from one state to another state.
+
+
+---
+
+# Assignment Statement
+
+- If boil down imperative programs at its most abstract form, it is simply a *combination of assignment statements*.
+- If arranged in the correct way, a given problem (*initial state*) can progress through multiple states until it reaches the solution (*final state*).
 
 
 ---
@@ -218,14 +253,16 @@ class: center, middle
 ---
 # Structured Program Theorem
 
-- Creating meaningful programs in imperative programming is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem** [@bohm_flow_1966].
+- Creating meaningful imperative programs is done by applying the **Bohm-Jacopini Theorem**, also known as the **Structured Program Theorem** .
 
 
 ---
 
 # Structured Program Theorem
 
+- The theorem describes a formalism of a class called **control flow graphs** which are capable of representing any computable function.
 - It is known to you as the trusty old **flow chart**.
+- A subprogram can be a *single assignment statement*, or it can be a *combination* of more than one subprogram.
 
 
 ---
@@ -242,6 +279,12 @@ class: center, middle
 # Structured Program Theorem
 
 ![Flowcharts](../mdNotes/mermaid_diagrams/flowchart.png)
+
+---
+
+# Structured Program Theorem
+
+![Example Program](../mdNotes/mermaid_diagrams/modulo.png)
 
 ---
 
