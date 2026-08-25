@@ -3,7 +3,7 @@
 During the 1930s a mathematician investigating the foundation of mathematics, named Alonzo Church, introduced a formal system of expressing computational logic.
 The system he created was called **Lambda Calculus**.
 It was until the 1960s when the system found its way through different disciplines.
-It became something more than a mathematical formalism and became an important concept in linguistics and **computer science**[@church_set_1932].
+It became something more than a mathematical formalism and became an important concept in linguistics and **computer science** [@church_set_1932].
 
 Before we dive into functional programming let's introduce ourselves to the formalism that inspired it, Lambda Calculus.
 These concepts may seem strange at first since it imagines a mathematical foundation beyond numbers, sets, and logic.
@@ -21,13 +21,13 @@ You might get confused if you read some lambda calculus expressions.
 Some people often omit parentheses or single-parametrizations to write shorter expressions:
 
 1. Application is left associative
-   
+
    $$
    \mathcal{M_1}\mathcal{M_2}\mathcal{M_3} = ((\mathcal{M_1}\mathcal{M_2})\mathcal{M_3})
    $$
 
 2. Consecutive abstractions can be uncurried
-   
+
    $$
    \lambda xyz.\mathcal{M}=\lambda x.\lambda y.\lambda z.\mathcal{M}
    $$
@@ -57,7 +57,7 @@ The bound variable $x$ may appear somewhere in $\mathcal{M}$, the body of the ab
 An alpha equivalence basically shows that the name of the variable has no inherent meaning.
 Therefore, you can replace it with any other variable name.
 
-###  $\beta$ Reductions
+### $\beta$ Reductions
 
 $\beta$ reductions state how to simplify abstractions.
 This process is similar to applying a function in the context of programming.
@@ -89,7 +89,7 @@ These $\eta$ reductions characterize higher level simplifications that are not a
 
 ### Reduction example
 
-For example to reduce the following lambda expression, we must first understand what it means.
+For example, to reduce the following lambda expression, we must first understand what it means.
 
 $$
 (\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))
@@ -134,8 +134,8 @@ $$
 ## Lambda Calculus Encoding (Optional Reading)
 
 One of the most interesting things that the Lambda Calculus System demonstrates is its use in computability theory.
-It's importance in computing has led to the formulation of the Church-Turing Thesis which conjectures that the Lambda Calculus System and the hypothetical Turing machine rules as complete representations of any algorithm.
-The lambda calculus system is said to be **Turing Complete**, which means that the system can simulate any concievable Turing machine.
+Its importance in computing has led to the formulation of the Church-Turing Thesis which conjectures that the Lambda Calculus System and the hypothetical Turing machine rules as complete representations of any algorithm.
+The lambda calculus system is said to be **Turing Complete**, which means that the system can simulate any conceivable Turing machine.
 To demonstrate its Turing completeness this topic will show some of the encodings in lambda calculus.
 
 ### Boolean Values
@@ -147,8 +147,8 @@ Boolean values, such as true and false can be represented by the following lambd
 - **False:** $F=\lambda x. \lambda y. y$
 
 The way boolean values are encoded in lambda calculus using an abstraction that when applied to two values, produces first value for true and produces the second value for false.
-To demostrate the consistency of this encoding we can use this encoding of an `if_then_else` function.
-An `if_then_else` function in the context of any familiar programming language looks like this:
+To demostrate the consistency of this encoding we can use this encoding of some `if_then_else` function.
+A general `if_then_else` function in the context of any familiar programming language looks like this:
 
 ```python
 if(condition)

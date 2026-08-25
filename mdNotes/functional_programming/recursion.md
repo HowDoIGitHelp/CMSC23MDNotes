@@ -254,8 +254,31 @@ When programming languages (not just functional languages) detect tail call recu
 Instead of using $O(n)$ memory for $n$ recursive calls, it only needs to use $O(1)$.
 This process is known as **tail call optimization** [@abelson_linear_2002].
 
-One caveat for haskell: since haskell is lazily evaluated, tail call recursion may not lead to memory optimization.
-You might need to force some more optimzation to force haskell to eagerly evaluate expressions and avoid memory leaks.
+One caveat for haskell: since haskell is lazily evaluated, tail call recursion will not lead to optimization by default.
+You will need to enable optimization options during compilation to force haskell to eagerly evaluate expressions and avoid memory leaks.
+
+Here's comparison of non tail-call optimized `summation 100000` and tail call optimized `tail_summation 100000`.
+Notice the memory savings in the heap allocation.
+
+```ansi
+> ./non_tco +RTS -s
+5000050000
+       1,721,968 bytes allocated in the heap
+           3,272 bytes copied during GC
+          44,328 bytes maximum residency (1 sample(s))
+          25,304 bytes maximum slop
+               7 MiB total memory in use (0 MiB lost due to fragmentation)
+```
+
+```ansi
+> ./tco +RTS -s  
+5000050000
+          50,800 bytes allocated in the heap
+           3,272 bytes copied during GC
+          44,328 bytes maximum residency (1 sample(s))
+          25,304 bytes maximum slop
+               6 MiB total memory in use (0 MiB lost due to fragmentation)
+```
 
 ## Extra Reading
 

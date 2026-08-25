@@ -69,20 +69,19 @@ Imperative programming functions during runtime are meaningless unless they are 
 
 Functional programming languages treat functions the same way it treats values, you *can* pass them in other functions, and you *can* return them as well.
 
-
-```Haskell
-s:: Int -> Int
+```haskell
+s :: Int -> Int
 func x = x + 1
 
-p::Int -> Int
+p :: Int -> Int
 func x = x - 1
 
-applytwice:: (Int-> Int) -> Int -> Int
+applytwice :: (Int-> Int) -> Int -> Int
 applytwice f x = f (f x)
 ```
 
 The code above shows two function definitions with some *type signature annotations* for readability.
-The first is the function `s::Int -> Int` which is *applied to an integer* and *produces an integer*.
+The first is the function `s :: Int -> Int` which is *applied to an integer* and *produces an integer*.
 What it does is it simply adds one to `x`.
 The second function is similar but what it does is subtracting one from `x`.
 
@@ -132,20 +131,20 @@ On the other side of the coin, a function, in functional programming will also l
 To explore this, suppose we have different functions that when applied to an integer, produces that integer plus a certain integer.
 
 ```haskell
-addTwo::Int -> Int
+addTwo :: Int -> Int
 addTwo x = x + 2
 
-addThree::Int -> Int
+addThree :: Int -> Int
 addThree x = x + 3
 
-addFour:: Int -> Int
+addFour :: Int -> Int
 addFour x = x + 4
 ```
 
 We can generalize these functions into a *function-maker* function, that when applied to an arbitrary integer `x`, will produce a function similar to `addx` which is a function that adds `x` to your integer.
 
- ```haskell
-addMaker::Int -> (Int->Int)
+```haskell
+addMaker :: Int -> (Int -> Int)
 addMaker x = (\y -> x + y)
  ```
 
@@ -313,7 +312,7 @@ For example, a function that adds 15 to an element as such:
 addFifteen = \x -> 15 + x
 ```
 
-But with partial application, this be defined with the following:
+But with partial application, this can be defined with the following:
 
 ```haskell
 addFifteen = plus 15
@@ -330,14 +329,14 @@ addFifteen = \x -> 15 + x --alpha equivalent to the lambda above
 
 Also, all operations in haskell are also functions.
 This means you can also use partial applications with them.
-A function can be used like a function if it is written using preorder notation, instead of inorder notation.
+An operator can be used like a function if it is written using preorder notation instead of inorder notation.
 
 ```haskell
 ghci> (+) 3 2
 5
 ```
 
-Since `+` is a function, it can be partially applied.
+And since `+` is a function, it can also be partially applied.
 
 ```haskell
 ghci> applytwice (+ 3) 4
