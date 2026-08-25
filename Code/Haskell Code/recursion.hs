@@ -1,4 +1,6 @@
-{-# LANGUAGE BangPatterns #-}
+{-# LANGUAGE Strict #-}
+
+module Recursion where
 
 line :: Int -> String
 line n = 
@@ -118,9 +120,9 @@ index_of elem list = index_of_inner elem list 0
             else if ((head list) == elem) then index
                 else (index_of_inner elem (tail list) (index + 1))
 
-summation :: Int -> Int-> Int
-summation 0 0 = 0
-summation n m = n + summation (n - 1) (m - 1)
+summation :: Int -> Int
+summation 0 = 0
+summation n = n + summation (n - 1)
 
 tail_summation :: Int -> Int
 tail_summation n = s n 0
@@ -143,3 +145,8 @@ mergeSort l = merge (mergeSort left) (mergeSort right)
         n = quot (length l) 2
         left = take n l
         right = drop n l
+
+main :: IO()
+main = do 
+    putStrLn "test"
+    print (summation 100000)
