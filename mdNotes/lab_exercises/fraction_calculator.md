@@ -1,4 +1,4 @@
-# Lab Exercise 12 (Fraction Calculator)
+# Lab Exercise 13 (Fraction Calculator)
 
 ## Task
 

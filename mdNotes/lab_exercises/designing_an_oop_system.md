@@ -1,4 +1,4 @@
-# Lab Exercise 7 (Designing an OOP System)
+# Lab Exercise 8 (Designing an OOP System)
 Links to relevant notes and videos
 
 - [Python Introduction](kotlin-introduction)

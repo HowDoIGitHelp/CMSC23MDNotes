@@ -1,4 +1,4 @@
-# Lab Exercise 6 (Borrowing from the Library) (Kotlin)
+# Lab Exercise 7 (Borrowing from the Library) (Kotlin)
 
 ## Task
 

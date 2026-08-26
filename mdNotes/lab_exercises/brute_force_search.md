@@ -1,4 +1,4 @@
-# Lab Exercise 16 (Brute Force Search)
+# Lab Exercise 17 (Brute Force Search)
 
 ## Task
 

@@ -1,4 +1,4 @@
-# Lab Exercise 17 (Iterator Pattern)
+# Lab Exercise 18 (Iterator Pattern)
 
 ## Task
 

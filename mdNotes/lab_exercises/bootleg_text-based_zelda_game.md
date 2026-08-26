@@ -1,4 +1,4 @@
-# Lab Exercise 9 (Bootleg Text-based Zelda Game)
+# Lab Exercise 10 (Bootleg Text-based Zelda Game)
 
 You're creating the dungeon encounter mechanics of some bootleg text-based zelda game. In this game,every time you enter a dungeon, you encounter 0-8 monsters (the exact number is randomly determined). There are 3 types of monsters, bokoblins, moblins, and lizalflos (different types have different moves). The exact type of monster is randomly decided as well. 
 

@@ -1,4 +1,4 @@
-# Lab Exercise 14 (Zooming through a Maze)
+# Lab Exercise 15 (Zooming through a Maze)
 
 ## Task
 
