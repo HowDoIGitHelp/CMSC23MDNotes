@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/functional_programming/functional_formalism.md</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Functional Programming Formalism
+
+---
+# Functional Programming Formalism
+
+- The system he created was called **Lambda Calculus**.
+- It became something more than a mathematical formalism and became an important concept in linguistics and **computer science** .
+
+
+---
+
+class: center, middle
+# Expressions in the Lambda Calculus Formalism
+
+---
+# Expressions in the Lambda Calculus Formalism
+
+1. **Variables**. If x is a variable, then $x \in \Lambda$
+2. **Abstractions**. If $x$ is a variable and $\mathcal{M} \in \Lambda$, then $(\lambda x. \mathcal{M}) \in \Lambda$.
+3. **Applications**. If $\mathcal{M} \in \Lambda \land \mathcal{N} \in \Lambda$, then $(\mathcal{M} \mathcal{N}) \in \Lambda$.
+
+
+---
+
+# Expressions in the Lambda Calculus Formalism
+
+1. Application is left associative
+   `
+$$
+ \mathcal{M_1}\mathcal{M_2}\mathcal{M_3} = ((\mathcal{M_1}\mathcal{M_2})\mathcal{M_3}) \\
+$$
+`
+2. Consecutive abstractions can be uncurried
+   `
+$$
+ \lambda xyz.\mathcal{M}=\lambda x.\lambda y.\lambda z.\mathcal{M} \\
+$$
+`
+3. The body of an abstraction extends to the right
+   `
+$$
+ \lambda x.\mathcal{M}\mathcal{N}=\lambda x.(\mathcal{M}\mathcal{N}) \\
+$$
+`
+
+
+---
+
+class: center, middle
+# Reductions
+
+---
+class: center, middle
+# $\alpha$ equivalence:
+
+---
+# $\alpha$ equivalence:
+
+`
+$$
+ \lambda x.x =_\alpha \lambda y.y \\
+$$
+`
+
+---
+
+class: center, middle
+# $\beta$ Reductions
+
+---
+# $\beta$ Reductions
+
+`
+$$
+ (\lambda x.x)y=_\beta y \\
+$$
+`
+
+---
+
+# $\beta$ Reductions
+
+`
+$$
+ (\lambda u. \lambda v.uvu)\lambda x.x =_{\beta} \lambda v.(\lambda x.x)v(\lambda x.x) \\
+$$
+`
+
+---
+
+class: center, middle
+# $\eta$ reductions
+
+---
+# $\eta$ reductions
+
+`
+$$
+ \lambda x.(\mathcal{M}x) =_\eta \mathcal{M} \\
+$$
+`
+
+---
+
+class: center, middle
+# Reduction example
+
+---
+# Reduction example
+
+`
+$$
+ (\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy)) \\
+$$
+`
+
+---
+
+# Reduction example
+
+`
+$$
+ \begin{aligned} (\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))&=_{\beta}\lambda y.((\lambda x.\lambda y.(xy))y)\\
+ &=_{\beta}\lambda y.\lambda y.(yy) \end{aligned} \\
+$$
+`
+
+---
+
+# Reduction example
+
+- The $x$ and $y$ variables inside the left lambda expression are **bound** inside this lambda expression.
+- The $x$ and $y$ variables outside the left lambda expression (inside the right lambda expression) are **free** in its context, therefore, even though they look the same, it is incorrect to interchange the two variables.
+
+
+---
+
+# Reduction example
+
+`
+$$
+ (\lambda x.\lambda y.(xy))(\lambda x.\lambda y.(xy))=_\alpha(\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv)) \\
+$$
+`
+
+---
+
+# Reduction example
+
+`
+$$
+ \begin{aligned} (\lambda x.\lambda y.(xy))(\lambda u.\lambda v.(uv))&=_\beta \lambda y.((\lambda u.\lambda v.(uv))y)\\
+ &=_\beta \lambda y.\lambda v.(yv) \end{aligned} \\
+$$
+`
+
+---
+
+class: center, middle
+# Lambda Calculus Encoding (Optional Reading)
+
+---
+# Lambda Calculus Encoding (Optional Reading)
+
+- The lambda calculus system is said to be **Turing Complete**, which means that the system can simulate any conceivable Turing machine.
+
+
+---
+
+class: center, middle
+# Boolean Values
+
+---
+# Boolean Values
+
+- **True:** $T=\lambda x. \lambda y. x$
+- **False:** $F=\lambda x. \lambda y. y$
+
+
+---
+
+# Boolean Values
+
+```python
+if(condition)
+	this
+else
+	that 
+
+```
+
+---
+
+# Boolean Values
+
+`
+$$
+ \lambda c.\lambda x. \lambda y. cxy \\
+$$
+`
+
+---
+
+# Boolean Values
+
+> $c$ : `condition`, $x$ : `this`, $y$ : `that`
+> 
+
+
+---
+
+# `not` function
+
+```python
+if(condition)
+	False
+else
+	True
+
+```
+
+---
+
+# `or` Function
+
+```python
+if(left)
+	True
+else
+	right
+
+```
+
+---
+
+# `or` Function
+
+`
+$$
+ \lambda x. \lambda y. xTy \\
+$$
+`
+
+---
+
+# `and` Function
+
+```python
+if(left)
+	right
+else
+	false
+
+```
+
+---
+
+class: center, middle
+# Natural Numbers
+
+---
+# Natural Numbers
+
+- Natural numbers are encoded in lambda calculus similar to how numbers are described using *Peano's Axioms*.
+
+
+---
+
+# Natural Numbers
+
+`
+$$
+ \overline{0} = \lambda s. \lambda z .z \\
+$$
+`
+
+---
+
+# Natural Numbers
+
+`
+$$
+ S=\lambda n. \lambda s. \lambda z. (s(nsz)) \\
+$$
+`
+
+---
+
+# Natural Numbers
+
+`
+$$
+ \begin{aligned} \overline{1}=S(\overline{0})&=(\lambda n. \lambda s. \lambda z. (s(nsz)))(\lambda u. \lambda v .v)\\
+ &=\lambda s.\lambda z.(s((\lambda u. \lambda v .v)sz))\\
+ &=\lambda s.\lambda z.(s(z)) \end{aligned} \\
+$$
+`
+
+---
+
+# Natural Numbers
+
+`
+$$
+ \begin{aligned} \overline{2}=S(\overline{1})&=(\lambda n. \lambda s. \lambda z. (s(nsz)))(\lambda u.\lambda v.(u(v)))\\
+ &=\lambda s.\lambda z.(s((\lambda u.\lambda v.(u(v)))sz))\\
+ &=\lambda s.\lambda z.(s(s(z))) \end{aligned} \\
+$$
+`
+
+---
+
+# Natural Numbers
+
+| Church Numeral | Lambda Calculus Encoding |
+|:---:|:---:|
+| $\overline{0}$ | $\lambda s. \lambda z .z$ |
+| $\overline{1}$ | $\lambda s.\lambda z.(s(z))$ |
+| $\overline{2}$ | $\lambda s.\lambda z.(s(s(z)))$ |
+| $\vdots$ | $\vdots$ |
+| $\overline{n}$ | $\lambda s. \lambda z. s^n(z)$[^superscript] |
+
+
+---
+
+# Natural Numbers
+
+`
+$$
+ S(\overline{n})=S(\lambda s. \lambda z. s^n(z))=\lambda s. \lambda z. s(s^n(z))=\lambda s. \lambda z. s^{n+1}(z) \\
+$$
+`
+
+---
+
+# Addition and Multiplication
+
+`
+$$
+ \text{add}=\lambda m.\lambda n. mSn \\
+$$
+`
+
+---
+
+# Addition and Multiplication
+
+`
+$$
+ \begin{aligned} \text{add } \overline{m}\overline{n}&=(\lambda m. \lambda n. mSn)\overline{m}\overline{n}\\
+ &=\overline{m}S\overline{n}\\
+ &=(\lambda s. \lambda z. s^{m}(z))S(\lambda a. \lambda b. a^{n}(b))\\
+ &=(\lambda z.S^m(z))(\lambda a. \lambda b. a^{n}(b))\\
+ &=S^m(\lambda a.\lambda b.a^n(b))\\
+ &=\lambda a.\lambda b.a^{m+n}(b)\\
+ &=\lambda s. \lambda z. s^{m+n}(z)\\
+ &=\overline{m+n} \end{aligned} \\
+$$
+`
+
+---
+
+# Addition and Multiplication
+
+`
+$$
+ \text{mult }=\lambda m.\lambda n. m (\text{add }n)\overline{0} \\
+$$
+`
+
+---
+
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

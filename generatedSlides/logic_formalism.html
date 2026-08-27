@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/logic_programming/logic_formalism.md</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Logic Programming Formalism
+
+---
+# Logic Programming Formalism
+
+- Logic programming is based on the formal system of **predicate calculus**.
+- It is a formalism based on *logical operations* and *quantification*.
+
+
+---
+
+class: center, middle
+# Satisfiability and Horn Clauses
+
+---
+class: center, middle
+# Satisfiability
+
+---
+# Satisfiability
+
+- A boolean expression is said to be **satisfiable** if there exists an assignment of truth values (either TRUE or FALSE) that evaluates the entire formula to TRUE.
+- A **boolean expression**, is an expression that uses only boolean values, variables or boolean operations.
+
+
+---
+
+# Satisfiability
+
+`
+$$
+ p \lor q \lor r \\
+$$
+`
+
+---
+
+# Satisfiability
+
+`
+$$
+ p \land \neg p \land q \\
+$$
+`
+
+---
+
+# Satisfiability
+
+`
+$$
+ \begin{aligned} & (u \lor \neg v \lor w) \land \\
+ & (\neg u \lor v \lor p) \land \\
+ & (\neg u \lor p \lor r) & \end{aligned} \\
+$$
+`
+
+---
+
+# Satisfiability
+
+- To make it a little easier to solve satisfiability problems, we usually write boolean formulas in **conjunctive normal form** (clausal normal form or CNF).
+- A boolean formula is in CNF if it is a *conjunction of disjunctions of boolean literals*.
+
+
+---
+
+# Satisfiability
+
+- Any boolean formula can be expanded into CNF using **logical equivalences**.
+
+
+---
+
+class: center, middle
+# Horn Clauses
+
+---
+# Horn Clauses
+
+- **Horn clauses** are special clauses where there is at most one positive literal in the disjunction.
+- A boolean formula in CNF where all clauses are Horn clauses is called a **Horn formula**.
+
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\neg r \lor \neg s \lor t) \land \\
+ & (\neg s \lor \neg t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+- If each Horn clause in the formula has at least one negative literal, then the formula is *always satisfiable* by assigning FALSE to each variable.
+
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (s) \land \\
+ & (\neg r \lor \neg s \lor t) \land \\
+ & (\neg s \lor t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\top) \land \\
+ & (\neg r \lor \bot \lor t) \land \\
+ & (\bot \lor t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+> In the previous formula, TRUE is denoted by the $\top$ symbol, and FALSE is denoted by the $\bot$ symbol.
+> 
+
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\neg r \lor t) \land \\
+ & (t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\neg r \lor \top) \land \\
+ & (\top) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (s) \land \\
+ & (t) \land \\
+ & (\neg s \lor \neg t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\top) \land \\
+ & (t) \land \\
+ & (\bot \lor \neg t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (t) \land \\
+ & (\neg t) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses
+
+`
+$$
+ \begin{aligned} & (\neg p) \land \\
+ & (\neg q \lor r) \land \\
+ & (\top) \land \\
+ & (\bot) \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses as Implications
+
+- Horn clauses also have the advantage of being neatly rewritten as *implication statements*.
+
+
+---
+
+# Horn Clauses as Implications
+
+`
+$$
+ \neg p \lor q \equiv p \lor q \\
+$$
+`
+
+---
+
+# Horn Clauses as Implications
+
+`
+$$
+ \begin{aligned} \neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n \lor q &\equiv \\
+ (p_1 \land p_2 \land \cdots \land p_n) \to q \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses as Implications
+
+- A Horn clause with exactly one positive literal and one or more negative literal is known as a **definite Horn clause**.
+
+
+---
+
+# Horn Clauses as Implications
+
+- A Horn clause that is only made up of one positive literal and nothing else is called a **fact**.
+
+
+---
+
+# Horn Clauses as Implications
+
+`
+$$
+ \begin{aligned} q & \equiv \bot \lor q\\
+ & \equiv \top \to q \end{aligned} \\
+$$
+`
+
+---
+
+# Horn Clauses as Implications
+
+- A Horn clause that is made up 1 or more negative literals, is called a **goal clause**.
+
+
+---
+
+# Horn Clauses as Implications
+
+`
+$$
+ \begin{aligned} \neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n & \equiv \\
+ \neg p_1 \lor \neg p_2 \lor \cdots \lor \neg p_n \lor \bot & \equiv \\
+ (p_1 \land p_2 \land \cdots \land p_n) \to \bot \end{aligned} \\
+$$
+`
+
+---
+
+# Resolution
+
+`
+$$
+ \begin{aligned} p_1 \lor p_2 \lor \cdots \lor r & \\
+ q_1 \lor q_2 \lor \cdots \lor \neg r & \\
+ \hline p_1 \lor p_2 \lor q_1 \lor q_2 \cdots \\
+ \end{aligned} \\
+$$
+`
+
+---
+
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
