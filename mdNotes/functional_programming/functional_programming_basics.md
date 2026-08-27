@@ -71,10 +71,10 @@ Functional programming languages treat functions the same way it treats values, 
 
 ```haskell
 s :: Int -> Int
-func x = x + 1
+s x = x + 1
 
 p :: Int -> Int
-func x = x - 1
+p x = x - 1
 
 applytwice :: (Int-> Int) -> Int -> Int
 applytwice f x = f (f x)
