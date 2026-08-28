@@ -164,7 +164,7 @@ $$
 \lambda c.\lambda x. \lambda y. cxy
 $$
 
-> $c$ : `condition`, $x$ : `this`, $y$ : `that`
+$c$ : `condition`, $x$ : `this`, $y$ : `that`
 
 Applying this function shows how lambda calculus boolean encodings work.
 The example below shows what happens when the condition is applied to a true condition
@@ -179,6 +179,7 @@ $$
 &=a\\
 \end{aligned}
 $$
+
 [^alpha_eq]
 
 [^alpha_eq]: In the first line a quick $\alpha$ equivalency is done on the `True` encoding.
@@ -192,6 +193,7 @@ $$
 &=b
 \end{aligned}
 $$
+
 [^beta_eq]
 
 [^beta_eq]: In the effort of saving lines $\beta$ reductions with currying are applied in one go.
@@ -210,6 +212,7 @@ else
 ```
 
 In lambda calculus:
+
 $$
 \lambda x.xFT
 $$
@@ -243,6 +246,7 @@ else
 ```
 
 In lambda calculus:
+
 $$
 \lambda x. \lambda y. xyF
 $$

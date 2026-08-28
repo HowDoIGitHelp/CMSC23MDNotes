@@ -213,9 +213,29 @@ $$
 
 # Boolean Values
 
-> $c$ : `condition`, $x$ : `this`, $y$ : `that`
-> 
+`
+$$
+ \begin{aligned} (\lambda c.\lambda x. \lambda y. cxy)Tab &= (\lambda c.\lambda x. \lambda y. cxy)(\lambda u. \lambda v. u)ab\\
+ &=(\lambda x. \lambda y. ((\lambda u. \lambda v. u)xy))ab\\
+ &=(\lambda x. \lambda y. ((\lambda v. x)y))ab\\
+ &=(\lambda x. \lambda y. x)ab\\
+ &=(\lambda y. a)b\\
+ &=a\\
+ \end{aligned} \\
+$$
+`
 
+---
+
+# Boolean Values
+
+`
+$$
+ \begin{aligned} (\lambda c.\lambda x. \lambda y. cxy)Fab &= (\lambda c.\lambda x. \lambda y. cxy)(\lambda u. \lambda v. v)ab\\
+ &=(\lambda u. \lambda v. v)ab\\
+ &=b \end{aligned} \\
+$$
+`
 
 ---
 
@@ -228,6 +248,16 @@ else
 	True
 
 ```
+
+---
+
+# `not` function
+
+`
+$$
+ \lambda x.xFT \\
+$$
+`
 
 ---
 
@@ -262,6 +292,16 @@ else
 	false
 
 ```
+
+---
+
+# `and` Function
+
+`
+$$
+ \lambda x. \lambda y. xyF \\
+$$
+`
 
 ---
 
