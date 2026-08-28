@@ -84,6 +84,9 @@ Lab exercises submitted after the deadline but within the day will have a 10% de
 Lab exercises submitted after the day will have a 20% deduction per day.
 Lab exercises submitted one week after the deadline will not be accepted.
 
+Submitting code that is not your own constitutes cheating and will be subject to the universities policies and penalties regarding academic dishonesty.
+This includes submitting code written by AI.
+
 Please let me know if you encounter any issues in submitting the lab exercises.
 
 1. [Imperative Programming Review](/imperative-programming-review)
