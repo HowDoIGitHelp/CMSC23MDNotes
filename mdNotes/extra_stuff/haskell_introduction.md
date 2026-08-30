@@ -194,7 +194,7 @@ double 3
 
 evaluates to 6
 
-```
+```haskell
 compose addThree double 2
 ```
 
@@ -250,8 +250,7 @@ evaluates to `"abcd"`[^char_list]
 ```
 
 The `[]` expression evaluates to an empty list.
-
-evaluates to `[1,2,3,4]`
+So this evaluates to `[1,2,3,4]`
 
 You can also create regular series as lists by specifying the start and end of the list:
 
@@ -411,9 +410,9 @@ secondElement (e1:e2:rest) = e2
 ```
 
 From the deconstruction, haskell also creates a local binding that binds the first element into `e1`, the second element into `e2`, and the rest of the list into `rest`.
-We can use this binding in the functions definition.
+We can use this binding in the function's definition.
 
-Since the `(e1:e2:rest)` pattern only matches lists with 2 elements or more, the pattern is non exhaustive.
+Since the `(e1:e2:rest)` pattern only matches lists with 2 elements or more, the pattern is non-exhaustive.
 We can add a definition that matches the wildcard pattern (`_`).
 The wildcard pattern matches any expression, making our function exhaustive.
 
@@ -476,7 +475,7 @@ evaluates to -6
 ## Where blocks
 
 You can create multiple local bindings inside the `where` block of functions.
-All of the bindings inside the `where` block can be used in the scope of the function definition.
+All the bindings inside the `where` block can be used in the scope of the function definition.
 
 ```haskell
 function arg arg = definition
