@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/functional_programming/recursion.md</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Recursion
+
+---
+# Recursion
+
+```c
+for (int i = 0; i < 10; i++) {
+    println("hello");
+}
+
+```
+
+---
+
+# Recursion
+
+```c
+while (boolean_expression) {
+    no_state_change
+}
+
+```
+
+---
+
+# Recursion
+
+```haskell
+summation :: Int -> Int
+summation n = 
+    if n <= 0 then 0
+    else n + summation (n - 1)
+
+```
+
+---
+
+class: center, middle
+# Recurrence Relations
+
+---
+# Recurrence Relations
+
+`
+$$
+ \begin{aligned} 0! &= 1\\
+ n! &= n(n-1)! \end{aligned} \\
+$$
+`
+
+---
+
+# Recurrence Relations
+
+```haskell
+factorial :: Int -> Int
+factorial n = 
+    if n == 0 then 1
+    else n * factorial (n - 1)
+
+```
+
+---
+
+# Recurrence Relations
+
+```haskell
+n_asterisks :: Int -> String
+n_astersisk n = "*" ++ nasterisk (n - 1)
+
+```
+
+---
+
+# Recurrence Relations
+
+```haskell
+n_asterisks :: Int -> String
+n_asterisks n = 
+    if n <= 0 then ""
+    else "*" ++ n_asterisks (n - 1)
+
+```
+
+---
+
+# Recurrence Relations
+
+```haskell
+is_not_greater :: Int -> [Int] -> Bool
+is_not_greater n list = 
+    if (length list) == 0 then True
+    else (n <= (head list)) && is_not_greater n (tail list)
+
+```
+
+---
+
+# Recurrence Relations
+
+- `length :: [a] -> Int` - returns the length of the list, or the number of elements
+- `head :: [a] -> a` - returns the first element in the list
+- `tail :: [a] -> [a]` - returns the entire list excluding the first element
+
+
+---
+
+# Recurrence Relations
+
+```haskell
+is_sorted :: [Int] -> Bool
+is_sorted list = 
+    if (length list) == 0 then True
+    else (is_not_greater (head list) (tail list)) && (is_sorted (tail list))
+
+```
+
+---
+
+class: center, middle
+# Accumulators
+
+---
+# Accumulators
+
+```haskell
+index_of :: Int -> [Int] -> Int
+index_of elem list = 
+    if (length list) == 0 then error "element not found"
+    else if ((head list) == elem) then <index_of_elem>
+        else (index_of elem (tail list))
+
+```
+
+---
+
+# Accumulators
+
+```haskell
+index_of :: Int -> [Int] -> Int -> Int
+index_of elem list index = 
+    if (length list) == 0 then error "element not found"
+    else if ((head list) == elem) then index
+        else (index_of elem (tail list) (index + 1))
+
+```
+
+---
+
+# Accumulators
+
+```haskell
+index_of_inner :: Int -> [Int] -> Int -> Int
+index_of_inner elem list index = 
+    if (length list) == 0 then error "element not found"
+    else if ((head list) == elem) then index
+        else (index_of_inner elem (tail list) (index + 1))
+
+index_of :: Int -> [Int] -> Int
+index_of elem list = index_of_inner elem list 0
+
+```
+
+---
+
+# Accumulators
+
+```haskell
+index_of :: Int -> [Int] -> Int
+index_of elem list = index_of_inner elem list 0
+    where
+        index_of_inner elem list index = 
+            if (length list) == 0 then error "element not found"
+            else if ((head list) == elem) then index
+                else (index_of_inner elem (tail list) (index + 1))
+
+```
+
+---
+
+# Accumulators
+
+- What we ended up with `index_of_inner` is known as **accumulator passing style** .
+
+
+---
+
+class: center, middle
+# Tail Call Recursion
+
+---
+# Tail Call Recursion
+
+- When the last evaluation performed in your recursive function is the recursive call, it is known as **tail call recursion**.
+
+
+---
+
+# Tail Call Recursion
+
+```haskell
+summation :: Int -> Int
+summation n = 
+    if n <= 0 then 0
+    else n + summation (n - 1)
+
+```
+
+---
+
+# Tail Call Recursion
+
+```haskell
+summation 3
+(3 + summation 2)
+3 + (2 + summation 1)
+3 + (2 + (1 + summation 0))
+3 + (2 + (1 + 0))
+3 + (2 + 1)
+3 + 3
+6
+
+```
+
+---
+
+# Tail Call Recursion
+
+```haskell
+tail_summation :: Int -> Int
+tail_summation n = s n 0
+    where
+        s n sum =
+            if n <= 0 then sum
+            else s (n - 1) (n + sum)
+
+```
+
+---
+
+# Tail Call Recursion
+
+```haskell
+tail_summation 3
+s 3 0
+s (3 - 1) (3 + 0)
+s 2 3
+s (2 - 1) (2 + 3)
+s 1 5
+s (1 - 0) (1 + 5)
+s 0 6
+```
+
+---
+
+# Tail Call Recursion
+
+```haskell
+6
+
+```
+
+---
+
+# Tail Call Recursion
+
+- This process is known as **tail call optimization** .
+
+
+---
+
+# Tail Call Recursion
+
+```ansi
+> ./non_tco +RTS -s
+5000050000
+       1,721,968 bytes allocated in the heap
+           3,272 bytes copied during GC
+          44,328 bytes maximum residency (1 sample(s))
+          25,304 bytes maximum slop
+               7 MiB total memory in use (0 MiB lost due to fragmentation)
+
+```
+
+---
+
+# Tail Call Recursion
+
+```ansi
+> ./tco +RTS -s  
+5000050000
+          50,800 bytes allocated in the heap
+           3,272 bytes copied during GC
+          44,328 bytes maximum residency (1 sample(s))
+          25,304 bytes maximum slop
+               6 MiB total memory in use (0 MiB lost due to fragmentation)
+
+```
+
+---
+
+class: center, middle
+# Extra Reading
+
+---
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
