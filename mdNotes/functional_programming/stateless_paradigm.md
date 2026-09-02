@@ -49,7 +49,7 @@ It is a side effect since this line of code modifies values outside boundaries o
 ```c
 int* increaseArray(int *a, int size){
     for(int i = 0; i < size; i++)
-    a[i]+1;
+        a[i] = a[i]+1;
 }
 ```
 
