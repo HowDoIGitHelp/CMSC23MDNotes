@@ -66,7 +66,7 @@ From that recurrence relation we can define:
 
 ```haskell
 n_asterisks :: Int -> String
-n_astersisk n = "*" ++ nasterisk (n - 1)
+n_asterisks n = "*" ++ nasterisks (n - 1)
 ```
 
 To complete the recursive function, we just need a base case that represents the simplest and most trivial case for the problem.

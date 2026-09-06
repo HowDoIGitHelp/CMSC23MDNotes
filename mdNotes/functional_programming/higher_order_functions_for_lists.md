@@ -88,7 +88,7 @@ f(l_1,f(l_2,f(l_3,f(l_n,u)))) &= (1 - (2 - (3 - (4 - 0))))\\
 \end{aligned}
 $$
 
-The functions `foldl` and `foldr` will have the same result when used on a commutative function.
+The functions `foldl` and `foldr` will have the same result when used on an associative function.
 
 ```haskell
 > foldl (+) 0 [1,2,3,4]
