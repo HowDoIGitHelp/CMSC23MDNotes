@@ -112,6 +112,12 @@ is_sorted list =
     if (length list) == 0 then True
     else (is_not_greater (head list) (tail list)) && (is_sorted (tail list))
 
+index_of_helper :: Int -> [Int] -> Int -> Int
+index_of_helper elem list index = 
+    if (length list) == 0 then error "element not found"
+    else if ((head list) == elem) then index
+        else (index_of_helper elem (tail list) (index + 1))
+
 index_of :: Int -> [Int] -> Int
 index_of elem list = index_of_inner elem list 0
     where
@@ -121,8 +127,14 @@ index_of elem list = index_of_inner elem list 0
                 else (index_of_inner elem (tail list) (index + 1))
 
 summation :: Int -> Int
-summation 0 = 0
-summation n = n + summation (n - 1)
+summation n = 
+    if n <= 0 then 0
+    else n + summation (n - 1)
+
+factorial :: Int -> Int
+factorial n = 
+    if n == 0 then 1
+    else n * factorial (n - 1)
 
 tail_summation :: Int -> Int
 tail_summation n = s n 0
