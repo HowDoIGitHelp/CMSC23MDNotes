@@ -43,6 +43,8 @@ $$
 & \end{aligned}
 $$
 
+## Conjunctive Normal Form
+
 To make it a little easier to solve satisfiability problems, we usually write boolean formulas in **conjunctive normal form** (clausal normal form or CNF).
 A boolean formula is in CNF if it is a *conjunction of disjunctions of boolean literals*.
 Each disjunction is also known as a clause (e.g. $(u \lor \neg w \lor w)$).
@@ -53,7 +55,7 @@ The equivalent CNF of a boolean formula is easier to solve since we just need to
 
 ### Horn Clauses
 
-**Horn clauses** are special clauses where there is at most one positive literal in the disjunction.
+**Horn clauses** are special clauses where there is *at most* one positive literal in the disjunction.
 A boolean formula in CNF where all clauses are Horn clauses is called a **Horn formula**.
 The satisfiability of a Horn formula is much easier to solve.
 
@@ -66,11 +68,11 @@ $$
 \end{aligned}
 $$
 
-If each Horn clause in the formula has at least one negative literal, then the formula is *always satisfiable* by assigning FALSE to each variable.
+If each Horn clause in the formula has at least one negative literal, then the formula is *guaranteed to be satisfiable* by assigning FALSE to each variable.
 This is because the negative literals will all evaluate to TRUE, therefore making each clause TRUE.
 This Horn formula is a trivial case for satisfiability.
 
-On the other hand if some of the clauses have no negative literals, then we can simply reduce the clauses to either a trivial satisfiable Horn clause or a contradiction.
+On the other hand if some of the clauses have no negative literals, then there are two possibilities. Either the formula can be reduced to a trivial satisfiable Horn clause or it can be reduced to a contradiction.
 
 $$
 \begin{aligned}
@@ -83,9 +85,9 @@ $$
 $$
 
 In this example, one of the Horn clauses have no negative literal.
-Note, that a Horn clause with no literal is a clause with exactly one positive literal.
+Note, that a Horn clause with no negative literal is a clause with exactly one positive literal.
 
-This can be solved by assigning clause $(s)$ as TRUE, since it can be true for the entire formula to be satisfiable.
+To solve this formula we assign clause $(s)$ as TRUE, since this is the only way for the entire formula to be satisfiable.
 
 $$
 \begin{aligned}
@@ -97,9 +99,11 @@ $$
 \end{aligned}
 $$
 
-> In the previous formula, TRUE is denoted by the $\top$ symbol, and FALSE is denoted by the $\bot$ symbol.
+[^top_and_bottom]
 
-We just need to reduce the formula according to logical equivalencies:
+[^top_and_bottom]: In the previous formula, TRUE is denoted by the $\top$ symbol, and FALSE is denoted by the $\bot$ symbol.
+
+From here, we just need to reduce the formula according to logical equivalencies:
 
 $$
 \begin{aligned}
@@ -122,7 +126,7 @@ $$
 \end{aligned}
 $$
 
-Reduced into:
+This reduces into:
 
 $$
 \begin{aligned}
@@ -194,7 +198,7 @@ $$
 \neg p \lor q \equiv p \lor q
 $$
 
-A Horn clause that has exactly one positive literal can be converted into an implication with the sole positive literal as the conclusion, and the rest as the hypothesis.
+A Horn clause that has exactly one positive literal can be converted into an implication with the sole positive literal as the conclusion, and the rest as the hypotheses.
 
 $$
 \begin{aligned}

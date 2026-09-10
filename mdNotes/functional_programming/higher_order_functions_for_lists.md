@@ -92,12 +92,12 @@ The functions `foldl` and `foldr` will have the same result when used on an asso
 
 ```haskell
 > foldl (+) 0 [1,2,3,4]
-15
+10
 ```
 
 ```haskell
 > foldr (+) 0 [1,2,3,4]
-15
+10
 ```
 
 You can use fold to concatenate lists:
