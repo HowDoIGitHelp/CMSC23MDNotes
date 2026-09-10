@@ -25,7 +25,7 @@ By the same intuition, `watertype(X)` and `watertype(squirtle)` will also unify.
 Unification involving variables, create what is known as an instantiation.
 Unifying `watertype(X)` and `watertype(squirtle)` will create the instantiation `X=squirtle`.
 
-On the other hand the complex terms `isresistantto(X,charmander)` and `isresistantto(squirtle,X)` do not unify since you cannot find a consistent instantiation of `X`.
+On the other hand, the complex terms `isresistantto(X,charmander)` and `isresistantto(squirtle,X)` do not unify since you cannot find a consistent instantiation of `X`.
 The instantiation `X=squirtle` evaluates to the terms `isresistantto(squirtle,charmander)` and `isresistantto(squirtle,squirtle)`.
 The instantiation `X=charmander` makes the terms `isresistantto(charmander,charmander)` and `isresistantto(squirtle,charmander)`.
 
@@ -168,7 +168,7 @@ false.
 ## Selective Linear Definite Resolution
 
 Prolog uses the algorithm called **Selective Linear Definite Resolution** (SLD Resolution) to answer queries efficiently.
-The process is equivalent to checking if the combination of the knowledge base clauses and the goal leads to an unsatisfiable formula.
+The process is equivalent to checking if combining the knowledge base clauses and the goal leads to an unsatisfiable formula.
 But this method provides a step-by-step process that can be easily implemented by computers.
 
 Let's start with a simple example:
@@ -177,21 +177,19 @@ Let's start with a simple example:
 q(a).
 s(b).
 p(X).
-```
 
-```
 ?- p(a), p(b)
 ```
 
 Given the query, `p(a), p(b)`, Prolog produces a goal by negating the query.
-The goal is now $\neg p(a) \lor \neg p(b)$.
-Since the goal is a disjunction, it must prove that a contradiction arises from both $\neg p(a)$ and $\neg p(b)$.
+The goal is now $\neg (p(a) \lor p(b))$.
+Since the goal is a disjunction, its negation becomes a conjunction via DeMorgan's Law, $\neg p(a) \land \neg p(b)$.
 This creates two separate sub goals $\neg p(a)$ and $\neg p(b)$.
 One of the aspects of SLD resolution is how it only *selects* one **subgoal** out of the conjunction of goals.
 Prolog selects the leftmost subgoal first, in this case, $\neg p(a)$.
 
 Prolog searches the entire knowledge base from top to bottom, and tries to unify the current subgoal with any fact or rule head in the knowledge base.
-A successful unification, resolves the subgoal away.
+A successful unification, resolves the subgoal away (i.e. the subgoal gets cancelled out via resolution).
 In this case, $\neg p(a)$, unifies with $p(X)$, creating the instantiation $X = a$.
 
 If the resolution is unclear, you can write $\neg p(a)$ and $p(X)$ as separate clauses[^comp_unif].
@@ -207,9 +205,10 @@ $$
 
 [^comp_unif]: $p(X)$ and $\neg p(a)$ are complements of each other through unification. Remember that `p(X)` in Prolog implicitly means $\forall x p(x)$. Through universal instantiation, we know that $\forall x p(x)$ implies that $p(a)$ is true. And we know that $p(a)$ is a complement of $\neg p(a)$.
 
-This resolves $\neg p(a)$, cancelling it out. Thus, leaving $\neg p(b)$ as the only remaining subgoal to be resolved.
+This resolves $\neg p(a)$, cancelling it out.
+Therefore, this leaves $\neg p(b)$ as the only remaining subgoal to be resolved.
 Prolog repeats the process for $\neg p(b)$, unifying with $p(X)$ with the instantiation $X=b$.
-Resolving $\neg p(b)$ leaves all subgoals resolved.
+Resolving $\neg p(b)$ leaves all subgoals resolved away.
 With all subgoals resolved and refuted, the query is proven `true` by contradiction.
 
 Let's try an example that involves rules on the knowledge base (example from @blackburn_learn_2006).
