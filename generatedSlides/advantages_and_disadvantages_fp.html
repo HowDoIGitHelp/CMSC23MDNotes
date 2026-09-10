@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>mdNotes/functional_programming/advantages_and_disadvantages_fp.md</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+# Advantages and Disadvantages of Functional Programming
+
+---
+class: center, middle
+# Advantages
+
+---
+# Advantages
+
+- Functional purity
+- Lack of side effects
+- Referential Transparency
+
+
+---
+
+# Advantages
+
+- Also, functional programming revolutionized how functions are *used* and *treated*.
+- As a result you end up with a very *expressive* language.
+
+
+---
+
+class: center, middle
+# Disadvantages
+
+---
+# Disadvantages
+
+- Functional programming has its own set of *disadvantages* as well, most of them related to this seemingly artificial crutch of statelessness and immutability.
+- The most obvious one is that creating new values instead of changing an existing variable has extra overhead in both processing and memory, making functional programming *slower and less efficient*.
+- Programming without state can be difficult to do for certain mechanisms (*Like the external logger for example*).
+- It's not impossible though, you just have to learn some category theory concepts such as **monads**.
+
+
+---
+
+# Disadvantages
+
+- Also, for most people who are used imperative programming, *recursion*, does not feel natural compared to *iteration*.
+
+
+---
+
+# Disadvantages
+
+- People mocked Haskell for its pristine white tower "*elitist*" approach to programming.
+- In fact, functional programming has gained a considerable rise in popularity to an extent that mainstream programming languages with imperative roots like C#, Python, and JavaScript have started to introduce features *derived* from functional programming languages.
+- These languages and more either have libraries or built-in **higher-order functions** and **lambdas**.
+- At this point learning functional programming concepts has become a *necessity* for any programmer, regardless of their paradigm preferences.
+
+
+---
+
+class: center, middle
+# Some projects and systems written in the functional paradigm
+
+---
+# Some projects and systems written in the functional paradigm
+
+- [Pandoc](https://pandoc.org/) - a widely used document converter that is offers universal document conversions from markdown, docx, latex, html, and more. It is written in haskell.
+- [Emacs](https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html) - a very extensible text editor that natively interprets lisp. Its plugins are also written in lisp.
+- [React](https://react.dev/) - a Javascript library for mainly for web UI. Modern react moved from OOP to functional programming.
+
+
+---
+
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
