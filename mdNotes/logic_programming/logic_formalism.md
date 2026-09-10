@@ -195,7 +195,7 @@ If you apply the logical equivalency that converts disjunctions into implication
 You can convert your Horn clauses into implication statements.
 
 $$
-\neg p \lor q \equiv p \lor q
+\neg p \lor q \equiv p \to q
 $$
 
 A Horn clause that has exactly one positive literal can be converted into an implication with the sole positive literal as the conclusion, and the rest as the hypotheses.
