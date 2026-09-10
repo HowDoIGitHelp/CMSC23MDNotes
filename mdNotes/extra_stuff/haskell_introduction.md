@@ -2,20 +2,19 @@
 
 ## Setting up Haskell
 
-To start writing Haskell code, install Haskell through stack. Stack is found in the folder called "Haskell/Stack" inside the provided course pack. Copy the Stack folder and place it in your computer. To be able to use stack anywhere, add your copy of the stack folder in the PATH variable of your computer.
+You can find instructions to get started with haskell in their [official page](https://www.haskell.org/get-started/).
+The easiest way is through [GHCup](https://www.haskell.org/ghcup/#) which includes a complete haskell development toolchain.
 
-Once stack has been set up using the steps above, you can run the GHC repl using the command 
+After adding `ghci` in your PATH environment variable, you can verify your installation by running the `ghci` REPL.
 
 ```
-> stack ghci
+> ghci
 ```
 
-The first time you run this code, stack will automatically install the GHC compiler. 
-
-After downloading GHC, you will be taken to the Prelude part of your GHC repl. To test if everything is working properly, try the following Haskell expression:
+Once you are inside the `ghci` repl, you can try evaluating haskell expressions.
 
 ```haskell
-Prelude> show (1 + 3)
+> show (1 + 3)
 ```
 
 If everything is good to go, the GHC expression will evaluate to:
@@ -33,13 +32,13 @@ To exit GHC run the following GHC command
 To load a Haskell program, enter the GHC repl first
 
 ```
-> stack ghci
+> ghci
 ```
 
-While inside `Prelude`, use the command `:load <Path to haskell file>`. For example
+While inside `ghci`, use the command `:load <Path to haskell file>`. For example
 
 ```haskell
-Prelude> :load "Trying Things.hs"
+> :load "Trying Things.hs"
 ```
 
 If the path to the haskell file contains spaces, you need to enclose the path in quotes.
