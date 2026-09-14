@@ -50,6 +50,7 @@ project:
         - file: mdNotes/extra_stuff/kotlin_introduction.md
         - file: mdNotes/extra_stuff/OOP_kotlin.md
         - file: mdNotes/extra_stuff/exceptions_kotlin.md
+        - file: mdNotes/extra_stuff/LE2_selftest.md
     - file: mdNotes/lab_index.md
       hidden: true
       children:
