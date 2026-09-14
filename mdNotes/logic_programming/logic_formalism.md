@@ -40,7 +40,7 @@ $$
 & (u \lor \neg v \lor w) \land \\
 & (\neg u \lor v \lor p) \land \\
 & (\neg u \lor p \lor r)
-& \end{aligned}
+\end{aligned}
 $$
 
 ## Conjunctive Normal Form
