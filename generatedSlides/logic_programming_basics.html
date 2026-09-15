@@ -72,8 +72,8 @@ axiom_1.
 
 `$$
 \begin{aligned}
-firetype(charmander) & \equiv firetype(charmander) \lor \bot\\
-& \equiv \top \to firetype(charmander) \\
+\text{firetype}(\text{charmander}) & \equiv \text{firetype}(\text{charmander}) \lor \bot\\
+& \equiv \top \to \text{firetype}(\text{charmander}) \\
 \end{aligned}
 $$`
 
@@ -110,8 +110,8 @@ resistanttofire(squirtle) :- watertype(squirtle).
 
 `$$
 \begin{aligned}
-watertype(squirtle) \to resistanttofire(squirtle) & \equiv \\
-\neg watertype(squirtle) \lor resistanttofire(squirtle)
+\text{watertype}(\text{squirtle}) \to \text{resistanttofire}(\text{squirtle}) & \equiv \\
+\neg \text{watertype}(\text{squirtle}) \lor \text{resistanttofire}(\text{squirtle})
 \end{aligned}
 $$`
 
@@ -183,7 +183,7 @@ true.
 
 `$$
 \begin{aligned}
-\neg firetype(charizard) \lor \neg watertype(squirtle)
+\neg \text{firetype}(\text{charizard}) \lor \neg \text{watertype}(\text{squirtle})
 \end{aligned}
 $$`
 
