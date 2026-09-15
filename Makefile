@@ -1,4 +1,5 @@
 include mdSources.txt
+include mdSourcesSlides.txt
 
 book.pdf: $(mdSources) template.typ references.bib Makefile
 	pandoc $(mdSources) \
@@ -12,6 +13,9 @@ book.pdf: $(mdSources) template.typ references.bib Makefile
 		--bibliography="references.bib" \
 		--template="template.typ" \
 		--pdf-engine=typst
+
+slides:
+	$(foreach file, $(mdSourcesSlides), make -C generatedSlides SOURCE=$(file) OUTPUT=$(notdir $(basename $(file))).html;)
 
 clean:
 	rm book.pdf
