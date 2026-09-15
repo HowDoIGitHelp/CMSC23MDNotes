@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Logic Programming Paradigm
+
+---
+
+# Introduction
+
+- Computer Scientists usually describe families of programming languages
+  under the logic paradigm as a sub-paradigm of declarative programming
+  (*declarative programming being any paradigm that is not imperative*).
+
+---
+
+# Learning Outcomes
+
+1.  Create Prolog facts, rules, and queries
+2.  Explain the process of unification
+3.  Explain how proof search is used to respond to queries
+4.  Create recursive Prolog rules
+
+---
+
+# Facts
+
+- There are three basic constructs in Prolog, **facts**, **rules** and
+  **queries**.
+- A **knowledge base** is a collection of facts and rules in the same
+  way a c library or a python package is a collection of function
+  definitions.
+
+---
+
+# Facts
+
+``` prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+```
+
+---
+
+# Facts
+
+``` prolog
+firetype(charmander).
+```
+
+---
+
+# Facts
+
+``` prolog
+this_is_a_fact.
+axiom_1.
+```
+
+---
+
+# Facts
+
+`$$
+\begin{aligned}
+firetype(charmander) & \equiv firetype(charmander) \lor \bot\\
+& \equiv \top \to firetype(charmander) \\
+\end{aligned}
+$$`
+
+---
+
+# Rules
+
+``` prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+resistanttofire(squirtle) :- watertype(squirtle).
+```
+
+---
+
+# Rules
+
+- Rules are written with the syntax: **`u :- v`**.
+- In prolog, we call the conclusion `u` as the rule **head** and the
+  hypothesis `v` as the rule **body**.
+
+---
+
+# Rules
+
+- A **rule** is an implementation of a definite Horn clause.
+
+---
+
+# Rules
+
+`$$
+\begin{aligned}
+watertype(squirtle) \to resistanttofire(squirtle) & \equiv \\
+\neg watertype(squirtle) \lor resistanttofire(squirtle)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+- We interact with a knowledge base by writing **queries** to Prolog.
+- Queries represent *questions* you ask Prolog.
+
+---
+
+# Queries
+
+``` prolog
+?- firetype(charmander).
+```
+
+---
+
+# Queries
+
+``` prolog
+true.
+```
+
+---
+
+# Queries
+
+``` prolog
+?- firetype(squirtle).
+```
+
+---
+
+# Queries
+
+``` prolog
+false.
+```
+
+---
+
+# Queries
+
+``` prolog
+?- firetype(charizard), watertype(squirtle).
+```
+
+---
+
+# Queries
+
+``` prolog
+true.
+```
+
+---
+
+# Queries
+
+- When you provide a query to prolog, prolog tries to prove that the
+  query is true using **proof by contradiction**.
+
+---
+
+# Queries
+
+`$$
+\begin{aligned}
+\neg firetype(charizard) \lor \neg watertype(squirtle)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+- Therefore, the goal's negation (the original query), must be
+  **consistent** with the knowledge base's assumptions.
+- This ultimately means that it is **true** with respect to the
+  knowledge base.
+
+---
+
+# Queries
+
+``` prolog
+p
+q
+r :- q
+```
+
+---
+
+# Queries
+
+``` prolog
+?- r
+```
+
+---
+
+# Queries
+
+`$$
+\begin{aligned}
+(p) \land \\
+(q) \land \\
+(\neg q \lor r) \land \\
+(\neg r)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+`$$
+\begin{aligned}
+(\top) \land \\
+(\top) \land \\
+(\bot \lor r) \land \\
+(\neg r)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+`$$
+\begin{aligned}
+(r) \land \\
+(\neg r)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+`$$
+\begin{aligned}
+(\top) \land \\
+(\bot)
+\end{aligned}
+$$`
+
+---
+
+# Queries
+
+``` prolog
+true.
+```
+
+---
+
+# Variables
+
+- Another important thing about Prolog constructs is that you can write
+  them with **variables**.
+- When you write with Prolog facts or rules, you are implicitly creating
+  a *universally instantiated predicate*.
+
+---
+
+# Variables
+
+``` prolog
+pokemon(X).
+```
+
+---
+
+# Variables
+
+``` prolog
+?- pokemon(charizard).
+```
+
+---
+
+# Variables
+
+``` prolog
+true.
+```
+
+---
+
+# Variables
+
+``` prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+
+resistanttofire(squirtle) :- watertype(squirtle).
+```
+
+---
+
+# Variables
+
+``` prolog
+?- firetype(X)
+```
+
+---
+
+# Variables
+
+``` prolog
+X = charmander
+X = charizard
+```
+
+---
+
+# Variables
+
+``` prolog
+firetype(charmander).
+firetype(charizard).
+watertype(squirtle).
+flyingtype(charizard).
+```
+
+---
+
+# Variables
+
+``` prolog
+
+isresistantto(X,Y) :- watertype(X),firetype(Y).
+isresistantto(X,Y) :- watertype(X),watertype(Y).
+```
+
+---
+
+# Variables
+
+> for all pairs of X and Y, X is resistant to Y, if X is water type and
+> Y is fire type,
+
+---
+
+# Variables
+
+``` prolog
+?- isresistantto(squirtle,charmander).
+true.
+```
+
+---
+
+# Variables
+
+``` prolog
+?- isresistantto(squirtle,charizard).
+true.
+```
+
+---
+
+# Variables
+
+``` prolog
+?- isresistantto(squirtle,squirtle).
+true.
+```
+
+---
+
+# Variables
+
+``` prolog
+?- isresistantto(squirtle,X).
+```
+
+---
+
+# Variables
+
+``` prolog
+X = charmander
+X = charizard
+X = squirtle
+```
+
+---
+
+# Variables
+
+``` prolog
+?- isresistantto(X,Y).
+X = squirtle,
+Y = charmander ;
+X = squirtle,
+Y = charizard ;
+X = Y, Y = squirtle.
+```
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
