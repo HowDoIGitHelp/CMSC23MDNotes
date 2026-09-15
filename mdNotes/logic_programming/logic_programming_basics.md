@@ -156,7 +156,7 @@ For example, the query `firetype(charizard), watertype(squirtle)`, is negated in
 
 $$
 \begin{aligned}
-\neg firetype(charizard) \lor \neg watertype(squirtle)
+\neg \text{firetype}(\text{charizard}) \lor \neg \text{watertype}(\text{squirtle})
 \end{aligned}
 $$
 
