@@ -62,8 +62,8 @@ A fact like, `firetype(charmander)` can be written in the form of an implication
 
 $$
 \begin{aligned}
-firetype(charmander) & \equiv firetype(charmander) \lor \bot\\
- & \equiv \top \to firetype(charmander) \\
+\text{firetype}(\text{charmander}) & \equiv \text{firetype}(\text{charmander}) \lor \bot\\
+& \equiv \top \to \text{firetype}(\text{charmander}) \\
 \end{aligned}
 $$
 
@@ -96,8 +96,8 @@ This will be more obvious if we convert the rule into its disjunction form.
 
 $$
 \begin{aligned}
-watertype(squirtle) \to resistanttofire(squirtle) & \equiv \\
-\neg watertype(squirtle) \lor resistanttofire(squirtle)
+\text{watertype}(\text{squirtle}) \to \text{resistanttofire}(\text{squirtle}) & \equiv \\
+\neg \text{watertype}(\text{squirtle}) \lor \text{resistanttofire}(\text{squirtle})
 \end{aligned}
 $$
 
@@ -290,14 +290,14 @@ This introduces a more complicated rule `isresistanto(X,Y) :- watertype(X),firet
 This rule's premise is a conjunction of predicates `watertype(X)` and `firetype(Y)`.
  
 
-If we imagine that the predicate, $isresistantto(x,y)$ means "x is resistant to y", the whole rule can be interpreted as 
+If we imagine that the predicate, $\text{isresistantto}(x,y)$ means "x is resistant to y", the whole rule can be interpreted as 
 
 > for all pairs of X and Y, X is resistant to Y, if X is water type and Y is fire type,
 
 This statement, can be written as the following quantification statement:
 
 $$
-\forall x \forall y ((watertype(x) \land firetype(y)) \to isresistantto(x,y))
+\forall x \forall y ((\text{watertype}(x) \land \text{firetype}(y)) \to \text{isresistantto}(x,y))
 $$
 By writing this rule, Prolog can infer the following facts:
 
