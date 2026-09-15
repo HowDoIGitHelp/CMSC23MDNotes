@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Advanced Constructs in Logic Programming
+
+---
+
+# Recursive Definitions
+
+``` prolog
+is_ancestor(Parent, Child) :- is_parent(Parent, Child).
+is_ancestor(Ancestor, Descendant) :-
+    is_parent(Parent, Descendant), 
+    is_ancestor(Ancestor, Parent).
+
+is_parent(juan, francisco).
+```
+
+---
+
+# Recursive Definitions
+
+``` prolog
+is_parent(cirila, francisco).
+is_parent(teodora, jose).
+is_parent(francisco, jose).
+is_parent(brigida, teodora).
+is_parent(lorenzo, teodora).
+```
+
+---
+
+# Recursive Definitions
+
+``` prolog
+?- is_ancestor(juan, jose).
+```
+
+---
+
+# Numbers in Logic Programming
+
+> 0 is an integer.
+
+---
+
+# Numbers in Logic Programming
+
+> The successor of an integer, denoted by s(n) is also an integer.
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+int(0).
+int(s(X)) :- int(X).
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+int(X)
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+X = 0
+X = s(0)
+X = s(s(0))
+X = s(s(s(0)))
+...
+```
+
+---
+
+# Numbers in Logic Programming
+
+`$$
+\begin{aligned}
+&a + 0 = a\\
+&a + b = c \to a + (b + 1) = (c + 1)
+\end{aligned}
+$$`
+
+---
+
+# Numbers in Logic Programming
+
+`$$
+\begin{aligned}
+&a * 0 = 0\\
+&a * b = d \land a + d = c \to a * (b + 1) = c
+\end{aligned}
+$$`
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+int(0).
+int(s(X)) :- int(X).
+
+add(A,0,A).
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+add(A,s(B),s(C)) :- add(A,B,C).
+
+mult(_,0,0).
+mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+positive(X) :- X > 0.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- positive(2).
+true.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- X = 2.
+Arguments are not sufficiently instantiated
+In:
+   [1] 2>_2258
+```
+
+---
+
+# Numbers in Logic Programming
+
+- The library `clp(fd)` stands for **Constraint Logic Programming Over
+  Finite Domains**.
+- This library was further refined to a more complete and more advanced
+  library called `clp(z)` or **Constrained Programming Over Integers**.
+
+---
+
+# Numbers in Logic Programming
+
+- **Constraints** are predicates that restrict a variable to a specific
+  set of values.
+- Constraints are usually applied to *numerical variables* to define the
+  domain of said variable.
+
+---
+
+# Numbers in Logic Programming
+
+- `X #= Y`: $x = y$
+- `X #< Y`: $x < y$
+- `X #> Y`: $x > y$
+- `X #\= Y`: $x \neq y$
+- `X #>= Y`: $x \geq y$
+- `X #=< Y`: $x \leq y$
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+:- use_module(library(clpfd)).
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- use_module(library(clpfd)).
+true.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- X #< 3.
+X in inf..2.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- 4 #= 2*X + 2.
+X = 1.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- 0 #= 2*X + 3.
+false.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- X #>= 3, X #\= 12.
+X in 3..11\/13..sup.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- X in 0..10 \/ 9..12.
+X in 0..12.
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+?- X in 0..10, 1 #\= X mod 2, indomain(X).
+X = 0 ;
+X = 2 ;
+X = 4 ;
+```
+
+---
+
+# Numbers in Logic Programming
+
+``` prolog
+X = 6 ;
+X = 8 ;
+X = 10.
+```
+
+---
+
+# Data Structures
+
+``` prolog
+a(X).
+b(c(d(Y)), e).
+f(X) :- g(h), i(j).
+k.
+```
+
+---
+
+# Compound data
+
+``` prolog
+:- use_module(library(clpfd)).
+
+person(id(artman, 16)).
+person(id(bartman, 19)).
+```
+
+---
+
+# Compound data
+
+``` prolog
+person(id(cartman, 21)).
+adult(Name) :-
+    person(id(Name, Age)),
+    Age #>= 18.
+```
+
+---
+
+# Lists
+
+- An **empty list** is represented by the special atom `[]`.
+- Any term defined as `list(Head, Tail)` is a *list*, if `Tail` is a
+  *list*.
+
+---
+
+# Lists
+
+- With this you can represent a list with *one element* as
+  `list(elem1, [])`.
+- You can define a list with *two elements* as
+  `list(elem1, list(elem2, []))`.
+
+---
+
+# Lists
+
+- For example, a *list with four elements* can be written as
+  `[elem1, elem2, elem3, elem4]`.
+- Prolog still allows us to use the *head-tail* pattern for defining
+  lists as `[Head|Tail]`.
+- Such a list is valid if `Tail` is also a *valid list*.
+
+---
+
+# Lists
+
+``` prolog
+?- =([elem1, elem2, elem3, elem4], [elem1 | [elem2, elem3, elem4]]).
+true.
+```
+
+---
+
+# Lists
+
+``` prolog
+?- =([elem1, elem2, elem3, elem4], [elem1, elem2 | [elem3, elem4]]).
+true.
+```
+
+---
+
+# Lists
+
+``` prolog
+:- use_module(library(clpfd)).
+
+list_length([], 0).
+list_length([Head|Tail], Length) :-
+    Length #= Tail_length + 1,
+    list_length(Tail, Tail_length).
+```
+
+---
+
+# Lists
+
+``` prolog
+?- list_length([a,b,c,d],X).
+X = 4.
+```
+
+---
+
+# Lists
+
+``` prolog
+:- use_module(library(clpfd)).
+
+list_take_n(List,0,List).
+list_take_n([Head|Tail], N, Leftover) :-
+    N #> 0,
+```
+
+---
+
+# Lists
+
+``` prolog
+    M #= N - 1,
+    list_take_n(Tail, M, Leftover).
+
+list_nth_element(List, N, Elem) :-
+    list_take_n(List, N, [Elem|Tail]).
+```
+
+---
+
+# Lists
+
+``` prolog
+?- list_nth_element([a,b,c,d,e],2,X).
+X = c.
+```
+
+---
+
+# Lists
+
+``` prolog
+?- list_nth_element([a,q,c,q,e],Index,q).
+Index = 1 ;
+Index = 3 ;
+false.
+```
+
+---
+
+# Lists
+
+- We can write such queries because we are working with predicates that
+  act as *pure relations*.
+- Pure relations, unlike functions *do not have a set input and output*.
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

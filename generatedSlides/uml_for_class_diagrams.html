@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Unified Modelling Language for Class Diagrams
+
+---
+
+# Introduction
+
+- The modelling language we are going to use to represent architecture
+  would be UML or **Unified Modelling Language**.
+
+---
+
+# Learning Outcomes
+
+1.  Create class diagrams to represent OOP architecture in UML
+2.  Create classes with attributes and methods in UML
+3.  Establish class relationships in UML
+
+---
+
+# Modelling Classes
+
+![Class Diagrams](../mdNotes/uml/classExample.svg)
+
+---
+
+# Modelling Class Relationships
+
+![class relationships](../mdNotes/uml/classRelationships.svg)
+
+---
+
+# Optional Readings
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

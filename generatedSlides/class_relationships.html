@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Class Relationships
+
+---
+class: center, middle
+
+# Introduction
+
+---
+
+# Learning Outcomes
+
+1.  Differentiate realization relationships and specialization
+    relationships
+2.  Describe how class abstract methods work in realization
+    relationships
+3.  Differentiate aggregation relationships and composition
+    relationships
+
+---
+class: center, middle
+
+# Type Based Relationships
+
+---
+
+# Realization
+
+- A realization relationship is a one way relationship that describes
+  how something abstract is **REAL**ized by something concrete.
+
+---
+
+# Realization
+
+- A realization relationship is also called an **implementation**
+  relationship.
+- **Interface** is also a fitting term for abstractions because it is
+  through these classes that other objects interact with each other.
+
+---
+
+# Realization
+
+- **What's the point in maintaining some realization relationship
+  between classes? If abstractions can only be used through their
+  realizations, then why create the abstraction at all?**
+
+---
+
+# Realization
+
+![Realization Relationship
+Example](../mdNotes/copyright_free_drawings/realizationrelationship.png)
+
+---
+
+# Realization
+
+- When the library system interacts with these resources to facilitate
+  transactions such as borrowing and returning, the library system
+  treats these resource like general **Borrowable Items**.
+
+---
+
+# Realization
+
+- This is how realization relationships enable **polymorphism**, a
+  `Book` is a `BorrowableItem`, allowing the library system to interact
+  with it like any `BorrowableItem`.
+
+---
+
+# Realization
+
+- Although all this effort may seem unnecessary, you will learn in this
+  course that through the establishment of these relationships, OOP is
+  able to uphold one of its core design principles, **data-hiding**.
+
+---
+
+# Specialization
+
+- This relationship is also called **extension** between the
+  special/child/subclass and general/parent/super class.
+- Another name for it would be **inheritance**.
+
+---
+
+# Specialization
+
+![Specialization
+Example](../mdNotes/copyright_free_drawings/specializationrelationship.png)
+
+---
+
+# Specialization
+
+- Through this mechanism, specialization relationships enable
+  **inheritance**, one of OOP's core design principle.
+
+---
+
+# Specialization
+
+- This is where the terms **inheritance** and extension make sense.
+
+---
+class: center, middle
+
+# Abstract Classes
+
+---
+class: center, middle
+
+# Multiple Type Relationships
+
+---
+
+# Dependency Relationships
+
+- A **client** class is dependent on some **dependency**.
+
+---
+
+# Weak Dependency
+
+- On weak dependency relationships a client class merely **uses**
+  instances of a dependency.
+
+---
+
+# Structural Dependencies
+
+![Dependency
+Example](../mdNotes/copyright_free_drawings/dependencyrelationship.png)
+
+---
+
+# Aggregation
+
+- When a dependency is an aggregate of some client, it means that the
+  client merely **has** instances of this dependency.
+
+---
+
+# Composition
+
+- When a client is composed of some dependency, this means that the
+  client **owns** the instances of this dependency.
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

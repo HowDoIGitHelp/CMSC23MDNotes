@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Design Patterns Introduction
+
+---
+class: center, middle
+
+# Introduction
+
+---
+
+# Learning Outcomes
+
+1.  Discuss the origins of design patterns in OOP
+2.  Explain the advantages of design patterns
+3.  Explain the disadvantages of design patterns
+4.  Identify the three classifications of design patterns
+
+---
+
+# History of Design Patterns
+
+- The concept of design patterns is often attributed to Christopher
+  Alexander, from his book, *A Pattern Language: Towns, Buildings,
+  Construction* [@alexander_pattern_2017].
+
+---
+
+# History of Design Patterns
+
+- Four software engineers, Erich Gamma, John Vlissides, Ralph Johnson,
+  and Richard Helm, used this as an inspiration to publish the famous
+  book, *Design Patterns: Elements of Reusable Object-Oriented
+  Software.* [@gamma_design_2011] The four became collectively known as
+  the "**Gang of Four"**.
+
+---
+class: center, middle
+
+# Why Patterns?
+
+---
+class: center, middle
+
+# Why not Patterns?
+
+---
+
+# Classifications of Design Patterns
+
+- **Creational Patterns** provide object creation mechanisms that
+  increase flexibility and reuse of existing code
+- **Structural patterns** explain how to assemble objects and classes
+  into larger structures, while keeping the structures flexible and
+  efficient.
+- **Behavioral patterns** take care of effective communication and the
+  assignment of responsibilities between objects.
+
+---
+
+# Optional Reading
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

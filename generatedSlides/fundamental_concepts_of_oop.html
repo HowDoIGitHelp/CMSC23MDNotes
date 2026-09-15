@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Fundamental Concepts of OOP
+
+---
+
+# Encapsulation
+
+- This mechanism is also called **encapsulation**.
+
+---
+
+# Encapsulation
+
+- Encapsulation, when done correctly, makes your system approach a more
+  accurate simulation of the real world. The more you encapsulate
+  related data and methods, the more you'll create cohesive classes that
+  have definite and indivisible purpose.
+- You should **encapsulate what varies**, meaning, things that always
+  change should be encapsulated deep into the structure of your code.
+  This will help with maintainability since the changing isolated data
+  or behavior will have less impact to the whole system.
+
+---
+
+# Encapsulation
+
+- Encapsulation means both attributes and behaviors. Concrete objects
+  should be given the responsibility of implementing their own behavior.
+  This means that a method that describes the behavior of a certain
+  class should belong to that class.
+
+---
+
+# Encapsulation
+
+- **Tax rate as a global variable**
+
+---
+
+# Encapsulation
+
+``` python
+TAX_RATE = 1.1
+
+product1_price = 100
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+```
+
+---
+
+# Encapsulation
+
+``` python
+
+final_price += product1_price * TAX_RATE
+final_price += product2_price * TAX_RATE
+final_price += exempt_product_price
+```
+
+---
+
+# Encapsulation
+
+- **Tax rate hard coded for every instance of use**
+
+---
+
+# Encapsulation
+
+``` python
+product1_price = 100
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+```
+
+---
+
+# Encapsulation
+
+``` python
+final_price += product1_price * 1.1
+final_price += product2_price * 1.1
+final_price += exempt_product_price
+```
+
+---
+
+# Encapsulation
+
+- **A function called `taxedPrice()` which calculates tax**
+
+---
+
+# Encapsulation
+
+``` python
+TAX_RATE = 1.1
+
+def taxedPrice(price):
+    return price * TAX_RATE
+
+product1_price = 100
+```
+
+---
+
+# Encapsulation
+
+``` python
+product2_price = 35
+exempt_product_price = 22 #exempted from tax
+
+final_price += taxedPrice(product1_price)
+final_price += taxedPrice(product2_price)
+final_price += exempt_product_price
+```
+
+---
+
+# Inheritance
+
+- Another important design principle in OOP is the concept of
+  **inheritance**.
+- An existing class, called the **super class** (also called the **base
+  class** or the **parent class**) passes all visible attributes and
+  methods to a **subclass** (also called the **derived class** or the
+  **child class**).
+
+---
+
+# Inheritance
+
+![Inheritance](../mdNotes/uml/inheritance.svg)
+
+---
+
+# Inheritance
+
+![Inheritance](../mdNotes/uml/inheritance2.svg)
+
+---
+
+# Inheritance
+
+| super class visibility | public derivation | protected derivation | private derivation |
+|---------------------|----------------|-------------------|-----------------|
+| `public` | `public` | `protected` | `private` |
+| `protected` | `protected` | `protected` | `private` |
+| `private` | *not inherited* | *not inherited* | *not inherited* |
+
+---
+
+# Polymorphism
+
+- Polymorphism literally means *multiple forms*.
+
+---
+class: center, middle
+
+# Compile-time polymorphism
+
+---
+
+# Run-time polymorphism
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Slides</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="../resources/slides.css">
+    </head>
+        <body>
+            <textarea id="source">
+class: center, middle
+
+# Structural Patterns
+
+---
+class: center, middle
+
+# Introduction
+
+---
+
+# Learning Objectives
+
+1.  Design systems that apply the decorator pattern
+2.  Design systems that apply the adapter pattern
+
+---
+class: center, middle
+
+# Decorator Pattern
+
+---
+
+# Problem
+
+![decorator](../mdNotes/copyright_free_drawings/decorator.png)
+
+---
+
+# Solution
+
+![decorator](../mdNotes/uml/umlOutputs/Decorator.svg)
+
+---
+
+# Solution
+
+``` kotlin
+//Decorator1's implementation of doSomething():
+
+override fun doSomething() {
+    wrappedObject.doSomething()
+    doSomethingExtra()
+}
+```
+
+---
+class: center, middle
+
+# Example
+
+---
+
+# Decorating Sentences
+
+- **bordered** - Given the sentence, `["hey","there"]` it prints:
+
+      -----------
+      |hey there|
+      -----------
+
+---
+
+# Decorating Sentences
+
+- **fancy** - Given the sentence, `["hey","there"]` it prints:
+
+      -+hey there+-
+
+---
+
+# Decorating Sentences
+
+- **uppercase** - Given the sentence, `["hey","there"]` it prints:
+
+      HEY THERE
+
+---
+
+# Decorating Sentences
+
+- **bordered fancy** - Given the sentence, `["hey","there"]` it prints:
+
+      ---------------
+      |-+hey there+-|
+      ---------------
+
+---
+
+# Decorating Sentences
+
+- **fancy uppercase** - Given the sentence, `["hey","there"]` it prints:
+
+      -+HEY THERE+-
+
+---
+
+# Decorating Sentences
+
+![decorator example](../mdNotes/uml/umlOutputs/FormattedSentence.svg)
+
+---
+
+# Why this is elegant
+
+- **Open/Closed Principle** - Decorators extend classes via inheritance.
+  It is easier to add new decorators without touching any exiting code.
+- A class can have many variants because of diverse combinations of
+  behaviors can be cleanly implemented using this pattern.
+- You can arbitrarily mix and match decorators without the worry of
+  polymorphic incompatibility during runtime
+
+---
+
+# How to implement it
+
+1.  Create an abstract class `BaseDecorator` that specializes some
+    `SimpleClass`. This `BaseDecorator` will also have the attribute
+    `wrappedObject` which is a reference to an instance of the decorated
+    `SimpleClass`. This attribute is set as protected so that it may be
+    inherited by `BaseDecorator`s specializations. `BaseDecorator` also
+    contains the abstract method `doSomething()`. This method's
+    behavior, when invoked by `BaseDecorator`s specializations, changes
+    depending on the decorations attached to `SimpleClass`
+
+---
+
+# How to implement it
+
+2.  For every decoration, that can decorate `SimpleClass`, a
+    specialization for `BaseClass` is created. These specializations
+    implement `doSomething()` in a manner that augments/modifies
+    `SimpleClass`'s own `doSomething()`
+
+---
+class: center, middle
+
+# Adapter Pattern
+
+---
+
+# Problem
+
+![adapter](../mdNotes/copyright_free_drawings/adapter.png)
+
+---
+
+# Solution
+
+![adapter](../mdNotes/uml/umlOutputs/Adapter.svg)
+
+---
+class: center, middle
+
+# Example
+
+---
+
+# Printable Shipments
+
+![adapter example](../mdNotes/uml/umlOutputs/PrintableShipment.svg)
+
+---
+
+# Why this is elegant
+
+- **Open/Closed Principle** - Instead of changing existing incompatible
+  interfaces, you can extend them by creating adapters.
+- **Interface Segregation Principle** - Instead of cluttering up your
+  code with duplicate functions and unused interface methods, you
+  instead create adapters only when it is needed.
+
+---
+
+# How to implement it
+
+1.  If you want an `AbstractService` to be used like a
+    `RequiredInterface`, Create a `ServiceAdapter` that realizes
+    `RequiredInterface` and contains an attribute `service` that is a
+    reference to an instance of `AbstractService`.
+2.  Inside `ServiceAdapter`, the implementations of
+    `RequiredInterface`'s abstract methods are merely calls to the
+    methods of the reference `service`.
+
+---
+class: center, middle
+
+# Composite (Optional Read)
+
+---
+class: center, middle
+
+# Problem
+
+---
+
+# Solution
+
+![composite](../mdNotes/uml/composite.png)
+
+---
+class: center, middle
+
+# Example
+
+---
+
+# File System
+
+![composite pattern](../mdNotes/uml/compositeexample.png)
+
+---
+
+# File System
+
+- **`size()`** - the size of a `File` is based on the attribute size
+  which is set during the initialization of the `File` instance. The
+  size of a `Directory` is the size of all the `FileSystemEntities`
+  inside it.
+- **`searchResults(target)`** - if used by a `File`, if the name of the
+  file matches the `target` it returns a list containing the `File`, if
+  not it returns an empty list. If used by a `Directory` returns a list
+  containing all the of the instances of `FileSystemEntity` (including
+  itself) that matches the target inside the `Directory`.
+
+---
+
+# Why this is elegant
+
+- **Open/Closed Principle** - You can introduce new component
+  realizations in the system without touching any existing code.
+- Working with composite trees are easier because of the polymorphism in
+  the pattern
+
+---
+
+# How to implement it
+
+1.  Create an abstraction called `Component` that contains the abstract
+    methods that are supposed to be executed across all components.
+2.  The `Component` has two realizations, `Composite`s and `Leaf`s.
+3.  `Component` contains an attribute `children` which is a list of
+    `Composite` instance references and the methods `addChild()` and
+    `removeChild()` to attach/detach `Composite`s. It also has
+    `execute()` which an implemented method from `Component`.
+
+---
+
+# How to implement it
+
+4.  `Leaf` contains the method `execute()` as well.
+5.  When a `Composite`'s execute is invoked, it calls invokes all of its
+    children's`execute()`. When `Leaf`'s execute is invoked it performs,
+    leaf related behavior.
+
+---
+class: center, middle
+
+# Facade (Optional Read)
+
+---
+class: center, middle
+
+# Problem
+
+---
+
+# Solution
+
+![facade](../mdNotes/uml/facade.png)
+
+---
+
+# Why this is elegant
+
+- Implementing this pattern encapsulates complicated subsystem behavior
+  into simple straightforward functions.
+
+---
+
+# Optional Readings
+        </textarea>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],    // Inline math delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],    // Display math delimiters
+                    packages: {'[+]': ['ams']},    // Load the AMS extensions
+                    processEnvironments: true,     // Required for \begin{align}, \begin{aligned}, etc.
+                },
+                loader: {load: ['[tex]/ams']},    // Explicitly load the 'ams' package
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea']
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create({ ratio: "16:9" });
+        </script>
+    </body>
+</html>
