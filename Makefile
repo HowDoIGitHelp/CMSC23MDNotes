@@ -1,7 +1,7 @@
 include mdSources.txt
 include mdSourcesSlides.txt
 
-book.pdf: $(mdSources) template.typ references.bib Makefile
+book.pdf: $(mdSources) template.typ references.bib Makefile slides
 	pandoc $(mdSources) \
 		-o book.pdf \
 		-V monofont="JetBrainsMonoNL NF" \
