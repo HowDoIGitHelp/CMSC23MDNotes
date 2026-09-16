@@ -9,35 +9,40 @@
             <textarea id="source">
 class: center, middle
 
-# Object-Oriented Programming Paradigm
+## Object-Oriented Programming Paradigm
 
 ---
 class: center, middle
 
-# Introduction
+## Introduction
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 1.  Explain how programmers started to focus on writing maintainable
     code
 2.  Differentiate between the object and the class
 3.  Explain OOP's philosophy, the surface vs. the volume
+
+---
+
+## Learning Outcomes
+
 4.  Explain what abstraction means
 5.  Describe the fundamental concepts: encapsulation, inheritance, and
     polymorphism
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 - As the demand for complex systems grew, the priority shifted from
   *code that run*s, to *code that was intuitive*.
 
 ---
 
-# Fundamental Concepts of OOP
+## Fundamental Concepts of OOP
 
 - Encapsulation
 - Abstraction
@@ -46,19 +51,19 @@ class: center, middle
 
 ---
 
-# The Object
+## The Object
 
 - Think of objects as the **representatives** of things in your code.
 
 ---
 
-# The Class
+## The Class
 
-![Class diagram of a book class](../mdNotes/uml/introduction.svg)
+![Class diagram of a book class](../uml/introduction.svg)
 
 ---
 
-# The Class
+## The Class
 
     book1{
     title: "Corpus Hermeticum"
@@ -69,7 +74,7 @@ class: center, middle
 
 ---
 
-# The Class
+## The Class
 
     book2{
     title: "Behold a Pale Horse"
@@ -79,7 +84,7 @@ class: center, middle
 
 ---
 
-# The Class
+## The Class
 
     }
 
@@ -88,7 +93,7 @@ class: center, middle
 
 ---
 
-# The Class
+## The Class
 
     jobTitle: "Instructor 1"
     salary: [REDACTED]
@@ -97,58 +102,58 @@ class: center, middle
 ---
 class: center, middle
 
-# The Surface and the Volume
+## The Surface and the Volume
 
 ---
 
-# Data Hiding and the Interface
+## Data Hiding and the Interface
 
 - The base premise of OOP is the concept called **data hiding**.
 
 ---
 
-# Data Hiding and the Interface
+## Data Hiding and the Interface
 
 - Some of the data in `Book` should be **hidden** from a client object
   `LibraryCard`.
 
 ---
 
-# Data Hiding and the Interface
+## Data Hiding and the Interface
 
 - The process of modeling elegant object representations is basically
   determining what the **public interface** of that object may be.
 
 ---
 
-# Data Hiding and the Interface
+## Data Hiding and the Interface
 
-![Class diagram of a book class](../mdNotes/uml/public_interface.svg)
+![Class diagram of a book class](../uml/public_interface.svg)
 
 ---
 
-# Data Hiding and the Interface
+## Data Hiding and the Interface
 
 ![abstraction borrowable
-item](../mdNotes/copyright_free_drawings/abstractionborrowableitems.png)
+item](../copyright_free_drawings/abstractionborrowableitems.png)
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 - Creating interfaces like these provide OOP with the mechanism to
   create **abstractions** in the object level.
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 - In the example above, the interface `BorrowableItem` is an abstract
   representation of *something from the library that can be borrowed*.
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 - The reason why this structure still works, is because we have a
   concrete class called `Book` which is a **realization** or an
@@ -157,14 +162,14 @@ item](../mdNotes/copyright_free_drawings/abstractionborrowableitems.png)
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 - If *something from the library that can be borrowed* is an abstract
   idea, what is the point of modelling its representation?
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 - Since a periodical is also *something from the library that can be
   borrowed*, a periodical is another **realization** of
@@ -172,14 +177,14 @@ item](../mdNotes/copyright_free_drawings/abstractionborrowableitems.png)
 
 ---
 
-# Abstraction of Objects
+## Abstraction of Objects
 
 ![Class diagram of a book
-class](../mdNotes/uml/public_interface_2_realizations.svg)
+class](../uml/public_interface_2_realizations.svg)
 
 ---
 
-# The Interface and the Implementation
+## The Interface and the Implementation
 
 - A library card name shouldn't mix with a book title, so we put a
   boundary between them by **encapsulating** them into their respective
@@ -187,7 +192,7 @@ class](../mdNotes/uml/public_interface_2_realizations.svg)
 
 ---
 
-# The Interface and the Implementation
+## The Interface and the Implementation
 
 - The volume of these blobs represent the **implementation** of these
   objects and the surface of these blobs represent the **interface** of
@@ -195,10 +200,10 @@ class](../mdNotes/uml/public_interface_2_realizations.svg)
 
 ---
 
-# The Interface and the Implementation
+## The Interface and the Implementation
 
 ![Abstraction borrowable
-item](../mdNotes/copyright_free_drawings/abstractionpluggabledevice.png)
+item](../copyright_free_drawings/abstractionpluggabledevice.png)
         </textarea>
         <script>
             MathJax = {

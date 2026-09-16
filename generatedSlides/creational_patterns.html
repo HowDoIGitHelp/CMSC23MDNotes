@@ -9,16 +9,16 @@
             <textarea id="source">
 class: center, middle
 
-# Creational Patterns
+## Creational Patterns
 
 ---
 class: center, middle
 
-# Introduction
+## Introduction
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 1.  Design systems that apply the factory method design pattern
 2.  Design systems that apply the abstract factory pattern
@@ -26,31 +26,30 @@ class: center, middle
 ---
 class: center, middle
 
-# Factory Method Pattern
+## Factory Method Pattern
 
 ---
 
-# Problem
+## Problem
 
-![Factory Method](../mdNotes/copyright_free_drawings/factory_method.png)
+![Factory Method](../copyright_free_drawings/factory_method.png)
 
 ---
 
-# Solution
+## Solution
 
 - You encapsulate the creation of a class inside a **factory method**
   that is specified to return an abstraction of the product.
 
 ---
 
-# Solution
+## Solution
 
-![factory method class
-diagram](../mdNotes/uml/umlOutputs/factoryMethod.svg)
+![factory method class diagram](../uml/umlOutputs/factoryMethod.svg)
 
 ---
 
-# Solution
+## Solution
 
 > Somewhere inside factory you have one or more instances of creating or
 > using the product.
@@ -58,98 +57,107 @@ diagram](../mdNotes/uml/umlOutputs/factoryMethod.svg)
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Online Marketplace Delivery
+## Online Marketplace Delivery
 
-![online marketplace](../mdNotes/uml/umlOutputs/ShipmentNoFactory.svg)
-
----
-
-# Online Marketplace Delivery
-
-![online marketplace](../mdNotes/uml/umlOutputs/Shipment.svg)
+![online marketplace](../uml/umlOutputs/ShipmentNoFactory.svg)
 
 ---
 
-# Why this is elegant
+## Online Marketplace Delivery
+
+![online marketplace](../uml/umlOutputs/Shipment.svg)
+
+---
+
+## Why this is elegant
 
 - **Single Responsibility Principle** - the extra level of encapsulation
   on the construction of the product (factory method), allows the
   factory to be responsible of creating the exact product type it needs.
+
+---
+
+## Why this is elegant
+
 - **Open/Closed Principle** - instead of modifying the factory to
   incorporate the creation of different product realizations, you
   instead create an extension of the factory. No need for introspective
   checks since the factory method supports polymorphism of the product
   it creates.
-
----
-
-# Why this is elegant
-
 - *Encapsulate what varies* - This pattern upholds one of OOP paradigms
   most important principles. Since the construction of product varies
   from product type to product type, it is encapsulated into the factory
   method.
+
+---
+
+## Why this is elegant
+
 - This avoids tight **coupling** between the factory and the product
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 > Coupled classes are classes which are very dependent on each other.
 > Changing the code of one will most likely affect the other
 
 ---
 
-# How to implement it:
+## How to implement it:
 
 1.  Create an abstraction for all product types (`Product`).
 2.  Inside the base factory create the the factory method function
     `newProduct():Product`. Make sure it is specified to return
     abstraction `Product`.
+
+---
+
+## How to implement it:
+
 3.  For every new product type that is added to the system, create 2 new
     classes: the new product type as a realization of `Product` and, and
     the factory for the new product type as a specialization of
     `Factory`.
+4.  Inside each factory specialization override `newProduct()` to return
+    the correct realization of `Product`.
 
 ---
 
-# How to implement it:
+## How to implement it:
 
-4.  Inside each factory specialization override `newProduct()` to return
-    the correct realization of `Product`.
 5.  Replace every instance of constructor calls inside `Factory` with a
     call to the factory method `newProduct()`.
 
 ---
 class: center, middle
 
-# Abstract Factory
+## Abstract Factory
 
 ---
 
-# Problem
+## Problem
 
-![Abstract
-Factory](../mdNotes/copyright_free_drawings/abstract_factory.png)
+![Abstract Factory](../copyright_free_drawings/abstract_factory.png)
 
 ---
 
-# Solution
+## Solution
 
-![abstract factory](../mdNotes/uml/umlOutputs/abstractFactory.svg)
+![abstract factory](../uml/umlOutputs/abstractFactory.svg)
 
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Bootleg Text-based Zelda Game
+## Bootleg Text-based Zelda Game
 
     5 monsters appeared
     A lizalflos appeared
@@ -160,7 +168,7 @@ class: center, middle
 
 ---
 
-# Bootleg Text-based Zelda Game
+## Bootleg Text-based Zelda Game
 
     Lizalflos thorws its lizal boomerang at you for 2 damage
     Lizalflos thorws its lizal boomerang at you for 2 damage
@@ -170,7 +178,7 @@ class: center, middle
 
 ---
 
-# Medium dungeon
+## Medium dungeon
 
 - **Blue Bokoblin**
 - equipped with a spiked boko club and a spiked boko shield
@@ -180,7 +188,7 @@ class: center, middle
 
 ---
 
-# Medium dungeon
+## Medium dungeon
 
 - stab deals 5 damage
 - kick deals 2 damage
@@ -190,7 +198,7 @@ class: center, middle
 
 ---
 
-# Hard dungeon
+## Hard dungeon
 
 - **Silver Bokoblin**
 - equipped with a dragonbone boko club and a dragonbone boko shield
@@ -200,7 +208,7 @@ class: center, middle
 
 ---
 
-# Hard dungeon
+## Hard dungeon
 
 - stab deals 10 damage
 - kick deals 3 damage
@@ -210,14 +218,13 @@ class: center, middle
 
 ---
 
-# Hard dungeon
+## Hard dungeon
 
-![abstract factory
-example](../mdNotes/uml/umlOutputs/TextBasedZelda.svg)
+![abstract factory example](../uml/umlOutputs/TextBasedZelda.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - This solution is easier to maintain since
   you can add more variants of `Product` without touching any existing
@@ -225,11 +232,16 @@ example](../mdNotes/uml/umlOutputs/TextBasedZelda.svg)
   new realization `AbstractFactory`
 - Changing the form and behavior of specific variants are isolated since
   its creation is abstracted.
+
+---
+
+## Why this is elegant
+
 - You can easily switch between variants by swapping out the factory.
 
 ---
 
-# How to implement it:
+## How to implement it:
 
 - For every product in the family of products, create an abstraction of
   it (`ProductA`, `ProductB`).
@@ -237,37 +249,42 @@ example](../mdNotes/uml/umlOutputs/TextBasedZelda.svg)
   (`FactoryVariant1`, `FactoryVariant2`). These factories must realize
   under an abstraction `AbstractFactory`. The factory should contain
   abstract factory methods for each product,
+
+---
+
+## How to implement it:
+
 - Inside every factory realization implement all factory methods.
 
 ---
 class: center, middle
 
-# Singleton Pattern (Optional Read)
+## Singleton Pattern (Optional Read)
 
 ---
 class: center, middle
 
-# Problem
+## Problem
 
 ---
 
-# Solution
+## Solution
 
-![Singleton](../mdNotes/uml/singleton.png)
-
----
-class: center, middle
-
-# Example
+![Singleton](../uml/singleton.png)
 
 ---
 class: center, middle
 
-# A Catalog of Globals
+## Example
+
+---
+class: center, middle
+
+## A Catalog of Globals
 
 ---
 
-# Why this is NOT elegant
+## Why this is NOT elegant
 
 - You can ensure single instance classes, just by being vigilant.
 - Singletons require the use of static attributes and methods. Statics
@@ -277,7 +294,7 @@ class: center, middle
 
 ---
 
-# Optional Reading
+## Optional Reading
         </textarea>
         <script>
             MathJax = {

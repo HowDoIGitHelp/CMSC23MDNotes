@@ -9,11 +9,11 @@
             <textarea id="source">
 class: center, middle
 
-# Advanced Constructs in Logic Programming
+## Advanced Constructs in Logic Programming
 
 ---
 
-# Recursive Definitions
+## Recursive Definitions
 
 ``` prolog
 is_ancestor(Parent, Child) :- is_parent(Parent, Child).
@@ -26,7 +26,7 @@ is_parent(juan, francisco).
 
 ---
 
-# Recursive Definitions
+## Recursive Definitions
 
 ``` prolog
 is_parent(cirila, francisco).
@@ -38,7 +38,7 @@ is_parent(lorenzo, teodora).
 
 ---
 
-# Recursive Definitions
+## Recursive Definitions
 
 ``` prolog
 ?- is_ancestor(juan, jose).
@@ -46,19 +46,19 @@ is_parent(lorenzo, teodora).
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 > 0 is an integer.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 > The successor of an integer, denoted by s(n) is also an integer.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 int(0).
@@ -67,7 +67,7 @@ int(s(X)) :- int(X).
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 int(X)
@@ -75,7 +75,7 @@ int(X)
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 X = 0
@@ -87,7 +87,7 @@ X = s(s(s(0)))
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 `$$
 \begin{aligned}
@@ -98,7 +98,7 @@ $$`
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 `$$
 \begin{aligned}
@@ -109,7 +109,7 @@ $$`
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 int(0).
@@ -120,7 +120,7 @@ add(A,0,A).
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 add(A,s(B),s(C)) :- add(A,B,C).
@@ -131,7 +131,7 @@ mult(A,s(B),C) :- mult(A,B,D), add(A,D,C).
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 positive(X) :- X > 0.
@@ -139,7 +139,7 @@ positive(X) :- X > 0.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- positive(2).
@@ -148,7 +148,7 @@ true.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- X = 2.
@@ -159,7 +159,7 @@ In:
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 - The library `clp(fd)` stands for **Constraint Logic Programming Over
   Finite Domains**.
@@ -168,7 +168,7 @@ In:
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 - **Constraints** are predicates that restrict a variable to a specific
   set of values.
@@ -177,7 +177,7 @@ In:
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 - `X #= Y`: $x = y$
 - `X #< Y`: $x < y$
@@ -188,7 +188,7 @@ In:
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 :- use_module(library(clpfd)).
@@ -196,7 +196,7 @@ In:
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- use_module(library(clpfd)).
@@ -205,7 +205,7 @@ true.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- X #< 3.
@@ -214,7 +214,7 @@ X in inf..2.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- 4 #= 2*X + 2.
@@ -223,7 +223,7 @@ X = 1.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- 0 #= 2*X + 3.
@@ -232,7 +232,7 @@ false.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- X #>= 3, X #\= 12.
@@ -241,7 +241,7 @@ X in 3..11\/13..sup.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- X in 0..10 \/ 9..12.
@@ -250,7 +250,7 @@ X in 0..12.
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 ?- X in 0..10, 1 #\= X mod 2, indomain(X).
@@ -261,7 +261,7 @@ X = 4 ;
 
 ---
 
-# Numbers in Logic Programming
+## Numbers in Logic Programming
 
 ``` prolog
 X = 6 ;
@@ -271,7 +271,7 @@ X = 10.
 
 ---
 
-# Data Structures
+## Data Structures
 
 ``` prolog
 a(X).
@@ -282,7 +282,7 @@ k.
 
 ---
 
-# Compound data
+## Compound data
 
 ``` prolog
 :- use_module(library(clpfd)).
@@ -293,7 +293,7 @@ person(id(bartman, 19)).
 
 ---
 
-# Compound data
+## Compound data
 
 ``` prolog
 person(id(cartman, 21)).
@@ -304,7 +304,7 @@ adult(Name) :-
 
 ---
 
-# Lists
+## Lists
 
 - An **empty list** is represented by the special atom `[]`.
 - Any term defined as `list(Head, Tail)` is a *list*, if `Tail` is a
@@ -312,7 +312,7 @@ adult(Name) :-
 
 ---
 
-# Lists
+## Lists
 
 - With this you can represent a list with *one element* as
   `list(elem1, [])`.
@@ -321,7 +321,7 @@ adult(Name) :-
 
 ---
 
-# Lists
+## Lists
 
 - For example, a *list with four elements* can be written as
   `[elem1, elem2, elem3, elem4]`.
@@ -331,7 +331,7 @@ adult(Name) :-
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 ?- =([elem1, elem2, elem3, elem4], [elem1 | [elem2, elem3, elem4]]).
@@ -340,7 +340,7 @@ true.
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 ?- =([elem1, elem2, elem3, elem4], [elem1, elem2 | [elem3, elem4]]).
@@ -349,7 +349,7 @@ true.
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 :- use_module(library(clpfd)).
@@ -362,7 +362,7 @@ list_length([Head|Tail], Length) :-
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 ?- list_length([a,b,c,d],X).
@@ -371,7 +371,7 @@ X = 4.
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 :- use_module(library(clpfd)).
@@ -383,7 +383,7 @@ list_take_n([Head|Tail], N, Leftover) :-
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
     M #= N - 1,
@@ -395,7 +395,7 @@ list_nth_element(List, N, Elem) :-
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 ?- list_nth_element([a,b,c,d,e],2,X).
@@ -404,7 +404,7 @@ X = c.
 
 ---
 
-# Lists
+## Lists
 
 ``` prolog
 ?- list_nth_element([a,q,c,q,e],Index,q).
@@ -415,7 +415,7 @@ false.
 
 ---
 
-# Lists
+## Lists
 
 - We can write such queries because we are working with predicates that
   act as *pure relations*.

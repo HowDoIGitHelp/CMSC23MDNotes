@@ -9,11 +9,11 @@
             <textarea id="source">
 class: center, middle
 
-# Logic Programming Paradigm
+## Logic Programming Paradigm
 
 ---
 
-# Introduction
+## Introduction
 
 - Computer Scientists usually describe families of programming languages
   under the logic paradigm as a sub-paradigm of declarative programming
@@ -21,7 +21,7 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 1.  Create Prolog facts, rules, and queries
 2.  Explain the process of unification
@@ -30,7 +30,7 @@ class: center, middle
 
 ---
 
-# Facts
+## Facts
 
 - There are three basic constructs in Prolog, **facts**, **rules** and
   **queries**.
@@ -40,7 +40,7 @@ class: center, middle
 
 ---
 
-# Facts
+## Facts
 
 ``` prolog
 firetype(charmander).
@@ -51,7 +51,7 @@ flyingtype(charizard).
 
 ---
 
-# Facts
+## Facts
 
 ``` prolog
 firetype(charmander).
@@ -59,7 +59,7 @@ firetype(charmander).
 
 ---
 
-# Facts
+## Facts
 
 ``` prolog
 this_is_a_fact.
@@ -68,7 +68,7 @@ axiom_1.
 
 ---
 
-# Facts
+## Facts
 
 `$$
 \begin{aligned}
@@ -79,7 +79,7 @@ $$`
 
 ---
 
-# Rules
+## Rules
 
 ``` prolog
 firetype(charmander).
@@ -92,7 +92,7 @@ resistanttofire(squirtle) :- watertype(squirtle).
 
 ---
 
-# Rules
+## Rules
 
 - Rules are written with the syntax: **`u :- v`**.
 - In prolog, we call the conclusion `u` as the rule **head** and the
@@ -100,13 +100,13 @@ resistanttofire(squirtle) :- watertype(squirtle).
 
 ---
 
-# Rules
+## Rules
 
 - A **rule** is an implementation of a definite Horn clause.
 
 ---
 
-# Rules
+## Rules
 
 `$$
 \begin{aligned}
@@ -117,14 +117,14 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 - We interact with a knowledge base by writing **queries** to Prolog.
 - Queries represent *questions* you ask Prolog.
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 ?- firetype(charmander).
@@ -132,7 +132,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 true.
@@ -140,7 +140,7 @@ true.
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 ?- firetype(squirtle).
@@ -148,7 +148,7 @@ true.
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 false.
@@ -156,7 +156,7 @@ false.
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 ?- firetype(charizard), watertype(squirtle).
@@ -164,7 +164,7 @@ false.
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 true.
@@ -172,14 +172,14 @@ true.
 
 ---
 
-# Queries
+## Queries
 
 - When you provide a query to prolog, prolog tries to prove that the
   query is true using **proof by contradiction**.
 
 ---
 
-# Queries
+## Queries
 
 `$$
 \begin{aligned}
@@ -189,7 +189,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 - Therefore, the goal's negation (the original query), must be
   **consistent** with the knowledge base's assumptions.
@@ -198,7 +198,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 p
@@ -208,7 +208,7 @@ r :- q
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 ?- r
@@ -216,7 +216,7 @@ r :- q
 
 ---
 
-# Queries
+## Queries
 
 `$$
 \begin{aligned}
@@ -229,7 +229,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 `$$
 \begin{aligned}
@@ -242,7 +242,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 `$$
 \begin{aligned}
@@ -253,7 +253,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 `$$
 \begin{aligned}
@@ -264,7 +264,7 @@ $$`
 
 ---
 
-# Queries
+## Queries
 
 ``` prolog
 true.
@@ -272,7 +272,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 - Another important thing about Prolog constructs is that you can write
   them with **variables**.
@@ -281,7 +281,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 pokemon(X).
@@ -289,7 +289,7 @@ pokemon(X).
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- pokemon(charizard).
@@ -297,7 +297,7 @@ pokemon(X).
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 true.
@@ -305,7 +305,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 firetype(charmander).
@@ -318,7 +318,7 @@ resistanttofire(squirtle) :- watertype(squirtle).
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- firetype(X)
@@ -326,7 +326,7 @@ resistanttofire(squirtle) :- watertype(squirtle).
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 X = charmander
@@ -335,7 +335,7 @@ X = charizard
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 firetype(charmander).
@@ -346,7 +346,7 @@ flyingtype(charizard).
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 
@@ -356,14 +356,14 @@ isresistantto(X,Y) :- watertype(X),watertype(Y).
 
 ---
 
-# Variables
+## Variables
 
 > for all pairs of X and Y, X is resistant to Y, if X is water type and
 > Y is fire type,
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- isresistantto(squirtle,charmander).
@@ -372,7 +372,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- isresistantto(squirtle,charizard).
@@ -381,7 +381,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- isresistantto(squirtle,squirtle).
@@ -390,7 +390,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- isresistantto(squirtle,X).
@@ -398,7 +398,7 @@ true.
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 X = charmander
@@ -408,7 +408,7 @@ X = squirtle
 
 ---
 
-# Variables
+## Variables
 
 ``` prolog
 ?- isresistantto(X,Y).

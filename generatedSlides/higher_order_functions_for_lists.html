@@ -9,11 +9,11 @@
             <textarea id="source">
 class: center, middle
 
-# Higher-order Functions for Lists
+## Higher-order Functions for Lists
 
 ---
 
-# Map
+## Map
 
 ``` haskell
 > map (\x -> x * x) [1,2,3,4,5]
@@ -22,7 +22,7 @@ class: center, middle
 
 ---
 
-# Map
+## Map
 
 ``` haskell
 > map head [[1,2,3], [4,5,6,7], [8]]
@@ -31,7 +31,7 @@ class: center, middle
 
 ---
 
-# Map
+## Map
 
 ``` haskell
 > map (\x -> '*') [1..4]
@@ -40,7 +40,7 @@ class: center, middle
 
 ---
 
-# Filter
+## Filter
 
 ``` haskell
 > filter (\l -> length l > 0) [[1,2,3],[],[],[1],[],[4,5,6]]
@@ -49,7 +49,7 @@ class: center, middle
 
 ---
 
-# Filter
+## Filter
 
 ``` haskell
 > filter ((> 0) . length) [[1,2,3],[],[],[1],[],[4,5,6]]
@@ -58,7 +58,7 @@ class: center, middle
 
 ---
 
-# Fold
+## Fold
 
 ``` haskel
 > foldl (-) 0 [1,2,3,4]
@@ -67,7 +67,7 @@ class: center, middle
 
 ---
 
-# Fold
+## Fold
 
 ``` haskell
 > foldr (-) 0 [1,2,3,4]
@@ -76,7 +76,7 @@ class: center, middle
 
 ---
 
-# Fold
+## Fold
 
 `$$
 \begin{aligned}
@@ -89,7 +89,7 @@ $$`
 
 ---
 
-# Fold
+## Fold
 
 `$$
 \begin{aligned}
@@ -102,7 +102,7 @@ $$`
 
 ---
 
-# Fold
+## Fold
 
 ``` haskell
 > foldl (+) 0 [1,2,3,4]
@@ -111,7 +111,7 @@ $$`
 
 ---
 
-# Fold
+## Fold
 
 ``` haskell
 > foldr (+) 0 [1,2,3,4]
@@ -120,7 +120,7 @@ $$`
 
 ---
 
-# Fold
+## Fold
 
 ``` haskell
 > foldl (++) [] [[1,2,3],[4],[],[5,6],[7]]
@@ -129,7 +129,7 @@ $$`
 
 ---
 
-# Fold
+## Fold
 
 ``` haskell
 > foldl min 1000000  [-1,2,4,-2,3,1,-5,0,2]
@@ -138,7 +138,7 @@ $$`
 
 ---
 
-# Some more useful higher order list functions
+## Some more useful higher order list functions
 
 - `any :: (a -> Bool) -> [a] -> Bool`, returns true if at least one
   element satisfies the predicate otherwise returns false
@@ -149,7 +149,7 @@ $$`
 
 ---
 
-# Some more useful higher order list functions
+## Some more useful higher order list functions
 
 - `dropWhile :: (a -> Bool) -> [a] -> [a]`, drops elements from the
   given list until predicate is not satisfied
@@ -159,7 +159,7 @@ $$`
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 factorial :: Int -> Int
@@ -169,7 +169,7 @@ factorial n = foldl (*) 1 [1..n]
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 map2d :: (a -> b) -> [[a]] -> [[b]]
@@ -178,7 +178,7 @@ map2d f ll = map (map f) ll
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 map2d = (map . map)
@@ -186,7 +186,7 @@ map2d = (map . map)
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 map2d (+ 1) [[1],[2,3]]
@@ -196,7 +196,7 @@ map (\m -> map (+ 1) m) [[1],[2,3]] -- apply currying to map (+ 1)
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 map2d (+ 1) [[1],[2,3]]
@@ -207,7 +207,7 @@ map2d (+ 1) [[1],[2,3]]
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 (\l -> map ((\g -> (\m -> map g m)) (+ 1)) l) [[1],[2,3]] -- beta reduce (+ 1) to \f
@@ -217,7 +217,7 @@ map (\m -> map (+ 1) m) [[1],[2,3]] -- beta reduce [[1],[2,3]] to \l
 
 ---
 
-# Using higher order list functions
+## Using higher order list functions
 
 ``` haskell
 isPrime :: Int -> Bool

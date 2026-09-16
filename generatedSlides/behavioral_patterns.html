@@ -9,16 +9,16 @@
             <textarea id="source">
 class: center, middle
 
-# Behavioral Patterns
+## Behavioral Patterns
 
 ---
 class: center, middle
 
-# Introduction
+## Introduction
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 1.  Design systems that apply the strategy pattern
 2.  Design systems that apply the state pattern
@@ -30,28 +30,28 @@ class: center, middle
 ---
 class: center, middle
 
-# Strategy pattern
+## Strategy pattern
 
 ---
 
-# Problem
+## Problem
 
-![strategy](../mdNotes/copyright_free_drawings/strategy.png)
+![strategy](../copyright_free_drawings/strategy.png)
 
 ---
 
-# Solution
+## Solution
 
-![Strategy pattern](../mdNotes/uml/umlOutputs/Strategy.svg)
+![Strategy pattern](../uml/umlOutputs/Strategy.svg)
 
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Fraction Calculations
+## Fraction Calculations
 
 - `left` - represents the left operand fraction
 - `right` - represents the right operand fraction
@@ -60,79 +60,88 @@ class: center, middle
 
 ---
 
-# Fraction Calculations
+## Fraction Calculations
 
-![strategy pattern
-example](../mdNotes/uml/umlOutputs/FractionCalculator.svg)
+![strategy pattern example](../uml/umlOutputs/FractionCalculator.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - If you want to add new strategies, you
   wouldn't need to touch any existing code.
 - The implementation of a strategy is deeply tucked inside multiple
   layers of encapsulation. Changing these implementations are very easy.
+
+---
+
+## Why this is elegant
+
 - You can swap strategies during runtime in the same way you do in
   functional programming.
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstract `Strategy` that contains an abstract method
     called `execute`. This method should be specified to accept all the
     necessary parameters needed by your parameterized function.
-2.  For every strategy, the higher order method can accept, you create a
-    realization for `Strategy` and implement the correct behavior in
-    `execute`.
 
 ---
 
-# How to implement it
+## How to implement it
 
+2.  For every strategy, the higher order method can accept, you create a
+    realization for `Strategy` and implement the correct behavior in
+    `execute`.
 3.  The higher order function should now be specified to accept a
     `strategy` of type `Strategy`.
+
+---
+
+## How to implement it
+
 4.  Inside the higher order function, whenever it wants to perform the
     strategies embedded behavior, call `strategy.execute(...)`.
 
 ---
 class: center, middle
 
-# State Pattern
+## State Pattern
 
 ---
 
-# Problem
+## Problem
 
-![State](../mdNotes/copyright_free_drawings/state.png)
-
----
-
-# Solution
-
-![state pattern](../mdNotes/uml/umlOutputs/State.svg)
+![State](../copyright_free_drawings/state.png)
 
 ---
 
-# Solution
+## Solution
 
-![state diagram](../mdNotes/uml/statediagram.png)
+![state pattern](../uml/umlOutputs/State.svg)
+
+---
+
+## Solution
+
+![state diagram](../uml/statediagram.png)
 
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# States of matter
+## States of matter
 
-![state diagram example](../mdNotes/uml/statediagramexample.png)
+![state diagram example](../uml/statediagramexample.png)
 
 ---
 
-# States of matter
+## States of matter
 
 > Delegating behavior to the composed state means that, when the
 > `Matter` instances invoke, `compress()`, `release()` `heat()`, and
@@ -141,13 +150,13 @@ class: center, middle
 
 ---
 
-# States of matter
+## States of matter
 
-![state example](../mdNotes/uml/umlOutputs/StatesOfMatter.svg)
+![state example](../uml/umlOutputs/StatesOfMatter.svg)
 
 ---
 
-# States of matter
+## States of matter
 
 > Matter owns an instance of `State`, and that instance has an attribute
 > called `matter`. The attribute `matter` is the reference to the
@@ -157,7 +166,7 @@ class: center, middle
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Single Responsibility Principle** - behavior related to state is
   delegated to the state itself.
@@ -168,22 +177,27 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstract `State` that contains abstract methods for all
     state dependent behavior (context related behaviors that are
     dependent on context's state).
 2.  For every state the `Context` can have, create a realization of
     `State`.
-3.  `Context` owns an attribute that represents the current state
-    (`currentState`) that it owns.
 
 ---
 
-# How to implement it
+## How to implement it
 
+3.  `Context` owns an attribute that represents the current state
+    (`currentState`) that it owns.
 4.  If the state needs to control the `Context` instance that owns it,
     add a backreference to `Context` inside state.
+
+---
+
+## How to implement it
+
 5.  Whenever a `Context` instance performs state dependent methods, it
     calls `currentState.stateDependentBehavior()` instead so that its
     behavior is dependent on its current state.
@@ -191,28 +205,32 @@ class: center, middle
 ---
 class: center, middle
 
-# Command Pattern
+## Command Pattern
 
 ---
 
-# Problem
+## Problem
 
 ![Command (What does this strange picture
-mean?)](../mdNotes/copyright_free_drawings/command.png)
+mean?)](../copyright_free_drawings/command.png)
 
 ---
 
-# Solution
+## Solution
 
 - These problems have a common solution, the **command pattern**.
 
 ---
 
-# Solution
+## Solution
 
 - If you want to keep a history of the performed commands, the `Invoker`
   may keep a list of `Commands`. This way the data stored in the list
   history, is a perfect representation of the previous commands.
+
+---
+
+## Solution
 
 - If you want the `Commands` to be undoable, you can store a backup of
   the receiver (and other affected objects) by the `Command` inside each
@@ -221,13 +239,13 @@ mean?)](../mdNotes/copyright_free_drawings/command.png)
 
 ---
 
-# Solution
+## Solution
 
-![command example](../mdNotes/uml/umlOutputs/Command.svg)
+![command example](../uml/umlOutputs/Command.svg)
 
 ---
 
-# Solution
+## Solution
 
 > Instead of passing the receiver in the `Invoker` methods, you can
 > create an attribute called receiver inside `Invoker`. But doing this
@@ -249,11 +267,11 @@ mean?)](../mdNotes/copyright_free_drawings/command.png)
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Zooming through a maze
+## Zooming through a maze
 
 - `Board` - this represents the layout of the maze. The layout is loaded
   from a file. It has these attributes:
@@ -277,7 +295,7 @@ class: center, middle
 
 ---
 
-# Zooming through a maze
+## Zooming through a maze
 
 - `dpad_up()`, `dpad_down()`, `dpad_left()`, `dpad_right()` - The
   character dashes through the maze in the specified direction until it
@@ -286,13 +304,13 @@ class: center, middle
 
 ---
 
-# Zooming through a maze
+## Zooming through a maze
 
-![command example](../mdNotes/uml/umlOutputs/ZoomingThroughAMaze.svg)
+![command example](../uml/umlOutputs/ZoomingThroughAMaze.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Single Responsibility Principle** - The behavioral responsibilities
   in the system are thoroughly separated. One invokes the command, and
@@ -303,7 +321,7 @@ class: center, middle
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - You can implement undo (and redo)
 - You can defer the execution of behavior
@@ -311,7 +329,7 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstraction `Command` that contains abstract method
     `execute()`, and other command related methods like `undo()`.
@@ -322,7 +340,7 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 3.  Create an `Invoker` class that will be responsible for
     instantiating, preparing, and executing commands. Inside these class
@@ -336,7 +354,7 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 4.  If the system supports undoable commands, the `Invoker` should keep
     a list of commands called `commandHistory` and each command instance
@@ -346,23 +364,23 @@ class: center, middle
 ---
 class: center, middle
 
-# Observer Pattern
+## Observer Pattern
 
 ---
 
-# Problem
+## Problem
 
-![observer](../mdNotes/copyright_free_drawings/observer.png)
-
----
-
-# Solution
-
-![observer](../mdNotes/uml/umlOutputs/Observer.svg)
+![observer](../copyright_free_drawings/observer.png)
 
 ---
 
-# Solution
+## Solution
+
+![observer](../uml/umlOutputs/Observer.svg)
+
+---
+
+## Solution
 
 > Whenever an observer has updated, the publisher needs to pass all the
 > necessary details in the notification. This is generally done by
@@ -380,17 +398,22 @@ class: center, middle
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Push Notifier for Weather and Headlines
+## Push Notifier for Weather and Headlines
 
 - `EmailSubscriber` - every time the `currentWeather` or
   `currentHeadline` changes you send an email to the specified `email`.
   (you don't have to actually send an email. You can just simulate
   sending an email by printing something like "sending
   `<weather>`{=html} and `<headline>`{=html} to `<email>`{=html}").
+
+---
+
+## Push Notifier for Weather and Headlines
+
 - `FileLogger` - every time the `currentWeather` or `currentHeadline`
   changes, you append the updated weather and headline to the file
   specified in the attribute `filename`. You actually have to update a
@@ -398,13 +421,13 @@ class: center, middle
 
 ---
 
-# Push Notifier for Weather and Headlines
+## Push Notifier for Weather and Headlines
 
-![observer example](../mdNotes/uml/umlOutputs/WeatherNotifier.svg)
+![observer example](../uml/umlOutputs/WeatherNotifier.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - You can add new `Observer` realizations
   seamlessly every time there are new objects that are interested in the
@@ -413,13 +436,18 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an `Observer` abstraction that represents all classes that
     can potentially observe changes to the `Publisher`. `Observer` will
     contain the abstract method `update()`.
 2.  All classes that want to be notified about changes to the `subject`
     should realize `Observer`.
+
+---
+
+## How to implement it
+
 3.  `Publisher` will either own/use an instance of the `subject` of
     interest. It will also use an attribute which is stores the list of
     `Observers` that are interested in the subject. To attach or detach
@@ -428,37 +456,42 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 4.  Every time `subject` is manipulated, it should be done through
     `Publisher` , because `Publisher` needs to notify all `Observers` in
     its observer list attribute after every manipulation. This
     notification is done through `notifyObservers()` after the end of
     every subject manipulation.
+
+---
+
+## How to implement it
+
 5.  Inside the `Publisher`s `notifyObservers` method, every `Observer`
     in its list of observers invoke their `update()` method.
 
 ---
 class: center, middle
 
-# Template Method Pattern
+## Template Method Pattern
 
 ---
 
-# Problem
+## Problem
 
 - Say you have two or more *almost* identical behaviors from different
   classes.
 
 ---
 
-# Problem
+## Problem
 
-![template](../mdNotes/copyright_free_drawings/template.png)
+![template](../copyright_free_drawings/template.png)
 
 ---
 
-# Solution
+## Solution
 
 - This superclass will also contain the common implementation for the
   **template method**, the method that combines all steps into the
@@ -466,13 +499,13 @@ class: center, middle
 
 ---
 
-# Solution
+## Solution
 
-![template method](../mdNotes/uml/umlOutputs/Template.svg)
+![template method](../uml/umlOutputs/Template.svg)
 
 ---
 
-# Solution
+## Solution
 
 > The steps in the superclass can be a mix of abstract methods and
 > concrete methods. Make a method abstract if you want to force all
@@ -483,17 +516,17 @@ class: center, middle
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 - **Equality Search**
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 #searchSpace = [2,3,1,0,6,2,4]
@@ -506,7 +539,7 @@ candidate = searchSpace[0]
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 while(i<len(searchSpace)):
@@ -519,13 +552,13 @@ while(i<len(searchSpace)):
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 - **Divisibility Search**
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 #searchSpace = [2,3,1,0,6,2,4]
@@ -538,7 +571,7 @@ candidate = searchSpace[0]
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 while(i<len(searchSpace)):
@@ -551,13 +584,13 @@ while(i<len(searchSpace)):
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 - **Minimum Search**
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 #searchSpace = [2,3,1,0,6,2,4]
@@ -570,7 +603,7 @@ candidate = searchSpace[1]
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` kotlin
 while(i<len(searchSpace)):
@@ -583,13 +616,13 @@ while(i<len(searchSpace)):
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 - **Common Recipe**
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` python
 i = 0
@@ -600,7 +633,7 @@ while(isStillSearching()):
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 ``` python
     if valid(candidate):
@@ -610,13 +643,13 @@ while(isStillSearching()):
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
-![template example](../mdNotes/uml/templateexample.svg)
+![template example](../uml/templateexample.svg)
 
 ---
 
-# Brute Force Recipe
+## Brute Force Recipe
 
 > is `isValid()` and `updateSolution(candidate)` is different for each
 > algorithm so it doesn't have a default implementation. It would be
@@ -624,13 +657,17 @@ while(isStillSearching()):
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - The `Template` is open for extension but
   closed for modification
 
 - *Encapsulate what varies* - steps can vary from specialization to
   specialization, therefore they are encapsulated into step methods.
+
+---
+
+## Why this is elegant
 
 - Implementing this pattern will remove duplicate code in the common
   parts of the algorithm.
@@ -640,19 +677,24 @@ while(isStillSearching()):
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstract class called `Template`. It contains the method
     `templateMethod()` broken down into separate steps through separate
     `step1()`, `step2()`, ... and etc. methods. When invoked
     `templateMethod()` will just call these step methods.
+
+---
+
+## How to implement it
+
 2.  Each step method inside `Template` will contain the default
     implementation of that step. If there is no default implementation,
     the method should be abstract.
 
 ---
 
-# How to implement it
+## How to implement it
 
 3.  For every similar behavior to `templateMethod()` a specialization of
     `Template` is created. These methods will implement all abstract
@@ -661,24 +703,24 @@ while(isStillSearching()):
 ---
 class: center, middle
 
-# Iterator
+## Iterator
 
 ---
 
-# Problem
+## Problem
 
 - One of the most common iteration recipes that you'll likely implement
   is the **for-each** loop.
 
 ---
 
-# Problem
+## Problem
 
-![iterator](../mdNotes/copyright_free_drawings/iterator.png)
+![iterator](../copyright_free_drawings/iterator.png)
 
 ---
 
-# Solution
+## Solution
 
 ``` python
 i = collection.newIterator()
@@ -688,13 +730,13 @@ while i.hasNext():
 
 ---
 
-# Solution
+## Solution
 
-![iterator](../mdNotes/uml/umlOutputs/Iterator.svg)
+![iterator](../uml/umlOutputs/Iterator.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Single Responsibility Principle** - Traversal algorithms can now be
   placed into separate classes that interact with an iterator instead of
@@ -705,7 +747,7 @@ while i.hasNext():
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - You can traverse all the elements in a collection, even if you don't
   know the exact type of the said collection.
@@ -715,7 +757,7 @@ while i.hasNext():
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstraction called `Iterator` which contains the abstract
     methods `next()` and `hasNext()`.
@@ -724,7 +766,7 @@ while i.hasNext():
 
 ---
 
-# How to implement it
+## How to implement it
 
 3.  For very collection that can be iterated through create a
     realization to `Collection`. Inside these `Collection` realizations,
@@ -738,14 +780,14 @@ while i.hasNext():
 
 ---
 
-# How to implement it
+## How to implement it
 
 5.  `Iterator` realizations should contain an attribute that refers to
     the collection instance it is iterating through.
 
 ---
 
-# Optional Reading
+## Optional Reading
         </textarea>
         <script>
             MathJax = {

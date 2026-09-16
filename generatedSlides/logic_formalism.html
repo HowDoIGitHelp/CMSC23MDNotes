@@ -7,7 +7,7 @@
     </head>
         <body>
             <textarea id="source">
-# Logic Programming Formalism
+## Logic Programming Formalism
 
 - Logic programming is based on the formal system of **predicate
   calculus**.
@@ -16,11 +16,11 @@
 ---
 class: center, middle
 
-# Satisfiability and Horn Clauses
+## Satisfiability and Horn Clauses
 
 ---
 
-# Satisfiability
+## Satisfiability
 
 - A boolean expression is said to be **satisfiable** if there exists an
   assignment of truth values (either TRUE or FALSE) that evaluates the
@@ -30,7 +30,7 @@ class: center, middle
 
 ---
 
-# Satisfiability
+## Satisfiability
 
 `$$
 p \lor q \lor r
@@ -38,7 +38,7 @@ $$`
 
 ---
 
-# Satisfiability
+## Satisfiability
 
 `$$
 p \land \neg p \land q
@@ -46,7 +46,7 @@ $$`
 
 ---
 
-# Satisfiability
+## Satisfiability
 
 `$$
 \begin{aligned}
@@ -58,7 +58,7 @@ $$`
 
 ---
 
-# Conjunctive Normal Form
+## Conjunctive Normal Form
 
 - To make it a little easier to solve satisfiability problems, we
   usually write boolean formulas in **conjunctive normal form** (clausal
@@ -68,14 +68,14 @@ $$`
 
 ---
 
-# Conjunctive Normal Form
+## Conjunctive Normal Form
 
 - Any boolean formula can be expanded into CNF using **logical
   equivalences**.
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 - **Horn clauses** are special clauses where there is *at most* one
   positive literal in the disjunction.
@@ -84,7 +84,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -97,7 +97,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 - If each Horn clause in the formula has at least one negative literal,
   then the formula is *guaranteed to be satisfiable* by assigning FALSE
@@ -105,7 +105,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -119,7 +119,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -133,7 +133,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -146,7 +146,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -159,7 +159,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -170,7 +170,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -184,7 +184,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -198,7 +198,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -211,7 +211,7 @@ $$`
 
 ---
 
-# Horn Clauses
+## Horn Clauses
 
 `$$
 \begin{aligned}
@@ -224,14 +224,14 @@ $$`
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 - Horn clauses also have the advantage of being neatly rewritten as
   *implication statements*.
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 `$$
 \neg p \lor q \equiv p \to q
@@ -239,7 +239,7 @@ $$`
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 `$$
 \begin{aligned}
@@ -250,21 +250,21 @@ $$`
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 - A Horn clause with exactly one positive literal and one or more
   negative literal is known as a **definite Horn clause**.
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 - A Horn clause that is only made up of one positive literal and nothing
   else is called a **fact**.
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 `$$
 \begin{aligned}
@@ -275,14 +275,14 @@ $$`
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 - A Horn clause that is made up 1 or more negative literals, is called a
   **goal clause**.
 
 ---
 
-# Horn Clauses as Implications
+## Horn Clauses as Implications
 
 `$$
 \begin{aligned}
@@ -294,7 +294,7 @@ $$`
 
 ---
 
-# Resolution
+## Resolution
 
 `$$
 \begin{aligned}

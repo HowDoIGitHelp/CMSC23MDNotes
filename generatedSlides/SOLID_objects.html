@@ -9,16 +9,16 @@
             <textarea id="source">
 class: center, middle
 
-# SOLID Objects
+## SOLID Objects
 
 ---
 class: center, middle
 
-# Introduction
+## Introduction
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 1.  Design methods and classes with exactly one responsibility
 2.  Design extension to classes to incorporate new behavior
@@ -28,12 +28,17 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 - **Single Responsibility Principle** - Objects should have cohesive and
   complete responsibilities. It shouldn't be aware of knowledge it
   doesn't need, and it shouldn't perform responsibilities that are
   irrelevant from it.
+
+---
+
+## Learning Outcomes
+
 - **Open/Closed Principle** - Classes should be open to extension and
   closed to modification. Instead of changing the form and behavior of
   an existing class, you should extend the class
@@ -42,7 +47,7 @@ class: center, middle
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 - **Interface Segregation Principle** - A client shouldn't be forced to
   implement methods that it doesn't use
@@ -52,24 +57,24 @@ class: center, middle
 ---
 class: center, middle
 
-# Single Responsibility Principle
+## Single Responsibility Principle
 
 ---
 
-# The GOD Class
+## The GOD Class
 
 - One of the canonical examples of violations against SRP is the concept
   known as the **god class**.
 
 ---
 
-# The GOD Class
+## The GOD Class
 
-![God class library card](../mdNotes/uml/godclasslibrarycard.png)
+![God class library card](../uml/godclasslibrarycard.png)
 
 ---
 
-# The GOD Class
+## The GOD Class
 
 - On the example above `LibraryCard` is a god class since it exposes the
   secrets of `Date` by forcing the creations of *evil* getters
@@ -77,7 +82,7 @@ class: center, middle
 
 ---
 
-# Assigning the correct responsibilities
+## Assigning the correct responsibilities
 
 - When you're introducing new behavior or information to a system, you
   should ask first: *who should be responsible for this behavior or
@@ -85,7 +90,7 @@ class: center, middle
 
 ---
 
-# Assigning the correct responsibilities
+## Assigning the correct responsibilities
 
 - Who should be responsible for calculating the differences between
   dates? **`Date` should be responsible, not `LibraryCard`**.
@@ -95,26 +100,26 @@ class: center, middle
 
 ---
 
-# Assigning the correct responsibilities
+## Assigning the correct responsibilities
 
 - `LibraryCard` should not be aware of **how** dates are subtracted to
   be able to subtract dates.
 
 ---
 
-# Open/Closed Principle
+## Open/Closed Principle
 
 - This is **opening `Bank` up for modification**.
 
 ---
 
-# Open/Closed Principle
+## Open/Closed Principle
 
-![open for extension](../mdNotes/uml/openforextension.png)
+![open for extension](../uml/openforextension.png)
 
 ---
 
-# Open/Closed Principle
+## Open/Closed Principle
 
 - Inside `CreditAccount.applyMonthlyChange()` you just call
   `applyMonthlyInterest()`,
@@ -124,7 +129,7 @@ class: center, middle
 
 ---
 
-# Open/Closed Principle
+## Open/Closed Principle
 
 > The previous library card example and bank examples are indeed
 > similar. This is because introspective checks like `isinstance` are
@@ -132,7 +137,7 @@ class: center, middle
 
 ---
 
-# Open/Closed Principle
+## Open/Closed Principle
 
 > Closed for modification does not mean you cannot change literally
 > anything in the class. Of course if there are mistakes in the specific
@@ -141,27 +146,27 @@ class: center, middle
 ---
 class: center, middle
 
-# Liskov-Substitution Principle
+## Liskov-Substitution Principle
 
 ---
 class: center, middle
 
-# Interface Segregation Principle
+## Interface Segregation Principle
 
 ---
 
-# Role Interfaces
+## Role Interfaces
 
-![God class library card](../mdNotes/uml/roleinterfaces.png)
+![God class library card](../uml/roleinterfaces.png)
 
 ---
 class: center, middle
 
-# Dependency Inversion Principle
+## Dependency Inversion Principle
 
 ---
 
-# Optional Reading
+## Optional Reading
         </textarea>
         <script>
             MathJax = {

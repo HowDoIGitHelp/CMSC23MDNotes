@@ -9,16 +9,16 @@
             <textarea id="source">
 class: center, middle
 
-# Structural Patterns
+## Structural Patterns
 
 ---
 class: center, middle
 
-# Introduction
+## Introduction
 
 ---
 
-# Learning Objectives
+## Learning Objectives
 
 1.  Design systems that apply the decorator pattern
 2.  Design systems that apply the adapter pattern
@@ -26,23 +26,23 @@ class: center, middle
 ---
 class: center, middle
 
-# Decorator Pattern
+## Decorator Pattern
 
 ---
 
-# Problem
+## Problem
 
-![decorator](../mdNotes/copyright_free_drawings/decorator.png)
-
----
-
-# Solution
-
-![decorator](../mdNotes/uml/umlOutputs/Decorator.svg)
+![decorator](../copyright_free_drawings/decorator.png)
 
 ---
 
-# Solution
+## Solution
+
+![decorator](../uml/umlOutputs/Decorator.svg)
+
+---
+
+## Solution
 
 ``` kotlin
 //Decorator1's implementation of doSomething():
@@ -56,11 +56,11 @@ override fun doSomething() {
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
 - **bordered** - Given the sentence, `["hey","there"]` it prints:
 
@@ -70,7 +70,7 @@ class: center, middle
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
 - **fancy** - Given the sentence, `["hey","there"]` it prints:
 
@@ -78,7 +78,7 @@ class: center, middle
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
 - **uppercase** - Given the sentence, `["hey","there"]` it prints:
 
@@ -86,7 +86,7 @@ class: center, middle
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
 - **bordered fancy** - Given the sentence, `["hey","there"]` it prints:
 
@@ -96,7 +96,7 @@ class: center, middle
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
 - **fancy uppercase** - Given the sentence, `["hey","there"]` it prints:
 
@@ -104,24 +104,29 @@ class: center, middle
 
 ---
 
-# Decorating Sentences
+## Decorating Sentences
 
-![decorator example](../mdNotes/uml/umlOutputs/FormattedSentence.svg)
+![decorator example](../uml/umlOutputs/FormattedSentence.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - Decorators extend classes via inheritance.
   It is easier to add new decorators without touching any exiting code.
 - A class can have many variants because of diverse combinations of
   behaviors can be cleanly implemented using this pattern.
+
+---
+
+## Why this is elegant
+
 - You can arbitrarily mix and match decorators without the worry of
   polymorphic incompatibility during runtime
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstract class `BaseDecorator` that specializes some
     `SimpleClass`. This `BaseDecorator` will also have the attribute
@@ -134,7 +139,7 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 2.  For every decoration, that can decorate `SimpleClass`, a
     specialization for `BaseClass` is created. These specializations
@@ -144,34 +149,34 @@ class: center, middle
 ---
 class: center, middle
 
-# Adapter Pattern
+## Adapter Pattern
 
 ---
 
-# Problem
+## Problem
 
-![adapter](../mdNotes/copyright_free_drawings/adapter.png)
+![adapter](../copyright_free_drawings/adapter.png)
 
 ---
 
-# Solution
+## Solution
 
-![adapter](../mdNotes/uml/umlOutputs/Adapter.svg)
+![adapter](../uml/umlOutputs/Adapter.svg)
 
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# Printable Shipments
+## Printable Shipments
 
-![adapter example](../mdNotes/uml/umlOutputs/PrintableShipment.svg)
+![adapter example](../uml/umlOutputs/PrintableShipment.svg)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - Instead of changing existing incompatible
   interfaces, you can extend them by creating adapters.
@@ -181,12 +186,17 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  If you want an `AbstractService` to be used like a
     `RequiredInterface`, Create a `ServiceAdapter` that realizes
     `RequiredInterface` and contains an attribute `service` that is a
     reference to an instance of `AbstractService`.
+
+---
+
+## How to implement it
+
 2.  Inside `ServiceAdapter`, the implementations of
     `RequiredInterface`'s abstract methods are merely calls to the
     methods of the reference `service`.
@@ -194,38 +204,43 @@ class: center, middle
 ---
 class: center, middle
 
-# Composite (Optional Read)
+## Composite (Optional Read)
 
 ---
 class: center, middle
 
-# Problem
+## Problem
 
 ---
 
-# Solution
+## Solution
 
-![composite](../mdNotes/uml/composite.png)
+![composite](../uml/composite.png)
 
 ---
 class: center, middle
 
-# Example
+## Example
 
 ---
 
-# File System
+## File System
 
-![composite pattern](../mdNotes/uml/compositeexample.png)
+![composite pattern](../uml/compositeexample.png)
 
 ---
 
-# File System
+## File System
 
 - **`size()`** - the size of a `File` is based on the attribute size
   which is set during the initialization of the `File` instance. The
   size of a `Directory` is the size of all the `FileSystemEntities`
   inside it.
+
+---
+
+## File System
+
 - **`searchResults(target)`** - if used by a `File`, if the name of the
   file matches the `target` it returns a list containing the `File`, if
   not it returns an empty list. If used by a `Directory` returns a list
@@ -234,7 +249,7 @@ class: center, middle
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - **Open/Closed Principle** - You can introduce new component
   realizations in the system without touching any existing code.
@@ -243,21 +258,26 @@ class: center, middle
 
 ---
 
-# How to implement it
+## How to implement it
 
 1.  Create an abstraction called `Component` that contains the abstract
     methods that are supposed to be executed across all components.
 2.  The `Component` has two realizations, `Composite`s and `Leaf`s.
+
+---
+
+## How to implement it
+
 3.  `Component` contains an attribute `children` which is a list of
     `Composite` instance references and the methods `addChild()` and
     `removeChild()` to attach/detach `Composite`s. It also has
     `execute()` which an implemented method from `Component`.
+4.  `Leaf` contains the method `execute()` as well.
 
 ---
 
-# How to implement it
+## How to implement it
 
-4.  `Leaf` contains the method `execute()` as well.
 5.  When a `Composite`'s execute is invoked, it calls invokes all of its
     children's`execute()`. When `Leaf`'s execute is invoked it performs,
     leaf related behavior.
@@ -265,29 +285,29 @@ class: center, middle
 ---
 class: center, middle
 
-# Facade (Optional Read)
+## Facade (Optional Read)
 
 ---
 class: center, middle
 
-# Problem
+## Problem
 
 ---
 
-# Solution
+## Solution
 
-![facade](../mdNotes/uml/facade.png)
+![facade](../uml/facade.png)
 
 ---
 
-# Why this is elegant
+## Why this is elegant
 
 - Implementing this pattern encapsulates complicated subsystem behavior
   into simple straightforward functions.
 
 ---
 
-# Optional Readings
+## Optional Readings
         </textarea>
         <script>
             MathJax = {
