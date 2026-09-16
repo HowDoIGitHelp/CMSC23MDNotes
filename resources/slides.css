@@ -27,6 +27,10 @@ h1, h2, h3 {
     font-size: 45px !important;
 }
 
+.middle h2 {
+    font-size: 80px !important;
+}
+
 .remark-code, .remark-inline-code {
     font-family: 'JetBrains Mono', 'Ubuntu Mono', monospace;
     font-size: revert;
