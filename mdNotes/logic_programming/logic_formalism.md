@@ -243,7 +243,7 @@ $$
 p_1 \lor p_2 \lor \cdots \lor r & \\
 q_1 \lor q_2 \lor \cdots \lor \neg r & \\
 \hline
-p_1 \lor p_2 \lor q_1 \lor q_2 \cdots \\
+p_1 \lor p_2 \lor \cdots \lor q_1 \lor q_2 \cdots \\
 \end{aligned}
 $$
 
