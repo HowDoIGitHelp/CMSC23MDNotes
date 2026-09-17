@@ -117,6 +117,16 @@ $$`
 
 ---
 
+## Rules
+
+- When you convert a prolog knowledge base into a Horn formula, the
+  resulting Horn formula is *guaranteed to be satisfiable*.
+- This is because the resulting Horn formula is composed of only
+  **definite clauses** and **facts**, which are satisfiable by assigning
+  TRUE to all variables.
+
+---
+
 ## Queries
 
 - We interact with a knowledge base by writing **queries** to Prolog.
@@ -201,9 +211,9 @@ $$`
 ## Queries
 
 ``` prolog
-p
-q
-r :- q
+p.
+q.
+r :- q.
 ```
 
 ---
@@ -211,7 +221,7 @@ r :- q
 ## Queries
 
 ``` prolog
-?- r
+?- r.
 ```
 
 ---

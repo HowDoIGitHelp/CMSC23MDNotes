@@ -222,7 +222,7 @@ $$
 Note that, a Horn formula made up of only facts and definite Horn clauses is always satisfiable by assigning TRUE to every variable.
 By assigning, TRUE to every variable, you ensure that each positive literal is TRUE, meaning each Horn clause is also TRUE.
 
-A Horn clause that is made up 1 or more negative literals, is called a **goal clause**.
+A Horn clause that is made up 1 or more negative literals, and no positive literal is called a **goal clause**.
 
 $$
 \begin{aligned}
