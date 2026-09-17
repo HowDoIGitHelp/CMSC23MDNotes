@@ -370,8 +370,8 @@ Note that the quantification $\forall X z(X)$ and $\neg z(a)$ are actually compl
 The reasoning is obvious since both cannot be true at the same time and is therefore a contradiction.
 But also, you can apply existential generalization and DeMorgan's Theorem converting $\neg z(a) \equiv \exists X \neg z(X) \equiv \neg \forall X z(X)$.
 
-From here you can simply solve for the satisfiability of the formula using the previous methods discuss.
-But we can also apply resolution/modus tollens to simplify the formula into the following.
+From here you can simply solve for the satisfiability of the formula using the previous methods discussed.
+But we can also apply resolution/modus tollens to simplify the formula into a contradiction.
 Here we resolve away the complements $\neg z(a)$ and $\forall X z(X)$.
 
 $$
@@ -402,6 +402,6 @@ q(a) \land \\
 \end{aligned}
 $$
 
-This leads us to a contradiction, this proving that $z(a)$ is consistent with the knowledge base.
+This leads us to a contradiction, thus proving that $z(a)$ is consistent with the knowledge base.
 The rules of inference we applied also provide us with the context that $z(a)$ is consistent specifically on the universal instantiation $X = a$.
 
