@@ -428,6 +428,65 @@ X = squirtle,
 Y = charizard ;
 X = Y, Y = squirtle.
 ```
+
+---
+
+## Variables
+
+``` prolog
+p(a).
+q(a).
+z(X) :- p(X), q(X).
+
+?- z(a).
+```
+
+---
+
+## Variables
+
+`$$
+\begin{aligned}
+p(a) \land \\
+q(a) \land \\
+\neg \forall X p(X) \lor \neg \forall X q(X) \lor \forall X z(X) \\
+\neg z(a)
+\end{aligned}
+$$`
+
+---
+
+## Variables
+
+`$$
+\begin{aligned}
+p(a) \land \\
+q(a) \land \\
+\neg \forall X p(X) \lor \neg \forall X q(X)
+\end{aligned}
+$$`
+
+---
+
+## Variables
+
+`$$
+\begin{aligned}
+q(a) \land \\
+\neg \forall X q(X)
+\end{aligned}
+$$`
+
+---
+
+## Variables
+
+`$$
+\begin{aligned}
+q(a) \land \\
+\neg q(a)
+\end{aligned}
+$$`
         </textarea>
         <script>
             MathJax = {

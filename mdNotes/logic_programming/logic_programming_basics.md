@@ -344,3 +344,64 @@ X = squirtle,
 Y = charizard ;
 X = Y, Y = squirtle.
 ```
+
+Let's look at another example involving variables and convert it into a Horn formula.
+
+```prolog
+p(a).
+q(a).
+z(X) :- p(X), q(X).
+
+?- z(a).
+```
+
+Writing the knowledge base and the negation of the query as clauses:
+
+$$
+\begin{aligned}
+p(a) \land \\
+q(a) \land \\
+\neg \forall X p(X) \lor \neg \forall X q(X) \lor \forall X z(X) \\
+\neg z(a)
+\end{aligned}
+$$
+
+Note that the quantification $\forall X z(X)$ and $\neg z(a)$ are actually complements of each other.
+The reasoning is obvious since both cannot be true at the same time and is therefore a contradiction.
+But also, you can apply existential generalization and DeMorgan's Theorem converting $\neg z(a) \equiv \exists X \neg z(X) \equiv \neg \forall X z(X)$.
+
+From here you can simply solve for the satisfiability of the formula using the previous methods discuss.
+But we can also apply resolution/modus tollens to simplify the formula into the following.
+Here we resolve away the complements $\neg z(a)$ and $\forall X z(X)$.
+
+$$
+\begin{aligned}
+p(a) \land \\
+q(a) \land \\
+\neg \forall X p(X) \lor \neg \forall X q(X)
+\end{aligned}
+$$
+
+Just like before, $p(a)$ and $\neg \forall X p(X)$ are complements.
+You can prove this by applying universal instantiation to $\forall X p(X)$, $\neg \forall X p(X) \equiv \neg p(a)$.
+This means that we can resolve away this pair of complements as well.
+
+$$
+\begin{aligned}
+q(a) \land \\
+\neg \forall X q(X)
+\end{aligned}
+$$
+
+Apply universal instantiation to $\forall X q(X)$:
+
+$$
+\begin{aligned}
+q(a) \land \\
+\neg q(a)
+\end{aligned}
+$$
+
+This leads us to a contradiction, this proving that $z(a)$ is consistent with the knowledge base.
+The rules of inference we applied also provide us with the context that $z(a)$ is consistent specifically on the universal instantiation $X = a$.
+
