@@ -83,9 +83,9 @@ flyingtype(charizard).
 resistanttofire(squirtle) :- watertype(squirtle).
 ```
 
-Rules are written with the syntax: **`u :- v`**.
+Rules are written with the syntax, **`u :- v`**.
 This is equivalent to the implication statement $v \to u$.
-Prolog rules are written using the "u if v", the reverse of a conventional "if v then u" implication "statement.
+Prolog rules are written using the "u if v", the reverse of a conventional "if v then u" implication statement.
 A lot of people get confused here so just remember, `:-` is read as if.
 In prolog, we call the conclusion `u` as the rule **head** and the hypothesis `v` as the rule **body**.
 
