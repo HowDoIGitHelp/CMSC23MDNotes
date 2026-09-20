@@ -186,6 +186,8 @@ true.
 
 - When you provide a query to prolog, prolog tries to prove that the
   query is true using **proof by contradiction**.
+- To do this, the query is negated, converting them to a **goal** (the
+  Horn clause variant, goal).
 
 ---
 
@@ -286,8 +288,8 @@ true.
 
 - Another important thing about Prolog constructs is that you can write
   them with **variables**.
-- When you write with Prolog facts or rules, you are implicitly creating
-  a *universally instantiated predicate*.
+- When you use variables within Prolog facts or rules, you are
+  implicitly creating a *universally instantiated predicate*.
 
 ---
 
@@ -348,6 +350,14 @@ X = charizard
 ## Variables
 
 ``` prolog
+resistanttofire(X) :- watertype(X).
+```
+
+---
+
+## Variables
+
+``` prolog
 firetype(charmander).
 firetype(charizard).
 watertype(squirtle).
@@ -360,8 +370,8 @@ flyingtype(charizard).
 
 ``` prolog
 
-isresistantto(X,Y) :- watertype(X),firetype(Y).
-isresistantto(X,Y) :- watertype(X),watertype(Y).
+isresistantto(X,Y) :- watertype(X), firetype(Y).
+isresistantto(X,Y) :- watertype(X), watertype(Y).
 ```
 
 ---
@@ -375,18 +385,19 @@ isresistantto(X,Y) :- watertype(X),watertype(Y).
 
 ## Variables
 
+`$$
+\forall x \forall y ((\text{watertype}(x) \land \text{firetype}(y)) \to \text{isresistantto}(x,y))
+$$`
+
+---
+
+## Variables
+
 ``` prolog
 ?- isresistantto(squirtle,charmander).
 true.
-```
 
----
-
-## Variables
-
-``` prolog
 ?- isresistantto(squirtle,charizard).
-true.
 ```
 
 ---
@@ -394,6 +405,8 @@ true.
 ## Variables
 
 ``` prolog
+true.
+
 ?- isresistantto(squirtle,squirtle).
 true.
 ```

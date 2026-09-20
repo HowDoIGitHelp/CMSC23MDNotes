@@ -34,8 +34,17 @@ class: center, middle
 
 - The way Prolog is able to respond to interesting queries involving
   constants, variables and complex terms is through the **unification**.
+- Through unification, prolog can identify which pairs of terms can be
+  **resolved** away using resolution.
+
+---
+
+## Unification
+
 - Unification algorithmically identifies **logically consistent
   substitutions** involving constants, variables, and complex terms.
+- If a pair of terms unify, it means that the *negation of one of them
+  produces a contradicting pair*.
 
 ---
 
@@ -68,6 +77,13 @@ $$`
 \text{isresistantto}(\text{squirtle}, \text{charmander})
 \end{aligned}
 $$`
+
+---
+
+## Unification
+
+- Both scenarios cannot work because the constants `squirtle` and
+  `charmander` *do not unify* with each other.
 
 ---
 
@@ -155,8 +171,8 @@ true.
 
 ## Unification
 
-- Unification with variables is an implementation of **universal
-  instantiation**.
+- Unification with variables is an implementation of the inference rule
+  **universal instantiation**.
 - When you assume `p(X)` in the knowledge base, you assume that
   $\forall x p(x)$ which implies via *universal instantiation* that
   $p(a)$ is also true (for some constant $a$).
@@ -236,8 +252,21 @@ p(X).
 
 ## Selective Linear Definite Resolution
 
-- One of the aspects of SLD resolution is how it only *selects* one
-  **subgoal** out of the conjunction of goals.
+- This creates *two separate sub goals* $\neg p(a)$ and $\neg p(b)$.
+- One of the aspects of SLD resolution is how it only **selects one
+  subgoal** out of the conjunction of goals.
+- Prolog selects the **leftmost** subgoal first, in this case,
+  $\neg p(a)$.
+
+---
+
+## Selective Linear Definite Resolution
+
+- Prolog searches the entire knowledge base from **top to bottom**, and
+  tries to unify the current subgoal with any fact or rule head in the
+  knowledge base.
+- A successful unification, *resolves the subgoal away* (i.e. the
+  subgoal gets cancelled out via resolution).
 
 ---
 
@@ -287,9 +316,9 @@ k(X) :- f(X), g(X), h(X).
 
 ## Selective Linear Definite Resolution
 
-| Current Goal |
-|:-------------|
-| $\neg k(Y)$  |
+| Current Goal          |
+|:----------------------|
+| $\neg \forall Y k(Y)$ |
 
 ---
 
@@ -297,10 +326,10 @@ k(X) :- f(X), g(X), h(X).
 
 `$$
 \begin{aligned}
-\neg k(Y) \lor \bot\\
-k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X)\\
+\neg \forall Y k(Y) \lor \bot\\
+\forall X k(X) \lor \neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
 \hline
-\neg f(X) \lor \neg g(X) \lor \neg h(X)\\
+\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
 \end{aligned}
 $$`
 
@@ -308,9 +337,9 @@ $$`
 
 ## Selective Linear Definite Resolution
 
-| Current Goal                              |
-|:------------------------------------------|
-| $\neg f(X) \lor \neg g(X) \lor \neg h(X)$ |
+| Current Goal                                                            |
+|:-----------------------------------------------------------------------|
+| $\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)$ |
 
 ---
 
