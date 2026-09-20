@@ -113,7 +113,7 @@ The answer to a question depends on what Prolog knows.
 And what Prolog knows is represented by the knowledge base.
 For example if you load the knowledge base we created earlier.
 We can ask Prolog the following question below.
-Writing the following will basically ask Prolog, "hey, is it true that charmander is firetype?"
+Writing the following will basically ask Prolog, "hey, is it true that charmander is firetype"?
 
 ```prolog
 ?- firetype(charmander).
@@ -139,8 +139,8 @@ Realizing that none of the facts match this proposition, Prolog responds with:
 false.
 ```
 
-You can also ask Prolog a conjunction as a query.
-This is written multiple queries, separated by a comma.
+You can also ask Prolog a conjunction of queries.
+This is written as multiple queries, separated by a comma.
 
 ```prolog
 ?- firetype(charizard), watertype(squirtle).
@@ -154,7 +154,7 @@ true.
 
 Prolog queries are also implementations of Horn clauses.
 When you provide a query to prolog, prolog tries to prove that the query is true using **proof by contradiction**.
-To do this, the query is negated, converting them to a goal.
+To do this, the query is negated, converting them to a **goal** (the Horn clause variant, goal).
 For example, the query `firetype(charizard), watertype(squirtle)`, is negated into the disjunction:
 
 $$
@@ -231,7 +231,7 @@ true.
 ## Variables
 
 Another important thing about Prolog constructs is that you can write them with **variables**[^variables].
-When you write with Prolog facts or rules, you are implicitly creating a *universally instantiated predicate*.
+When you use variables within Prolog facts or rules, you are implicitly creating a *universally instantiated predicate*.
 For example, the fact `pokemon(X)`[^variable_syntax], corresponds to the proposition, $\forall x (\text{Pokemon}(x))$.
 By adding this to the knowledge base, you are assuming that for any value `x`, `pokemon(X)` is true.
 Therefore, asking the query, `pokemon(charizard)` will yield a `true` response.
@@ -269,7 +269,8 @@ resistanttofire(squirtle) :- watertype(squirtle).
 ?- firetype(X)
 ```
 
-This query basically asks, which values when substituted to `X` in the predicate `firetype(X)` will yield true statements? This can be interpreted in natural language as "which Pokémon are fire type?" Therefore, this query will yield the response:
+This query basically asks, "which values when substituted to `X` in the predicate `firetype(X)` will yield true statements"?
+This can be interpreted in natural language as "which Pokémon are fire type"? Therefore, this query will yield the response:
 
 ```prolog
 X = charmander
@@ -277,7 +278,14 @@ X = charizard
 ```
 
 Variables used in rules allows the creation of richer knowledge bases.
-Instead of the rule `resistanttofire(squirtle) :- watertype(squirtle).` we can write a more general rule using variables:
+In our knowledge base, the rule `resistanttofire(squirtle) :- watertype(squirtle).` is a rule that only applies to `squirtle`.
+If we want a more general rule, we can write it with variables.
+
+```prolog
+resistanttofire(X) :- watertype(X).
+```
+
+We can even generalize it further by creating a rule with a conjunction as a body.
 
 ```prolog
 firetype(charmander).
@@ -285,13 +293,12 @@ firetype(charizard).
 watertype(squirtle).
 flyingtype(charizard).
 
-isresistantto(X,Y) :- watertype(X),firetype(Y).
-isresistantto(X,Y) :- watertype(X),watertype(Y).
+isresistantto(X,Y) :- watertype(X), firetype(Y).
+isresistantto(X,Y) :- watertype(X), watertype(Y).
 ```
 
-This introduces a more complicated rule `isresistanto(X,Y) :- watertype(X),firetype(Y)`.
-This rule's premise is a conjunction of predicates `watertype(X)` and `firetype(Y)`.
- 
+This introduces a more expressive rule, `isresistanto(X,Y) :- watertype(X),firetype(Y)`.
+This rule's body is the conjunction of predicates `watertype(X)` and `firetype(Y)`.
 
 If we imagine that the predicate, $\text{isresistantto}(x,y)$ means "x is resistant to y", the whole rule can be interpreted as 
 
@@ -302,19 +309,16 @@ This statement, can be written as the following quantification statement:
 $$
 \forall x \forall y ((\text{watertype}(x) \land \text{firetype}(y)) \to \text{isresistantto}(x,y))
 $$
+
 By writing this rule, Prolog can infer the following facts:
 
 ```prolog
 ?- isresistantto(squirtle,charmander).
 true.
-```
 
-```prolog
 ?- isresistantto(squirtle,charizard).
 true.
-```
 
-```prolog
 ?- isresistantto(squirtle,squirtle).
 true.
 ```
@@ -325,7 +329,8 @@ If you ask Prolog a harder question like the following:
 ?- isresistantto(squirtle,X).
 ```
 
-Prolog interprets this as "which values of `X` make the proposition: squirtle is resistant to X, true? Therefore, Prolog will look for the pokémon, squirtle is resistant to, therefore you with the output:
+Prolog interprets this as "which values of `X` make the proposition: squirtle is resistant to X, true"?
+Therefore, Prolog will look for the pokémon, squirtle is resistant to, therefore you with the output:
 
 ```prolog
 X = charmander
