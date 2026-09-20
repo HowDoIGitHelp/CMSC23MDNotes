@@ -381,6 +381,91 @@ $$`
 Y = b,
 true.
 ```
+
+---
+
+## Selective Linear Definite Resolution
+
+1.  The first subgoal is selected, as the current goal.
+2.  The knowledge base is searched for complements of the current goal.
+
+---
+
+## Selective Linear Definite Resolution
+
+3.  For every complement in the knowledge perform the following:
+    1.  Resolve away the complement and the current goal, while keeping
+        the instantiations formed from the resolution.
+    2.  Perform SLD resolution with the new goal as the resolvent.
+
+---
+
+## Selective Linear Definite Resolution
+
+``` prolog
+f(a).
+g(b).
+g(Z) :- f(Z).
+h(X) :- g(X).
+
+?- h(Y).
+```
+
+---
+
+## Selective Linear Definite Resolution
+
+`$$
+\begin{aligned}
+f(a) \land \\
+g(b) \land \\
+(\forall Z g(Z) \lor \neg \forall Z f(Z)) \land \\
+(\forall X h(X) \lor \neg \forall X g(X)) \land \\
+\neg \forall Y h(Y)
+\end{aligned}
+$$`
+
+---
+
+## Selective Linear Definite Resolution
+
+| Current Goal          |
+|:----------------------|
+| $\neg Y \forall h(Y)$ |
+
+---
+
+## Selective Linear Definite Resolution
+
+| Current Goal ($X=Y$)  |
+|:----------------------|
+| $\neg \forall X g(X)$ |
+
+---
+
+## Selective Linear Definite Resolution
+
+| Branch ($X=b$) (Current Goal) | Branch ($X=Z$)   |
+|:------------------------------|:-----------------|
+| $\bot$ (contradiction)        | $\forall Z f(Z)$ |
+
+---
+
+## Selective Linear Definite Resolution
+
+| Branch ($X=b$)         | Branch ($Z=a$) (Current Goal) |
+|:-----------------------|:------------------------------|
+| $\bot$ (contradiction) | $\bot$ (contradiction)        |
+
+---
+
+## Selective Linear Definite Resolution
+
+``` prolog
+?- h(Y).
+Y = b ;
+Y = a.
+```
         </textarea>
         <script>
             MathJax = {

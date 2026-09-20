@@ -308,3 +308,61 @@ Y = b,
 true.
 ```
 
+The SLD resolution algorithm can be broken down like this:
+
+The initial goal is created by negating the query.
+
+1. The first subgoal is selected, as the current goal.
+2. The knowledge base is searched for complements of the current goal.
+3. For every complement in the knowledge perform the following:
+    1. Resolve away the complement and the current goal, while keeping the instantiations formed from the resolution.
+    2. Perform SLD resolution with the new goal as the resolvent.
+
+Here's another example knowledge base and query:
+
+```prolog
+f(a).
+g(b).
+g(Z) :- f(Z).
+h(X) :- g(X).
+
+?- h(Y).
+```
+
+As a horn formula:
+
+$$
+\begin{aligned}
+f(a) \land \\
+g(b) \land \\
+(\forall Z g(Z) \lor \neg \forall Z f(Z)) \land \\
+(\forall X h(X) \lor \neg \forall X g(X)) \land \\
+\neg \forall Y h(Y)
+\end{aligned}
+$$
+
+| Current Goal |
+|:-------------|
+| $\neg Y \forall h(Y)$ |
+
+| Current Goal ($X=Y$)  |
+|:----------------------|
+| $\neg \forall X g(X)$ |
+
+| Branch ($X=b$) (Current Goal)   | Branch ($X=Z$)   |
+|:--------------------------------|:-----------------|
+| $\bot$ (contradiction)          | $\forall Z f(Z)$ |
+
+
+| Branch ($X=b$)    | Branch ($Z=a$) (Current Goal)  |
+|:--------------------------------|:-----------------|
+| $\bot$ (contradiction)          | $\bot$ (contradiction) |
+
+Prolog responds with the following.
+
+```prolog
+?- h(Y).
+Y = b ;
+Y = a.
+```
+
