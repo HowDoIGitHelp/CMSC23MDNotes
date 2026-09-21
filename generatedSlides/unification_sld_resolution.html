@@ -174,8 +174,38 @@ true.
 - Unification with variables is an implementation of the inference rule
   **universal instantiation**.
 - When you assume `p(X)` in the knowledge base, you assume that
-  $\forall x p(x)$ which implies via *universal instantiation* that
+  $\forall X p(X)$ which implies via *universal instantiation* that
   $p(a)$ is also true (for some constant $a$).
+
+---
+
+## Unification
+
+- As a unifying pair, if one of them gets negated, you end up with a
+  *contradiction*.
+
+---
+
+## Unification
+
+`$$
+\begin{aligned}
+\forall X p(X) \land \neg p(a) &\equiv p(a) \land \neg p(a)\\
+\forall X p(X) \land \neg p(a) &\equiv \bot
+\end{aligned}
+$$`
+
+---
+
+## Unification
+
+`$$
+\begin{aligned}
+p(a) \land \neg \exists X p(X) &\equiv p(a) \land \forall X \neg p(X) \\
+p(a) \land \neg \exists X p(X) &\equiv p(a) \land \neg p(a) \\
+&\equiv \bot
+\end{aligned}
+$$`
 
 ---
 

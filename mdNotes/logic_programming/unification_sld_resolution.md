@@ -104,8 +104,29 @@ true.
 ```
 
 Unification with variables is an implementation of the inference rule **universal instantiation**.
-Remember that a `p(X)` in Prolog implicitly means $\forall x p(x)$.
-When you assume `p(X)` in the knowledge base, you assume that $\forall x p(x)$ which implies via *universal instantiation* that $p(a)$ is also true (for some constant $a$).
+Remember that a fact `p(X)` in Prolog implicitly means $\forall X p(X)$.
+When you assume `p(X)` in the knowledge base, you assume that $\forall X p(X)$ which implies via *universal instantiation* that $p(a)$ is also true (for some constant $a$).
+As a unifying pair, if one of them gets negated, you end up with a *contradiction*.
+Indeed, if we negate $p(a)$ we end up with a contradiction.
+
+$$
+\begin{aligned}
+\forall X p(X) \land \neg p(a) &\equiv p(a) \land \neg p(a)\\
+\forall X p(X) \land \neg p(a) &\equiv \bot
+\end{aligned}
+$$
+
+Given `p(A)` in the knowledge base and a query `p(X)`, the query is translated into the existential quantification, $\exists X p(X)$.
+Negating said quantification, we also end up with a contradicting pair:
+
+$$
+\begin{aligned}
+p(a) \land \neg \exists X p(X) &\equiv p(a) \land \forall X \neg p(X) \\
+p(a) \land \neg \exists X p(X) &\equiv p(a) \land \neg p(a) \\
+&\equiv \bot
+\end{aligned}
+$$
+
 This is why variables automatically unify with non-variables.
 
 When you compare two variables, they automatically unify because the actual variable name used does not matter at all.
@@ -113,7 +134,6 @@ For example, `p(X)` will unify with `p(Y)`, because there is no semantic differe
 
 Using the same intuition you'll find why the terms `p(X,a)` and `p(b,X)` will not unify.
 These terms represent $\forall X p(X,a)$ and $\forall X p(b,X)$, which can only consistently instantiate if $X=a$, $X=b$, and $a=b$.
-
 
 ### Programming with unification
 
