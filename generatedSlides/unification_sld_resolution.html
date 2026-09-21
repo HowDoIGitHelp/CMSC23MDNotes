@@ -316,20 +316,9 @@ k(X) :- f(X), g(X), h(X).
 
 ## Selective Linear Definite Resolution
 
-| Current Goal          |
-|:----------------------|
-| $\neg \forall Y k(Y)$ |
-
----
-
-## Selective Linear Definite Resolution
-
 `$$
 \begin{aligned}
-\neg \forall Y k(Y) \lor \bot\\
-\forall X k(X) \lor \neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
-\hline
-\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
+\exists Y k(Y)
 \end{aligned}
 $$`
 
@@ -337,41 +326,74 @@ $$`
 
 ## Selective Linear Definite Resolution
 
-| Current Goal                                                            |
-|:-----------------------------------------------------------------------|
-| $\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)$ |
+| Current Goal          |
+|:----------------------|
+| $\forall Y \neg k(Y)$ |
 
 ---
 
 ## Selective Linear Definite Resolution
 
-| Branch $X = a$ goal (current) | Branch $X = b$ goal        |
-|:------------------------------|:---------------------------|
-| $\neg g(a) \lor \neg h(a)$    | $\neg g(b) \lor \neg h(b)$ |
+`$$
+\begin{aligned}
+\forall Y \neg Y k(Y) \land \\
+\forall X (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))\\
+\hline
+\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))
+\end{aligned}
+$$`
 
 ---
 
 ## Selective Linear Definite Resolution
 
-| Branch $X = a$ goal (current) | Branch $X = b$ goal        |
-|:------------------------------|:---------------------------|
-| $\neg h(a)$                   | $\neg g(b) \lor \neg h(b)$ |
+`$$
+\begin{aligned}
+\forall Y \neg k(Y) \equiv \forall X \neg k(X) \\
+\\
+\forall X \neg k(X) \land \forall X (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))\\
+\forall X (\neg k(X) \land (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))) \\
+\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))
+\end{aligned}
+$$`
 
 ---
 
 ## Selective Linear Definite Resolution
 
-| Branch $X = a$ goal (not refuted) | Branch $X = b$ goal        |
-|:----------------------------------|:---------------------------|
-| $\neg h(a)$                       | $\neg g(b) \lor \neg h(b)$ |
+| Current Goal                                         |
+|:-----------------------------------------------------|
+| $\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X)$ |
 
 ---
 
 ## Selective Linear Definite Resolution
 
-| Branch $X = a$ goal (not refuted) | Branch $X = b$ goal (refuted) |
-|:----------------------------------|:------------------------------|
-| $\neg h(a)$                       | $\bot$                        |
+| Branch $X = a$ (current)             | Branch $X = b$                       |
+|:-----------------------------------|:-----------------------------------|
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
+| $\neg g(a) \lor \neg h(a)$           | $\neg g(b) \lor \neg h(b)$           |
+
+---
+
+## Selective Linear Definite Resolution
+
+| Branch $X = a$ (current)             | Branch $X = b$                       |
+|:-----------------------------------|:-----------------------------------|
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
+| $\neg g(a) \lor \neg h(a)$           | $\neg g(b) \lor \neg h(b)$           |
+| $\neg h(a)$                          | ...                                  |
+
+---
+
+## Selective Linear Definite Resolution
+
+| Branch $X = a$                       | Branch $X = b$ (current)             |
+|:-----------------------------------|:-----------------------------------|
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
+| $\neg g(a) \lor \neg h(a)$           | $\neg g(b) \lor \neg h(b)$           |
+| $\neg h(a)$                          | $\neg h(b)$                          |
+| not refuted                          | $\bot$ (refuted)                     |
 
 ---
 
@@ -386,7 +408,7 @@ true.
 
 ## Selective Linear Definite Resolution
 
-1.  The first subgoal is selected, as the current goal.
+1.  The first/leftmost subgoal is selected as the current goal.
 2.  The knowledge base is searched for complements of the current goal.
 
 ---
@@ -419,9 +441,9 @@ h(X) :- g(X).
 \begin{aligned}
 f(a) \land \\
 g(b) \land \\
-(\forall Z g(Z) \lor \neg \forall Z f(Z)) \land \\
-(\forall X h(X) \lor \neg \forall X g(X)) \land \\
-\neg \forall Y h(Y)
+\forall Z (g(Z) \lor \neg f(Z)) \land \\
+\forall X (h(X) \lor \neg g(X)) \land \\
+\forall Y \neg h(Y)
 \end{aligned}
 $$`
 
@@ -429,33 +451,19 @@ $$`
 
 ## Selective Linear Definite Resolution
 
-| Current Goal          |
-|:----------------------|
-| $\neg Y \forall h(Y)$ |
+| Current Goal                                         |
+|:-----------------------------------------------------|
+| $\forall Y \neg h(Y)$                                |
+| $\forall X \neg g(X)$ (with instantiation ($X = Y$)) |
 
 ---
 
 ## Selective Linear Definite Resolution
 
-| Current Goal ($X=Y$)  |
-|:----------------------|
-| $\neg \forall X g(X)$ |
-
----
-
-## Selective Linear Definite Resolution
-
-| Branch ($X=b$) (Current Goal) | Branch ($X=Z$)   |
-|:------------------------------|:-----------------|
-| $\bot$ (contradiction)        | $\forall Z f(Z)$ |
-
----
-
-## Selective Linear Definite Resolution
-
-| Branch ($X=b$)         | Branch ($Z=a$) (Current Goal) |
-|:-----------------------|:------------------------------|
-| $\bot$ (contradiction) | $\bot$ (contradiction)        |
+| Branch ($X=b$)   | Branch ($X=Z$) (Current Goal)                   |
+|:-----------------|:------------------------------------------------|
+| $\bot$ (refuted) | $\forall Z \neg f(Z)$                           |
+| ...              | $\bot$ (refuted) (with instantiation ($X = a$)) |
 
 ---
 

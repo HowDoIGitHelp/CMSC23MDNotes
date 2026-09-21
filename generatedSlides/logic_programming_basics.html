@@ -462,7 +462,7 @@ z(X) :- p(X), q(X).
 \begin{aligned}
 p(a) \land \\
 q(a) \land \\
-\neg \forall X p(X) \lor \neg \forall X q(X) \lor \forall X z(X) \\
+\forall X (\neg p(X) \lor \neg q(X) \lor z(X)) \land \\
 \neg z(a)
 \end{aligned}
 $$`
@@ -475,7 +475,8 @@ $$`
 \begin{aligned}
 p(a) \land \\
 q(a) \land \\
-\neg \forall X p(X) \lor \neg \forall X q(X)
+\neg p(a) \lor \neg q(a) \lor z(a) \land \\
+\neg z(a)
 \end{aligned}
 $$`
 
@@ -485,8 +486,9 @@ $$`
 
 `$$
 \begin{aligned}
+p(a) \land \\
 q(a) \land \\
-\neg \forall X q(X)
+\neg p(a) \lor \neg q(a)
 \end{aligned}
 $$`
 
@@ -496,10 +498,19 @@ $$`
 
 `$$
 \begin{aligned}
-q(a) \land \\
-\neg q(a)
+p(a) \land \\
+\neg p(a)
 \end{aligned}
 $$`
+
+---
+
+## Variables
+
+``` prolog
+?- z(a).
+true.
+```
         </textarea>
         <script>
             MathJax = {

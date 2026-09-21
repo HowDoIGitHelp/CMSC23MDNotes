@@ -366,47 +366,47 @@ $$
 \begin{aligned}
 p(a) \land \\
 q(a) \land \\
-\neg \forall X p(X) \lor \neg \forall X q(X) \lor \forall X z(X) \\
+\forall X (\neg p(X) \lor \neg q(X) \lor z(X)) \land \\
 \neg z(a)
 \end{aligned}
 $$
 
-Note that the quantification $\forall X z(X)$ and $\neg z(a)$ are actually complements of each other.
-The reasoning is obvious since both cannot be true at the same time and is therefore a contradiction.
-But also, you can apply existential generalization and DeMorgan's Theorem converting $\neg z(a) \equiv \exists X \neg z(X) \equiv \neg \forall X z(X)$.
+The clause $\forall X (\neg p(X) \lor \neg q(X) \lor z(X))$ is universally quantified, which means it is true for all possible values of $X$.
+This means we can apply the inference rule universal instantiation to specifically assert the clause on $X = a$.
 
-From here you can simply solve for the satisfiability of the formula using the previous methods discussed.
-But we can also apply resolution/modus tollens to simplify the formula into a contradiction.
-Here we resolve away the complements $\neg z(a)$ and $\forall X z(X)$.
+With this, we end up with the new horn formula:
 
 $$
 \begin{aligned}
 p(a) \land \\
 q(a) \land \\
-\neg \forall X p(X) \lor \neg \forall X q(X)
+\neg p(a) \lor \neg q(a) \lor z(a) \land \\
+\neg z(a)
 \end{aligned}
 $$
 
-Just like before, $p(a)$ and $\neg \forall X p(X)$ are complements.
-You can prove this by applying universal instantiation to $\forall X p(X)$, $\neg \forall X p(X) \equiv \neg p(a)$.
-This means that we can resolve away this pair of complements as well.
+We can apply resolution to resolve away the complements $z(a)$ and $\neg z(a)$.
 
 $$
 \begin{aligned}
+p(a) \land \\
 q(a) \land \\
-\neg \forall X q(X)
+\neg p(a) \lor \neg q(a)
 \end{aligned}
 $$
 
-Apply universal instantiation to $\forall X q(X)$:
+We continue applying resolution to resolve away the complements $q(a)$ and $\neg q(a)$
 
 $$
 \begin{aligned}
-q(a) \land \\
-\neg q(a)
+p(a) \land \\
+\neg p(a)
 \end{aligned}
 $$
 
-This leads us to a contradiction, thus proving that $z(a)$ is consistent with the knowledge base.
-The rules of inference we applied also provide us with the context that $z(a)$ is consistent specifically on the universal instantiation $X = a$.
+We end up with a contradiction, which means we have proved that $z(a)$ is indeed true.
 
+```prolog
+?- z(a).
+true.
+```

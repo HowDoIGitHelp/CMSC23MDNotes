@@ -235,73 +235,101 @@ With the query:
 ?- k(Y).
 ```
 
-The goal produced from the query is $\neg \forall Y k(Y)$.
-
-| Current Goal     |
-|:-----------------|
-| $\neg \forall Y k(Y)$      |
-
-Prolog goes through the entire knowledge base from top to bottom finding unification with the head of `k(X) :- f(X), g(X), h(X)`.
-The resolution of a rule and a goal leaves a resolvent which serves as new subgoals[^modus_tollens].
+When you ask prolog the query `k(Y)`, remember that you are actually asking, "which values of `Y` can make the query true"?
+For the query to be true, prolog just needs to find one example that makes this query true.
+This means that the query is actually an existential quantifier:
 
 $$
 \begin{aligned}
-\neg \forall Y k(Y) \lor \bot\\
-\forall X k(X) \lor \neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
+\exists Y k(Y)
+\end{aligned}
+$$
+
+To prove via contradiction, we end up with a goal which is a negation of the query:
+
+| Current Goal           |
+|:-----------------------|
+| $\forall Y \neg k(Y)$  |
+
+Prolog searches through the entire knowledge base from top to bottom, searching for unifying facts and rule heads.
+Prolog ends up finding unification with the head of `k(X) :- f(X), g(X), h(X)`.
+The resolution of this rule and the current goal leaves a resolvent which serves as new subgoals [^modus_tollens].
+
+$$
+\begin{aligned}
+\forall Y \neg Y k(Y) \land \\
+\forall X (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))\\
 \hline
-\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)\\
+\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))
 \end{aligned}
 $$
 
 [^modus_tollens]: This resolution is just modus tollens.
 
+If you are confused with this resolution, remember that we are unifying the complex term `k(Y)` and `k(X)`.
+They do unify since their variable arguments unify automatically.
+You can also see that this is true using logical equivalencies:
+
+$$
+\begin{aligned}
+\forall Y \neg k(Y) \equiv \forall X \neg k(X) \\
+\\
+\forall X \neg k(X) \land \forall X (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))\\
+\forall X (\neg k(X) \land (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))) \\
+\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))
+\end{aligned}
+$$
+
 With $\neg k(Y)$ resolved away, and the resolvent added to the goals, we are left with the following goal.
 
 | Current Goal     |
 |:-----------------|
-| $\neg \forall X f(X) \lor \neg \forall X g(X) \lor \neg \forall X h(X)$      |
+| $\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X)$      |
 
-With this new goal, Prolog starts resolving the leftmost subgoal, $\neg \forall X f(X)$.
-This subgoal can be resolved with two possible complements in the knowledge base, `f(a)` and `f(b)`.
-Whenever this happens, Prolog creates two branches (one for each possible resolution).
+With this new goal, Prolog starts resolving the leftmost subgoal, $\neg f(X)$.
+This subgoal can be resolved with two distinct complements in the knowledge base, `f(a)` and `f(b)`.
+The goal $\neg f(X)$ can resolve with $f(a)$ with the instantiation $X = a$, and resolve with $f(b)$ with the instantiation $X = b$.
+Whenever this happens, Prolog creates two branches (one for each distinct instantiation).
 Prolog tries to complete the refutation one branch at a time in a depth first manner.
 The other branch will be revisited once one branch is completed.
 
 Prolog resolves with the $f(a)$ first since it is found first (when searching top to bottom).
-The resolution of $f(a)$ and $\neg \forall X f(X)$ creates the instantiation, $X = a$.
-For the unification to be consistent, the other subgoals must also unify with respect to the instantiation $X = a$.
-With this, $\neg \forall X f(X)$ is resolved away, and the goal narrows down to the following:
+With this, $\neg f(X)$ is resolved away, and the goal narrows down to the following:
 
-| Branch $X = a$ goal (current)    | Branch $X = b$ goal |
+| Branch $X = a$ (current)    | Branch $X = b$ |
 |:---------|:---------|
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
 | $\neg g(a) \lor \neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
 
-Coninuing, it tries to complete the branch formed from $X=a$ first.
+Continuing, it tries to complete the branch formed from $X=a$ first.
 The subgoal $\neg g(a)$ unifies with `g(a)` in the knowledge base.
 
-| Branch $X = a$ goal (current)    | Branch $X = b$ goal |
+| Branch $X = a$ (current)    | Branch $X = b$ |
 |:---------|:---------|
-| $\neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
+| $\neg g(a) \lor \neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+| $\neg h(a)$ | ... |
 
 The subgoal $\neg h(a)$ cannot be resolved away with any clause in the knowledge base.
 Therefore, it cannot be resolved away.
 This means that the branch for $X = a$ completes without refutation/proof by contradiction.
 
-| Branch $X = a$ goal (not refuted)    | Branch $X = b$ goal |
-|:---------|:---------|
-| $\neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
-
 From here, Prolog proceeds to resolve the goal of the $X = b$ branch.
 In this branch both subgoals do unify, with $g(b)$ and $h(b)$.
 This resolves the goal which completes the branch.
 
-| Branch $X = a$ goal (not refuted)    | Branch $X = b$ goal (refuted)|
+| Branch $X = a$ | Branch $X = b$ (current) |
 |:---------|:---------|
-| $\neg h(a)$ | $\bot$ |
+| $\neg f(a) \lor \neg g(a) \lor h(a)$ | $\neg f(b) \lor \neg g(b) \lor h(b)$ |
+| $\neg g(a) \lor \neg h(a)$ | $\neg g(b) \lor \neg h(b)$ |
+| $\neg h(a)$ | $\neg h(b)$ |
+| not refuted | $\bot$ (refuted) |
 
 Since one branch is refuted, Prolog responds to the query with `true`.
 Prolog also shows which instantiations/branches lead to a refutation.
-In this case, the instantiation branch $X=b$ is refuted and since $X = Y$:
+In this case, the instantiation branch $X=b$ is refuted.
+Prolog shows the relevant instantiations that lead to a refuted outcome.
+In this case, $X = Y = b$, since $X$ is an internal variable from the knowledge base, it is ommmited.
 
 ```prolog
 Y = b,
@@ -312,7 +340,7 @@ The SLD resolution algorithm can be broken down like this:
 
 The initial goal is created by negating the query.
 
-1. The first subgoal is selected, as the current goal.
+1. The first/leftmost subgoal is selected as the current goal.
 2. The knowledge base is searched for complements of the current goal.
 3. For every complement in the knowledge perform the following:
     1. Resolve away the complement and the current goal, while keeping the instantiations formed from the resolution.
@@ -335,28 +363,21 @@ $$
 \begin{aligned}
 f(a) \land \\
 g(b) \land \\
-(\forall Z g(Z) \lor \neg \forall Z f(Z)) \land \\
-(\forall X h(X) \lor \neg \forall X g(X)) \land \\
-\neg \forall Y h(Y)
+\forall Z (g(Z) \lor \neg f(Z)) \land \\
+\forall X (h(X) \lor \neg g(X)) \land \\
+\forall Y \neg h(Y)
 \end{aligned}
 $$
 
 | Current Goal |
 |:-------------|
-| $\neg Y \forall h(Y)$ |
+| $\forall Y \neg h(Y)$ |
+| $\forall X \neg g(X)$ (with instantiation ($X = Y$)) |
 
-| Current Goal ($X=Y$)  |
-|:----------------------|
-| $\neg \forall X g(X)$ |
-
-| Branch ($X=b$) (Current Goal)   | Branch ($X=Z$)   |
+| Branch ($X=b$)    | Branch ($X=Z$) (Current Goal)  |
 |:--------------------------------|:-----------------|
-| $\bot$ (contradiction)          | $\forall Z f(Z)$ |
-
-
-| Branch ($X=b$)    | Branch ($Z=a$) (Current Goal)  |
-|:--------------------------------|:-----------------|
-| $\bot$ (contradiction)          | $\bot$ (contradiction) |
+| $\bot$ (refuted)          |  $\forall Z \neg f(Z)$ |
+| ...                       | $\bot$ (refuted) (with instantiation ($X = a$))|
 
 Prolog responds with the following.
 
