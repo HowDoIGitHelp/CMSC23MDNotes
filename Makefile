@@ -6,7 +6,6 @@ all: book.pdf slides
 book.pdf: $(mdSources) template.typ references.bib
 	pandoc $(mdSources) \
 		-o book.pdf \
-		-V monofont="JetBrainsMonoNL NF" \
 		-V papersize=a5 \
 		--toc \
 		--toc-depth=2 \

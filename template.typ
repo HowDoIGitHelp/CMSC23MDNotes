@@ -17,6 +17,10 @@
   it
 }
 
+#show raw: set text(
+  font: "JetBrains Mono",
+  features: (calt: 1)
+)
 
 #show outline.entry.where(
   level: 1
