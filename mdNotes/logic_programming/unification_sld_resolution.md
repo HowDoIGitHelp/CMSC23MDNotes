@@ -277,7 +277,7 @@ The resolution of this rule and the current goal leaves a resolvent which serves
 
 $$
 \begin{aligned}
-\forall Y \neg Y k(Y) \land \\
+\forall Y \neg k(Y) \land \\
 \forall X (k(X) \lor \neg f(X) \lor \neg g(X) \lor \neg h(X))\\
 \hline
 \forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))
