@@ -304,7 +304,7 @@ With $\neg k(Y)$ resolved away, and the resolvent added to the goals, we are lef
 
 | Current Goal     |
 |:-----------------|
-| $\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X)$      |
+| $\forall X (\neg f(X) \lor \neg g(X) \lor \neg h(X))$      |
 
 With this new goal, Prolog starts resolving the leftmost subgoal, $\neg f(X)$.
 This subgoal can be resolved with two distinct complements in the knowledge base, `f(a)` and `f(b)`.

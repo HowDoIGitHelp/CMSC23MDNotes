@@ -120,7 +120,7 @@ In:
 To solve this limitation, the library `clp(fd)` and `clp(z)` was created.
 The library `clp(fd)` stands for **Constraint Logic Programming Over Finite Domains**.
 This library offers predicates that can be used to apply logical reasoning on integers.
-This library was further refined to a more complete and more advanced library called `clp(z)` or **Constrained Programming Over Integers**.
+This library was further refined to a more complete and more advanced library called `clp(z)` or **Constraint Logic Programming Over Integers**.
 
 These libraries include special predicates known as constraints.
 **Constraints** are predicates that restrict a variable to a specific set of values.
