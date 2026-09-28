@@ -1,13 +1,14 @@
-numeral(0).
-numeral(s(X)) :- numeral(X).
+int(0).
+int(s(X)) :- int(X).
 
 
-sum(A,0,A).
-sum(A,s(B),s(C)) :- sum(A,B,C).
+add(A,0,A).
+add(A,s(B),s(C)) :- add(A,B,C).
 
 
-difference(A,B,C) :- sum(B,C,A).
+sub(A,B,C) :- add(B,C,A).
 
-product(_,0,0).
-product(A,s(B),C) :- product(A,B,D), sum(A,D,C).
+mult(_,0,0).
+mult(A,s(B),C) :-
+    mult(A,B,D), add(A,D,C).
 
