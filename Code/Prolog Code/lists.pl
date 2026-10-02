@@ -2,6 +2,7 @@
 
 list_length([], 0).
 list_length([Head|Tail], Length) :-
+    Length #> 0,
     Length #= Tail_length + 1,
     list_length(Tail, Tail_length).
 
