@@ -335,7 +335,7 @@ adult(Name) :-
 ## Lists
 
 ``` prolog
-?- =([elem1, elem2, elem3, elem4], [elem1 | [elem2, elem3, elem4]]).
+?- =([e1, e2, e3, e4], [e1 | [e2, e3, e4]]).
 true.
 ```
 
@@ -344,7 +344,7 @@ true.
 ## Lists
 
 ``` prolog
-?- =([elem1, elem2, elem3, elem4], [elem1, elem2 | [elem3, elem4]]).
+?- =([e1, e2, e3, e4], [e1, e2 | [e3, e4]]).
 true.
 ```
 
@@ -354,9 +354,9 @@ true.
 
 ``` prolog
 :- use_module(library(clpfd)).
-
 list_length([], 0).
 list_length([Head|Tail], Length) :-
+    Length #> 0,
     Length #= Tail_length + 1,
     list_length(Tail, Tail_length).
 ```
@@ -376,10 +376,10 @@ X = 4.
 
 ``` prolog
 :- use_module(library(clpfd)).
-
 list_take_n(List,0,List).
 list_take_n([Head|Tail], N, Leftover) :-
     N #> 0,
+    M #= N - 1,
 ```
 
 ---
@@ -387,7 +387,6 @@ list_take_n([Head|Tail], N, Leftover) :-
 ## Lists
 
 ``` prolog
-    M #= N - 1,
     list_take_n(Tail, M, Leftover).
 
 list_nth_element(List, N, Elem) :-

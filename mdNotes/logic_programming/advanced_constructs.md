@@ -258,14 +258,14 @@ Such a list is valid if `Tail` is also a *valid list*.
 For example, the four element list can be represented as `[elem1 | [elem2, elem3, elem4]]`.
 
 ```prolog
-?- =([elem1, elem2, elem3, elem4], [elem1 | [elem2, elem3, elem4]]).
+?- =([e1, e2, e3, e4], [e1 | [e2, e3, e4]]).
 true.
 ```
 
 You can also combine, comma separated lists with the head-tail pattern as such:
 
 ```prolog
-?- =([elem1, elem2, elem3, elem4], [elem1, elem2 | [elem3, elem4]]).
+?- =([e1, e2, e3, e4], [e1, e2 | [e3, e4]]).
 true.
 ```
 
@@ -274,9 +274,9 @@ For example, you can find the length of a list by creating the following rule:
 
 ```prolog
 :- use_module(library(clpfd)).
-
 list_length([], 0).
 list_length([Head|Tail], Length) :-
+    Length #> 0,
     Length #= Tail_length + 1,
     list_length(Tail, Tail_length).
 ```
@@ -295,7 +295,6 @@ Given `List`, `N`, `Leftover`, `list_take_n(List, N, Leftover)` is true if, `Lef
 
 ```prolog
 :- use_module(library(clpfd)).
-
 list_take_n(List,0,List).
 list_take_n([Head|Tail], N, Leftover) :-
     N #> 0,
