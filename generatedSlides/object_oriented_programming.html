@@ -12,33 +12,18 @@ class: center, middle
 ## Object-Oriented Programming Paradigm
 
 ---
-class: center, middle
 
 ## Introduction
 
----
-
-## Learning Outcomes
-
-1.  Explain how programmers started to focus on writing maintainable
-    code
-2.  Differentiate between the object and the class
-3.  Explain OOP's philosophy, the surface vs. the volume
+- Not only must good code be efficient, good code must also be
+  **maintainable**.
 
 ---
 
-## Learning Outcomes
+## Introduction
 
-4.  Explain what abstraction means
-5.  Describe the fundamental concepts: encapsulation, inheritance, and
-    polymorphism
-
----
-
-## Learning Outcomes
-
-- As the demand for complex systems grew, the priority shifted from
-  *code that run*s, to *code that was intuitive*.
+- Now, programmers want code to be *easy to understand* and *resilient
+  to change*.
 
 ---
 
@@ -53,7 +38,112 @@ class: center, middle
 
 ## The Object
 
-- Think of objects as the **representatives** of things in your code.
+- Data abstraction
+- Behavior abstraction
+- Organizational abstraction
+
+---
+
+## Object abstraction
+
+- Objects provide a way to create **abstractions of data**.
+
+---
+
+## Object abstraction
+
+| Address          | Stored Byte |
+|------------------|-------------|
+| `0x7FFD53A42B10` | `0x2C`      |
+| `0x7FFD53A42B11` | `0x01`      |
+| `0x7FFD53A42B12` | `0x00`      |
+| `0x7FFD53A42B13` | `0x00`      |
+
+---
+
+## Object abstraction
+
+``` c
+int x = 300;
+```
+
+---
+
+## Object abstraction
+
+``` c
+int coef1 = 3;
+char var1 = 'x';
+int exp1 = 2;
+```
+
+---
+
+## Object abstraction
+
+``` c
+int coef2 = -2;
+char var2 = 'x';
+int exp2 = 1;
+```
+
+---
+
+## Object abstraction
+
+``` c
+struct Monomial {
+    int coefficient;
+    char variable;
+    int exponent;
+```
+
+---
+
+## Object abstraction
+
+``` c
+};
+...
+struct Monomial m1 = { .coef = 3, .var = 'x', .exp = 2 }
+struct Monomial m2 = { .coef = -2, .var = 'x', .exp = 1 }
+```
+
+---
+
+## Behavior abstraction
+
+``` asm
+loop_start:
+    cmp eax, 5
+    jge loop_end
+    ...
+    inc eax
+    jmp loop_start
+```
+
+---
+
+## Organizational abstraction
+
+- Objects also provide the mechanism to further **organize code**.
+
+---
+
+## The Class
+
+- A class contains the specifications for the *creation of objects*.
+- If you want to give a class a more proactive role, you can think of
+  the class as the *factory* that builds objects.
+- You can also call objects as **instances** of a class.
+
+---
+
+## The Class
+
+- If an object is a representation of a tangible real world object, then
+  the class is the conceptual *type*/*category* of that real world
+  object.
 
 ---
 
@@ -65,22 +155,22 @@ class: center, middle
 
 ## The Class
 
-    book1{
-    title: "Corpus Hermeticum"
-    author: "Hermes Trismegistus"
-    publishDate: Dec 12, 2008
-    pages: ......
+    book1 {
+        title: "Corpus Hermeticum"
+        author: "Hermes Trismegistus"
+        publishDate: Dec 12, 2008
+        pages: ......
     }
 
 ---
 
 ## The Class
 
-    book2{
-    title: "Behold a Pale Horse"
-    author: "Milton William Cooper"
-    publishDate: Dec 1, 1991
-    pages: ......
+    book2 {
+        title: "Behold a Pale Horse"
+        author: "Milton William Cooper"
+        publishDate: Dec 1, 1991
+        pages: ......
 
 ---
 
@@ -88,27 +178,24 @@ class: center, middle
 
     }
 
-    employee1{
-    name: "Rubelito Abella"
+    employee1 {
+        name: "Kain Pathos Crow"
 
 ---
 
 ## The Class
 
-    jobTitle: "Instructor 1"
-    salary: [REDACTED]
+        jobTitle: "Senior Researcher"
+        department: "Bio-Research Area-12"
     }
-
----
-class: center, middle
-
-## The Surface and the Volume
 
 ---
 
 ## Data Hiding and the Interface
 
-- The base premise of OOP is the concept called **data hiding**.
+- The philosophy of OOP is the concept called **data hiding**.
+- This term describes how OOP allows imperative programs to *create
+  boundaries between different parts of data and behavior*.
 
 ---
 
@@ -123,6 +210,8 @@ class: center, middle
 
 - The process of modeling elegant object representations is basically
   determining what the **public interface** of that object may be.
+- The interface of an object is the set of attributes and methods that
+  are *exposed* to other objects.
 
 ---
 
@@ -148,7 +237,7 @@ item](../mdNotes/copyright_free_drawings/abstractionborrowableitems.png)
 
 ## Abstraction of Objects
 
-- In the example above, the interface `BorrowableItem` is an abstract
+- In the previous example, the interface `BorrowableItem` is an abstract
   representation of *something from the library that can be borrowed*.
 
 ---
@@ -194,16 +283,15 @@ class](../mdNotes/uml/public_interface_2_realizations.svg)
 
 ## The Interface and the Implementation
 
-- The volume of these blobs represent the **implementation** of these
-  objects and the surface of these blobs represent the **interface** of
-  these objects.
+![Abstraction borrowable
+item](../mdNotes/copyright_free_drawings/abstractionpluggabledevice.png)
 
 ---
 
 ## The Interface and the Implementation
 
-![Abstraction borrowable
-item](../mdNotes/copyright_free_drawings/abstractionpluggabledevice.png)
+![Pluggable
+Abstraction](../mdNotes/copyright_free_drawings/abstractionpluggabledevice.png)
         </textarea>
         <script>
             MathJax = {
