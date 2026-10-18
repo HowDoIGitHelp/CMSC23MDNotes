@@ -227,11 +227,9 @@ The paradigm aims to solve the issues of state and maintainability by allowing p
 The boundaries you enforce are basically the object structure you create.
 A library card name shouldn't mix with a book title, so we put a boundary between them by **encapsulating** them into their respective objects.
 
-![Abstraction borrowable item](../copyright_free_drawings/abstractionpluggabledevice.png)
+![Pluggable Abstraction](../copyright_free_drawings/abstractionpluggabledevice.png)
 
 Your job as an OOP programmer is to make sure that the complexity of the surface grows slower than the complexity of the core.
 This means that as your system evolves, changes that happen in the core i.e. the implementation hidden inside each object, as much as possible, shouldn't affect the surface, the interfaces of each object.
 This is what harmony and elegance in OOP means.
 Objects interact with each other seamlessly, and intuitively, regardless of what their inside look like.
-
-![Pluggable Abstraction](../copyright_free_drawings/abstractionpluggabledevice.png)
