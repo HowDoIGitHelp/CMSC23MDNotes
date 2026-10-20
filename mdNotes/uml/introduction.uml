@@ -11,7 +11,7 @@ class Book{
 class Employee{
   name : string
   jobTitle : string
-  salary : float
+  department : string
   reassignJob() : void
 }
 @enduml
