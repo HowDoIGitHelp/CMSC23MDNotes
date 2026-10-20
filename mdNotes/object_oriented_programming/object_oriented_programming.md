@@ -58,7 +58,7 @@ You can think of objects as the combination of three abstractions.
 An abstraction in computer science is basically a model of computation that is free from its implementation.
 In the same way that functional programming creates abstractions of mathematical functions by writing lambdas without side effects, OOP creates abstractions through its objects.
 
-#### Object abstraction
+#### Data abstraction
 
 Objects provide a way to create **abstractions of data**.
 Instead of looking at memory addresses, we group together a sequence of memory addresses and give it a more meaningful representation.
@@ -135,7 +135,7 @@ The following class diagrams are the representations of a book and an Employee.
 The attributes of the book are `title`, `author`, `publishDate`, and `pages`.
 These attributes also simulate the form of a real world book.
 This object also has methods called `ISBN()` and `numPages()`.
-The attributes of an employee are `name`, `string`, and `department`, and it has a method called `reassignJob()`.
+The attributes of an employee are `name`, `jobTitle`, and `department`, and it has a method called `reassignJob()`.
 
 ![Class diagram of a book class](../uml/introduction.svg)
 
