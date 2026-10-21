@@ -967,11 +967,40 @@ val number = -2
 3 + (if (number > 0) number else (-number))
 ```
 
-
     5
 
 You can also use other `selection` patterns in kotlin using `when` clauses: [kotlin control flow](https://kotlinlang.org/docs/control-flow.html)
 
+```kotlin
+val x = 2
+when (x) {
+    1 -> print("one")
+    2 -> print("two")
+    3 -> print("three")
+    else -> print("number")
+}
+
+```
+
+    two
+
+```kotlin
+val x = 2
+val numberString = when (x) {
+    1 -> print("one")
+    2 -> print("two")
+    3 -> print("three")
+    else -> print("number")
+}
+
+print(numberString)
+```
+
+    two
+
+### `while` loop and `do-while` loops
+
+Kotlin also supports, while and do while loops.
 
 ```kotlin
 var sum = 0
