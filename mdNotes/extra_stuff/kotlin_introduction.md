@@ -754,16 +754,16 @@ when (x) {
 ```kotlin
 val x = 2
 val numberString = when (x) {
-    1 -> print("one")
-    2 -> print("two")
-    3 -> print("three")
-    else -> print("number")
+    1 -> "one"
+    2 -> "two"
+    3 -> "three"
+    else -> "number"
 }
 
-print(numberString)
+print(numberString + " is the number")
 ```
 
-    two
+    two is the number
 
 ### `while` loop and `do-while` loops
 
@@ -942,9 +942,9 @@ fun value(map: Map<String,Int>, key: String): Int? { // removing the `?` will re
 ```
 
 A nullable type will cause type mismatch errors on some operations.
-In the example below, `+` wont work with nullable values.
+In the example below, `+` will not work with nullable values.
 Even if the expression does not evaluate into null.
-The code below wont even compile:
+The code below will not even compile:
 
 ```kotlin
 value(database,"this") + 3
@@ -965,8 +965,8 @@ else
     3
 
 You can also use the specialized safe elvis operator `?:` that works like a ternary.
-Using this operator if the left operand evaluates into `null` the elvis operation evaluates into the left operand.
-Otherwise, it evalutes into the right operand.
+Using this operator if the left operand evaluates into `null` the elvis operation evaluates into the right operand.
+Otherwise, it evalutes into the left operand.
 
 ```kotlin
 (value(database, "this") ?: 0) + 3
