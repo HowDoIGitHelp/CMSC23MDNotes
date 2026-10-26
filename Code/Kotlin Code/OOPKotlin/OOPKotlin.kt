@@ -17,7 +17,8 @@ open class Robot constructor (var name: String) {
 
 }
 
-class RoboticArm (val type: Char) { //if there are no visibility modifiers, the `constructor` keyword can be ommitted
+class RoboticArm (val type: Char) {
+    //if there are no visibility modifiers, the `constructor` keyword can be ommitted
 
     var position = 0.0f
 
@@ -50,7 +51,7 @@ class Person (val name: String) {
     constructor (firstname: String, mi: Char, lastname: String): this("$firstname $mi. $lastname")
 }
 
-class SkyBot (name: String) : Robot(name) {
+class SkyBot (name: String) : Robot("sky$name") {
     fun fly(height: Int) {
         println("I'm flying ${height}m high in the air")
     }
@@ -158,7 +159,6 @@ class ConcreteClass2(state: String) : AbsClass(state) {
 
 @Suppress("USELESS_IS_CHECK")
 fun main() {
-    val secretiveObject = ClandestineClass(1,2,3)
-    val secretiveObject2 = SpecialClandestineClass1(1,2,3)
-    secretiveObject2.method2()
+    val r1 = SkyBot("Clanker")
+    r1.talk()
 }
