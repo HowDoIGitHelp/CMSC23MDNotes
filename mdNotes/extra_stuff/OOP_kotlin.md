@@ -1,19 +1,25 @@
 # OOP kotlin
 
-While kotlin is a modern multiparadaigm language. Its supports rich OOP support. In fact kotlin is very strongly OOP flavored. Every type in kotlin is a class and every value is an object.
+While kotlin is a modern multiparadaigm language.
+Its supports rich OOP support.
+In fact kotlin is very strongly OOP flavored.
+Every type in kotlin is a class and every value is an object.
 
 ## Kotlin Classes
 
-Creating classes in kotlin is very easy, here's an empty class called `EmptyClass`:
+Creating classes in kotlin is very easy, here's an empty class called `EmptyClass`[^class_names].
 
 
 ```kotlin
 class EmptyClass
 ```
 
-> It is conventional to name your classes as nouns that start with capital letters like `EmptyClass`
+[^class_names]: It is conventional to name your classes as nouns that start with capital letters like `EmptyClass`
 
-To make classes more interesting, lets put something inside it. You can put methods and attributes inside classes. Everything found inside the `{ }` scope of a class, belongs to that class. Below we have a more interesting class called `VoiceBox`
+To make classes more interesting, lets put something inside it.
+You can put methods and attributes inside classes.
+Everything found inside the `{ }` scope of a class, belongs to that class.
+Below we have a more interesting class called `VoiceBox`
 
 
 ```kotlin
@@ -24,11 +30,19 @@ class VoiceBox {
 }
 ```
 
-Inside the scope of the class `VoiceBox` we have the function `speak()`. Since this function is a member of the class `VoiceBox` we also call it a **method**. We say `speak()` is a method of `VoiceBox`
+Inside the scope of the class `VoiceBox` we have the function `speak()`.
+Since this function is a member of the class `VoiceBox` we also call it a **method**.
+We say `speak()` is a method of `VoiceBox`
 
-To use this class we create an **instance** of `VoiceBox`. We invoke what is know as the **default constructor** of `VoiceBox` using the syntax `VoiceBox()`. The constructor `VoiceBox()` will evaluate into an instance of `VoiceBox`.
+To use this class we create an **instance** of `VoiceBox`.
+We invoke what is know as the **default constructor** of `VoiceBox` using the syntax `VoiceBox()`.
+The constructor `VoiceBox()` will evaluate into an instance of `VoiceBox`.
 
-This constructed instance is assign to the `val` `v`. We call `v` an instance of `VoiceBox` or a `VoiceBox` **object**. To interact with this voicebox object we can call its method `speak()`. We use the dot-reference operator as shown below. This tells kotlin that we are invloking the method `speak()` specifically owned by the instance `v`.
+This constructed instance is assigned to the `val` `v`.
+We call `v` an instance of `VoiceBox` or a `VoiceBox` **object**.
+To interact with this voicebox object we can call its method `speak()`.
+We use the dot-reference operator as shown below.
+This tells kotlin that we are invloking the method `speak()` specifically owned by the instance `v`.
 
 
 ```kotlin
@@ -39,10 +53,18 @@ v.speak()
     Hi I'm a voicebox that speaks
 
 
-**Classes vs objects**. Classes and objects are similar things. We refer to `v` as a `VoiceBox` object or instance. This is different from the `VoiceBox` class itself. The `VoiceBox` class refers to the definition of what `VoiceBox` objects like `v` can be. There can only be one `VoiceBox` class. On the other hand a `VoiceBox` instance like `v` refers to one of the many possible `VoiceBox` instances that can be created. In the example below we create another `VoiceBox` instance `w`. Right now there is no way to differentiate between these two because all `VoiceBox`es are created the same way. 
+#### Classes vs objects
 
-> The distinction between classes may not be important right now (especially in kotlin). But in some language you can create methods that are specifically owned by the class itself rather than the instances of the class. These methods are known as static methods. Kotlin does not happen to support static methods.
+We refer to `v` as a `VoiceBox` object or instance.
+This is different from the `VoiceBox` class itself.
+The `VoiceBox` class refers to the definition of what `VoiceBox` objects like `v` can be.
+There can only be one `VoiceBox` class.
+On the other hand a `VoiceBox` instance like `v` refers to one of the many possible `VoiceBox` instances that can be created [^class_vs_objects].
+In the example below we create another `VoiceBox` instance `w`.
+Right now there is no way to differentiate between these two instances because all `VoiceBox`es are constructed the same way.
 
+
+[^class_vs_objects]: The distinction between classes may not be important right now. In some language you can create methods that are specifically owned by the class itself rather than the instances of the class. These methods are known as static methods. Kotlin does not support static methods.
 
 ```kotlin
 val w = VoiceBox()
@@ -54,7 +76,8 @@ v.speak()
 
 ## Customizing the Constructor
 
-All class definitions automatically come with a default constructor. But to add nuance to how instances are created we can change the constructor.
+All class definitions automatically come with a default constructor.
+But to add nuance to how instances are created we can change the constructor.
 
 
 ```kotlin
@@ -70,11 +93,15 @@ class Robot constructor (var name: String) {
 }
 ```
 
-In the example above we change our constructor so that when invoked it accepts a string called `name` as a parameter. By adding `name` in the constructor header kotlin automatically creates an **attribute** called `name`. This attribute will recieve the value passed during the construction of `Robot`.
+In the example above we change our constructor so that when invoked it accepts a string called `name` as a parameter.
+Here we add the declaration `val name` in the constructor header.
+Adding this declaration tells kotlin to create an **attribute** called `name`.
+This attribute will receive the value passed during the construction of `Robot`.
 
-The attributes of a specific instance is owned by that specific instance. Using the code below as n example, the `Robot` instance `r1` has its own version of the attribute `name` (accessed through `r1.name()`) which is distinct from `r2`s version of `name`.
+The attributes of a specific instance is owned by that specific instance.
+Using the code below as nn example, the `Robot` instance `r1` has its own version of the attribute `name` (accessed through `r1.name()`) which is distinct from `r2`s version of `name` [^attribute_reference].
 
-> Note how inside the function communicate, you refer to an external instance's name attribute using dot-reference (`partner.name`) while referencing an internal attribute is done directly.
+[^attribute_reference]: Note how inside the method `communicate()`, you refer to an external instance's name attribute using dot-reference (`partner.name`) while referencing an internal attribute is done directly.
 
 
 ```kotlin
@@ -89,7 +116,9 @@ println(r2.name)
     Chonk
 
 
-Going back to the class definition of `Robot` you can see the attribute `name` referenced inside the scope of `Robot`. All attributes owned by `Robot` can referenced by any of `Robot`s methods. In fact it can be referenced anywhere inside the `Robot` scope.
+Going back to the class definition of `Robot` you can see the attribute `name` referenced inside the scope of `Robot`.
+All attributes owned by `Robot` can referenced by any of `Robot`s methods.
+In fact it can be referenced anywhere inside the `Robot` scope.
 
 When you call the methods `talk()` or `communicate()`, the reference `name` can be used without any problem.
 
@@ -143,9 +172,14 @@ println(arm.position)
     0.7
 
 
-In some cases you might want to add attributes to your classes without making said attributes as constructor parameters. To do this you simply declare the attribute somewhere inside the class but outside the method bodies. Just like the attribute `position` in the class `RoboticArm` above.
+In some cases you might want to add attributes to your classes without making said attributes as constructor parameters.
+To do this you simply declare the attribute somewhere inside the class but outside the method bodies.
+Just like the attribute `position` in the class `RoboticArm` above.
 
-You can only place declarations and definitions in the class defintion scope. You cannot put runnable code. If you want to run some code during object construction you can create an `init` block. All of the code inside an `init` block will be executed during the constructor invocation.
+You can only place declarations and definitions in the class defintion scope.
+You cannot put runnable code.
+If you want to run some code during object construction you can create an `init` block.
+All of the code inside an `init` block will be executed during the constructor invocation.
 
 
 ```kotlin
@@ -170,9 +204,11 @@ val cam = Camera()
     cleaning complete
 
 
-You can also **overload** the class's constructor in kotlin. To do this you simply define a new constructor block with a different set of parameters. The constructor in the class header (beside the class name) is called the primary constructor while all other constructors are know as secondary constructors.
+You can also **overload** the class's constructor in kotlin.
+To do this you simply define a new constructor block with a different set of parameters.
+The constructor in the class header (beside the class name) is called the primary constructor while all other constructors are known as secondary constructors.
 
-You can read more aboth secondary constructors here: [Constructors](https://kotlinlang.org/docs/classes.html#constructors)
+You can read more about secondary constructors here: [Constructors](https://kotlinlang.org/docs/classes.html#constructors)
 
 
 ```kotlin
@@ -183,7 +219,8 @@ class Person (val name: String) {
 
 ## Kotlin Specializations and Realizations
 
-All classes in kotlin inherit from the `Any` generalization. The `Any` class is a class that doesn't have any generalization.
+All classes in kotlin inherit from the `Any` generalization.
+The `Any` class is a class that doesn't have any generalization.
 
 
 ```kotlin
@@ -215,7 +252,12 @@ open class Robot constructor (open var name: String) { //open is a modifier that
 }
 ```
 
-To establish that  the class `Skybot` below is a specialization of `Robot`, it must be specified in class header using `:` syntax. In this particular example, `Robot` has a primary constructor (i.e. it is not using a default constructor), so `Skybot` must have a primary constructor with the same pattern as `Robot`. The primary constructor of `Robot` accepts one `String` called name, so `Skybot`s primary constructor should also accept one `String`. This must be done so that all of the attribute assignments in `Robot` are also inherited by `Skybot`. 
+To establish that  the class `Skybot` below is a specialization of `Robot`, it must be specified in class header using `:` syntax.
+In this particular example, `Robot` has a primary constructor (i.e.
+it is not using a default constructor), so `Skybot` must have a primary constructor with the same pattern as `Robot`.
+The primary constructor of `Robot` accepts one `String` called name, so `Skybot`s primary constructor should also accept one `String`.
+This must be done so that all of the attribute assignments in `Robot` are also inherited by `Skybot`.
+
 
 
 ```kotlin
@@ -226,7 +268,8 @@ class SkyBot (name: String) : Robot(name) {
 }
 ```
 
-Since `Skybot` is now a specialized `Robot`, it will inherit all of the inheritable definitions in `Robot`. This includes `talk()` and `communicate()`
+Since `Skybot` is now a specialized `Robot`, it will inherit all of the inheritable definitions in `Robot`.
+This includes `talk()` and `communicate()`
 
 
 ```kotlin
@@ -241,7 +284,9 @@ s1.communicate(r)
     Howdy Donk it's me Zonk
 
 
-Due to polymorphism all specializations of `Robot` are also considered as `Robot`s. This means that `Skybot` instances can be used as `Robot`s without any type mismatch. The method `communicate()` which accepts `Robot` instances as parameters can also accept `Skybot` instances.
+Due to polymorphism all specializations of `Robot` are also considered as `Robot`s.
+This means that `Skybot` instances can be used as `Robot`s without any type mismatch.
+The method `communicate()` which accepts `Robot` instances as parameters can also accept `Skybot` instances.
 
 
 ```kotlin
@@ -263,7 +308,8 @@ s1.fly(4)
     I'm flying 4m high in the air
 
 
-Specializations of classes can also override the definitions of their generalization. 
+Specializations of classes can also override the definitions of their generalization.
+
 
 
 ```kotlin
@@ -271,7 +317,8 @@ class ShadeBot(name: String, val visorOpacity: Float) : Robot(name) {
     
     override fun communicate(partner: Robot) {
         if (visorOpacity >= 1)
-            println("Howdy, it's me $name. Sorry I cant see you my shades are too dark")
+            println("Howdy, it's me $name.
+Sorry I cant see you my shades are too dark")
         else
             println("Howdy ${partner.name} it's me $name")
     }
@@ -279,19 +326,27 @@ class ShadeBot(name: String, val visorOpacity: Float) : Robot(name) {
 }
 ```
 
-To override a method or an attribute you must explicitly, use the `override` modifier. This tells kotlin that instead of inheriting `communicate()` you will replace it with the definition found in `ShadeBot`. Take note that methods are final by default so you can only override methods that are declared to be `open` in the generalization. Without the modifiers `override` and `open` the override of `communicate()` will not compile.
+To override a method or an attribute you must explicitly, use the `override` modifier.
+This tells kotlin that instead of inheriting `communicate()` you will replace it with the definition found in `ShadeBot`.
+Take note that methods are final by default so you can only override methods that are declared to be `open` in the generalization.
+Without the modifiers `override` and `open` the override of `communicate()` will not compile.
 
 ```kotlin
 open class Robot constructor (var name: String) { 
     
-    open fun talk() {... //talk() is actually not overriden right now but we can declare it to be open for future specializations
+    open fun talk() {...
+//talk() is actually not overriden right now but we can declare it to be open for future specializations
 
     open fun communicate(partner: Robot) {...
     
 }
 ```
 
-Also in the class header of `ShadeBot` we are overriding the primary constructor to accept two parameters instead of just one. Since `visorOpacity` is a special attribute of `ShadeBot` it has not been declared yet. Therefore we have to explicitly declare it as `val` or `var` in the in the primary constructor declaration. The attribute `name`, on the other hand, is inherited so it doesn't need to be redeclared. If you do redeclare it, then it will be considered as an override, requiring the `override` modifier.
+Also in the class header of `ShadeBot` we are overriding the primary constructor to accept two parameters instead of just one.
+Since `visorOpacity` is a special attribute of `ShadeBot` it has not been declared yet.
+Therefore we have to explicitly declare it as `val` or `var` in the in the primary constructor declaration.
+The attribute `name`, on the other hand, is inherited so it doesn't need to be redeclared.
+If you do redeclare it, then it will be considered as an override, requiring the `override` modifier.
 
 
 ```kotlin
@@ -299,12 +354,16 @@ val sh1 = ShadeBot("Tonk", 1.0f)
 sh1.communicate(s1)
 ```
 
-    Howdy, it's me Tonk. Sorry I cant see you my shades are too dark
+    Howdy, it's me Tonk.
+Sorry I cant see you my shades are too dark
 
 
 ### Realization
 
-To create an abstraction in kotlin you simply use the keyword `interface`. Any abstraction's methods must be declared to be `abstract`. The `abstract` modifier allows these functions to have no body. Note that abstract functions are open by default so you dont need the `open` modifier
+To create an abstraction in kotlin you simply use the keyword `interface`.
+Any abstraction's methods must be declared to be `abstract`.
+The `abstract` modifier allows these functions to have no body.
+Note that abstract functions are open by default so you dont need the `open` modifier
 
 
 ```kotlin
@@ -379,7 +438,8 @@ binder::class.simpleName
 
 
 
-Any class that realizes the `BorrowableItem` abstraction will be forced to override all of its abstract functions. If you miss overriding even one function, it will lead to an error
+Any class that realizes the `BorrowableItem` abstraction will be forced to override all of its abstract functions.
+If you miss overriding even one function, it will lead to an error
 
 
 ```kotlin
@@ -456,7 +516,9 @@ secretiveObject.v3
 
 
 
-As you see in the example above, accessing the attribute `v1` outside the scope of `ClandestineClass` works. On the other hand accessing the attributes `v2`, and `v3` will cause an error. This is because only `public` attributes can be accessed outside the scope of any give class.
+As you see in the example above, accessing the attribute `v1` outside the scope of `ClandestineClass` works.
+On the other hand accessing the attributes `v2`, and `v3` will cause an error.
+This is because only `public` attributes can be accessed outside the scope of any give class.
 
 
 ```kotlin
@@ -516,7 +578,9 @@ open class SpecialClandestineClass1(
 ​    
 
 
-The specializations of a class will have access to `public` and `protected` attributes. The code above will not compile because `SpecialClandestineClass1` doesn't have access to the private attribute `v3`. 
+The specializations of a class will have access to `public` and `protected` attributes.
+The code above will not compile because `SpecialClandestineClass1` doesn't have access to the private attribute `v3`.
+
 
 Omitting `v3` inside the body of `method2`, the code now works:
 
@@ -536,7 +600,9 @@ open class SpecialClandestineClass2(
 }
 ```
 
-Note that although private attributes and methods of a general class cannot be accessed by its specializations, said attributes and methods are still inherited. For example, instances of `SpecialClandestineClass2` can still display the private attribute `v3` since it still exists. This works because the definition of `method1()` being used here is inherited from `ClandestineClass`.
+Note that although private attributes and methods of a general class cannot be accessed by its specializations, said attributes and methods are still inherited.
+For example, instances of `SpecialClandestineClass2` can still display the private attribute `v3` since it still exists.
+This works because the definition of `method1()` being used here is inherited from `ClandestineClass`.
 
 
 ```kotlin
@@ -561,9 +627,13 @@ Here is a summary of visibility modifiers and where they can be accessed
 
 ## Abstract Classes
 
-Abstract classes are hybrids of interfaces and concrete classes. Abstract classes, unlike interfaces, can have attributes and contructors. Also, unlike concrete classes, it can be defined with abstract methods.
+Abstract classes are hybrids of interfaces and concrete classes.
+Abstract classes, unlike interfaces, can have attributes and contructors.
+Also, unlike concrete classes, it can be defined with abstract methods.
 
-In the example below `AbsClass` has the modifier `abstract` making it an abstract class. The method `printSomethingA()` is an abstract function so all realizations of `AbsClass` must override it. While the method `printSomethingB()` is concrete, so it can be inherited or overridden.
+In the example below `AbsClass` has the modifier `abstract` making it an abstract class.
+The method `printSomethingA()` is an abstract function so all realizations of `AbsClass` must override it.
+While the method `printSomethingB()` is concrete, so it can be inherited or overridden.
 
 
 ```kotlin
