@@ -1,0 +1,53 @@
+@startuml
+class DragonPriest
+{
+    DragonPriest(weapon: Weapon, armor: Armor)
+    + armor: Armor
+    + characterModel: DragonPriestCharacterModel
+    + hp: Int
+    + level: Int
+    + weapon: Weapon
+    + attack(target: Entity)
+    + dropRewards(): List<Equipment>
+}
+
+
+class DragonPriestCharacterModel
+{
+    DragonPriestCharacterModel()
+    
+}
+
+
+class DragonPriestMask
+{
+    DragonPriestMask()
+    + baseArmor(): Double
+    + baseValue(): Double
+}
+DragonPriestMask ..|> Armor
+
+class DragonPriestStaff
+{
+    DragonPriestStaff()
+    + baseDamage(): Double
+    + baseValue(): Double
+}
+DragonPriestStaff ..|> Weapon
+
+interface Weapon
+{
+    + baseDamage(): Double
+}
+Weapon ..|> Equipment
+
+interface Armor
+{
+    + baseArmor(): Double
+}
+Armor ..|> Equipment
+
+DragonPriest ..> Armor
+DragonPriest ..> DragonPriestCharacterModel
+DragonPriest ..> Weapon
+@enduml

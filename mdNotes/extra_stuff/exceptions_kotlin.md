@@ -5,13 +5,6 @@
 One of the features added to imperative programming was the elegant handling of errors.
 Exception handling provided OOP a mechanism to control what exactly the system does when parts of the system fail.
 
-
-## Learning Outcomes
-
-1. Create methods that throw errors in kotlin
-2. Create a try-except clause to properly react to errors in kotlin
-3. Design systems that correctly assign error handling responsibilities
-
 Let's explore this with an example.
 In the snippet below, the last line is not reached because the system fails during `println(quotient(3f, 0f))`.
 
