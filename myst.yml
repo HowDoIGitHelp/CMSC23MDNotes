@@ -32,9 +32,9 @@ project:
       children:
         - file: mdNotes/object_oriented_programming/object_oriented_programming.md
         - file: mdNotes/object_oriented_programming/fundamental_concepts_of_oop.md
-        - file: mdNotes/object_oriented_programming/SOLID_objects.md
         - file: mdNotes/object_oriented_programming/class_relationships.md
         - file: mdNotes/object_oriented_programming/uml_for_class_diagrams.md
+        - file: mdNotes/object_oriented_programming/SOLID_objects.md
     - title: Design Patterns
       children:
         - file: mdNotes/design_patterns/design_patterns_introduction.md
