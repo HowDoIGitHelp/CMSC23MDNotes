@@ -47,6 +47,12 @@ interface Armor
 }
 Armor ..|> Equipment
 
+interface Equipment
+{
+    + baseValue(): Double
+}
+
+
 DragonPriest ..> Armor
 DragonPriest ..> DragonPriestCharacterModel
 DragonPriest ..> Weapon
