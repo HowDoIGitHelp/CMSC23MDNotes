@@ -5,12 +5,6 @@
 The interactions between one an instance of a class to another is largely characterized by the relationship between them.
 Here we talk about relationships that define the polymorphism between classes and relationships that define dependency between objects.
 
-## Learning Outcomes
-
-1. Differentiate realization relationships and specialization relationships
-2. Describe how class abstract methods work in realization relationships
-3. Differentiate aggregation relationships and composition relationships
-
 ## Type Based Relationships
 
 Type based relationships are characterized by how two classes are related to each other through ontological hierarchy.
@@ -164,6 +158,8 @@ Then they have a structural dependency.
 
 When a dependency is an aggregate of some client, it means that the client merely **has** instances of this dependency.
 These relationships are the looser forms of structural dependency, because the dependency instance can exist outside the lifetime of the client instance.
+
+![Dependency UML](../uml/dependencies.svg)
 
 For example, in a videogame, a hostile enemy instance of `DragonPriest` spawns equipped with instances of`DragonPriestMask` and `DragonPriestStaff`.
 The `DragonPriest` instance is a client of the dependencies `DragonPriestMask` and `DragonPriestStaff`.
