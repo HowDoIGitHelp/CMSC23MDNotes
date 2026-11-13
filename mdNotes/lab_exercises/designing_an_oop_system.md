@@ -28,7 +28,7 @@ Before you start writing code for the system. Create a UML diagram that represen
 - show the balance report of an account
 - show account information (name of the account owner, type of the account and active/inactive status of the account)
 
-You can place all of the classes into a single python file and you can also separate them into their own python files (just make sure you're importing correctly). If you put them all into a single python file, submit the python file. If you separate them into multiple python files, package them all into a zipped folder and submit the zipped folder.
+You can place all the classes into a single kotlin file and you can also separate them into their own kotlin files (just make sure you're importing correctly). If you put them all into a single python file, submit the python file. If you separate them into multiple python files, package them all into a zipped folder and submit the zipped folder.
 
 *Feel free to add your own extra methods and extra features to this system. This is an open ended design exercise, go ahead and be creative. For example, I have not specified how the system might react if there are invalid withdrawals or transfers, it's up to you to implement those (do you print a message? or raise an error?)There is no single correct class architecture for this system.* 
 
