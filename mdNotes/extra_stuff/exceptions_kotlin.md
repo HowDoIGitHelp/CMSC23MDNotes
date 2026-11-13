@@ -168,11 +168,10 @@ So you've seen two ways to react with potential errors, to ignore them like `mix
 Which is the proper way? You might think that dealing with errors is better since it's this way doesn't break the system.
 But actually the choice to ignore or to deal with errors depends on who has the correct responsibility in fixing the error.
 
-
 If you immediately deal with the error as quickly as possible, you'll end up missing the importance of raising errors.
 The method `quotient()` for example, is responsible for providing the caller with a quotient, that must be this method's only responsibility.
-You should not give `quotient` the responsibility of fixing division by zeros.
-That responsibility lies on its caller, because different caller's may have different ways to deal with the error.
+You should not give `quotient()` the responsibility of fixing division by zero errors.
+That responsibility lies on the callers of `quotient()`, because different caller's may have different ways to deal with the error.
 The method `quotientString()` deals with division by zero with "undefined number" while the method `quotientList()` deals with division by zero with $\infty$.
 These two callers have different ways of interpreting division by zero, so they should be the one's responsible for dealing with the error.
 
