@@ -7,3 +7,13 @@ dependencies.Weapon
 dependencies.Armor
 dependencies.Equipment
 /home/rub/Projects/cmsc23/Code/Kotlin Code/dependencies.uml
+
+/home/rub/Projects/cmsc23/Code/Kotlin Code/role_interfaces.kt
+role_interfaces.BreakableProp
+role_interfaces.ClimbableProp
+role_interfaces.BurnableProp
+role_interfaces.InteractiveProp
+role_interfaces.WoodenCrate
+role_interfaces.Shrine
+role_interfaces.CampStove
+/home/rub/Projects/cmsc23/Code/Kotlin Code/role_interfaces.uml
