@@ -1,18 +1,7 @@
 # SOLID Objects
 
-## Introduction
-
 SOLID is an acronym describing design principles for creating OOP systems.
 By committing your code to these principles you will naturally build systems that don't only work perfectly, but work elegantly.
-
-
-## Learning Outcomes
-
-1. Design methods and classes with exactly one responsibility
-2. Design extension to classes to incorporate new behavior
-3. Design proper realization and specialization relationships
-4. Design purposeful abstractions and abstract methods
-5. Design systems that interact through abstractions
 
 Briefly, these five principles are:
 
@@ -28,13 +17,28 @@ Briefly, these five principles are:
 
 One of the canonical examples of violations against SRP is the concept known as the **god class**.
 A god class is a class that basically contains all the attributes and methods of the whole system.
-You'll recognize these god classes as those classes that control the behavior of objects (they contain the implementation of client objects' behavior).
+You'll recognize these god classes as those classes that control the behavior of client objects (they contain the implementation of client objects' behavior).
 These god classes are also aware of all the objects secrets (they expose and manipulate private attributes and methods).
 
-![God class library card](../uml/godclasslibrarycard.png)
+```kotlin
+class LibraryCard {
+...
+    private fun penalty(b: BorrowableItem, today: LocalDate) : Float {
+        val borrowDate = borrowedItems[b] ?: today
+        val dueDate: LocalDate = when {
+            b is Book -> borrowDate.plusDays(7)
+            b is Periodical -> borrowDate.plusDays(1)
+            b is PC -> borrowDate.plusDays(0)
+            else -> borrowDate.plusDays(0)
+        }
+        val daysDiff = Period.between(dueDate, today).days.toFloat()
+        return (if (daysDiff < 0) 0f else daysDiff) * 3.5f
+    }
+}
+```
 
-On the example above `LibraryCard` is a god class since it exposes the secrets of `Date` by forcing the creations of *evil* getters (`getMonth()`, `getDay()`, `getYear()`) for otherwise private details.
-Although it isn't obvious, it also tampers on the responsibilities of `BorrowableItem` by deciding by itself how penalty is calculated for each realization.
+On the example above `LibraryCard` is a god class since it becomes responsible for the individual behaviors of each `BorrowableItem` realization.
+Inside `penalty` we write the implementation of how `BorrowableItem` due dates are calculated.
 
 The moment you ask an object what it's exact type is, you should consider refactoring your code since introspective checks like `isinstance`, `instanceof`, `typeof`, etc. are symptoms of smelly design.
 You can think of these checks as analogies to racial discrimination since your client object asks the race (type) of the dependency.
@@ -53,7 +57,7 @@ creating getters to expose private attributes).
 `LibraryCard` should not be aware of **how** dates are subtracted to be able to subtract dates.
 The same is true for a `BorrowableItem`'s due date.
 The `LibraryCard` shouldn't contain the specifications as to how `BorrowableItem`s calculate their due date.
-In fact `LibraryCard` shouldn't even be aware of the exact type of the `BorrowableItem` (`isinstance` violates this).
+In fact `LibraryCard` shouldn't even be aware of the exact type of the `BorrowableItem` (`is` checks violate this).
 
 The process of designing these cohesive systems requires not only OOP design techniques but also domain knowledge.
 The designer of the system, should know how a library system operates so that, he/she can accurately simulate their responsibilities on code.
@@ -61,7 +65,6 @@ The designer of the system, should know how a library system operates so that, h
 You can also apply SRP on individual methods inside objects.
 Methods should be responsible for one thing only.
 Keeping methods pure like these will help reduce unwanted side effects.
-The builder/manipulator naming scheme will help you with this.
 Also, a method should not be responsible for handling the problems such as errors/exceptions.
 The method should delegate that responsibility to the clients of that method.
 The methods itself should only report/raise/throw the problem.
@@ -76,9 +79,6 @@ It is open for extension but closed for modification.
 To understand this principle let's have an example of a system that is closed for extension:
 
 ![God class library card](../uml/closedforextension.png)
-[^long_names]
-
-[^long_names]: Forgive the long Java-like method names, they're named as descriptive as possible so that I can skip actually explaining what they do.
 
 This is a system that indeed works perfectly.
 The bank will be able to apply the appropriate changes to the account types because of the `if-else` block that segregates the accounts based on its type (another instance of type discrimination so that's a hint that this is bad design).

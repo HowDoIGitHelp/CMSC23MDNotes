@@ -7,28 +7,7 @@
     </head>
         <body>
             <textarea id="source">
-class: center, middle
-
 ## SOLID Objects
-
----
-class: center, middle
-
-## Introduction
-
----
-
-## Learning Outcomes
-
-1.  Design methods and classes with exactly one responsibility
-2.  Design extension to classes to incorporate new behavior
-3.  Design proper realization and specialization relationships
-4.  Design purposeful abstractions and abstract methods
-5.  Design systems that interact through abstractions
-
----
-
-## Learning Outcomes
 
 - **Single Responsibility Principle** - Objects should have cohesive and
   complete responsibilities. It shouldn't be aware of knowledge it
@@ -37,7 +16,7 @@ class: center, middle
 
 ---
 
-## Learning Outcomes
+## SOLID Objects
 
 - **Open/Closed Principle** - Classes should be open to extension and
   closed to modification. Instead of changing the form and behavior of
@@ -47,7 +26,7 @@ class: center, middle
 
 ---
 
-## Learning Outcomes
+## SOLID Objects
 
 - **Interface Segregation Principle** - A client shouldn't be forced to
   implement methods that it doesn't use
@@ -70,23 +49,42 @@ class: center, middle
 
 ## The GOD Class
 
-![God class library card](../mdNotes/uml/godclasslibrarycard.png)
+``` kotlin
+class LibraryCard {
+...
+    private fun penalty(b: BorrowableItem, today: LocalDate) : Float {
+        val borrowDate = borrowedItems[b] ?: today
+        val dueDate: LocalDate = when {
+            b is Book -> borrowDate.plusDays(7)
+```
 
 ---
 
 ## The GOD Class
 
-- On the example above `LibraryCard` is a god class since it exposes the
-  secrets of `Date` by forcing the creations of *evil* getters
-  (`getMonth()`, `getDay()`, `getYear()`) for otherwise private details.
+``` kotlin
+            b is Periodical -> borrowDate.plusDays(1)
+            b is PC -> borrowDate.plusDays(0)
+            else -> borrowDate.plusDays(0)
+        }
+```
+
+---
+
+## The GOD Class
+
+``` kotlin
+        val daysDiff = Period.between(dueDate, today).days.toFloat()
+        return (if (daysDiff < 0) 0f else daysDiff) * 3.5f
+    }
+}
+```
 
 ---
 
 ## Assigning the correct responsibilities
 
-- When you're introducing new behavior or information to a system, you
-  should ask first: *who should be responsible for this behavior or
-  information?*
+- *who should be responsible for this behavior or information?*
 
 ---
 
@@ -104,6 +102,12 @@ class: center, middle
 
 - `LibraryCard` should not be aware of **how** dates are subtracted to
   be able to subtract dates.
+
+---
+
+## Open/Closed Principle
+
+![God class library card](../mdNotes/uml/closedforextension.png)
 
 ---
 
