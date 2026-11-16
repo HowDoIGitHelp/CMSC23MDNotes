@@ -104,12 +104,12 @@ We extend the functionality of `CreditAccount`, `DebitAccount`, and `PayrollAcco
 Is a method that does nothing inelegant? Not really because this is an accurate representation as to how a `PayrollAccount` changes every month— it doesn't change.
 Also, in the future, the inertness of `PayrollAccount` may change so at least you have the function prepared.
 
-> The previous library card example and bank examples are indeed similar.
+The previous library card god class and closed for modification bank examples are indeed similar.
+
 This is because introspective checks like `isinstance` are again symptoms of inelegant design.
+Another symptom of bad design is how you need to augment the `PayrollAccount` class to contain the `recieveFund(float)` or `deposit(float)` method so that it can become a recipient for transfer.
 
-Another example of this is how you need to augment the `PayrollAccount` class to contain the `recieveFund(float)` or `deposit(float)` method so that it can become a recipient for transfer.
-
-> Closed for modification does not mean you cannot change literally anything in the class.
+Closed for modification does not mean you cannot change literally anything in the class.
 Of course if there are mistakes in the specific behavior of the class then you have to modify it.
 
 
@@ -123,36 +123,68 @@ LSP is important because it ensures the polymorphic capabilities of your realiza
 
 ### Interface Segregation Principle
 
+![Diverse functionality](../copyright_free_drawings/botw.png)
+
 Sometimes the subtypes/realizations of a certain object may have diverse functionality.
-Some subtypes can deposit, some subtypes can't, all subtypes can be recipient for transfers but not all can be senders.
 The diversity of functionality support may sometimes force the designer to pollute the system with methods that the subtypes don't actually use.
-`PayrollAccount` will not use deposit but since it realizes `Account` then we reluctantly add it.
 This is a violation if LSP which states that an object should not be forced to implement methods it doesn't use.
 
 #### Role Interfaces
 
 The best way to design these diverse systems is by refactoring your architecture to have diverse role interfaces instead.
 
-![God class library card](../uml/roleinterfaces.png)
+![Role interfaces](../uml/role_interfaces.svg)
 
 Now instead of cluttering you realizations with useless methods, your system is now cluttered with role interfaces.
 This is a benevolent kind of clutter.
-Because more objects and looser dependencies make for a maintainable and therefore elegant system (in the same way a language with more words have less chance for ambiguity).
+Because more objects and looser dependencies make for a more expressive and maintainable system (in the same way a language with more words have less chance for ambiguity).
 Because of this clutter, you can have rich polymorphism without sacrificing ISP.
-Although be careful not to overdo it though.
-You wouldn't want a role interface for every conceivable method out there.
+But you also need to be careful not to overdo the creation or role interfaces.
+You wouldn't want a role interface for every possible method out there.
 
 When you have role interfaces, you can refine lines of your code by describing which exact role interface applies.
-For example, instead of writing `transfer` as some `Account` to `Account` process they, it would be more specific to write it as a `TransferSenderAccount` to `TransferRecipientAccount` process.
+For example, instead of writing a `destroyProp` client function, instead of making it a function that accepts a general `Prop` type, you can be more specific and define the function as something that accepts a `BreakableProp` type.
+With a more expressive typing like this, your code can be safer and more deliberate.
 
 ### Dependency Inversion Principle
 
-The relationships between objects should be defined by surface instead of their interior.
-This means that How a bank interacts with an account should not be dependent on the implementation.
-The way `Bank` prints the balance report should not be by directly concatenating `"Your balance is" + account.balance`.
-Bank should interact with an account by printing the return value the abstract builder method, `balanceReport()`.
-The class `Bank` should not dissect `Account` to retrieve the balance.
-It should tell the `Account` to build a balance report.
+The relationships between objects should be defined by interfaces instead of their implementation.
+This means that the interaction between a `LibraryCard` client with a dependency like `Book` should not be dependent on the exact implementation.
+For example, you should avoid defining the `borrowerReport()` of `LibraryCard` as such:
+
+```kotlin
+class LibraryCard {
+...
+    public fun borrowerReport(): String {
+        var r = "$name\n"
+        for ((item, date) in borrowedItems) {
+            r += "${item.title}, borrow date: $date\n"
+            // using Book's title attribute to generate report
+        }
+        return r
+    }
+}
+```
+
+Instead, the `LibraryCard` should interact with its `item` like `BorrowableItem` instances.
+This means that we use the interface's methods.
+
+```kotlin
+class LibraryCard {
+...
+    public fun borrowerReport(): String {
+        var r = "$name\n"
+        for ((item, date) in borrowedItems) {
+            r += "${item.commonName()}, borrow date: $date\n"
+            // using BorrowableItem's commmonName() method to generate report
+        }
+        return r
+    }
+}
+```
+
+In this example, we follow the dependency inversion principle.
+The interaction between the `LibraryCard` instances and `Book` instances is through the interface `BorrowableItem`.
 
 ## Optional Reading
 

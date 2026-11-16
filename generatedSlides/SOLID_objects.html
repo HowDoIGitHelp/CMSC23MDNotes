@@ -132,41 +132,71 @@ class LibraryCard {
 - Inside `PayrollAccount.applyMonthlyChange()` you do nothing
 
 ---
-
-## Open/Closed Principle
-
-> The previous library card example and bank examples are indeed
-> similar. This is because introspective checks like `isinstance` are
-> again symptoms of inelegant design.
-
----
-
-## Open/Closed Principle
-
-> Closed for modification does not mean you cannot change literally
-> anything in the class. Of course if there are mistakes in the specific
-> behavior of the class then you have to modify it.
-
----
 class: center, middle
 
 ## Liskov-Substitution Principle
 
 ---
-class: center, middle
 
 ## Interface Segregation Principle
+
+![Diverse functionality](../mdNotes/copyright_free_drawings/botw.png)
 
 ---
 
 ## Role Interfaces
 
-![God class library card](../mdNotes/uml/roleinterfaces.png)
+![Role interfaces](../mdNotes/uml/role_interfaces.svg)
 
 ---
-class: center, middle
 
 ## Dependency Inversion Principle
+
+``` kotlin
+class LibraryCard {
+...
+    public fun borrowerReport(): String {
+        var r = "$name\n"
+        for ((item, date) in borrowedItems) {
+            r += "${item.title}, borrow date: $date\n"
+```
+
+---
+
+## Dependency Inversion Principle
+
+``` kotlin
+            // using Book's title attribute to generate report
+        }
+        return r
+    }
+}
+```
+
+---
+
+## Dependency Inversion Principle
+
+``` kotlin
+class LibraryCard {
+...
+    public fun borrowerReport(): String {
+        var r = "$name\n"
+        for ((item, date) in borrowedItems) {
+            r += "${item.commonName()}, borrow date: $date\n"
+```
+
+---
+
+## Dependency Inversion Principle
+
+``` kotlin
+            // using BorrowableItem's commmonName() method to generate report
+        }
+        return r
+    }
+}
+```
 
 ---
 
