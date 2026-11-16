@@ -1,0 +1,56 @@
+@startuml
+interface BreakableProp
+{
+    + destroy()
+}
+
+
+interface ClimbableProp
+{
+    + climb()
+}
+
+
+interface BurnableProp
+{
+    + burn()
+}
+
+
+interface InteractiveProp
+{
+    + interact()
+}
+
+
+class WoodenCrate
+{
+    WoodenCrate()
+    + burn()
+    + climb()
+    + destroy()
+}
+WoodenCrate ..|> BreakableProp
+WoodenCrate ..|> ClimbableProp
+WoodenCrate ..|> BurnableProp
+
+class Shrine
+{
+    Shrine()
+    + climb()
+    + interact()
+}
+Shrine ..|> ClimbableProp
+Shrine ..|> InteractiveProp
+
+class CampStove
+{
+    CampStove()
+    + burn()
+    + interact()
+}
+CampStove ..|> BurnableProp
+CampStove ..|> InteractiveProp
+
+
+@enduml
