@@ -95,7 +95,7 @@ Please let me know if you encounter any issues in submitting the lab exercises.
 4. [Drama in the Clue Mansion](/drama-in-the-clue-mansion)
 5. [Logical Relations for Lists](/list-relations)
 6. [Kotlin Introduction](/kotlin)
-7. [Borrowing from the Library (Kotlin)](borrowing-from-the-library-kotlin)
+7. [Borrowing from the Library (Kotlin)](/borrowing-from-the-library-kotlin)
 8. [Designing an OOP System](/designing-an-oop-system)
 9. [Shipment](/shipment)
 10. [Bootleg Text-based Zelda Game](/bootleg-text-based-zelda-game)
